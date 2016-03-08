@@ -1,0 +1,20 @@
+[Mon Mar  7 21:47:28 CST 2016] =========================================== 
+Successful
+
+[Mon Mar  7 21:49:01 CST 2016] =========================================== 
+Syntax error at line 3 Unexpected token  ,
+
+[Mon Mar  7 21:50:05 CST 2016] =========================================== 
+ERROR: light_scanner_parser.py:30: Rule 't_SEP_COMMA' requires an argument
+Traceback (most recent call last):
+  File "light_scanner_parser.py", line 317, in <module>
+    lex.lex()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/lex.py", line 907, in lex
+    raise SyntaxError("Can't build lexer")
+SyntaxError: Can't build lexer
+
+[Mon Mar  7 21:50:33 CST 2016] =========================================== 
+Syntax error at line 3 Unexpected token  var
+
+[Mon Mar  7 21:51:00 CST 2016] =========================================== 
+Successful

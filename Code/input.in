@@ -1,6 +1,6 @@
 program lolz {
 
-    var a:int
+    var a, ab, abc:int
 
     function example() {
 

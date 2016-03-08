@@ -16,10 +16,8 @@ tokens = (
 
 # SEPARATORS
 
-t_SEP_COMMA         = r','
-t_SEP_DOT           = r'\.'
-t_INT       = r'int'
-#t_SEP_HASHTAG       = r'\#'
+t_SEP_DOT      = r'\.'
+#t_SEP_HASHTAG = r'\#'
 
 # TOKENS
 t_MOVE              = r'move'
@@ -27,6 +25,10 @@ t_MOVE              = r'move'
 #dot      = r'\.'
 def t_SEP_LPAR(t):
     r'\('
+    return t
+
+def t_SEP_COMMA(t):
+    r','
     return t
 
 def t_SEP_RPAR(t):
