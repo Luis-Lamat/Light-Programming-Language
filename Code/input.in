@@ -1,9 +1,12 @@
 program lolz {
 
     var a, ab, abc:int
+    var global:int = 0
 
-    function example() {
+    function example() returns int {
 
+        print("This")
+        return 0
     }
 
     light() {

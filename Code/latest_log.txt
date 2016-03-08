@@ -18,3 +18,15 @@ Syntax error at line 3 Unexpected token  var
 
 [Mon Mar  7 21:51:00 CST 2016] =========================================== 
 Successful
+
+[Mon Mar  7 22:05:58 CST 2016] =========================================== 
+Successful
+
+[Mon Mar  7 22:07:27 CST 2016] =========================================== 
+Successful
+
+[Mon Mar  7 22:07:59 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  return
+
+[Mon Mar  7 22:12:47 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  return
