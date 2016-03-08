@@ -2,14 +2,15 @@
 tokens = (
     'PROGRAM', 'VAR_IDENTIFIER' , 'SEP_LCBRACKET' , 'SEP_RCBRACKET',
     'FUNCTION', 'LIGHT_TOKEN', 'VAR_BOOLEAN', 'VAR_INT', 'VAR_DECIMAL',
-    'VAR_STRING', 'VAR_FRACTION', 'POINT', 'LINE', 'TRIANGLE', 'SQUARE', 
+    'VAR_STRING', 'VAR_FRACTION', 'POINT', 'LINE', 'TRIANGLE', 'SQUARE',
+    'BOOLEAN', 'INT', 'DECIMAL', 'STRING', 'FRACTION',
     'RECTANGLE', 'POLYGON', 'STAR', 'CIRCLE', 'SEP_LPAR', 'SEP_RPAR', 'RETURNS',
     'SEP_COLON', 'SEP_COMMA', 'OP_EQUALS', 'LOOP', 'SEP_DOT', 'FOR_EACH',
     'IN', 'SEP_SEMICOLON', 'ACTION', 'DO', 'BEGINS', 'ENDS', 'MOVE', 'POS_X', 'POS_Y', 'END',
     'SCALE', 'SIZE', 'HIDE', 'SHOW', 'CAMERA', 'OP_LESS_THAN', 'OP_GREATER_THAN', 'OP_NOT_EQUAL',
     'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 'OP_PLUS', 'OP_MINUS', 'OP_TIMES',
     'OP_DIVISION', 'OP_PLUS_EQUALS', 'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR',
-    'SEP_HASHTAG', 'VAR', 'INT', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID',
+    'SEP_HASHTAG', 'VAR', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID',
     'RETURN', 
     )
 
@@ -17,6 +18,7 @@ tokens = (
 
 t_SEP_COMMA         = r','
 t_SEP_DOT           = r'\.'
+t_INT       = r'int'
 #t_SEP_HASHTAG       = r'\#'
 
 # TOKENS
@@ -353,11 +355,11 @@ def p_type (p):
 
 def p_primitive (p):
     '''
-    primitive : VAR_BOOLEAN 
-                | VAR_INT 
-                | VAR_DECIMAL 
-                | VAR_STRING 
-                | VAR_FRACTION
+    primitive : BOOLEAN 
+                | INT 
+                | DECIMAL 
+                | STRING 
+                | FRACTION
     '''
 
 def p_figure (p):

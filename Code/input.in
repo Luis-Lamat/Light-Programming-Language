@@ -1,8 +1,8 @@
 program lolz {
 
-    # var a:int
+    var a:int
 
-    function pito() {
+    function example() {
 
     }
 
