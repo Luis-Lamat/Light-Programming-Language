@@ -16,13 +16,16 @@ tokens = (
 
 # SEPARATORS
 
-t_SEP_DOT      = r'\.'
 #t_SEP_HASHTAG = r'\#'
 
 # TOKENS
 t_MOVE              = r'move'
 
 #dot      = r'\.'
+def t_SEP_DOT(t):
+    r'\.'
+    return t
+
 def t_SEP_LPAR(t):
     r'\('
     return t
@@ -68,11 +71,15 @@ def t_RETURN (t):
     return t
 
 def t_VAR (t):
-    r'var'
+    r'var\s'
     return t
 
 def t_DECIMAL (t):
     r'decimal'
+    return t
+
+def t_STRING (t):
+    r'string'
     return t
 
 def t_PRINT (t):
@@ -85,6 +92,10 @@ def t_VAR_VECTORID (t):
 
 def t_ANGLE (t):
     r'angle'
+    return t
+
+def t_FOR_EACH (t):
+    r'for_each'
     return t
 
 def t_FOR (t):
@@ -237,12 +248,9 @@ def t_LOOP (t):
     r'loop'
     return t
 
-def t_FOR_EACH (t):
-    r'for_each'
-    return t
-
 def t_IN (t):
-    r'in'
+    r'in\s'
+    return t
 
 #Figures
 
@@ -422,19 +430,14 @@ def p_assignment (p):
 
 def p_cycle (p):
     '''
-    cycle : loop cyc_a
-        | for_each cyc_a
-        | for cyc_a
-    '''
-
-def p_cyc_a (p):
-    '''
-    cyc_a : do_block
+    cycle : loop do_block
+        | for_each do_block
+        | for do_block
     '''
 
 def p_loop (p):
     '''
-    loop : LOOP SEP_LPAR l_a SEP_DOT SEP_DOT l_a SEP_RPAR do_block 
+    loop : LOOP SEP_LPAR l_a SEP_DOT SEP_DOT l_a SEP_RPAR 
     '''
 
 def p_l_a (p):
@@ -445,17 +448,12 @@ def p_l_a (p):
 
 def p_for_each (p):
     '''
-    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN fore_a SEP_RPAR stmt_loop
-    '''
-
-def p_fore_a (p):
-    '''
-    fore_a : VAR_IDENTIFIER
+    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN VAR_IDENTIFIER SEP_RPAR
     '''
 
 def p_for (p):
     '''
-    for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR stmt_loop
+    for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR
     '''
 
 def p_for_a (p):
@@ -647,7 +645,8 @@ def p_statement (p):
                 | action 
                 | camera 
                 | comments 
-                | print 
+                | print
+                | increment
                 | figure_creations 
                 | return
     '''

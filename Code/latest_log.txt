@@ -141,3 +141,157 @@ WARNING: Symbol 'var_a' is unreachable
 Generating LALR tables
 WARNING: 2 shift/reduce conflicts
 Successful
+
+[Wed Mar  9 21:45:59 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 21:47:06 CST 2016] =========================================== 
+Syntax error at line 16 Unexpected token  string
+
+[Wed Mar  9 21:48:11 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  {
+
+[Wed Mar  9 21:49:20 CST 2016] =========================================== 
+Syntax error at line 22 Unexpected token  print
+
+[Wed Mar  9 21:50:28 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 22 Unexpected token  print
+
+[Wed Mar  9 21:55:04 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  program
+
+[Wed Mar  9 21:56:02 CST 2016] =========================================== 
+Syntax error at line 22 Unexpected token  [
+
+[Wed Mar  9 21:57:48 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  _
+
+[Wed Mar  9 21:58:49 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  numbers
+
+[Wed Mar  9 22:00:47 CST 2016] =========================================== 
+WARNING: light_scanner_parser.py:450: No documentation string specified in function 'p_for_each' (ignored)
+ERROR: light_scanner_parser.py:430: Symbol 'for_each' used, but not defined as a token or a rule
+WARNING: Token 'FOR_EACH' defined, but not used
+WARNING: Token 'IN' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Traceback (most recent call last):
+  File "light_scanner_parser.py", line 815, in <module>
+    parser = yacc.yacc()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 3403, in yacc
+    raise YaccError('Unable to build parser')
+ply.yacc.YaccError: Unable to build parser
+
+[Wed Mar  9 22:01:27 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  numbers
+
+[Wed Mar  9 22:02:31 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  lol
+
+[Wed Mar  9 22:03:03 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  9
+
+[Wed Mar  9 22:04:45 CST 2016] =========================================== 
+Syntax error at line 30 Unexpected token  .
+
+[Wed Mar  9 22:05:47 CST 2016] =========================================== 
+Syntax error at line 31 Unexpected token  +=
+
+[Wed Mar  9 22:09:04 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 26 Unexpected token  }
+
+[Wed Mar  9 22:12:37 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 31 Unexpected token  +=
+
+[Wed Mar  9 22:13:02 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 31 Unexpected token  +=
+
+[Wed Mar  9 22:14:10 CST 2016] =========================================== 
+Syntax error at line 31 Unexpected token  +=
+
+[Wed Mar  9 22:15:00 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 39 Unexpected token  in
+
+[Wed Mar  9 22:20:25 CST 2016] =========================================== 
+Syntax error at line 39 Unexpected token  in
+
+[Wed Mar  9 22:20:36 CST 2016] =========================================== 
+Syntax error at line 39 Unexpected token  in
+
+[Wed Mar  9 22:20:50 CST 2016] =========================================== 
+Syntax error at line 39 Unexpected token  in
+
+[Wed Mar  9 22:21:26 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  in
+
+[Wed Mar  9 22:21:34 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  in
+
+[Wed Mar  9 22:21:57 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 22:22:10 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  innumbers
+
+[Wed Mar  9 22:22:16 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 22:23:49 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  decimal
+
+[Wed Mar  9 22:24:22 CST 2016] =========================================== 
+Syntax error at line 22 Unexpected token  print
+
+[Wed Mar  9 22:26:50 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 22:32:59 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  l
+
+[Wed Mar  9 22:33:59 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  l
+
+[Wed Mar  9 22:34:13 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  l
+
+[Wed Mar  9 22:34:32 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 22:34:51 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  l
+
+[Wed Mar  9 22:35:09 CST 2016] =========================================== 
+Successful

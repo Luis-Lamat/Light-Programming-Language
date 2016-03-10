@@ -13,10 +13,31 @@ program lolz {
         return 0
     }
 
+    function sayText(text: string){
+        print(text)
+    }
+    function addOne(number: int) returns int {
+        return number + 1
+    }
+    function outputArray(numbers: int){
+        for_each (element in numbers) do
+            print(element)
+        end
+    }
+    function sumTimes(first: int, last: int) returns int{
+
+        var sum:int = 0
+        loop (first..last) do
+            sum += 1
+        end 
+        
+        return sum
+    }
+
     function sumNumbers(first: int, last: int) returns int{
         var sum:int = 0
         for (sum = first; index < last; index += 1) do
-            
+            sum = sum + index
         end
         print("true") 
         return sum
