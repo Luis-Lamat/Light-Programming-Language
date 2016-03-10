@@ -310,3 +310,24 @@ Successful
 
 [Thu Mar 10 15:06:03 CST 2016] =========================================== 
 Successful
+
+[Thu Mar 10 16:12:41 CST 2016] =========================================== 
+python: can't open file 'light_scanner_parser.py': [Errno 2] No such file or directory
+
+[Thu Mar 10 16:13:10 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  program
+
+[Thu Mar 10 16:16:29 CST 2016] =========================================== 
+Syntax error at line 1 Unexpected token  program
+
+[Thu Mar 10 16:19:12 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  posX
+
+[Thu Mar 10 16:20:11 CST 2016] =========================================== 
+Syntax error at line 23 Unexpected token  _
+
+[Thu Mar 10 16:20:57 CST 2016] =========================================== 
+Successful
+
+[Thu Mar 10 16:21:29 CST 2016] =========================================== 
+Successful

@@ -3,7 +3,7 @@ program lolz {
     var a, ab, abc:int
     var global:int = 0
 
-    function example(posX: int, posY: int, posZ: decimal) returns int {
+    function example(x: int, y: int, z: decimal) returns int {
 
         if (1 < 2) do
             print("true")
@@ -19,8 +19,9 @@ program lolz {
     function addOne(number: int) returns int {
         return number + 1
     }
-    function outputArray(numbers: int){
-        for_each (element in numbers) do
+
+    function printArray(numbers: int){
+        foreach (element in numbers) do
             print(element)
         end
     }
