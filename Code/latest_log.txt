@@ -63,3 +63,81 @@ Syntax error at line 6 Unexpected token  decimal
 
 [Wed Mar  9 21:27:31 CST 2016] =========================================== 
 Successful
+
+[Wed Mar  9 21:30:23 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 21:30:47 CST 2016] =========================================== 
+Syntax error at line 10 Unexpected token  function
+
+[Wed Mar  9 21:32:32 CST 2016] =========================================== 
+Syntax error at line 18 Unexpected token  +
+
+[Wed Mar  9 21:32:54 CST 2016] =========================================== 
+Syntax error at line 18 Unexpected token  +
+
+[Wed Mar  9 21:33:07 CST 2016] =========================================== 
+Syntax error at line 18 Unexpected token  +
+
+[Wed Mar  9 21:33:46 CST 2016] =========================================== 
+Syntax error at line 18 Unexpected token  do
+
+[Wed Mar  9 21:34:50 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 14 shift/reduce conflicts
+Syntax error at line 19 Unexpected token  +
+
+[Wed Mar  9 21:36:37 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+Syntax error at line 21 Unexpected token  return
+
+[Wed Mar  9 21:38:31 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  return
+
+[Wed Mar  9 21:38:53 CST 2016] =========================================== 
+Syntax error at line 20 Unexpected token  2
+
+[Wed Mar  9 21:39:12 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:41:09 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:41:59 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:42:42 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:42:51 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:43:09 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:43:17 CST 2016] =========================================== 
+Syntax error at line 21 Unexpected token  print
+
+[Wed Mar  9 21:44:28 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Successful

@@ -5,8 +5,21 @@ program lolz {
 
     function example(posX: int, posY: int, posZ: decimal) returns int {
 
+        if (1 < 2) do
+            print("true")
+        end
+
         print("This")
         return 0
+    }
+
+    function sumNumbers(first: int, last: int) returns int{
+        var sum:int = 0
+        for (sum = first; index < last; index += 1) do
+            
+        end
+        print("true") 
+        return sum
     }
 
     light() {

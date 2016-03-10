@@ -157,6 +157,10 @@ def t_OP_NOT_EQUAL (t):
     r'!='
     return t
 
+def t_OP_MINUS_EQUALS (t):
+    r'\+='
+    return t
+
 def t_OP_PLUS (t):
     r'\+'
     return t
@@ -175,10 +179,6 @@ def t_OP_DIVISION (t):
 
 def t_OP_EQUALS (t):
     r'='
-    return t
-
-def t_OP_MINUS_EQUALS (t):
-    r'\+='
     return t
 
 def t_OP_PLUS_EQUALS (t):
@@ -445,7 +445,7 @@ def p_l_a (p):
 
 def p_for_each (p):
     '''
-    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN fore_a SEP_RPAR SEP_LCBRACKET stmt_loop SEP_RCBRACKET
+    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN fore_a SEP_RPAR stmt_loop
     '''
 
 def p_fore_a (p):
@@ -455,7 +455,7 @@ def p_fore_a (p):
 
 def p_for (p):
     '''
-    for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR SEP_LCBRACKET stmt_loop SEP_RCBRACKET
+    for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR stmt_loop
     '''
 
 def p_for_a (p):
@@ -540,9 +540,10 @@ def p_exp_a (p):
         | epsilon
     '''
 
+# Changed position of term 
 def p_exp_b (p):
     '''
-    exp_b : term exp_c exp_d
+    exp_b : exp_c term exp_d
     '''
 
 def p_exp_c (p):
@@ -570,7 +571,7 @@ def p_term_a (p):
 
 def p_term_b (p):
     '''
-    term_b : factor term_c term_d
+    term_b : term_c factor term_d
     '''
 
 def p_term_c (p):
