@@ -71,6 +71,10 @@ def t_VAR (t):
     r'var'
     return t
 
+def t_DECIMAL (t):
+    r'decimal'
+    return t
+
 def t_PRINT (t):
     r'print'
     return t
@@ -407,7 +411,7 @@ def p_parameters (p):
 
 def p_param_a (p):
     '''
-    param_a : SEP_COMMA
+    param_a : SEP_COMMA parameters
         | epsilon
     '''
 

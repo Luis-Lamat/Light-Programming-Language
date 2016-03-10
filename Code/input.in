@@ -3,7 +3,7 @@ program lolz {
     var a, ab, abc:int
     var global:int = 0
 
-    function example() returns int {
+    function example(posX: int, posY: int, posZ: decimal) returns int {
 
         print("This")
         return 0

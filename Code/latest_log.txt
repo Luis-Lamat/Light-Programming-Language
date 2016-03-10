@@ -39,3 +39,27 @@ Syntax error at line 6 Unexpected token  return
 
 [Wed Mar  9 19:15:50 CST 2016] =========================================== 
 Successful
+
+[Wed Mar  9 21:22:31 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 21:22:50 CST 2016] =========================================== 
+Successful
+
+[Wed Mar  9 21:22:55 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  posY
+
+[Wed Mar  9 21:24:11 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 14 shift/reduce conflicts
+Successful
+
+[Wed Mar  9 21:24:43 CST 2016] =========================================== 
+Syntax error at line 6 Unexpected token  decimal
+
+[Wed Mar  9 21:27:31 CST 2016] =========================================== 
+Successful
