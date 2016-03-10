@@ -59,6 +59,10 @@ def t_LIGHT_TOKEN(t):
     r'light'
     return t
 
+def t_RETURNS (t):
+    r'returns'
+    return t
+
 def t_RETURN (t):
     r'return'
     return t
@@ -223,10 +227,6 @@ def t_INT (t):
 
 def t_FLOAT (t):
     r'float'
-    return t
-
-def t_RETURNS (t):
-    r'RETURNS'
     return t
 
 def t_LOOP (t):
