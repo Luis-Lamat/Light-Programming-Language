@@ -331,3 +331,53 @@ Successful
 
 [Thu Mar 10 16:21:29 CST 2016] =========================================== 
 Successful
+
+[Thu Mar 10 16:33:01 CST 2016] =========================================== 
+Syntax error at line 7 Unexpected token  #
+
+[Thu Mar 10 16:33:22 CST 2016] =========================================== 
+ERROR: /Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_scanner.py:79: Rule t_ignore redefined. Previously defined on line 78
+Traceback (most recent call last):
+  File "light_parser.py", line 1, in <module>
+    import light_scanner as lexer
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_scanner.py", line 218, in <module>
+    lexer = lex.lex()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/lex.py", line 907, in lex
+    raise SyntaxError("Can't build lexer")
+SyntaxError: Can't build lexer
+
+[Thu Mar 10 16:33:32 CST 2016] =========================================== 
+ERROR: /Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_scanner.py:79: Rule t_ignore redefined. Previously defined on line 78
+Traceback (most recent call last):
+  File "light_parser.py", line 1, in <module>
+    import light_scanner as lexer
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_scanner.py", line 218, in <module>
+    lexer = lex.lex()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/lex.py", line 907, in lex
+    raise SyntaxError("Can't build lexer")
+SyntaxError: Can't build lexer
+
+[Thu Mar 10 16:34:11 CST 2016] =========================================== 
+WARNING: Token 'COMMENT' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 2 unused tokens
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 7 Unexpected token  #
+
+[Thu Mar 10 16:35:07 CST 2016] =========================================== 
+Successful
+
+[Thu Mar 10 16:35:40 CST 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Successful
+
+[Thu Mar 10 16:35:47 CST 2016] =========================================== 
+Successful

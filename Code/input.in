@@ -4,9 +4,9 @@ program lolz {
     var global:int = 0
 
     function example(x: int, y: int, z: decimal) returns int {
-
+        # This is a comment
         if (1 < 2) do
-            print("true")
+            print("true") # printing
         end
 
         print("This")

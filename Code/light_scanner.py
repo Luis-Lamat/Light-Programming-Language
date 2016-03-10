@@ -63,17 +63,25 @@ tokens = (
     'PROGRAM', 'VAR_IDENTIFIER' , 'SEP_LCBRACKET' , 'SEP_RCBRACKET',
     'FUNCTION', 'LIGHT_TOKEN', 'VAR_BOOLEAN', 'VAR_INT', 'VAR_DECIMAL',
     'VAR_STRING', 'VAR_FRACTION', 'POINT', 'LINE', 'TRIANGLE', 'SQUARE',
-    'BOOLEAN', 'INT', 'DECIMAL', 'STRING', 'FRACTION',
-    'RECTANGLE', 'POLYGON', 'STAR', 'CIRCLE', 'SEP_LPAR', 'SEP_RPAR', 'RETURNS',
-    'SEP_COLON', 'SEP_COMMA', 'OP_EQUALS', 'LOOP', 'SEP_DOT', 'FOR_EACH',
-    'IN', 'SEP_SEMICOLON', 'ACTION', 'DO', 'BEGINS', 'ENDS', 'MOVE', 'POS_X', 'POS_Y', 'END',
-    'SCALE', 'SIZE', 'HIDE', 'SHOW', 'CAMERA', 'OP_LESS_THAN', 'OP_GREATER_THAN', 'OP_NOT_EQUAL',
-    'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 'OP_PLUS', 'OP_MINUS', 'OP_TIMES',
-    'OP_DIVISION', 'OP_PLUS_EQUALS', 'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR',
-    'SEP_HASHTAG', 'VAR', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID',
-    'RETURN' 
+    'BOOLEAN', 'INT', 'DECIMAL', 'STRING', 'FRACTION', 'RECTANGLE', 'POLYGON', 
+    'STAR', 'CIRCLE', 'SEP_LPAR', 'SEP_RPAR', 'RETURNS', 'SEP_COLON', 
+    'SEP_COMMA', 'OP_EQUALS', 'LOOP', 'SEP_DOT', 'FOR_EACH', 'IN', 
+    'SEP_SEMICOLON', 'ACTION', 'DO', 'BEGINS', 'ENDS', 'MOVE', 'POS_X', 'POS_Y',
+    'END', 'SCALE', 'SIZE', 'HIDE', 'SHOW', 'CAMERA', 'OP_LESS_THAN', 
+    'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 
+    'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
+    'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'SEP_HASHTAG', 
+    'VAR', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN'
 )
 
+# Ignoring comments, spaces and tabs
+
+t_ignore = ' \t'
+def t_COMMENT(t):
+    r'\#.*'
+    pass
+
+# Separators and Operators
 
 def t_SEP_DOT(t):
     r'\.'
@@ -171,7 +179,7 @@ def t_OP_NOT_EQUAL(t):
     r'!='
     return t
 
-#Figures
+# Regular Expressions
 
 def t_VAR_FRACTION (t):
     r'[0-9]+[\\][0-9]+'
@@ -201,8 +209,6 @@ def t_VAR_BOOLEAN (t):
 def t_VAR_ANYCHAR(t) :
     r'.'
     return t
-
-t_ignore = ' \t'
 
 def t_newline(t):
     r'\n+'
