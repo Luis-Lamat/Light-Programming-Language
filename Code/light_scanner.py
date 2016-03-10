@@ -71,7 +71,8 @@ tokens = (
     'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'SEP_HASHTAG', 
-    'VAR', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN'
+    'VAR', 'PRINT' , 'VAR_ANYCHAR' ,'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN',
+    'SEP_LBRACKET', 'SEP_RBRACKET'
 )
 
 # Ignoring comments, spaces and tabs
@@ -89,6 +90,14 @@ def t_SEP_DOT(t):
 
 def t_SEP_LPAR(t):
     r'\('
+    return t
+
+def t_SEP_LBRACKET(t):
+    r'\['
+    return t
+
+def t_SEP_RBRACKET(t):
+    r'\]'
     return t
 
 def t_SEP_COMMA(t):
@@ -185,7 +194,7 @@ def t_VAR_FRACTION (t):
     r'[0-9]+[\\][0-9]+'
 
 def t_VAR_IDENTIFIER (t):
-    r'[a-zA-Z][a-zA-Z0-9]*'
+    r'[a-zA-Z]+[0-9]*(_[a-zA-Z0-9]+)?'
     t.type = reserved_words.get(t.value, 'VAR_IDENTIFIER')
     return t
 

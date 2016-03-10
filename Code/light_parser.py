@@ -26,13 +26,7 @@ def p_pr_b (p):
 
 def p_main_func (p):
     '''
-    main_func : LIGHT_TOKEN SEP_LPAR SEP_RPAR SEP_LCBRACKET m_a SEP_RCBRACKET
-    '''
-
-def p_m_a (p):
-    '''
-    m_a : statement m_a
-        | epsilon
+    main_func : LIGHT_TOKEN SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
     '''
 
 def p_type (p):
@@ -63,6 +57,12 @@ def p_figure (p):
             | CIRCLE
     '''
 
+def p_stmt_loop (p):
+    '''
+    stmt_loop : statement  stmt_loop
+        | epsilon
+    '''
+
 def p_function (p):
     '''
     function : FUNCTION VAR_IDENTIFIER SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
@@ -82,26 +82,45 @@ def p_func_c (p):
     func_c : vars  func_c
         | epsilon
     '''
-def p_stmt_loop (p):
-    '''
-    stmt_loop : statement  stmt_loop
-        | epsilon
-    '''
+
 def p_parameters (p):
     '''
     parameters : VAR_IDENTIFIER SEP_COLON type param_a
     '''
-
 def p_param_a (p):
     '''
     param_a : SEP_COMMA parameters
         | epsilon
     '''
 
+def p_function_call(p):
+    '''
+    function_call : VAR_IDENTIFIER SEP_LPAR call_parameters SEP_RPAR
+    '''
+
+def p_call_parameters(p):
+    '''
+    call_parameters : VAR_IDENTIFIER SEP_COLON cnt_prim call_param_a
+    '''
+def p_call_param_a(p):
+    '''
+    call_param_a : SEP_COMMA call_parameters
+        | epsilon
+    '''
+    pass
+
+
 def p_assignment (p):
     '''
-    assignment : VAR_IDENTIFIER OP_EQUALS exp 
+    assignment : VAR_IDENTIFIER OP_EQUALS assgn_a 
     '''
+
+def p_assgn_a(p):
+    '''
+    assgn_a : exp
+        | function_call
+    '''
+    pass
 
 def p_cycle (p):
     '''
@@ -123,8 +142,14 @@ def p_l_a (p):
 
 def p_for_each (p):
     '''
-    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN VAR_IDENTIFIER SEP_RPAR
+    for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN for_each_collection SEP_RPAR
     '''
+def p_for_each_collection(p):
+    '''
+    for_each_collection : VAR_IDENTIFIER
+        | SEP_LBRACKET VAR_INT SEP_DOT SEP_DOT VAR_INT SEP_RBRACKET
+    '''
+    pass
 
 def p_for (p):
     '''
@@ -319,7 +344,7 @@ def p_statement (p):
                 | cycle 
                 | action 
                 | camera 
-                | comments 
+                | function_call 
                 | print
                 | increment
                 | figure_creations 
@@ -391,9 +416,11 @@ def p_init_prim (p):
     init_prim : OP_EQUALS init_a
     '''
 
+# Adds a shift reduce conflict because of function_call
 def p_init_a (p):
     '''
-    init_a : VAR_IDENTIFIER
+    init_a : function_call
+        | VAR_IDENTIFIER
         | cnt_prim
     '''
 
@@ -435,25 +462,13 @@ def p_cnt_prim (p):
     cnt_prim : VAR_INT
         | VAR_DECIMAL
         | VAR_FRACTION
+        | VAR_STRING
     '''
 
 def p_return (p):
     '''
     return : RETURN exp
     '''
-
-def p_comments (p):
-    '''
-    comments : SEP_HASHTAG co_a 
-    '''
-    pass
-
-def p_co_a (p):
-    '''
-    co_a : VAR_ANYCHAR co_a
-        | epsilon
-    '''
-    pass
 
 def p_print (p):
     '''
@@ -465,6 +480,7 @@ def p_prin_a (p):
     '''
     prin_a : exp
         | VAR_STRING
+        | function_call
     '''
     pass
 

@@ -45,6 +45,91 @@ program lolz {
     }
 
     light() {
+        var numberOne:int = addOne(number: 25)
+        var xpos:int = 0
+        var ypos:int = 0
+        var t0:triangle
 
+        sayText(text: "hello")
+
+        # This line didn't work
+        # var numArray:[int] = {1,2,3,4}
+        # printArray(numbers: numArray)
+
+        # sumTimes
+        print(sumTimes(first:10, last:20))
+        
+        # sumNumbers
+        print(sumNumbers(first:10, last:20))
+
+
+        # camera
+        window_size(width: 1000, height: 1000)
+        coordinates(x: 100, y: 100)
+    
+        # Arrays are troublesome!
+        # var points:[point] = [5]
+
+        foreach (i in [1..5]) do 
+            if(xpos > 3) do
+                xpos = 0
+            end
+            xpos += 1
+            ypos += 1
+        end 
+
+        camera points
+
+        t0 has
+            v1: (0,0),
+            v2: (2,0),
+            v3: (4,2),
+            color: green
+        end
+
+        camera t0
+
+        var t1:triangle has
+            v1: (1,2),
+            v2: (2,4),
+            v3: (4,5),
+            color: green
+        end
+
+        camera t1
+
+        var c1:circle has
+            size: 5,
+            color: red
+        end
+            
+        camera c1
+
+        #action
+        action move t1 do
+            begins: 2
+            ends: 5
+            pos_x: 5
+            pos_y: 6
+        end
+        action move c1 do
+            begins: 5
+            ends: 9
+            pos_x: 9
+            pos_y:10
+        end
+        action scale do
+            begins: 1
+            ends: 2
+            size: 5
+        end
+        action hide t1 do
+            begins: 10
+            ends: 15
+        end
+        action show t1 do
+            begins: 16
+            ends: 17
+        end
     }
 }

@@ -381,3 +381,242 @@ Successful
 
 [Thu Mar 10 16:35:47 CST 2016] =========================================== 
 Successful
+
+[Thu Mar 10 16:44:46 CST 2016] =========================================== 
+Syntax error at line 48 Unexpected token  (
+
+[Thu Mar 10 16:47:16 CST 2016] =========================================== 
+ERROR: light_parser.py:329: Symbol 'function_call' used, but not defined as a token or a rule
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 2 unused tokens
+WARNING: Symbol 'co_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Traceback (most recent call last):
+  File "light_parser.py", line 489, in <module>
+    parser = yacc.yacc()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 3403, in yacc
+    raise YaccError('Unable to build parser')
+ply.yacc.YaccError: Unable to build parser
+
+[Thu Mar 10 16:47:41 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 2 unused tokens
+WARNING: Symbol 'co_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 49 Unexpected token  â
+
+[Thu Mar 10 16:48:00 CST 2016] =========================================== 
+Syntax error at line 49 Unexpected token  "hello"
+
+[Thu Mar 10 16:51:21 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:113: Rule 'call_param_a' defined, but not used
+WARNING: There are 2 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_parameters' is unreachable
+WARNING: Symbol 'co_a' is unreachable
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+Syntax error at line 49 Unexpected token  "hello"
+
+[Thu Mar 10 16:52:55 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:113: Rule 'call_param_a' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 2 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 185 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 185
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 50 Unexpected token  int
+
+[Thu Mar 10 16:53:02 CST 2016] =========================================== 
+Syntax error at line 50 Unexpected token  int
+
+[Thu Mar 10 16:53:43 CST 2016] =========================================== 
+Syntax error at line 48 Unexpected token  int
+
+[Thu Mar 10 16:55:52 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:107: Rule 'call_param_a' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 195 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 195
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 48 Unexpected token  (
+
+[Thu Mar 10 16:55:54 CST 2016] =========================================== 
+Syntax error at line 48 Unexpected token  (
+
+[Thu Mar 10 16:57:16 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:107: Rule 'call_param_a' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 195 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 195
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 48 Unexpected token  (
+
+[Thu Mar 10 16:57:19 CST 2016] =========================================== 
+Syntax error at line 48 Unexpected token  (
+
+[Thu Mar 10 17:00:22 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:107: Rule 'call_param_a' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 201 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 201
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 55 Unexpected token  [
+
+[Thu Mar 10 17:01:30 CST 2016] =========================================== 
+Syntax error at line 55 Unexpected token  [
+
+[Thu Mar 10 17:02:13 CST 2016] =========================================== 
+Syntax error at line 59 Unexpected token  (
+
+[Thu Mar 10 17:02:57 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:107: Rule 'call_param_a' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'call_param_a' is unreachable
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 201 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 201
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 59 Unexpected token  ,
+
+[Thu Mar 10 17:03:04 CST 2016] =========================================== 
+Syntax error at line 59 Unexpected token  ,
+
+[Thu Mar 10 17:04:36 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 204 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 204
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 66 Unexpected token  _
+
+[Thu Mar 10 17:05:51 CST 2016] =========================================== 
+Syntax error at line 69 Unexpected token  [
+
+[Thu Mar 10 17:06:21 CST 2016] =========================================== 
+Syntax error at line 72 Unexpected token  var
+
+[Thu Mar 10 17:06:32 CST 2016] =========================================== 
+Syntax error at line 72 Unexpected token  in
+
+[Thu Mar 10 17:06:38 CST 2016] =========================================== 
+Syntax error at line 72 Unexpected token  [
+
+[Thu Mar 10 17:10:35 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 204 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 204
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 72 Unexpected token  1
+
+[Thu Mar 10 17:10:38 CST 2016] =========================================== 
+Syntax error at line 72 Unexpected token  1
+
+[Thu Mar 10 17:11:05 CST 2016] =========================================== 
+WARNING: Token 'SEP_HASHTAG' defined, but not used
+WARNING: Token 'VAR_ANYCHAR' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 4 shift/reduce conflicts
+WARNING: 1 reduce/reduce conflict
+WARNING: reduce/reduce conflict in state 204 resolved using rule (cnt_prim -> VAR_STRING)
+WARNING: rejected rule (prin_a -> VAR_STRING) in state 204
+WARNING: Rule (prin_a -> VAR_STRING) is never reduced
+Syntax error at line 73 Unexpected token  [
+
+[Thu Mar 10 17:11:32 CST 2016] =========================================== 
+Syntax error at line 76 Unexpected token  +
+
+[Thu Mar 10 17:11:44 CST 2016] =========================================== 
+Syntax error at line 84 Unexpected token  t0
+
+[Thu Mar 10 17:12:06 CST 2016] =========================================== 
+Syntax error at line 83 Unexpected token  has
+
+[Thu Mar 10 17:14:03 CST 2016] =========================================== 
+Syntax error at line 93 Unexpected token  (
+
+[Thu Mar 10 17:14:15 CST 2016] =========================================== 
+Syntax error at line 105 Unexpected token  ends
+
+[Thu Mar 10 17:15:15 CST 2016] =========================================== 
+Syntax error at line 105 Unexpected token  ends
+
+[Thu Mar 10 17:15:31 CST 2016] =========================================== 
+Syntax error at line 83 Unexpected token  has
