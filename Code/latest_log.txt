@@ -295,3 +295,18 @@ Syntax error at line 1 Unexpected token  l
 
 [Wed Mar  9 22:35:09 CST 2016] =========================================== 
 Successful
+
+[Thu Mar 10 10:46:32 CST 2016] =========================================== 
+ERROR: No token list is defined
+Traceback (most recent call last):
+  File "light_scanner_parser.py", line 485, in <module>
+    parser = yacc.yacc()
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 3253, in yacc
+    raise YaccError('Unable to build parser')
+ply.yacc.YaccError: Unable to build parser
+
+[Thu Mar 10 15:05:27 CST 2016] =========================================== 
+Successful
+
+[Thu Mar 10 15:06:03 CST 2016] =========================================== 
+Successful
