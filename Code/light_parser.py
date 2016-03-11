@@ -31,14 +31,14 @@ def p_main_func (p):
 
 def p_type (p):
     '''
-    type : primitive 
+    type : primitive_type 
         | figure 
         | epsilon
     '''
 
-def p_primitive (p):
+def p_primitive_type (p):
     '''
-    primitive : BOOLEAN 
+    primitive_type : BOOLEAN 
                 | INT 
                 | DECIMAL 
                 | STRING 
@@ -182,22 +182,22 @@ def p_act_a (p):
 
 def p_act_header (p):
     '''
-    act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp SEP_COMMA 
+    act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp 
     '''
 
 def p_act_move (p):
     '''
-    act_move : MOVE act_header POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp  END
+    act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp  END
     '''
 
 def p_act_scale (p):
     '''
-    act_scale : SCALE act_header SIZE SEP_COLON exp SEP_COMMA  END
+    act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END
     '''
 
 def p_act_rotate (p):
     '''
-    act_rotate : SCALE act_header ANGLE SEP_COLON exp SEP_COMMA  END
+    act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA  END
     '''
 
 def p_act_visible (p):
@@ -337,6 +337,7 @@ def p_do_block (p):
     do_block : DO stmt_loop END
     '''
 
+# WARNING: Watch out for "figure_creation"
 def p_statement (p):
     '''
     statement : assignment 
@@ -348,6 +349,7 @@ def p_statement (p):
                 | print
                 | increment
                 | figure_creations 
+                | fig_description
                 | return
     '''
 
@@ -402,7 +404,7 @@ def p_vf_a (p):
 
 def p_vars_prim (p):
     '''
-    vars_prim : primitive var_p_a
+    vars_prim : primitive_type var_p_a
     '''
 
 def p_var_p_a (p):
@@ -416,7 +418,7 @@ def p_init_prim (p):
     init_prim : OP_EQUALS init_a
     '''
 
-# Adds a shift reduce conflict because of function_call
+# WARNING: Adds a shift reduce conflict because of function_call
 def p_init_a (p):
     '''
     init_a : function_call
@@ -452,6 +454,11 @@ def p_fig_attr (p):
         | SIZE SEP_COLON exp 
     '''
 
+def p_fig_description(p):
+    '''
+    fig_description : VAR_IDENTIFIER HAS fig_create_block
+    '''
+
 def p_vector (p):
     '''
     vector : VAR_VECTORID SEP_COLON SEP_LPAR exp SEP_COMMA exp SEP_RPAR 
@@ -479,7 +486,6 @@ def p_print (p):
 def p_prin_a (p):
     '''
     prin_a : exp
-        | VAR_STRING
         | function_call
     '''
     pass

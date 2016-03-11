@@ -107,28 +107,28 @@ program lolz {
 
         #action
         action move t1 do
-            begins: 2
-            ends: 5
-            pos_x: 5
-            pos_y: 6
+            begins: 2,
+            ends: 5,
+            posX: 5,
+            posY: 6
         end
         action move c1 do
-            begins: 5
-            ends: 9
-            pos_x: 9
-            pos_y:10
+            begins: 5,
+            ends: 9,
+            posX: 9,
+            posY:10
         end
-        action scale do
-            begins: 1
-            ends: 2
+        action scale c1 do
+            begins: 1,
+            ends: 2,
             size: 5
         end
         action hide t1 do
-            begins: 10
+            begins: 10,
             ends: 15
         end
         action show t1 do
-            begins: 16
+            begins: 16,
             ends: 17
         end
     }
