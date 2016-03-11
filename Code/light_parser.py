@@ -1,6 +1,7 @@
 import light_scanner as lexer
 import ply.yacc as yacc
 import sys
+from light_semantic_controller import *
 
 tokens = lexer.tokens
 
