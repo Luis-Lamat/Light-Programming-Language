@@ -1,72 +1,275 @@
-[Thu Mar 10 22:07:56 CST 2016] =========================================== 
-WARNING: Token 'SEP_HASHTAG' defined, but not used
-WARNING: Token 'VAR_ANYCHAR' defined, but not used
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: There are 3 unused tokens
-WARNING: Symbol 'var_b' is unreachable
-WARNING: Symbol 'var_a' is unreachable
-Generating LALR tables
-WARNING: 4 shift/reduce conflicts
-WARNING: 1 reduce/reduce conflict
-WARNING: reduce/reduce conflict in state 204 resolved using rule (cnt_prim -> VAR_STRING)
-WARNING: rejected rule (prin_a -> VAR_STRING) in state 204
-WARNING: Rule (prin_a -> VAR_STRING) is never reduced
-Syntax error at line 83 Unexpected token  has
+[Sat Mar 12 19:06:40 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 35
+    if !(name in self.vars):
+       ^
+SyntaxError: invalid syntax
 
-[Thu Mar 10 22:09:23 CST 2016] =========================================== 
+[Sat Mar 12 19:09:26 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 37
+    self.next_var_id++
+                     ^
+SyntaxError: invalid syntax
+
+[Sat Mar 12 19:09:37 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 37
+    self.next_var_id++
+                     ^
+SyntaxError: invalid syntax
+
+[Sat Mar 12 19:09:48 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 74
+    print "Semantic Error: " type " '" + name + "' already defined\n"
+                                ^
+SyntaxError: invalid syntax
+
+[Sat Mar 12 19:09:56 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 74
+    print "Semantic Error: " + type " '" + name + "' already defined\n"
+                                       ^
+SyntaxError: invalid syntax
+
+[Sat Mar 12 19:10:04 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 42, in <module>
+    class FunctionTable:
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 44, in FunctionTable
+    'program' : Function('program', type_dict['void'])
+TypeError: __init__() takes exactly 4 arguments (3 given)
+
+[Sat Mar 12 19:10:49 CST 2016] =========================================== 
+Successful
+
+[Sat Mar 12 20:04:11 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 16, in <module>
+    tmp_var = Var()
+NameError: name 'Var' is not defined
+
+[Sat Mar 12 20:04:34 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 53, in <module>
+    class FunctionTable:
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 55, in FunctionTable
+    'program' : Function(0, 'program', type_dict['void'])
+TypeError: __init__() takes exactly 1 argument (4 given)
+
+[Sat Mar 12 20:06:02 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_semantic_controller.py", line 105, in <module>
+    tmp_function = Function()
+TypeError: __init__() takes exactly 4 arguments (1 given)
+
+[Sat Mar 12 20:14:17 CST 2016] =========================================== 
 WARNING: Token 'VAR_BOOLEAN' defined, but not used
 WARNING: There is 1 unused token
-WARNING: Symbol 'var_b' is unreachable
-WARNING: Symbol 'var_a' is unreachable
-Generating LALR tables
-WARNING: 4 shift/reduce conflicts
-WARNING: 1 reduce/reduce conflict
-WARNING: reduce/reduce conflict in state 204 resolved using rule (cnt_prim -> VAR_STRING)
-WARNING: rejected rule (prin_a -> VAR_STRING) in state 204
-WARNING: Rule (prin_a -> VAR_STRING) is never reduced
-Syntax error at line 83 Unexpected token  has
-
-[Thu Mar 10 22:11:31 CST 2016] =========================================== 
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: There is 1 unused token
-WARNING: Symbol 'var_b' is unreachable
-WARNING: Symbol 'var_a' is unreachable
-Generating LALR tables
-WARNING: 4 shift/reduce conflicts
-Syntax error at line 83 Unexpected token  has
-
-[Thu Mar 10 22:18:01 CST 2016] =========================================== 
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: There is 1 unused token
 WARNING: Symbol 'var_a' is unreachable
 WARNING: Symbol 'var_b' is unreachable
 Generating LALR tables
 WARNING: 4 shift/reduce conflicts
-Syntax error at line 111 Unexpected token  ends
+Traceback (most recent call last):
+  File "light_parser.py", line 516, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 402, in p_vars_prim
+    tmp_var.type = type_dict[p[0]]
+KeyError: None
 
-[Thu Mar 10 22:25:42 CST 2016] =========================================== 
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: There is 1 unused token
-WARNING: Symbol 'var_a' is unreachable
-WARNING: Symbol 'var_b' is unreachable
-Generating LALR tables
-WARNING: 4 shift/reduce conflicts
-Syntax error at line 112 Unexpected token  pos_x
+[Sat Mar 12 20:16:50 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 517, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 402, in p_vars_prim
+    print "VARS_PRIM " + p[0]
+TypeError: cannot concatenate 'str' and 'NoneType' objects
 
-[Thu Mar 10 22:25:56 CST 2016] =========================================== 
-Syntax error at line 112 Unexpected token  pos_x
+[Sat Mar 12 20:18:55 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Traceback (most recent call last):
+  File "light_parser.py", line 517, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 14, in p_program
+    funtion_stack.push(p[0])
+NameError: global name 'funtion_stack' is not defined
 
-[Thu Mar 10 22:26:15 CST 2016] =========================================== 
-Syntax error at line 121 Unexpected token  do
+[Sat Mar 12 20:19:54 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Traceback (most recent call last):
+  File "light_parser.py", line 520, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 17, in p_program
+    funtion_stack.push(p[0])
+NameError: global name 'funtion_stack' is not defined
 
-[Thu Mar 10 22:26:42 CST 2016] =========================================== 
-Syntax error at line 125 Unexpected token  end
+[Sat Mar 12 20:20:10 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Successful
 
-[Thu Mar 10 22:27:00 CST 2016] =========================================== 
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: There is 1 unused token
-WARNING: Symbol 'var_a' is unreachable
-WARNING: Symbol 'var_b' is unreachable
-Generating LALR tables
-WARNING: 4 shift/reduce conflicts
+[Sat Mar 12 20:21:00 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Successful
+
+[Sat Mar 12 20:21:07 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Successful
+
+[Sat Mar 12 20:21:50 CST 2016] =========================================== 
+<type 'instance'>
+None
+<type 'instance'>
+None
+<type 'instance'>
+None
+<type 'instance'>
+None
+<type 'instance'>
+None
+<type 'instance'>
+None
+<type 'instance'>
+Successful
+
+[Sat Mar 12 20:25:15 CST 2016] =========================================== 
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+Successful
+
+[Sat Mar 12 20:25:39 CST 2016] =========================================== 
+int
+int
+int
+int
+decimal
+int
+string
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
+int
 Successful

@@ -1,68 +1,104 @@
 #Semantic Controller
-from ligt_datastructures import *
+from light_datastructures import *
+import sys
 
-#INITIALIZE DICTIONARIES
-
+# INITIALIZE DICTIONARIES
 type_dict = {
-	'boolean'   : 0,
-    'int'       : 1,
-    'decimal'   : 2,
-    'string'    : 3,
-    'fraction'  : 4
+    'void'      : 0,
+	'boolean'   : 1,
+    'int'       : 2,
+    'decimal'   : 3,
+    'string'    : 4,
+    'fraction'  : 5
 }
 
-var_dict = {
-	'global'	: {},
-	'local'		: {		'funcExemple' : {}
-	}
-}
-
-
-#DEFINE CLASSES
-
+# DEFINE CLASSES
 class Var:
-	def __init__(self, id, name, scope, type, value):
-		self.id = id
-		self.name = name
-		self.scope = scope
-		self.type = type
-		self.value = value
+    # Instance
+    def __init__(self):
+        self.id = -1
+        self.name = ""
+        self.type = 0
+        self.value = None
+
+    def erase(self):
+        self.id = -1
+        self.name = ""
+        self.type = 0
+        self.value = None
+
+class Function:
+    def __init__(self):
+        self.id = -1
+        self.name = ""
+        self.next_var_id = 0
+        self.type = ""
+        self.vars = {}
+
+    def erase(self):
+        self.id = -1
+        self.name = ""
+        self.next_var_id = 0
+        self.type = ""
+        self.vars = {}
+
+    def add_var(self, var):
+        if var.name not in self.vars:
+            self.vars[var.name] = (self.next_var_id, var.name, var.type, var.value)
+            self.next_var_id += 1
+        else:
+            Error.already_defined('variable', var.name)
+
+    def init_func(self, id, name, type):
+        self.id = id
+        self.name = name
+        self.type = type
 
 
-class Global_information:
-	var_id_num = 0
+class FunctionTable:
+
+    global_func = Function()
+    global_func.init_func(0, 'program', type_dict['void'])
+    
+    function_dict = {
+        'program' : global_func
+    }
+    next_func_id = 1
     __shared_state = {}
     def __init__(self):
         self.__dict__ = self.__shared_state
 
-    def get_next_var_id():
-    	var_id_num = var_id_num + 1
-    	return var_id_num - 1
+    @classmethod
+    def add_function(cls, func):
+        if func.name not in cls.function_dict:
+            cls.function_dict[func.name] = Function(cls.next_func_id, func.name, func.type)
+            cls.next_func_id += 1
+        else:
+            Error.already_defined('function', func.name)
+
+    @classmethod
+    def print_all(cls):
+        print cls.function_dict
+
+    @classmethod
+    def get(cls, function_name):
+        return cls.function_dict.get(function_name)
     
 
-gl_info = Global_information()
+class SemanticInfo:
+    current_func_id = 0
 
+    __shared_state = {}
+    def __init__(self):
+        self.__dict__ = self.__shared_state
 
-#DICTIONARY FUNCTIONS
-def add_var_dic(var_name, var_type, var_value, var_function):
-	if var_function == '':
-		if !var_exists_light(var_name):
-			var_dict['global'][var_name] = Var(gl_info.get_next_var_id, var_name,'global', type_dict[var_type], var_value)
-			return True
-		else:
-			return False
-	else:
-		if !var_exists_func(var_name, var_function):
-			var_dict['local'][var_function][var_name] = Var(gl_info.get_next_var_id, var_name,'local', type_dict[var_type], var_value)
+    def get_next_func_id():
+        current_func_id = current_func_id + 1
+        return current_func_id - 1
 
-def var_exists_light(var_name):
-	if var_name in var_dict['global']:
-		return True
-	else:
-		return False
+class Error:
 
-def var_exists_func(var_name, var_function):
-	if var_name in var_dict['local']['var_function']:
-		return True
-	else:
-		return False
+    @staticmethod
+    def already_defined(type, name):
+        print "Semantic Error: " + type + " '" + name + "' already defined\n"
+        sys.exit()

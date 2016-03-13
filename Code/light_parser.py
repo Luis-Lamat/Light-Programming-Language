@@ -1,9 +1,11 @@
 import light_scanner as lexer
 import ply.yacc as yacc
-import sys
 from light_semantic_controller import *
 
 tokens = lexer.tokens
+function_stack = Stack()
+tmp_var = Var()
+tmp_function = Function()
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -12,6 +14,7 @@ def p_program (p):
     '''
     program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
     '''
+    function_stack.push(p[1])
 
 def p_pr_a (p):
     '''
@@ -45,6 +48,7 @@ def p_primitive_type (p):
                 | STRING 
                 | FRACTION
     '''
+    tmp_var.type = type_dict[p[1]]
 
 def p_figure (p):
     '''
@@ -381,17 +385,9 @@ def p_v_a (p):
 
 def p_vars_start (p):
     '''
-    vars_start : VAR vs_a SEP_COLON
+    vars_start : VAR VAR_IDENTIFIER SEP_COLON
     '''
-def p_vs_a (p):
-    '''
-    vs_a : VAR_IDENTIFIER vs_b
-    '''
-def p_vs_b (p):
-    '''
-    vs_b : SEP_COMMA vs_a 
-        | epsilon
-    '''
+    tmp_var.name = p[2]
 
 def p_vars_figs (p):
     '''
@@ -407,6 +403,7 @@ def p_vars_prim (p):
     '''
     vars_prim : primitive_type var_p_a
     '''
+    
 
 def p_var_p_a (p):
     '''
