@@ -12,7 +12,10 @@ class Stack(object):
         else :
             print("Empty Stack")
     def peek(self):
-        return self.values[len(self.values)-1]
+    	if(len(self.values) == 0):
+    		return None
+    	else:
+        	return self.values[len(self.values)-1]
     def size(self):
         return len(self.items)
 

@@ -50,6 +50,7 @@ def p_primitive_type (p):
                 | FRACTION
     '''
     tmp_var.type = type_dict[p[1]]
+    tmp_function.type = type_dict[p[1]]
 
 def p_figure (p):
     '''
@@ -73,6 +74,12 @@ def p_function (p):
     '''
     function : FUNCTION VAR_IDENTIFIER SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
     '''
+    tmp_function.name = p[2]
+    function_stack.push(p[2])
+
+    FunctionTable.add_function(tmp_function)
+    tmp_function.erase()
+
 def p_func_a (p):
     '''
     func_a : parameters
