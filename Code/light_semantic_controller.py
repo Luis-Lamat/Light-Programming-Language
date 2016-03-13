@@ -81,8 +81,10 @@ class FunctionTable:
         print cls.function_dict
 
     @classmethod
-    def get(cls, function_name):
-        return cls.function_dict.get(function_name)
+    def add_var_to_func(cls, function_name, var_obj):
+        cls.function_dict[function_name].add_var(var_obj)
+
+
     
 
 class SemanticInfo:

@@ -6,6 +6,7 @@ tokens = lexer.tokens
 function_stack = Stack()
 tmp_var = Var()
 tmp_function = Function()
+function_stack.push('program')
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -14,7 +15,7 @@ def p_program (p):
     '''
     program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
     '''
-    function_stack.push(p[1])
+    FunctionTable.print_all()
 
 def p_pr_a (p):
     '''
@@ -403,7 +404,7 @@ def p_vars_prim (p):
     '''
     vars_prim : primitive_type var_p_a
     '''
-    
+    FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 
 def p_var_p_a (p):
     '''

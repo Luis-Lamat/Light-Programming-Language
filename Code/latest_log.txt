@@ -273,3 +273,25 @@ int
 int
 int
 Successful
+
+[Sat Mar 12 20:36:55 CST 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 520, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 407, in p_vars_prim
+    FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
+  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/light_datastructures.py", line 15, in peek
+    return self.values[len(self.values)-1]
+IndexError: list index out of range
+
+[Sat Mar 12 20:43:15 CST 2016] =========================================== 
+Semantic Error: variable 'sum' already defined
+
+
+[Sat Mar 12 20:44:23 CST 2016] =========================================== 
+Semantic Error: variable 'a' already defined
+
