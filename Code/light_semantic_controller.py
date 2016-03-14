@@ -6,12 +6,12 @@ pp = pprint.PrettyPrinter(indent=4)
 
 # INITIALIZE DICTIONARIES
 type_dict = {
-	'void'	  : 0,
-	'boolean'   : 1,
-	'int'	   : 2,
-	'decimal'   : 3,
+	'void'		: 0,
+	'boolean'	: 1,
+	'int'		: 2,
+	'decimal'	: 3,
 	'string'	: 4,
-	'fraction'  : 5
+	'fraction'	: 5
 }
 
 # DEFINE CLASSES
@@ -56,6 +56,11 @@ class Function:
 		self.type = ""
 		self.vars = {}
 
+	def init_func(self, id, name, type):
+		self.id = id
+		self.name = name
+		self.type = type
+
 	def add_var(self, var):
 		if var.name not in self.vars:
 			tmp_var = Var()
@@ -64,11 +69,6 @@ class Function:
 			self.next_var_id += 1
 		else:
 			Error.already_defined('variable', var.name)
-
-	def init_func(self, id, name, type):
-		self.id = id
-		self.name = name
-		self.type = type
 
 	def print_all(self):
 		#print "Hola"
@@ -102,18 +102,14 @@ class FunctionTable:
 			Error.already_defined('function', func.name)
 
 	@classmethod
-	def print_all(self):
-		#pp.pprint(self.function_dict)
-		for x in self.function_dict:
-			print (x + ":\n")
-			self.function_dict[x].print_all()
-		# 	#print( )
-			#y.print_all
+	def add_return_type_to_func(cls, name, type):
+		cls.function_dict[name].type = type
 
-			#for value in cls.function_dict[key]:
-			#	value.print_all
-		# 	for k2, v2 in value:
-		# 		pp.pprint(v2)
+	@classmethod
+	def print_all(cls):
+		for x in cls.function_dict:
+			print (x + ":")
+			cls.function_dict[x].print_all()
 
 	@classmethod
 	def add_var_to_func(cls, function_name, var_obj):
@@ -135,5 +131,5 @@ class Error:
 
 	@staticmethod
 	def already_defined(type, name):
-		print "Semantic Error: " + type + " '" + name + "' already defined\n"
+		print "Semantic Error: " + type + " '" + name + "' already defined"
 		sys.exit()

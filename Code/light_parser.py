@@ -31,7 +31,7 @@ def p_pr_b (p):
 
 def p_main_func (p):
     '''
-    main_func : LIGHT_TOKEN SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
+    main_func : LIGHT_TOKEN new_func_scope SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
     '''
 
 def p_type (p):
@@ -40,6 +40,7 @@ def p_type (p):
         | figure 
         | epsilon
     '''
+    p[0] = p[1]
 
 def p_primitive_type (p):
     '''
@@ -49,6 +50,7 @@ def p_primitive_type (p):
                 | STRING 
                 | FRACTION
     '''
+    p[0] = p[1]
     tmp_var.type = type_dict[p[1]]
     tmp_function.type = type_dict[p[1]]
 
@@ -63,6 +65,7 @@ def p_figure (p):
             | STAR 
             | CIRCLE
     '''
+    p[0] = p[1]
 
 def p_stmt_loop (p):
     '''
@@ -72,13 +75,8 @@ def p_stmt_loop (p):
 
 def p_function (p):
     '''
-    function : FUNCTION VAR_IDENTIFIER SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
+    function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
     '''
-    tmp_function.name = p[2]
-    function_stack.push(p[2])
-
-    FunctionTable.add_function(tmp_function)
-    tmp_function.erase()
 
 def p_func_a (p):
     '''
@@ -90,11 +88,20 @@ def p_func_b (p):
     func_b : RETURNS type
         | epsilon
     '''
+    FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
+
 def p_func_c (p):
     '''
     func_c : vars  func_c
         | epsilon
     '''
+
+def p_new_func_scope(p):
+    'new_func_scope :'
+    function_stack.push(p[-1])
+    tmp_function.name = p[-1]
+    tmp_function.type = type_dict['void']
+    FunctionTable.add_function(tmp_function)
 
 def p_parameters (p):
     '''

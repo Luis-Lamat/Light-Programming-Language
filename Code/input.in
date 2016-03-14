@@ -14,6 +14,7 @@ program lolz {
     }
 
     function sayText(text: string){
+        var exam: string
         print(text)
     }
     function addOne(number: int) returns int {
