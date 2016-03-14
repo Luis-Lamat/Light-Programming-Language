@@ -15,6 +15,7 @@ def p_program (p):
     '''
     program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
     '''
+    function_stack.pop()
     FunctionTable.print_all()
 
 def p_pr_a (p):
@@ -33,6 +34,7 @@ def p_main_func (p):
     '''
     main_func : LIGHT_TOKEN new_func_scope SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
     '''
+    function_stack.pop()
 
 def p_type (p):
     '''
@@ -77,6 +79,7 @@ def p_function (p):
     '''
     function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
     '''
+    function_stack.pop()
 
 def p_func_a (p):
     '''
@@ -104,9 +107,14 @@ def p_new_func_scope(p):
     FunctionTable.add_function(tmp_function)
 
 def p_parameters (p):
-    '''
-    parameters : VAR_IDENTIFIER SEP_COLON type param_a
-    '''
+    'parameters : VAR_IDENTIFIER SEP_COLON type new_param_seen param_a'
+
+def p_new_param_seen(p):
+    'new_param_seen : '
+    tmp_var.name = p[-3]
+    tmp_var.type = type_dict[p[-1]]
+    FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
+
 def p_param_a (p):
     '''
     param_a : SEP_COMMA parameters
@@ -169,7 +177,6 @@ def p_for_each_collection(p):
     for_each_collection : VAR_IDENTIFIER
         | SEP_LBRACKET VAR_INT SEP_DOT SEP_DOT VAR_INT SEP_RBRACKET
     '''
-    pass
 
 def p_for (p):
     '''
@@ -357,7 +364,7 @@ def p_do_block (p):
     do_block : DO stmt_loop END
     '''
 
-# WARNING: Watch out for "figure_creation"
+# WARNING: Watch out for "figure_creations"
 def p_statement (p):
     '''
     statement : assignment 

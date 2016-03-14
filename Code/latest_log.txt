@@ -1,33 +1,63 @@
 
-[Sun Mar 13 23:39:10 CST 2016] =========================================== 
+[Sun Mar 13 23:50:50 CST 2016] =========================================== 
 sumNumbers:
 	id: 6,
 	name: sumNumbers,
 	type: 2
 	VAR - sum:
-		id: 0,
+		id: 2,
 		name: sum,
+		type: 2
+		---------
+	VAR - last:
+		id: 1,
+		name: last,
+		type: 2
+		---------
+	VAR - first:
+		id: 0,
+		name: first,
 		type: 2
 		---------
 printArray:
 	id: 4,
 	name: printArray,
 	type: 2
+	VAR - numbers:
+		id: 0,
+		name: numbers,
+		type: 2
+		---------
 sumTimes:
 	id: 5,
 	name: sumTimes,
 	type: 2
 	VAR - sum:
-		id: 0,
+		id: 2,
 		name: sum,
+		type: 2
+		---------
+	VAR - last:
+		id: 1,
+		name: last,
+		type: 2
+		---------
+	VAR - first:
+		id: 0,
+		name: first,
 		type: 2
 		---------
 sayText:
 	id: 2,
 	name: sayText,
 	type: 4
-	VAR - exam:
+	VAR - text:
 		id: 0,
+		name: text,
+		type: 4
+		---------
+	VAR - exam:
+		id: 1,
 		name: exam,
 		type: 4
 		---------
@@ -35,6 +65,11 @@ addOne:
 	id: 3,
 	name: addOne,
 	type: 2
+	VAR - number:
+		id: 0,
+		name: number,
+		type: 2
+		---------
 program:
 	id: 0,
 	name: program,
@@ -72,4 +107,19 @@ example:
 	id: 1,
 	name: example,
 	type: 2
+	VAR - y:
+		id: 1,
+		name: y,
+		type: 2
+		---------
+	VAR - x:
+		id: 0,
+		name: x,
+		type: 2
+		---------
+	VAR - z:
+		id: 2,
+		name: z,
+		type: 3
+		---------
 Successful
