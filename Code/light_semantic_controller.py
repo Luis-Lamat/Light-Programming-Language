@@ -6,12 +6,30 @@ pp = pprint.PrettyPrinter(indent=4)
 
 # INITIALIZE DICTIONARIES
 type_dict = {
+	# Primitive Types
 	'void'		: 0,
 	'boolean'	: 1,
 	'int'		: 2,
 	'decimal'	: 3,
 	'string'	: 4,
-	'fraction'	: 5
+	'fraction'	: 5,
+
+	# Figure types
+    'point'     : 6,
+    'line'      : 7,
+    'triangle'  : 8,
+    'square'    : 9,
+    'rectangle' : 10,
+    'polygon'   : 11,
+    'star'      : 12,
+    'circle'    : 13 
+}
+
+operator_dict = {
+	'+' 	: 0,
+	'-' 	: 1,
+	'*' 	: 2,
+	'/' 	: 3
 }
 
 # DEFINE CLASSES
@@ -79,7 +97,6 @@ class Function:
 
 
 class FunctionTable:
-
 	global_func = Function()
 	global_func.init_func(0, 'program', type_dict['void'])
 	
@@ -116,6 +133,41 @@ class FunctionTable:
 		cls.function_dict[function_name].add_var(var_obj)
 
 
+class SemanticCube(object):
+	# Declaring the 3D matrix with dimensions
+	n = len(type_dict)
+	ops = len(operator_dict)
+
+	# Every square starts in -1, which is an 'ERROR' return value
+	cube = [[[-1 for j in xrange(n)] for i in xrange(n)] for k in xrange(ops)]
+
+	__shared_state = {}
+	def __init__(cls):
+		cls.__dict__ = cls.__shared_state
+
+	@classmethod
+	def set_return_value_for(cls, type1, op_or_list, type2, value):
+		i = type_dict[type1]
+		j = type_dict[type2]
+		value = type_dict[value]
+		if isinstance(op_or_list, list):
+			indeces = [operator_dict[x] for x in op_or_list]
+			for k in indeces:
+				cls.set_cube_value(k, i, j, value)
+		else:
+			k = operator_dict[op_or_list]
+			cls.set_cube_value(k, i, j, value)
+
+	@classmethod
+	def set_cube_value(cls, op, t1, t2, v):
+		cls.cube[op][t1][t2] = v
+		cls.cube[op][t2][t1] = v
+
+	@classmethod
+	def print_cube(cls):
+		pp.pprint(cls.cube)
+
+
 class SemanticInfo:
 	current_func_id = 0
 
@@ -128,8 +180,27 @@ class SemanticInfo:
 		return current_func_id - 1
 
 class Error:
-
 	@staticmethod
 	def already_defined(type, name):
 		print "Semantic Error: " + type + " '" + name + "' already defined"
 		sys.exit()
+
+################################################################################
+# Filling out the SemanticCube matrix ##########################################
+################################################################################
+
+arim_ops = ['+', '-', '*', '/']
+num_types = ['int', 'decimal', 'fraction']
+
+for type in num_types:
+	# Setting the matrix diagonals
+	SemanticCube.set_return_value_for(type, arim_ops, type, type)
+	# int with anything always returns that anything
+	SemanticCube.set_return_value_for('int', arim_ops, type, type)
+	# decimal with anything always returns decimal
+	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
+
+SemanticCube.set_return_value_for('string', '+', 'string', 'string')
+
+SemanticCube.print_cube()
+
