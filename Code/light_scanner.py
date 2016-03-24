@@ -15,7 +15,7 @@ reserved_words = {
     # Cycle tokens
     'loop'      : 'LOOP',
     'for'       : 'FOR',
-    'foreach'  : 'FOR_EACH',
+    'foreach'  	: 'FOR_EACH',
     'in'        : 'IN',
 
     # Conditional tokens

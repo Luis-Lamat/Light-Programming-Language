@@ -1,6 +1,9 @@
 program lolz {
 
     var a:int
+
+    var arr:[int]
+
     var global:int = 0
 
     function example(x: int, y: int, z: decimal) returns int {
