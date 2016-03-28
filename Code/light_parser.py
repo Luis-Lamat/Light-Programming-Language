@@ -469,13 +469,17 @@ def p_init_empty_arr(p):
 
 	FunctionTable.add_arr_empty_to_func(function_stack.peek(), arr_var)
 
-
 #array 
-#missing array initialization , 
+#missing array initialization 
 def p_arr_init_arr (p):
 	'''
-	arr_init_arr : OP_EQUALS 
-	'''
+	arr_init_arr : SEP_LPAR VAR_INT SEP_RPAR
+	'''	
+	arr_var = Array()
+	arr_var.name = tmp_var.name
+	arr_var.type = tmp_var.type
+	arr_var.length = p[2]
+	FunctionTable.add_arr_complete_to_func(function_stack.peek(), arr_var)
 
 
 # WARNING: Adds a shift reduce conflict because of function_call

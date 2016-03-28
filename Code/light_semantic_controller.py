@@ -105,7 +105,7 @@ class Array:
 	def add_length(self, length):
 		self.length = length
 		for i in range(length):
- 			self.data.append(initializer_dict[type])
+ 			self.data.append(initializer_dict[self.type])
 
  	#return n element on the array
  	def get_element(self, num):
