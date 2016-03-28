@@ -151,7 +151,7 @@ class SemanticCube(object):
 		j = type_dict[type2]
 		value = type_dict[value]
 		if isinstance(op_or_list, list):
-			indeces = [operator_dict[x] for x in op_or_list]
+			indeces = [operator_dict[x] for x in op_or_list] # cool but no need
 			for k in indeces:
 				cls.set_cube_value(k, i, j, value)
 		else:
