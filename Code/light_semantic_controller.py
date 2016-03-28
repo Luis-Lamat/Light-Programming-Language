@@ -91,8 +91,8 @@ class Array:
 		self.id = id
 		self.name = name
 		self.type = type 
-		self.length = length
-		for i in range(length):
+		self.length = int(length)
+		for i in range(self.length):
  			self.data.append(initializer_dict[type])
 
  	#initialize when length is unknown
@@ -117,7 +117,10 @@ class Array:
 
  	def print_arr(self):
  		print "\t\tARRAY! \n\t\tid: " + str(self.id) + ",\n\t\tname: " + self.name  + ",\n\t\ttype: " + str(self.type) + ",\n\t\tlength: " + str(self.length)
- 		print(', '.join(self.data))
+ 		if isinstance(self.data, str) :
+			print(', '.join(self.data))
+		else:
+ 			print("\t\t" + str(self.data))
  		print "\t\t---------"
 
  	#to be able to print all
