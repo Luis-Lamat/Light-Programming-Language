@@ -1,125 +1,73 @@
-
-[Sun Mar 13 23:50:50 CST 2016] =========================================== 
-sumNumbers:
-	id: 6,
-	name: sumNumbers,
-	type: 2
-	VAR - sum:
-		id: 2,
-		name: sum,
-		type: 2
-		---------
-	VAR - last:
-		id: 1,
-		name: last,
-		type: 2
-		---------
-	VAR - first:
-		id: 0,
-		name: first,
-		type: 2
-		---------
-printArray:
-	id: 4,
-	name: printArray,
-	type: 2
-	VAR - numbers:
-		id: 0,
-		name: numbers,
-		type: 2
-		---------
-sumTimes:
-	id: 5,
-	name: sumTimes,
-	type: 2
-	VAR - sum:
-		id: 2,
-		name: sum,
-		type: 2
-		---------
-	VAR - last:
-		id: 1,
-		name: last,
-		type: 2
-		---------
-	VAR - first:
-		id: 0,
-		name: first,
-		type: 2
-		---------
-sayText:
-	id: 2,
-	name: sayText,
-	type: 4
-	VAR - text:
-		id: 0,
-		name: text,
-		type: 4
-		---------
-	VAR - exam:
-		id: 1,
-		name: exam,
-		type: 4
-		---------
-addOne:
-	id: 3,
-	name: addOne,
-	type: 2
-	VAR - number:
-		id: 0,
-		name: number,
-		type: 2
-		---------
-program:
-	id: 0,
-	name: program,
-	type: 0
-	VAR - a:
-		id: 0,
-		name: a,
-		type: 2
-		---------
-	VAR - global:
-		id: 1,
-		name: global,
-		type: 2
-		---------
-light:
-	id: 7,
-	name: light,
-	type: 0
-	VAR - numberOne:
-		id: 0,
-		name: numberOne,
-		type: 2
-		---------
-	VAR - xpos:
-		id: 1,
-		name: xpos,
-		type: 2
-		---------
-	VAR - ypos:
-		id: 2,
-		name: ypos,
-		type: 2
-		---------
-example:
-	id: 1,
-	name: example,
-	type: 2
-	VAR - y:
-		id: 1,
-		name: y,
-		type: 2
-		---------
-	VAR - x:
-		id: 0,
-		name: x,
-		type: 2
-		---------
-	VAR - z:
-		id: 2,
-		name: z,
-		type: 3
-		---------
-Successful
+\n[Mon Mar 28 16:08:50 CST 2016] =========================================== 
+[   [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 3, 3, -1, 3, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 5, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]],
+    [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 3, 3, -1, 3, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 5, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]],
+    [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 3, 3, -1, 3, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 5, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]],
+    [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 3, 3, -1, 3, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, 5, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]]
+Traceback (most recent call last):
+  File "light_parser.py", line 585, in <module>
+    parser.parse(data, tracking=True)
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/ply/yacc.py", line 329, in parse
+    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/ply/yacc.py", line 815, in parseopt
+    p.callable(pslice)
+  File "light_parser.py", line 482, in p_arr_init_arr
+    FunctionTable.add_arr_complete_to_func(function_stack.peek(), arr_var)
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 222, in add_arr_complete_to_func
+    cls.function_dict[function_name].add_arr_complete(arr_obj)
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 167, in add_arr_complete
+    tmp_arr.init_arr_all(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type, arr.length)
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 95, in init_arr_all
+    for i in range(length):
+TypeError: range() integer end argument expected, got str.

@@ -8,6 +8,8 @@ tmp_var = Var()
 tmp_function = Function()
 function_stack.push('program')
 
+
+
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
 
@@ -399,10 +401,13 @@ def p_vars (p):
     '''
     vars : vars_start v_a
     '''
+
+#array
 def p_v_a (p):
     '''
     v_a : vars_figs
         | vars_prim
+        | vars_arr
     '''
 
 def p_vars_start (p):
@@ -427,6 +432,7 @@ def p_vars_prim (p):
     '''
     FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 
+
 def p_var_p_a (p):
     '''
     var_p_a : init_prim
@@ -437,6 +443,44 @@ def p_init_prim (p):
     '''
     init_prim : OP_EQUALS init_a
     '''
+
+#array
+def p_vars_arr (p):
+	'''
+	vars_arr : SEP_LBRACKET primitive_type SEP_RBRACKET arr_a
+	'''
+
+#array
+def p_arr_a (p):
+	'''
+	arr_a : arr_init_arr
+		| init_empty_arr
+	'''
+
+#array
+#initalization of empty array
+def p_init_empty_arr(p):
+	'''
+	init_empty_arr : 
+	'''
+	arr_var = Array()
+	arr_var.name = tmp_var.name
+	arr_var.type = tmp_var.type
+
+	FunctionTable.add_arr_empty_to_func(function_stack.peek(), arr_var)
+
+#array 
+#missing array initialization 
+def p_arr_init_arr (p):
+	'''
+	arr_init_arr : SEP_LPAR VAR_INT SEP_RPAR
+	'''	
+	arr_var = Array()
+	arr_var.name = tmp_var.name
+	arr_var.type = tmp_var.type
+	arr_var.length = p[2]
+	FunctionTable.add_arr_complete_to_func(function_stack.peek(), arr_var)
+
 
 # WARNING: Adds a shift reduce conflict because of function_call
 def p_init_a (p):
