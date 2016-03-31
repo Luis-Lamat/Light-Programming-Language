@@ -94,10 +94,10 @@ program lolz {
         # var points:[point] = [5]
 
         foreach (i in [1..5]) do 
-            if(xpos > 3) do
+            if(3 > 5) do
                 xpos = 0
             end
-            xpos += 1
+            xpos += (7 * 8 / (9 + 9))
             ypos += 1
         end 
 

@@ -1,0 +1,97 @@
+PROGRAM ::= 'programa' 'id' '{'  (VARS)*  (FUNCTION)* MAIN_FUNC '}'
+
+MAIN_FUNC ::= 'light()' '{' (VARS)* (STATEMENT)* '}'
+
+TYPE ::= (PRIMITIVE_TYPE  | FIGURE)?
+
+PRIMITIVE_TYPE ::= ('boolean' | 'int' | 'decimal' | 'string' )
+
+FIGURE ::= ( 'point' | 'line' | 'triangle' | 'square' | 'rectangle' | 'polygon' | 'star' | 'circle')
+
+FUNCTION ::= 'function' 'id' '(' (PARAMETERS)? ')' ('returns' TYPE )?  '{' (VARS )* (STATEMENT)* '}'
+
+FUNCTION_CALL ::= 'id' '(' CALL_PARAMETERS ')'
+
+CALL_PARAMETERS ::= (('id' ':' PRIMITIVE_TYPE) (',' 'id' ':' PRIMITIVE_TYPE)*)
+
+PARAMETERS::=  (('id' ':' TYPE) ( ',' 'id' ':' TYPE )*)    
+
+ASSIGNMENT ::= 'id' '=' (EXP | FUNCTION_CALL) 
+
+CYCLE::= (LOOP | FOR_EACH | FOR)  DO_BLOCK
+
+LOOP ::= 'loop' '(' (  'CTE_INT' |  'id' ) '.' '.' (  'CTE_INT' |  'id' )  ')' DO_BLOCK
+
+FOR_EACH ::=  'for_each'  '(' 'id' 'in' ( COLLECTION | 'id' ) ')' '{' (STATEMENT)* '}'
+
+COLLECTION ::= '[' 'CTE_INT' '.' '.' 'CTE_INT' ']'
+
+FOR ::= 'for' '(' ASSIGNMENT? ';' CONDITION ';' (INCREMENT | ASSIGNMENT) ')' '{' (STATEMENT)* '}'
+
+ACTION::= 'action' (ACT_MOVE | ACT_SCALE | ACT_VISIBLE | ACT_ROTATE) 
+
+ACT_HEADER::= 'id' 'do'  ('begins' ':' EXP ',' ) ('ends' ':' EXP ',' )
+
+ACT_MOVE ::= 'move' ACT_HEADER ('pos_x' ':' EXP ',' ) ('pos_y' ':' EXP ',' ) 'end'
+
+ACT_SCALE ::= 'scale' ACT_HEADER ('size' ':' EXP ',' ) 'end'
+
+ACT_ROTATE ::= 'scale' ACT_HEADER ('angle' ':' EXP ',' ) 'end'
+
+ACT_VISIBLE ::=  ('hide' | 'show') ACT_HEADER 'end'
+
+CAMERA::= 'camera' 'id' 
+
+CONDITION::= EXP (('>' | '<' | '!=' | '<=' | '>=') EXP )? 
+
+EXP::= (TERM) (TERM ('+'| '-'))*
+
+TERM::= (FACTOR) (FACTOR ('*'| '/'))*
+
+FACTOR::= ('id' | 'CNT_PRIM' | ('(' EXP ')'))
+
+INCREMENT::= 'id' ( '+=' | '-=' ) EXP
+
+IF::= 'if' CONDITION_BLOCK (ELSIF)* ELSE?
+
+ELSIF ::= 'elsif' CONDITION_BLOCK
+
+ELSE ::= 'else' DO_BLOCK
+
+COND_BLOCK ::= '(' CONDITION ')' DO_BLOCK
+
+DO_BLOCK ::= 'do' (STATEMENT)* 'end'
+
+STATEMENT ::= ( ASSIGNMENT | IF | CYCLE | ACTION | CAMERA | COMMENTS | PRINT| FIGURE_CREATIONS | RETURN)
+
+VARS_START ::= 'var' (('id') (',' 'id')*) ':'
+
+VARS ::= VARS_START (VARS_FIGS | VARS_PRIM)
+
+VARS_FIGS ::=  FIGURE (INIT_FIG)?
+
+VARS_PRIM ::=  PRIMITIVE (INIT_PRIM)?
+
+INIT_PRIM ::= '=' ('id' | CNT_PRIM)
+ 
+INIT_FIG::= ( ('=' 'id') | ('has' FIG_CREATE_BLOCK ))
+
+FIG_CREATE_BLOCK ::= (  ( FIG_ATTR) ( ','  FIG_ATTR)* )  'end'
+
+FIG_ATTR::= (VECTOR | ('color' ':' 'id') | ('size' ':' EXP))
+
+VECTOR::= 'v' 'CTE_INT' ':' '(' EXP ',' EXP ')'
+
+CNT_PRIM::= ( 'CTE_INT' | 'CTE_DEC' )
+
+RETURN ::= 'return' ( 'id' | EXP )
+
+COMMENTS::= '#' (.)* 
+
+PRINT::= 'print' '(' ('id'| EXP | CTE_STRING )  ')'
+
+FIGURE_CREATIONS::= 'var' 'id' ':' FIGURE 'has' FIGURE_CREATE_BLOCK
+
+FIGURE_DESCRIPTION ::= 'id' 'has' FIGURE_CREATE_BLOCK
+
+
