@@ -1,4 +1,4 @@
-\n[Mon Mar 28 16:37:13 CST 2016] =========================================== 
+\n[Thu Mar 31 00:35:59 CST 2016] =========================================== 
 [   [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -55,8 +55,282 @@
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]]
+varCTE: 12
+factor: 12
+term: 12
+exp: 12
+Greater less etc: 12
+varCTE: 12
+factor: 12
+term: 12
+exp: 12
+expresion12
+condition12
+print 14
+doBlock 16
+conditionBlock 16
+varCTE: 16
+factor: 16
+term: 16
+exp: 16
+Greater less etc: 16
+varCTE: 16
+factor: 16
+term: 16
+exp: 16
+expresion16
+varCTE: 16
+factor: 16
+varCTE: 16
+factor: 16
+term: 16
+term: 16
+exp: 16
+expresion16
+condition16
+factor: 16
+term: 16
+exp: 16
+Greater less etc: 16
+varCTE: 16
+factor: 16
+term: 16
+exp: 16
+expresion16
+condition16
+factor: 16
+term: 16
+exp: 16
+expresion16
+condition16
+print 18
+doBlock 19
+conditionBlock 19
+varCTE: 25
+factor: 25
+term: 25
+exp: 25
+Greater less etc: 25
+varCTE: 25
+factor: 25
+term: 25
+exp: 25
+expresion25
+condition25
+print 27
+doBlock 29
+conditionBlock 29
+print 30
+varCTE: 31
+factor: 31
+term: 31
+exp: 31
+print 36
+varCTE: 38
+factor: 38
+term: 38
+varCTE: 39
+factor: 39
+term: 39
+exp: 39
+exp: 39
+print 44
+doBlock 45
+cycle: 45
+varCTE: 51
+factor: 51
+term: 51
+exp: 51
+doBlock 53
+cycle: 53
+varCTE: 54
+factor: 54
+term: 54
+exp: 54
+ASSIGN A: 58
+assignment: 58
+varCTE: 58
+factor: 58
+term: 58
+exp: 58
+Greater less etc: 58
+varCTE: 58
+factor: 58
+term: 58
+exp: 58
+expresion58
+condition58
+varCTE: 58
+factor: 58
+term: 58
+exp: 58
+for58
+varCTE: 59
+factor: 59
+term: 59
+varCTE: 60
+factor: 60
+term: 60
+exp: 60
+exp: 60
+ASSIGN A: 60
+assignment: 60
+varCTE: 62
+factor: 62
+term: 62
+exp: 62
+doBlock 63
+cycle: 63
+print 64
+varCTE: 65
+factor: 65
+term: 65
+exp: 65
+print 86
+print 90
+varCTE: 97
+factor: 97
+term: 97
+exp: 97
+Greater less etc: 97
+varCTE: 97
+factor: 97
+term: 97
+exp: 97
+expresion97
+condition97
+varCTE: 99
+factor: 99
+term: 99
+exp: 99
+ASSIGN A: 99
+assignment: 99
+doBlock 100
+conditionBlock 100
+varCTE: 101
+factor: 101
+term: 101
+exp: 101
+varCTE: 102
+factor: 102
+term: 102
+exp: 102
+doBlock 104
+cycle: 104
+varCTE: 107
+factor: 107
+term: 107
+exp: 107
+varCTE: 107
+factor: 107
+term: 107
+exp: 107
+varCTE: 108
+factor: 108
+term: 108
+exp: 108
+varCTE: 108
+factor: 108
+term: 108
+exp: 108
+varCTE: 109
+factor: 109
+term: 109
+exp: 109
+varCTE: 109
+factor: 109
+term: 109
+exp: 109
+varCTE: 116
+factor: 116
+term: 116
+exp: 116
+varCTE: 116
+factor: 116
+term: 116
+exp: 116
+varCTE: 117
+factor: 117
+term: 117
+exp: 117
+varCTE: 117
+factor: 117
+term: 117
+exp: 117
+varCTE: 118
+factor: 118
+term: 118
+exp: 118
+varCTE: 118
+factor: 118
+term: 118
+exp: 118
+varCTE: 125
+factor: 125
+term: 125
+exp: 125
+varCTE: 133
+factor: 133
+term: 133
+exp: 133
+varCTE: 134
+factor: 134
+term: 134
+exp: 134
+varCTE: 135
+factor: 135
+term: 135
+exp: 135
+varCTE: 137
+factor: 137
+term: 137
+exp: 137
+varCTE: 139
+factor: 139
+term: 139
+exp: 139
+varCTE: 140
+factor: 140
+term: 140
+exp: 140
+varCTE: 141
+factor: 141
+term: 141
+exp: 141
+varCTE: 143
+factor: 143
+term: 143
+exp: 143
+varCTE: 145
+factor: 145
+term: 145
+exp: 145
+varCTE: 146
+factor: 146
+term: 146
+exp: 146
+varCTE: 148
+factor: 148
+term: 148
+exp: 148
+varCTE: 150
+factor: 150
+term: 150
+exp: 150
+varCTE: 152
+factor: 152
+term: 152
+exp: 152
+varCTE: 154
+factor: 154
+term: 154
+exp: 154
+varCTE: 156
+factor: 156
+term: 156
+exp: 156
 sumNumbers:
-	id: 6,
+	id: 7,
 	name: sumNumbers,
 	type: 2
 	VAR - sum:
@@ -78,7 +352,7 @@ sumNumbers:
 		value: None
 		---------
 printArray:
-	id: 4,
+	id: 5,
 	name: printArray,
 	type: 2
 	VAR - numbers:
@@ -88,7 +362,7 @@ printArray:
 		value: None
 		---------
 sumTimes:
-	id: 5,
+	id: 6,
 	name: sumTimes,
 	type: 2
 	VAR - sum:
@@ -110,7 +384,7 @@ sumTimes:
 		value: None
 		---------
 sayText:
-	id: 2,
+	id: 3,
 	name: sayText,
 	type: 4
 	VAR - text:
@@ -126,7 +400,7 @@ sayText:
 		value: None
 		---------
 addOne:
-	id: 3,
+	id: 4,
 	name: addOne,
 	type: 2
 	VAR - number:
@@ -168,7 +442,7 @@ program:
 		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 		---------
 light:
-	id: 7,
+	id: 8,
 	name: light,
 	type: 0
 	VAR - numberOne:
@@ -189,8 +463,12 @@ light:
 		type: 2,
 		value: None
 		---------
-example:
+verifyAndOr:
 	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
 	name: example,
 	type: 2
 	VAR - y:

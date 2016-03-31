@@ -7,6 +7,19 @@ program lolz {
 
     var global:int = 0
 
+  function verifyAndOr(){
+
+    	if( 2 <  3 ) do
+    		print("Truestuff")
+    	end
+
+    	if( 1<2 and ((3 * 4) > 9 )) do
+    		print("true")
+    	end
+    }
+
+
+  
     function example(x: int, y: int, z: decimal) returns int {
         # This is a comment
         if (1 < 2) do
@@ -43,7 +56,9 @@ program lolz {
     function sumNumbers(first: int, last: int) returns int{
         var sum:int = 0
         for (sum = first; index < last; index += 1) do
-            sum = sum + index
+            sum = 23 + index
+        	sum += index
+        	#sum = sum + index
         end
         print("true") 
         return sum
@@ -57,7 +72,10 @@ program lolz {
 
         sayText(text: "hello")
 
-        # This line didn't work
+        #verify and and or working
+        verifyAndOr()
+
+        # This line didnt work
         # var numArray:[int] = {1,2,3,4}
         # printArray(numbers: numArray)
 

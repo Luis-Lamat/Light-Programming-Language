@@ -56,7 +56,11 @@ reserved_words = {
     'camera'    : 'CAMERA',
     'has'       : 'HAS',
     'color'     : 'COLOR',
-    'angle'     : 'ANGLE'
+    'angle'     : 'ANGLE',
+
+    # AND OR Conditionals
+    'and'		: 'AND',
+    'or'		: 'OR'
 }
 
 tokens = (
@@ -71,7 +75,7 @@ tokens = (
     'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
-    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET'
+    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR'
 )
 
 # Ignoring comments, spaces and tabs
@@ -214,9 +218,9 @@ def t_VAR_BOOLEAN (t):
     return t
 
 #not shure braw
-def t_VAR_ANYCHAR(t) :
-    r'.'
-    return t
+# def t_VAR_ANYCHAR(t) :
+#     r'.'
+#     return t
 
 def t_newline(t):
     r'\n+'

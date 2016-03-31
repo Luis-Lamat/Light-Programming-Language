@@ -131,6 +131,7 @@ def p_function_call(p):
 def p_call_parameters(p):
     '''
     call_parameters : VAR_IDENTIFIER SEP_COLON cnt_prim call_param_a
+    	| epsilon
     '''
 def p_call_param_a(p):
     '''
@@ -138,19 +139,21 @@ def p_call_param_a(p):
         | epsilon
     '''
     pass
-
+ 
 
 def p_assignment (p):
     '''
     assignment : VAR_IDENTIFIER OP_EQUALS assgn_a 
     '''
+    print("assignment: " + str(p.lexer.lineno))
 
 def p_assgn_a(p):
     '''
-    assgn_a : exp
+    assgn_a : VAR_IDENTIFIER
         | function_call
+        | exp
     '''
-    pass
+    print("ASSIGN A: " + str(p.lexer.lineno))
 
 def p_cycle (p):
     '''
@@ -158,6 +161,7 @@ def p_cycle (p):
         | for_each do_block
         | for do_block
     '''
+    print("cycle: " + str(p.lexer.lineno))
 
 def p_loop (p):
     '''
@@ -184,6 +188,7 @@ def p_for (p):
     '''
     for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR
     '''
+    print("for" + str(p.lexer.lineno))
 
 def p_for_a (p):
     '''
@@ -240,85 +245,107 @@ def p_camera (p):
     camera : CAMERA VAR_IDENTIFIER 
     '''
 
+
+##AND OR ret
 def p_condition (p):
     '''
-    condition : exp ex_a
-        | exp
+    condition : expresion cond_a
     '''
+    print("condition" + str(p.lexer.lineno))
+
+def p_cond_a(p):
+	'''
+	cond_a : oper_a expresion
+		| epsilon
+	'''
+
+def p_oper_a(p):
+	'''
+	oper_a : AND
+		| OR
+	'''
+
+def p_expresion(p):
+	'''
+	expresion : exp expresion_a
+	'''
+	print("expresion" + str(p.lexer.lineno))
+
+def p_expresion_a(p):
+	'''
+	expresion_a : ex_a exp
+		| epsilon
+	'''
 
 def p_ex_a (p):
     '''
-    ex_a : OP_LESS_THAN exp
-        | OP_GREATER_THAN exp
-        | OP_NOT_EQUAL exp
-        | OP_EQUALS exp
-        | OP_GREATER_EQUAL exp
-        | OP_LESS_EQUAL exp
+    ex_a : OP_LESS_THAN
+        | OP_GREATER_THAN
+        | OP_NOT_EQUAL
+        | OP_EQUALS
+        | OP_GREATER_EQUAL
+        | OP_LESS_EQUAL
     '''
+    print("Greater less etc: " + str(p.lexer.lineno))
+
 
 def p_exp (p):
     '''
     exp : term exp_a
     '''
+    print("exp: " + str(p.lexer.lineno))
 
 def p_exp_a (p):
     '''
-    exp_a : exp_b
+    exp_a : exp_b exp
         | epsilon
     '''
 
 # Changed position of term 
 def p_exp_b (p):
     '''
-    exp_b : exp_c term exp_d
-    '''
-
-def p_exp_c (p):
-    '''
-     exp_c : OP_PLUS
+    exp_b : OP_PLUS
         | OP_MINUS
     '''
 
-def p_exp_d (p):
-    '''
-    exp_d : exp_b
-        | epsilon
-    '''
 
 def p_term (p):
     '''
     term : factor term_a
     '''
+    print("term: " + str(p.lexer.lineno))
 
 def p_term_a (p):
     '''
-    term_a : term_b
+    term_a : term_b term
         | epsilon
     '''
-
 def p_term_b (p):
     '''
-    term_b : term_c factor term_d
-    '''
-
-def p_term_c (p):
-    '''
-    term_c : OP_TIMES
+    term_b : OP_TIMES
         | OP_DIVISION
-    '''
-
-def p_term_d (p):
-    '''
-    term_d : term_b
-        | epsilon
     '''
 
 def p_factor (p):
     '''
-    factor : VAR_IDENTIFIER
-        | cnt_prim
-        | SEP_LPAR exp SEP_RPAR
+    factor : SEP_LPAR condition SEP_RPAR
+    	| fact_a var_cte
     '''
+    print("factor: " + str(p.lexer.lineno))
+
+def p_fact_a(p):
+	'''
+	fact_a : exp_b
+		| epsilon
+	'''
+
+def p_var_cte(p):
+	'''
+	var_cte : VAR_IDENTIFIER
+		| VAR_INT
+        | VAR_DECIMAL
+	'''
+	print("varCTE: " + str(p.lexer.lineno))
 
 def p_increment (p):
     '''
@@ -360,11 +387,13 @@ def p_condition_block (p):
     '''
     condition_block : SEP_LPAR condition SEP_RPAR do_block
     '''
+    print("conditionBlock " + str(p.lexer.lineno))
 
 def p_do_block (p):
     '''
     do_block : DO stmt_loop END
     '''
+    print("doBlock " + str(p.lexer.lineno))
 
 # WARNING: Watch out for "figure_creations"
 def p_statement (p):
@@ -543,16 +572,19 @@ def p_return (p):
 
 def p_print (p):
     '''
-    print : PRINT SEP_LPAR prin_a SEP_RPAR
+    print : PRINT SEP_LPAR print_a SEP_RPAR
     '''
-    pass
+    print("print " + str(p.lexer.lineno))
 
-def p_prin_a (p):
+def p_print_a (p):
     '''
-    prin_a : exp
+    print_a : exp
         | function_call
+        | VAR_STRING
+        | VAR_IDENTIFIER
     '''
-    pass
+    
+
 
 def p_figure_creations (p):
     '''
