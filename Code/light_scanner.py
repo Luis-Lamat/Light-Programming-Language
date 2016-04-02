@@ -163,32 +163,32 @@ def t_OP_DIVISION (t):
     r'/'
     return t
 
-def t_OP_EQUALS (t):
-    r'='
-    return t
-
 def t_OP_PLUS_EQUALS (t):
     r'-='
-    return t
-
-def t_OP_LESS_THAN (t):
-    r'<'
     return t
 
 def t_OP_LESS_EQUAL (t):
     r'<='
     return t
 
-def t_OP_GREATER_THAN (t):
-    r'>'
-    return t
-
 def t_OP_GREATER_EQUAL (t):
     r'>='
     return t
 
+def t_OP_GREATER_THAN (t):
+    r'>'
+    return t
+
+def t_OP_LESS_THAN (t):
+    r'<'
+    return t
+
 def t_OP_NOT_EQUAL(t):
     r'!='
+    return t
+
+def t_OP_EQUALS (t):
+    r'='
     return t
 
 # Regular Expressions

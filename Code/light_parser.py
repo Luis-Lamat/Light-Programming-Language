@@ -125,8 +125,13 @@ def p_param_a (p):
 
 def p_function_call(p):
     '''
-    function_call : VAR_IDENTIFIER SEP_LPAR call_parameters SEP_RPAR
+    function_call : VAR_IDENTIFIER test SEP_LPAR call_parameters SEP_RPAR
     '''
+def p_test(p):
+	'''
+	test : 
+	'''
+	print("test: " + str(p.lexer.lineno))
 
 def p_call_parameters(p):
     '''
@@ -150,8 +155,9 @@ def p_assignment (p):
 def p_assgn_a(p):
     '''
     assgn_a : VAR_IDENTIFIER
-        | function_call
-        | exp
+    	| exp
+    	| function_call
+     
     '''
     print("ASSIGN A: " + str(p.lexer.lineno))
 
@@ -255,7 +261,7 @@ def p_condition (p):
 
 def p_cond_a(p):
 	'''
-	cond_a : oper_a expresion
+	cond_a : oper_a condition
 		| epsilon
 	'''
 
@@ -329,15 +335,15 @@ def p_term_b (p):
 def p_factor (p):
     '''
     factor : SEP_LPAR condition SEP_RPAR
-    	| fact_a var_cte
+    	| var_cte
     '''
     print("factor: " + str(p.lexer.lineno))
 
-def p_fact_a(p):
-	'''
-	fact_a : exp_b
-		| epsilon
-	'''
+# def p_fact_a(p):
+# 	'''
+# 	fact_a : exp_b
+# 		| epsilon
+# 	'''
 
 def p_var_cte(p):
 	'''

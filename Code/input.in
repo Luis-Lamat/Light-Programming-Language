@@ -16,6 +16,10 @@ program lolz {
     	if( 1<2 and ((3 * 4) > 9 )) do
     		print("true")
     	end
+
+    	if( (1 * 4 > 5) and ( 4 != 2 or 4 > 3) and 5 >= 2 or 4 > 3) do
+    		print("false")
+    	end
     }
 
 
@@ -43,6 +47,7 @@ program lolz {
             print(element)
         end
     }
+
     function sumTimes(first: int, last: int) returns int{
 
         var sum:int = 0 
@@ -58,7 +63,7 @@ program lolz {
         for (sum = first; index < last; index += 1) do
             sum = 23 + index
         	sum += index
-        	#sum = sum + index
+        	sum = sum + index
         end
         print("true") 
         return sum
@@ -97,7 +102,7 @@ program lolz {
             if(3 > 5) do
                 xpos = 0
             end
-            xpos += (7 * 8 / (9 + 9))
+            xpos += (7 * 8 / (9 + 9) * 5 / 2)
             ypos += 1
         end 
 
