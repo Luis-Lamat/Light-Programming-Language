@@ -2,6 +2,7 @@
 from light_datastructures import *
 import sys
 import pprint
+from data_structures import *
 pp = pprint.PrettyPrinter(indent=4)
 
 # INITIALIZE DICTIONARIES
