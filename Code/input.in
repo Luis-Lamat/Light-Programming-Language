@@ -15,11 +15,14 @@ program lolz {
 
     	if( 1<2 and ((3 * 4) > 9 )) do
     		print("true")
+            return
     	end
 
     	if( (1 * 4 > 5) and ( 4 != 2 or 4 > 3) and 5 >= 2 or 4 > 3) do
     		print("false")
     	end
+
+        return
     }
 
 

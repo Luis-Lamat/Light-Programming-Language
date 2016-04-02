@@ -1,4 +1,5 @@
-\n[Fri Apr  1 19:22:08 CST 2016] =========================================== 
+
+[Fri Apr  1 21:09:02 CST 2016] =========================================== 
 [   [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -107,315 +108,303 @@ condition16
 print 18
 doBlock 20
 conditionBlock 20
-varCTE: 20
-factor: 20
-varCTE: 20
-factor: 20
-term: 20
-term: 20
-exp: 20
-Greater less etc: 20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-expresion20
-condition20
-factor: 20
-term: 20
-exp: 20
-expresion20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-Greater less etc: 20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-expresion20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-Greater less etc: 20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-expresion20
-condition20
-condition20
-factor: 20
-term: 20
-exp: 20
-expresion20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-Greater less etc: 20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-expresion20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-Greater less etc: 20
-varCTE: 20
-factor: 20
-term: 20
-exp: 20
-expresion20
-condition20
-condition20
-condition20
-condition20
-print 22
-doBlock 23
-conditionBlock 23
-varCTE: 29
-factor: 29
-term: 29
-exp: 29
-Greater less etc: 29
-varCTE: 29
-factor: 29
-term: 29
-exp: 29
-expresion29
-condition29
-print 31
-doBlock 33
-conditionBlock 33
-print 34
-varCTE: 35
-factor: 35
-term: 35
-exp: 35
+varCTE: 22
+factor: 22
+varCTE: 22
+factor: 22
+term: 22
+term: 22
+exp: 22
+Greater less etc: 22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+expresion22
+condition22
+factor: 22
+term: 22
+exp: 22
+expresion22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+Greater less etc: 22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+expresion22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+Greater less etc: 22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+expresion22
+condition22
+condition22
+factor: 22
+term: 22
+exp: 22
+expresion22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+Greater less etc: 22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+expresion22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+Greater less etc: 22
+varCTE: 22
+factor: 22
+term: 22
+exp: 22
+expresion22
+condition22
+condition22
+condition22
+condition22
+print 24
+doBlock 26
+conditionBlock 26
+varCTE: 33
+factor: 33
+term: 33
+exp: 33
+Greater less etc: 33
+varCTE: 33
+factor: 33
+term: 33
+exp: 33
+expresion33
+condition33
+print 35
+doBlock 37
+conditionBlock 37
+print 38
 varCTE: 39
 factor: 39
 term: 39
 exp: 39
-print 40
-varCTE: 42
-factor: 42
-term: 42
 varCTE: 43
 factor: 43
 term: 43
 exp: 43
-exp: 43
+print 44
+varCTE: 46
+factor: 46
+term: 46
 varCTE: 47
 factor: 47
 term: 47
 exp: 47
-print 48
-doBlock 49
-cycle: 49
-varCTE: 56
-factor: 56
-term: 56
-exp: 56
-doBlock 58
-cycle: 58
-varCTE: 59
-factor: 59
-term: 59
-exp: 59
-ASSIGN A: 63
-assignment: 63
+exp: 47
+varCTE: 51
+factor: 51
+term: 51
+exp: 51
+print 52
+doBlock 53
+cycle: 53
+varCTE: 60
+factor: 60
+term: 60
+exp: 60
+doBlock 62
+cycle: 62
 varCTE: 63
 factor: 63
 term: 63
 exp: 63
-Greater less etc: 63
-varCTE: 63
-factor: 63
-term: 63
-exp: 63
-expresion63
-condition63
-varCTE: 63
-factor: 63
-term: 63
-exp: 63
-for63
-varCTE: 64
-factor: 64
-term: 64
-varCTE: 65
-factor: 65
-term: 65
-exp: 65
-exp: 65
-ASSIGN A: 65
-assignment: 65
-varCTE: 66
-factor: 66
-term: 66
-exp: 66
-varCTE: 66
-factor: 66
-term: 66
+ASSIGN A: 67
+assignment: 67
 varCTE: 67
 factor: 67
 term: 67
 exp: 67
+Greater less etc: 67
+varCTE: 67
+factor: 67
+term: 67
 exp: 67
-ASSIGN A: 67
-assignment: 67
-doBlock 68
-cycle: 68
-print 69
+expresion67
+condition67
+varCTE: 67
+factor: 67
+term: 67
+exp: 67
+for67
+varCTE: 68
+factor: 68
+term: 68
+varCTE: 69
+factor: 69
+term: 69
+exp: 69
+exp: 69
+ASSIGN A: 69
+assignment: 69
 varCTE: 70
 factor: 70
 term: 70
 exp: 70
-test: 73
-test: 78
-test: 81
-test: 88
-print 91
-test: 91
+varCTE: 70
+factor: 70
+term: 70
+varCTE: 71
+factor: 71
+term: 71
+exp: 71
+exp: 71
+ASSIGN A: 71
+assignment: 71
+doBlock 72
+cycle: 72
+print 73
+varCTE: 74
+factor: 74
+term: 74
+exp: 74
+test: 77
+test: 82
+test: 85
+test: 92
 print 95
 test: 95
-test: 96
-varCTE: 102
-factor: 102
-term: 102
-exp: 102
-Greater less etc: 102
-varCTE: 102
-factor: 102
-term: 102
-exp: 102
-expresion102
-condition102
-varCTE: 104
-factor: 104
-term: 104
-exp: 104
-ASSIGN A: 104
-assignment: 104
-doBlock 105
-conditionBlock 105
-varCTE: 105
-factor: 105
-varCTE: 105
-factor: 105
-varCTE: 105
-factor: 105
-term: 105
-varCTE: 105
-factor: 105
-term: 105
-exp: 105
-exp: 105
-expresion105
-condition105
-factor: 105
-varCTE: 105
-factor: 105
-varCTE: 105
-factor: 105
-term: 105
-term: 105
-term: 105
-term: 105
-term: 105
-exp: 105
-expresion105
-condition105
+print 99
+test: 99
+test: 100
+varCTE: 106
 factor: 106
 term: 106
 exp: 106
-varCTE: 107
-factor: 107
-term: 107
-exp: 107
+Greater less etc: 106
+varCTE: 106
+factor: 106
+term: 106
+exp: 106
+expresion106
+condition106
+varCTE: 108
+factor: 108
+term: 108
+exp: 108
+ASSIGN A: 108
+assignment: 108
 doBlock 109
-cycle: 109
-varCTE: 112
-factor: 112
-term: 112
-exp: 112
-varCTE: 112
-factor: 112
-term: 112
-exp: 112
-varCTE: 113
-factor: 113
-term: 113
-exp: 113
-varCTE: 113
-factor: 113
-term: 113
-exp: 113
-varCTE: 114
-factor: 114
-term: 114
-exp: 114
-varCTE: 114
-factor: 114
-term: 114
-exp: 114
-varCTE: 121
-factor: 121
-term: 121
-exp: 121
-varCTE: 121
-factor: 121
-term: 121
-exp: 121
-varCTE: 122
-factor: 122
-term: 122
-exp: 122
-varCTE: 122
-factor: 122
-term: 122
-exp: 122
-varCTE: 123
-factor: 123
-term: 123
-exp: 123
-varCTE: 123
-factor: 123
-term: 123
-exp: 123
-varCTE: 130
-factor: 130
-term: 130
-exp: 130
-varCTE: 138
-factor: 138
-term: 138
-exp: 138
-varCTE: 139
-factor: 139
-term: 139
-exp: 139
-varCTE: 140
-factor: 140
-term: 140
-exp: 140
+conditionBlock 109
+varCTE: 109
+factor: 109
+varCTE: 109
+factor: 109
+varCTE: 109
+factor: 109
+term: 109
+varCTE: 109
+factor: 109
+term: 109
+exp: 109
+exp: 109
+expresion109
+condition109
+factor: 109
+varCTE: 109
+factor: 109
+varCTE: 109
+factor: 109
+term: 109
+term: 109
+term: 109
+term: 109
+term: 109
+exp: 109
+expresion109
+condition109
+factor: 110
+term: 110
+exp: 110
+varCTE: 111
+factor: 111
+term: 111
+exp: 111
+doBlock 113
+cycle: 113
+varCTE: 116
+factor: 116
+term: 116
+exp: 116
+varCTE: 116
+factor: 116
+term: 116
+exp: 116
+varCTE: 117
+factor: 117
+term: 117
+exp: 117
+varCTE: 117
+factor: 117
+term: 117
+exp: 117
+varCTE: 118
+factor: 118
+term: 118
+exp: 118
+varCTE: 118
+factor: 118
+term: 118
+exp: 118
+varCTE: 125
+factor: 125
+term: 125
+exp: 125
+varCTE: 125
+factor: 125
+term: 125
+exp: 125
+varCTE: 126
+factor: 126
+term: 126
+exp: 126
+varCTE: 126
+factor: 126
+term: 126
+exp: 126
+varCTE: 127
+factor: 127
+term: 127
+exp: 127
+varCTE: 127
+factor: 127
+term: 127
+exp: 127
+varCTE: 134
+factor: 134
+term: 134
+exp: 134
 varCTE: 142
 factor: 142
 term: 142
 exp: 142
+varCTE: 143
+factor: 143
+term: 143
+exp: 143
 varCTE: 144
 factor: 144
 term: 144
 exp: 144
-varCTE: 145
-factor: 145
-term: 145
-exp: 145
 varCTE: 146
 factor: 146
 term: 146
@@ -424,18 +413,22 @@ varCTE: 148
 factor: 148
 term: 148
 exp: 148
+varCTE: 149
+factor: 149
+term: 149
+exp: 149
 varCTE: 150
 factor: 150
 term: 150
 exp: 150
-varCTE: 151
-factor: 151
-term: 151
-exp: 151
-varCTE: 153
-factor: 153
-term: 153
-exp: 153
+varCTE: 152
+factor: 152
+term: 152
+exp: 152
+varCTE: 154
+factor: 154
+term: 154
+exp: 154
 varCTE: 155
 factor: 155
 term: 155
@@ -452,6 +445,14 @@ varCTE: 161
 factor: 161
 term: 161
 exp: 161
+varCTE: 163
+factor: 163
+term: 163
+exp: 163
+varCTE: 165
+factor: 165
+term: 165
+exp: 165
 sumNumbers:
 	id: 7,
 	name: sumNumbers,

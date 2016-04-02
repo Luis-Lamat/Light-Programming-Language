@@ -8,7 +8,8 @@ tmp_var = Var()
 tmp_function = Function()
 function_stack.push('program')
 
-
+# Conditions
+missing_return_stmt = False
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -79,9 +80,10 @@ def p_stmt_loop (p):
 
 def p_function (p):
     '''
-    function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop SEP_RCBRACKET
+    function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return SEP_RCBRACKET
     '''
     function_stack.pop()
+    missing_return_stmt = False # resetting var
 
 def p_func_a (p):
     '''
@@ -90,14 +92,28 @@ def p_func_a (p):
     '''
 def p_func_b (p):
     '''
-    func_b : RETURNS type
+    func_b : RETURNS primitive_type
         | epsilon
     '''
+    if (p[1] == "returns"):
+        missing_return_stmt = True
     FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
 
 def p_func_c (p):
     '''
-    func_c : vars  func_c
+    func_c : vars func_c
+        | epsilon
+    '''
+
+def p_tmp_return(p):
+    '''
+    tmp_return : RETURN opt_exp
+        | epsilon
+    '''
+
+def p_opt_exp(p):
+    '''
+    opt_exp : exp 
         | epsilon
     '''
 
@@ -299,6 +315,7 @@ def p_exp (p):
     '''
     exp : term exp_a
     '''
+
     print("exp: " + str(p.lexer.lineno))
 
 def p_exp_a (p):
@@ -573,7 +590,7 @@ def p_cnt_prim (p):
 
 def p_return (p):
     '''
-    return : RETURN exp
+    return : RETURN opt_exp
     '''
 
 def p_print (p):
