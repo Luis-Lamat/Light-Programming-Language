@@ -315,14 +315,12 @@ def p_ex_a (p):
 		| OP_GREATER_EQUAL
 		| OP_LESS_EQUAL
 	'''
-	print("Greater less etc: " + str(p.lexer.lineno))
-
+	operator_stack.push(p[1])
 
 def p_exp (p):
 	'''
 	exp : term exp_a
 	'''
-
 	print("exp: " + str(p.lexer.lineno))
 
 def p_exp_a (p):
@@ -337,7 +335,7 @@ def p_exp_b (p):
 	exp_b : OP_PLUS
 		| OP_MINUS
 	'''
-
+	operator_stack.push(p[1])
 
 def p_term (p):
 	'''
@@ -355,6 +353,7 @@ def p_term_b (p):
 	term_b : OP_TIMES
 		| OP_DIVISION
 	'''
+	operator_stack.push(p[1])
 
 def p_factor (p):
 	'''
@@ -375,12 +374,20 @@ def p_var_cte(p):
 		| VAR_INT
 		| VAR_DECIMAL
 	'''
-	# operator_stack.push(p[1])
-	# print p.type
-	# p[0] = p[1] #=> p[0] = [12, 12.4, variable_dos]
-	# if (lexer.token() == VAR_INT):
-	# 	print("INT: " + str(p[0]))
-	print("varCTE: " + str(p.lexer.lineno))
+	# Code to push the correct VAR type to the type_stack
+	print p[1] + ' ========================='
+	try:
+		tok_type = eval(p[1])
+		print str(tok_type) + ' =========='
+		if (isinstance(tok_type, (int, long))):
+			type_stack.push(type_dict['int'])
+		elif (isinstance(tok_type, (float))):
+			type_stack.push(type_dict['decimal'])
+	except Exception as e:
+		FunctionTable.print_all()
+		func = FunctionTable.function_dict[function_stack.peek()]
+		type_stack.push(func.vars[p[1]].type)
+	type_stack.pprint()
 
 def p_increment (p):
 	'''

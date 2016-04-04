@@ -1,5 +1,5 @@
 
-[Fri Apr  1 21:57:45 CST 2016] =========================================== 
+[Mon Apr  4 12:27:07 CDT 2016] =========================================== 
 [   [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, 2, 3, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -56,13 +56,1423 @@
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]]
-Traceback (most recent call last):
-  File "light_parser.py", line 651, in <module>
-    parser.parse(data, tracking=True)
-  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 329, in parse
-    return self.parseopt(input, lexer, debug, tracking, tokenfunc)
-  File "/Users/Beto/TEC/Compiladores/Proyecto Final/Code/ply/yacc.py", line 815, in parseopt
-    p.callable(pslice)
-  File "light_parser.py", line 379, in p_var_cte
-    print p.type
-AttributeError: YaccProduction instance has no attribute 'type'
+2 =========================
+2 ==========
+[2]
+factor: 12
+term: 12
+exp: 12
+3 =========================
+3 ==========
+[2, 2]
+factor: 12
+term: 12
+exp: 12
+expresion12
+condition12
+print 14
+doBlock 16
+conditionBlock 16
+1 =========================
+1 ==========
+[2, 2, 2]
+factor: 16
+term: 16
+exp: 16
+2 =========================
+2 ==========
+[2, 2, 2, 2]
+factor: 16
+term: 16
+exp: 16
+expresion16
+3 =========================
+3 ==========
+[2, 2, 2, 2, 2]
+factor: 16
+4.8 =========================
+4.8 ==========
+[2, 2, 2, 2, 2, 3]
+factor: 16
+term: 16
+term: 16
+exp: 16
+expresion16
+condition16
+factor: 16
+term: 16
+exp: 16
+9 =========================
+9 ==========
+[2, 2, 2, 2, 2, 3, 2]
+factor: 16
+term: 16
+exp: 16
+expresion16
+condition16
+factor: 16
+term: 16
+exp: 16
+expresion16
+condition16
+condition16
+print 18
+doBlock 21
+conditionBlock 21
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2]
+factor: 21
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2]
+factor: 21
+term: 21
+term: 21
+exp: 21
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion21
+condition21
+factor: 21
+term: 21
+exp: 21
+expresion21
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion21
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+3 =========================
+3 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion21
+condition21
+condition21
+factor: 21
+term: 21
+exp: 21
+expresion21
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion21
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+3 =========================
+3 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion21
+condition21
+condition21
+condition21
+condition21
+print 23
+doBlock 25
+conditionBlock 25
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 32
+term: 32
+exp: 32
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 32
+term: 32
+exp: 32
+expresion32
+condition32
+print 34
+doBlock 36
+conditionBlock 36
+print 37
+0 =========================
+0 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 38
+term: 38
+exp: 38
+text =========================
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]
+factor: 42
+term: 42
+exp: 42
+print 43
+number =========================
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2]
+factor: 45
+term: 45
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2]
+factor: 46
+term: 46
+exp: 46
+exp: 46
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2]
+factor: 60
+term: 60
+exp: 60
+doBlock 62
+cycle: 62
+sum =========================
+<built-in function sum> ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2]
+factor: 63
+term: 63
+exp: 63
+ASSIGN A: 68
+assignment: 68
+index =========================
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2013,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2012,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2011,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2010,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2006,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2009,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2008,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2007,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2]
+factor: 68
+term: 68
+exp: 68
+sum =========================
+<built-in function sum> ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2]
+factor: 68
+term: 68
+exp: 68
+expresion68
+condition68
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2]
+factor: 68
+term: 68
+exp: 68
+for68
+23 =========================
+23 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2]
+factor: 69
+term: 69
+index =========================
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2013,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2012,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2011,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2010,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2006,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2009,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2008,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2007,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2]
+factor: 70
+term: 70
+exp: 70
+exp: 70
+ASSIGN A: 70
+assignment: 70
+index =========================
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2013,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2012,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2011,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2010,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2006,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2009,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2008,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2007,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 71
+term: 71
+exp: 71
+sum =========================
+<built-in function sum> ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 71
+term: 71
+index =========================
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2013,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2012,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2011,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2010,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2006,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2009,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2008,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2007,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 72
+term: 72
+exp: 72
+exp: 72
+ASSIGN A: 72
+assignment: 72
+doBlock 73
+cycle: 73
+print 74
+sum =========================
+<built-in function sum> ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 75
+term: 75
+exp: 75
+test: 78
+test: 83
+test: 86
+test: 93
+print 96
+test: 96
+print 100
+test: 100
+test: 101
+3 =========================
+3 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 107
+term: 107
+exp: 107
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 107
+term: 107
+exp: 107
+expresion107
+condition107
+0 =========================
+0 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 109
+term: 109
+exp: 109
+ASSIGN A: 109
+assignment: 109
+doBlock 110
+conditionBlock 110
+7 =========================
+7 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+8 =========================
+8 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+9 =========================
+9 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+term: 110
+9 =========================
+9 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+term: 110
+exp: 110
+exp: 110
+expresion110
+condition110
+factor: 110
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 110
+term: 110
+term: 110
+term: 110
+term: 110
+term: 110
+exp: 110
+expresion110
+condition110
+factor: 111
+term: 111
+exp: 111
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 112
+term: 112
+exp: 112
+doBlock 114
+cycle: 114
+0 =========================
+0 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 117
+term: 117
+exp: 117
+0 =========================
+0 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 117
+term: 117
+exp: 117
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 118
+term: 118
+exp: 118
+0 =========================
+0 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 118
+term: 118
+exp: 118
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 119
+term: 119
+exp: 119
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 119
+term: 119
+exp: 119
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 126
+term: 126
+exp: 126
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 126
+term: 126
+exp: 126
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 127
+term: 127
+exp: 127
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 127
+term: 127
+exp: 127
+4 =========================
+4 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 128
+term: 128
+exp: 128
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 128
+term: 128
+exp: 128
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 135
+term: 135
+exp: 135
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 143
+term: 143
+exp: 143
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 144
+term: 144
+exp: 144
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 145
+term: 145
+exp: 145
+6 =========================
+6 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 147
+term: 147
+exp: 147
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 149
+term: 149
+exp: 149
+9 =========================
+9 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 150
+term: 150
+exp: 150
+9 =========================
+9 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 151
+term: 151
+exp: 151
+10 =========================
+10 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 153
+term: 153
+exp: 153
+1 =========================
+1 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 155
+term: 155
+exp: 155
+2 =========================
+2 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 156
+term: 156
+exp: 156
+5 =========================
+5 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 158
+term: 158
+exp: 158
+10 =========================
+10 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 160
+term: 160
+exp: 160
+15 =========================
+15 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 162
+term: 162
+exp: 162
+16 =========================
+16 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 164
+term: 164
+exp: 164
+17 =========================
+17 ==========
+[2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+factor: 166
+term: 166
+exp: 166
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2013,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2012,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2011,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2010,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2006,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2009,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2008,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2007,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2005,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+light:
+	id: 8,
+	name: light,
+	type: 0
+	VAR - numberOne:
+		id: 2014,
+		name: numberOne,
+		type: 2,
+		value: None
+		---------
+	VAR - xpos:
+		id: 2015,
+		name: xpos,
+		type: 2,
+		value: None
+		---------
+	VAR - ypos:
+		id: 2016,
+		name: ypos,
+		type: 2,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2004,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2003,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3001,
+		name: z,
+		type: 3,
+		value: None
+		---------
+Successful

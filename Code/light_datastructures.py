@@ -17,7 +17,9 @@ class Stack(object):
     	else:
         	return self.values[len(self.values)-1]
     def size(self):
-        return len(self.items)
+        return len(self.values)
+    def pprint(self):
+        print self.values
 
 class Queue(object):
     def __init__(self):
@@ -34,7 +36,7 @@ class Queue(object):
     def peek(self):
         return self.values[len(self.values)-1]
     def size(self):
-        return len(self.items)
+        return len(self.values)
 
 class HashTable(object):
     def __init__(self, size, hashValue):

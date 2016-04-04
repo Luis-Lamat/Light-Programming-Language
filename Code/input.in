@@ -13,7 +13,7 @@ program lolz {
     		print("Truestuff")
     	end
 
-    	if( 1<2 and ((3 * 4) > 9 )) do
+    	if( 1<2 and ((3 * 4.8) > 9 )) do
     		print("true")
             return
     	end
@@ -46,9 +46,10 @@ program lolz {
     }
 
     function printArray(numbers: int){
-        foreach (element in numbers) do
-            print(element)
-        end
+        # ERROR: 'element' is part of 'exp' rule (print)
+        # foreach (element in numbers) do
+        #     print(element) # '<======='
+        # end
     }
 
     function sumTimes(first: int, last: int) returns int{
@@ -63,7 +64,8 @@ program lolz {
 
     function sumNumbers(first: int, last: int) returns int{
         var sum:int = 0
-        for (sum = first; index < last; index += 1) do
+        var index:int = 0
+        for (sum = first; index < sum; index += 1) do
             sum = 23 + index
         	sum += index
         	sum = sum + index
