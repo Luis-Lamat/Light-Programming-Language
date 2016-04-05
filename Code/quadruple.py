@@ -29,8 +29,9 @@ class Quadruples(object):
 	# Quad Methods
 	@classmethod
 	def push_quad(cls, quad):
+		quad.id = cls.next_free_quad
 		cls.quad_list.append(quad)
-		next_free_quad = len(cls.quad_list)
+		cls.next_free_quad = len(cls.quad_list)
 
 	@classmethod
 	def fill_missing_quad(cls, quad_id, value):
