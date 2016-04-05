@@ -1,5 +1,5 @@
 
-[Tue Apr  5 14:40:50 CDT 2016] =========================================== 
+[Tue Apr  5 14:46:06 CDT 2016] =========================================== 
 [2]
 factor: 12
 term: 12
@@ -148,7 +148,7 @@ term: 45
 factor: 46
 term: 46
 Quads ===============================
-[[0, 1, 4.0, 3001], [0, 'number', 1, 2006]]
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001]]
 exp: 46
 exp: 46
 [2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1]
@@ -185,7 +185,7 @@ term: 69
 factor: 70
 term: 70
 Quads ===============================
-[[0, 1, 4.0, 3001], [0, 'number', 1, 2006], [0, 23, 'index', 2015]]
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004]]
 exp: 70
 exp: 70
 ASSIGN A: 70
@@ -201,7 +201,7 @@ term: 71
 factor: 72
 term: 72
 Quads ===============================
-[[0, 1, 4.0, 3001], [0, 'number', 1, 2006], [0, 23, 'index', 2015], [0, <built-in function sum>, 'index', 2016]]
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004], [0, <built-in function sum>, 'index', 2005]]
 exp: 72
 exp: 72
 ASSIGN A: 72
@@ -251,7 +251,7 @@ term: 110
 factor: 110
 term: 110
 Quads ===============================
-[[0, 1, 4.0, 3001], [0, 'number', 1, 2006], [0, 23, 'index', 2015], [0, <built-in function sum>, 'index', 2016], [0, 9, 9, 2020]]
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004], [0, <built-in function sum>, 'index', 2005], [0, 9, 9, 2003]]
 exp: 110
 exp: 110
 expresion110
@@ -395,25 +395,25 @@ sumNumbers:
 	name: sumNumbers,
 	type: 2
 	VAR - index:
-		id: 2014,
+		id: 2003,
 		name: index,
 		type: 2,
 		value: None
 		---------
 	VAR - sum:
-		id: 2013,
+		id: 2002,
 		name: sum,
 		type: 2,
 		value: None
 		---------
 	VAR - last:
-		id: 2012,
+		id: 2001,
 		name: last,
 		type: 2,
 		value: None
 		---------
 	VAR - first:
-		id: 2011,
+		id: 2000,
 		name: first,
 		type: 2,
 		value: None
@@ -423,7 +423,7 @@ printArray:
 	name: printArray,
 	type: 2
 	VAR - numbers:
-		id: 2007,
+		id: 2000,
 		name: numbers,
 		type: 2,
 		value: None
@@ -433,19 +433,19 @@ sumTimes:
 	name: sumTimes,
 	type: 2
 	VAR - sum:
-		id: 2010,
+		id: 2002,
 		name: sum,
 		type: 2,
 		value: None
 		---------
 	VAR - last:
-		id: 2009,
+		id: 2001,
 		name: last,
 		type: 2,
 		value: None
 		---------
 	VAR - first:
-		id: 2008,
+		id: 2000,
 		name: first,
 		type: 2,
 		value: None
@@ -471,7 +471,7 @@ addOne:
 	name: addOne,
 	type: 2
 	VAR - number:
-		id: 2005,
+		id: 2000,
 		name: number,
 		type: 2,
 		value: None
@@ -513,19 +513,19 @@ light:
 	name: light,
 	type: 0
 	VAR - numberOne:
-		id: 2017,
+		id: 2000,
 		name: numberOne,
 		type: 2,
 		value: None
 		---------
 	VAR - xpos:
-		id: 2018,
+		id: 2001,
 		name: xpos,
 		type: 2,
 		value: None
 		---------
 	VAR - ypos:
-		id: 2019,
+		id: 2002,
 		name: ypos,
 		type: 2,
 		value: None
@@ -539,19 +539,19 @@ example:
 	name: example,
 	type: 2
 	VAR - y:
-		id: 2004,
+		id: 2001,
 		name: y,
 		type: 2,
 		value: None
 		---------
 	VAR - x:
-		id: 2003,
+		id: 2000,
 		name: x,
 		type: 2,
 		value: None
 		---------
 	VAR - z:
-		id: 3002,
+		id: 3000,
 		name: z,
 		type: 3,
 		value: None

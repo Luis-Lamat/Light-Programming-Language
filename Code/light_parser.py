@@ -25,6 +25,7 @@ def p_program (p):
 	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
 
 def p_pr_a (p):
@@ -44,6 +45,7 @@ def p_main_func (p):
 	main_func : LIGHT_TOKEN new_func_scope SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 
 def p_type (p):
 	'''
@@ -89,6 +91,7 @@ def p_function (p):
 	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 	missing_return_stmt = False # resetting var
 
 def p_func_a (p):
