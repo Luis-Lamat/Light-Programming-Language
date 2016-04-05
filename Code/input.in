@@ -18,7 +18,7 @@ program lolz {
             return
     	end
 
-    	if( (1 * 4 > 5) and ( 4 != 2 or 4 > 3) and 5 >= 2 or 4 > 3) do
+    	if( (1 + 4.0 > 5) and ( 4 != 2 or 4 > 3) and 5 >= 2 or 4 > 3) do
     		print("false")
     	end
 

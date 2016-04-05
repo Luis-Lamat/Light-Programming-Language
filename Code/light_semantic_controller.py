@@ -25,13 +25,21 @@ type_dict = {
     'star'      : 12,
     'circle'    : 13 
 }
+inv_type_dict = {v: k for k, v in type_dict.items()}
 
 operator_dict = {
-	'+' 	: 0,
-	'-' 	: 1,
-	'*' 	: 2,
-	'/' 	: 3
+	'+'  : 0,
+	'-'  : 1,
+	'*'  : 2,
+	'/'  : 3,
+	'<'	 : 4,
+	'>'	 : 5,
+	'<=' : 6,
+	'>=' : 7,
+	'==' : 8,
+	'!=' : 9
 }
+inv_op_dict = {v: k for k, v in operator_dict.items()}
 
 initializer_dict = {
 	# Primitive Types
@@ -151,7 +159,7 @@ class Function:
 
 	def add_var(self, var):
 		if var.name not in self.vars:
-			tmp_var = Var()
+			tmp_var = Var() # TODO: dafuq with this????
 			tmp_var.init_var(SemanticInfo.get_next_var_id(var.type), var.name, var.type, var.value)
 			self.vars[var.name] = tmp_var
 		else:
@@ -265,23 +273,35 @@ class SemanticInfo:
 	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000]
 
 	__shared_state = {}
-	def __init__(self):
-		self.__dict__ = self.__shared_state
+	def __init__(cls):
+		cls.__dict__ = cls.__shared_state
 
 	@classmethod
-	def get_next_var_id(self, type):
-		self.current_var_id[type] = self.current_var_id[type] + 1
-		return self.current_var_id[type] - 1
+	def get_next_var_id(cls, type):
+		cls.current_var_id[type] = cls.current_var_id[type] + 1
+		return cls.current_var_id[type] - 1
+
+	@classmethod
+	def reset_var_ids(cls):
+		cls.current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 
+							  9000, 10000, 11000, 12000, 13000]
 
 class Error:
 	@staticmethod
 	def already_defined(type, name):
-		print "Semantic Error: " + type + " '" + name + "' already defined"
+		print "Semantic Error: {} '{}' already defined".format(type, name)
+		sys.exit()
+
+	@staticmethod #TODO: Dafuq we need this for
+	def out_of_bounds(name, num):
+		print "Out Of Bounds Error: Array '{}' out of bounds at index: {}".format(name, num)
 		sys.exit()
 
 	@staticmethod
-	def out_of_bounds(name, num):
-		print "Semanic Error: Array '" + name +"' out of bounds at index: " + num
+	def type_mismatch(t1, t2, op):
+		t1 = inv_type_dict[t1]
+		t2 = inv_type_dict[t2]
+		print "Type Mismatch: expresion '{} {} {}' is invalid".format(t1, op, t2)
 		sys.exit()
 
 ################################################################################
@@ -300,6 +320,4 @@ for type in num_types:
 	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
 
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
-
-SemanticCube.print_cube()
 

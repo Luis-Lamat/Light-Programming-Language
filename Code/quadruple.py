@@ -8,6 +8,15 @@ class Quadruple(object):
 		self.right_operand = None
 		self.result = None
 
+	def build(self, operator, left_operand, right_operand, result):
+		self.operator = operator
+		self.left_operand = left_operand
+		self.right_operand = right_operand
+		self.result = result
+
+	def get_list(self):
+		return [self.operator, self.left_operand, self.right_operand, self.result]
+
 class Quadruples(object):
 	# Class variables
 	quad_list = []
@@ -20,7 +29,7 @@ class Quadruples(object):
 	# Quad Methods
 	@classmethod
 	def push_quad(cls, quad):
-		cls.quad_list.append(uad)
+		cls.quad_list.append(quad)
 		next_free_quad = len(cls.quad_list)
 
 	@classmethod
@@ -39,3 +48,9 @@ class Quadruples(object):
 	@classmethod
 	def peek_jump(cls):
 		return cls.jump_stack.peek()
+
+	@classmethod
+	def print_all(cls):
+		print("Quads ===============================")
+		print([x.get_list() for x in cls.quad_list])
+		pass
