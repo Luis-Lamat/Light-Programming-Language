@@ -1,65 +1,9 @@
-#Semantic Controller
-from light_datastructures import *
-import sys
+# Semantic Controller
+
+from error import * # Includes light_data_structures.py
 import pprint
-from data_structures import *
+
 pp = pprint.PrettyPrinter(indent=4)
-
-# INITIALIZE DICTIONARIES
-type_dict = {
-	# Primitive Types
-	'void'		: 0,
-	'boolean'	: 1,
-	'int'		: 2,
-	'decimal'	: 3,
-	'string'	: 4,
-	'fraction'	: 5,
-
-	# Figure types
-    'point'     : 6,
-    'line'      : 7,
-    'triangle'  : 8,
-    'square'    : 9,
-    'rectangle' : 10,
-    'polygon'   : 11,
-    'star'      : 12,
-    'circle'    : 13 
-}
-inv_type_dict = {v: k for k, v in type_dict.items()}
-
-operator_dict = {
-	'+'  : 0,
-	'-'  : 1,
-	'*'  : 2,
-	'/'  : 3,
-	'<'	 : 4,
-	'>'	 : 5,
-	'<=' : 6,
-	'>=' : 7,
-	'==' : 8,
-	'!=' : 9
-}
-inv_op_dict = {v: k for k, v in operator_dict.items()}
-
-initializer_dict = {
-	# Primitive Types
-	0	:	"", 		#void
-	1	:	False,		#boolean
-	2	:	0,			#int
-	3	:	0.0,		#decimal
-	4	:	"", 		#string
-	5	:	"",			#decimal, missing probably a fraction class
-
-	#figure types, missing class 
-	6	:	"",			#point
-	7	:	"",			#line
-	8	:	"",			#triangle
-	9	:	"",			#square
-	10	:	"",			#rectangle
-	11	:	"",			#polygon
-	12	:	"",			#star
-	13	:	"", 		#circle
-}
 
 # DEFINE CLASSES
 class Var:
@@ -285,24 +229,6 @@ class SemanticInfo:
 	def reset_var_ids(cls):
 		cls.current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 
 							  9000, 10000, 11000, 12000, 13000]
-
-class Error:
-	@staticmethod
-	def already_defined(type, name):
-		print "Semantic Error: {} '{}' already defined".format(type, name)
-		sys.exit()
-
-	@staticmethod #TODO: Dafuq we need this for
-	def out_of_bounds(name, num):
-		print "Out Of Bounds Error: Array '{}' out of bounds at index: {}".format(name, num)
-		sys.exit()
-
-	@staticmethod
-	def type_mismatch(t1, t2, op):
-		t1 = inv_type_dict[t1]
-		t2 = inv_type_dict[t2]
-		print "Type Mismatch: expresion '{} {} {}' is invalid".format(t1, op, t2)
-		sys.exit()
 
 ################################################################################
 # Filling out the SemanticCube matrix ##########################################

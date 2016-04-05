@@ -350,7 +350,7 @@ def p_cuad_helper_sum(p):
 		t2 = type_stack.pop()
 		return_type = SemanticCube.cube[op][t1][t2]
 		if return_type == -1:
-			Error.type_mismatch(t1, t2, str_op)
+			Error.type_mismatch(p.lexer.lineno, t1, t2, str_op)
 		
 		o1 = operand_stack.pop()
 		o2 = operand_stack.pop()

@@ -9,6 +9,10 @@ program lolz {
 
   function verifyAndOr(){
 
+        # Outputs correct type mismatch error
+        # var a:string
+        # a = a + 8
+
     	if( 2 <  3 ) do
     		print("Truestuff")
     	end
