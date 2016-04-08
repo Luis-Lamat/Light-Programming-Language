@@ -1,9 +1,658 @@
 
-[Tue Apr  5 15:49:02 CDT 2016] =========================================== 
-['a']
-factor: 13
-term: 13
-['a', 8]
-factor: 15
-term: 15
-Type Mismatch (line 13): expresion 'int + string' is invalid
+[Thu Apr  7 13:19:02 CDT 2016] =========================================== 
+OPERAND STACK = [2]
+factor: 17
+term: 17
+exp: 17
+>>>>>>>>>>>>>> AGUAS []
+OPERATOR STACK = [4]
+OPERAND STACK = [2, 3]
+factor: 17
+term: 17
+exp: 17
+expresion: 17
+condition: 17
+print 19
+doBlock 21
+conditionBlock 21
+OPERAND STACK = [2, 3, 1]
+factor: 21
+term: 21
+exp: 21
+>>>>>>>>>>>>>> AGUAS [4]
+OPERAND STACK INSIDE = [2, 3, 1]
+
+Quads ===============================
+[[4, 3, 1, 1000]]
+OPERATOR STACK = [4]
+OPERAND STACK = [2, 2]
+factor: 21
+term: 21
+exp: 21
+expresion: 21
+OPERATOR STACK = [4, 10]
+OPERATOR STACK = [4, 10, 12]
+OPERATOR STACK = [4, 10, 12, 12]
+OPERAND STACK = [2, 2, 3]
+factor: 21
+OPERATOR STACK = [4, 10, 12, 12, 2]
+OPERAND STACK = [2, 2, 3, 4.8]
+factor: 21
+OPERAND STACK INSIDE = [2, 2, 3, 4.8]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001]]
+term: 21
+term: 21
+exp: 21
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12]
+expresion: 21
+condition: 21
+factor: 21
+term: 21
+exp: 21
+>>>>>>>>>>>>>> AGUAS [4, 10, 12]
+OPERATOR STACK = [4, 10, 12, 5]
+OPERAND STACK = [2, 2, 9]
+factor: 21
+term: 21
+exp: 21
+expresion: 21
+condition: 21
+factor: 21
+term: 21
+exp: 21
+>>>>>>>>>>>>>> AGUAS [4, 10, 12]
+expresion: 21
+condition: 21
+condition: 21
+print 23
+doBlock 26
+conditionBlock 26
+OPERATOR STACK = [4, 10, 12, 12]
+OPERAND STACK = [2, 2, 9, 1]
+factor: 26
+term: 26
+OPERATOR STACK = [4, 10, 12, 12, 0]
+OPERAND STACK = [2, 2, 9, 1, 4.0]
+factor: 26
+term: 26
+OPERAND STACK INSIDE = [2, 2, 9, 1, 4.0]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002]]
+exp: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12]
+OPERATOR STACK = [4, 10, 12, 12, 5]
+OPERAND STACK = [2, 2, 9, 5]
+factor: 26
+term: 26
+exp: 26
+expresion: 26
+condition: 26
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12]
+expresion: 26
+OPERATOR STACK = [4, 10, 12, 12, 10]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12]
+OPERAND STACK = [2, 2, 9, 5, 4]
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9]
+OPERAND STACK = [2, 2, 9, 5, 4, 2]
+factor: 26
+term: 26
+exp: 26
+expresion: 26
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 11]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 4]
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 11]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 11, 5]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 4, 3]
+factor: 26
+term: 26
+exp: 26
+expresion: 26
+condition: 26
+condition: 26
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 11]
+expresion: 26
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 4, 3]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5]
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2]
+factor: 26
+term: 26
+exp: 26
+expresion: 26
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4]
+factor: 26
+term: 26
+exp: 26
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 3]
+factor: 26
+term: 26
+exp: 26
+expresion: 26
+condition: 26
+condition: 26
+condition: 26
+condition: 26
+print 28
+doBlock 30
+conditionBlock 30
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 3, 1]
+factor: 37
+term: 37
+exp: 37
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5]
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 3, 1]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2]
+factor: 37
+term: 37
+exp: 37
+expresion: 37
+condition: 37
+print 39
+doBlock 41
+conditionBlock 41
+print 42
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0]
+factor: 43
+term: 43
+exp: 43
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text']
+factor: 47
+term: 47
+exp: 47
+print 48
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 'number']
+factor: 50
+term: 50
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4, 0]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 'number', 1]
+factor: 51
+term: 51
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 'number', 1]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001]]
+exp: 51
+exp: 51
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1]
+factor: 65
+term: 65
+exp: 65
+doBlock 67
+cycle: 67
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum']
+factor: 68
+term: 68
+exp: 68
+ASSIGN A: 73
+assignment: 73
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 'index']
+factor: 73
+term: 73
+exp: 73
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4]
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 'index']
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum']
+factor: 73
+term: 73
+exp: 73
+expresion: 73
+condition: 73
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1]
+factor: 73
+term: 73
+exp: 73
+for73
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 23]
+factor: 74
+term: 74
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4, 0]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 23, 'index']
+factor: 75
+term: 75
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 23, 'index']
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004]]
+exp: 75
+exp: 75
+ASSIGN A: 75
+assignment: 75
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index']
+factor: 76
+term: 76
+exp: 76
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum']
+factor: 76
+term: 76
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4, 0]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum', 'index']
+factor: 77
+term: 77
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum', 'index']
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005]]
+exp: 77
+exp: 77
+ASSIGN A: 77
+assignment: 77
+doBlock 78
+cycle: 78
+print 79
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum']
+factor: 80
+term: 80
+exp: 80
+test: 83
+test: 88
+test: 91
+test: 98
+print 101
+test: 101
+print 105
+test: 105
+test: 106
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum', 3]
+factor: 112
+term: 112
+exp: 112
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 4]
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 'sum', 3]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5]
+factor: 112
+term: 112
+exp: 112
+expresion: 112
+condition: 112
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0]
+factor: 114
+term: 114
+exp: 114
+ASSIGN A: 114
+assignment: 114
+doBlock 115
+conditionBlock 115
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 7]
+factor: 115
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 2]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 7, 8]
+factor: 115
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 7, 8]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000], [2, 7, 8, 2003]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 3]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 3, 12]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 9]
+factor: 115
+term: 115
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 3, 12, 0]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 9, 9]
+factor: 115
+term: 115
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0, 9, 9]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000], [2, 7, 8, 2003], [0, 9, 9, 2004]]
+exp: 115
+exp: 115
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 3, 12]
+expresion: 115
+condition: 115
+factor: 115
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5, 0]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000], [2, 7, 8, 2003], [0, 9, 9, 2004], [3, 5, 0, 2005]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 2]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5]
+factor: 115
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 'index', 5]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000], [2, 7, 8, 2003], [0, 9, 9, 2004], [3, 5, 0, 2005], [2, 'index', 5, 2006]]
+OPERATOR STACK = [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12, 3]
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 2]
+factor: 115
+OPERAND STACK INSIDE = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 2]
+
+Quads ===============================
+[[4, 3, 1, 1000], [2, 3, 4.8, 3001], [0, 1, 4.0, 3002], [11, 4, 3, 1001], [5, 3, 1, 1000], [0, 'number', 1, 2001], [4, 'sum', 'index', 1000], [0, 23, 'index', 2004], [0, 'sum', 'index', 2005], [4, 'sum', 3, 1000], [2, 7, 8, 2003], [0, 9, 9, 2004], [3, 5, 0, 2005], [2, 'index', 5, 2006], [3, 1, 2, 2007]]
+term: 115
+term: 115
+term: 115
+term: 115
+term: 115
+exp: 115
+>>>>>>>>>>>>>> AGUAS [4, 10, 12, 12, 10, 12, 9, 10, 7, 11, 5, 12]
+expresion: 115
+condition: 115
+factor: 116
+term: 116
+exp: 116
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1]
+factor: 117
+term: 117
+exp: 117
+doBlock 119
+cycle: 119
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0]
+factor: 122
+term: 122
+exp: 122
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0]
+factor: 122
+term: 122
+exp: 122
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2]
+factor: 123
+term: 123
+exp: 123
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0]
+factor: 123
+term: 123
+exp: 123
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4]
+factor: 124
+term: 124
+exp: 124
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2]
+factor: 124
+term: 124
+exp: 124
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1]
+factor: 131
+term: 131
+exp: 131
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2]
+factor: 131
+term: 131
+exp: 131
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2]
+factor: 132
+term: 132
+exp: 132
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4]
+factor: 132
+term: 132
+exp: 132
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4]
+factor: 133
+term: 133
+exp: 133
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5]
+factor: 133
+term: 133
+exp: 133
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5]
+factor: 140
+term: 140
+exp: 140
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2]
+factor: 148
+term: 148
+exp: 148
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5]
+factor: 149
+term: 149
+exp: 149
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5]
+factor: 150
+term: 150
+exp: 150
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6]
+factor: 152
+term: 152
+exp: 152
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5]
+factor: 154
+term: 154
+exp: 154
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9]
+factor: 155
+term: 155
+exp: 155
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9]
+factor: 156
+term: 156
+exp: 156
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10]
+factor: 158
+term: 158
+exp: 158
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1]
+factor: 160
+term: 160
+exp: 160
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2]
+factor: 161
+term: 161
+exp: 161
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5]
+factor: 163
+term: 163
+exp: 163
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10]
+factor: 165
+term: 165
+exp: 165
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15]
+factor: 167
+term: 167
+exp: 167
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15, 16]
+factor: 169
+term: 169
+exp: 169
+OPERAND STACK = [2, 2, 9, 5, 4, 2, 5, 2, 4, 2, 0, 'text', 1, 'sum', 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15, 16, 17]
+factor: 171
+term: 171
+exp: 171
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2003,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2000,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2000,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+light:
+	id: 8,
+	name: light,
+	type: 0
+	VAR - numberOne:
+		id: 2000,
+		name: numberOne,
+		type: 2,
+		value: None
+		---------
+	VAR - xpos:
+		id: 2001,
+		name: xpos,
+		type: 2,
+		value: None
+		---------
+	VAR - ypos:
+		id: 2002,
+		name: ypos,
+		type: 2,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2001,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2000,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3000,
+		name: z,
+		type: 3,
+		value: None
+		---------
+Successful

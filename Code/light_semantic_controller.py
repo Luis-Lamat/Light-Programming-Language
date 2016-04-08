@@ -213,8 +213,8 @@ class SemanticCube(object):
 		pp.pprint(cls.cube)
 
 class SemanticInfo:
-	#void, boolean, int, decimal, string, fraction, point, line, triangle, square, rectangle, polygon, star, circle
-	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000]
+	#void, boolean, int, decimal, string,, point, line, triangle, square, rectangle, polygon, star, circle
+	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000]
 
 	__shared_state = {}
 	def __init__(cls):
@@ -227,15 +227,17 @@ class SemanticInfo:
 
 	@classmethod
 	def reset_var_ids(cls):
+
 		cls.current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 
-							  9000, 10000, 11000, 12000, 13000]
+							  9000, 10000, 11000, 12000]
 
 ################################################################################
 # Filling out the SemanticCube matrix ##########################################
 ################################################################################
 
 arim_ops = ['+', '-', '*', '/']
-num_types = ['int', 'decimal', 'fraction']
+cond_ops = ['<', '>', '<=', '>=', '==', '!=', 'and', 'or']
+num_types = ['int', 'decimal']
 
 for type in num_types:
 	# Setting the matrix diagonals
@@ -244,6 +246,8 @@ for type in num_types:
 	SemanticCube.set_return_value_for('int', arim_ops, type, type)
 	# decimal with anything always returns decimal
 	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
+	# every numerical conditional comparison returns a boolean value
+	SemanticCube.set_return_value_for(type, cond_ops, type, 'boolean')
 
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
 

@@ -17,6 +17,33 @@ type_stack      = Stack()
 # Conditions
 missing_return_stmt = False
 
+# Helper Functions
+def exp_quad_helper(p, op_list):
+	if operator_stack.isEmpty():
+		return
+	op = operator_stack.peek()
+	str_op = inv_op_dict[op]
+	if str_op in op_list:
+		t1 = type_stack.pop()
+		t2 = type_stack.pop()
+		return_type = SemanticCube.cube[op][t1][t2]
+		if return_type == -1:
+			Error.type_mismatch(p.lexer.lineno, t1, t2, str_op)
+		sys.stdout.write("OPERAND STACK INSIDE = ")
+		operand_stack.pprint()
+		o1 = operand_stack.pop()
+		o2 = operand_stack.pop()
+		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
+
+		# Generate Quadruple and push it to the list
+		tmp_quad = Quadruple()
+		tmp_quad.build(op, o2, o1, tmp_var_id)
+		Quadruples.push_quad(tmp_quad)
+		operator_stack.pop()
+		# TODO: push the tmp_var_is to the operand_stack...
+		print("")
+		Quadruples.print_all()
+
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
 
@@ -280,9 +307,9 @@ def p_camera (p):
 ##AND OR ret
 def p_condition (p):
 	'''
-	condition : expresion cond_a
+	condition : expresion quad_helper_and_or cond_a
 	'''
-	print("condition" + str(p.lexer.lineno))
+	print("condition: " + str(p.lexer.lineno))
 
 def p_cond_a(p):
 	'''
@@ -295,12 +322,19 @@ def p_oper_a(p):
 	oper_a : AND
 		| OR
 	'''
+	operator_stack.push(operator_dict[p[1]])
+	sys.stdout.write('OPERATOR STACK = ')
+	operator_stack.pprint()
+
+def p_quad_helper_and_or(p):
+	'quad_helper_and_or : '
+	exp_quad_helper(p, ['and', 'or'])
 
 def p_expresion(p):
 	'''
-	expresion : exp expresion_a
+	expresion : exp quad_helper_cond expresion_a
 	'''
-	print("expresion" + str(p.lexer.lineno))
+	print("expresion: " + str(p.lexer.lineno))
 
 def p_expresion_a(p):
 	'''
@@ -318,10 +352,18 @@ def p_ex_a (p):
 		| OP_LESS_EQUAL
 	'''
 	operator_stack.push(operator_dict[p[1]])
+	sys.stdout.write('OPERATOR STACK = ')
+	operator_stack.pprint()
+
+def p_quad_helper_cond(p):
+	'quad_helper_cond : '
+	sys.stdout.write(">>>>>>>>>>>>>> AGUAS ")
+	operator_stack.pprint()
+	exp_quad_helper(p, ['<', '>', '!=', '==', '>=', '<='])
 
 def p_exp (p):
 	'''
-	exp : term cuad_helper_sum exp_a
+	exp : term quad_helper_sum exp_a
 	'''
 	print("exp: " + str(p.lexer.lineno))
 
@@ -338,34 +380,16 @@ def p_exp_b (p):
 		| OP_MINUS
 	'''
 	operator_stack.push(operator_dict[p[1]])
+	sys.stdout.write('OPERATOR STACK = ')
+	operator_stack.pprint()
 
-def p_cuad_helper_sum(p):
-	'cuad_helper_sum : '
-	if operator_stack.isEmpty():
-		return
-	op = operator_stack.pop()
-	str_op = inv_op_dict[op]
-	if str_op == '+' or str_op == '-':
-		t1 = type_stack.pop()
-		t2 = type_stack.pop()
-		return_type = SemanticCube.cube[op][t1][t2]
-		if return_type == -1:
-			Error.type_mismatch(p.lexer.lineno, t1, t2, str_op)
-		
-		o1 = operand_stack.pop()
-		o2 = operand_stack.pop()
-		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
-
-		# Generate Quadruple and push it to the list
-		tmp_quad = Quadruple()
-		tmp_quad.build(op, o2, o1, tmp_var_id)
-		Quadruples.push_quad(tmp_quad)
-		Quadruples.print_all()
-
+def p_quad_helper_sum(p):
+	'quad_helper_sum : '
+	exp_quad_helper(p, ['+', '-'])
 
 def p_term (p):
 	'''
-	term : factor term_a
+	term : factor quad_helper_mult term_a
 	'''
 	print("term: " + str(p.lexer.lineno))
 
@@ -380,10 +404,16 @@ def p_term_b (p):
 		| OP_DIVISION
 	'''
 	operator_stack.push(operator_dict[p[1]])
+	sys.stdout.write('OPERATOR STACK = ')
+	operator_stack.pprint()
+
+def p_quad_helper_mult(p):
+	'quad_helper_mult : '
+	exp_quad_helper(p, ['*', '/'])
 
 def p_factor (p):
 	'''
-	factor : SEP_LPAR condition SEP_RPAR
+	factor : SEP_LPAR quad_push_lpar condition SEP_RPAR quad_pop_lpar
 		| var_cte
 	'''
 	print("factor: " + str(p.lexer.lineno))
@@ -394,26 +424,40 @@ def p_factor (p):
 # 		| epsilon
 # 	'''
 
+def p_quad_push_lpar(p):
+	'quad_push_lpar : '
+	operator_stack.push(operator_dict[p[-1]])
+	sys.stdout.write('OPERATOR STACK = ')
+	operator_stack.pprint()
+
+def p_quad_pop_lpar(p):
+	'quad_pop_lpar : '
+	operator_stack.pop()
+
 def p_var_cte(p):
 	'''
-	var_cte : VAR_IDENTIFIER
-		| VAR_INT
-		| VAR_DECIMAL
+	var_cte : VAR_IDENTIFIER push_id
+		| VAR_INT push_num
+		| VAR_DECIMAL push_num
 	'''
-	# Code to push the correct VAR type to the type_stack
-	try:
-		num = eval(p[1])
-		if (isinstance(num, (int, long))):
-			type_stack.push(type_dict['int'])
-		elif (isinstance(num, (float))):
-			type_stack.push(type_dict['decimal'])
-		operand_stack.push(num)
 
-	# Will get called when eval func cannot parse string
-	except:
-		func = FunctionTable.function_dict[function_stack.peek()]
-		type_stack.push(func.vars[p[1]].type)
-		operand_stack.push(func.vars[p[1]].name)
+def p_push_id(p):
+	'push_id : '
+	func = FunctionTable.function_dict[function_stack.peek()]
+	type_stack.push(func.vars[p[-1]].type)
+	operand_stack.push(func.vars[p[-1]].name)
+	sys.stdout.write('OPERAND STACK = ')
+	operand_stack.pprint()	
+
+def p_push_num(p):
+	'push_num : '
+	num = eval(p[-1])
+	if (isinstance(num, (int, long))):
+		type_stack.push(type_dict['int'])
+	elif (isinstance(num, (float))):
+		type_stack.push(type_dict['decimal'])
+	operand_stack.push(num)
+	sys.stdout.write('OPERAND STACK = ')
 	operand_stack.pprint()
 
 def p_increment (p):
@@ -653,8 +697,6 @@ def p_print_a (p):
 		| VAR_IDENTIFIER
 	'''
 	
-
-
 def p_figure_creations (p):
 	'''
 	figure_creations : VAR VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
