@@ -53,5 +53,7 @@ class Quadruples(object):
 	@classmethod
 	def print_all(cls):
 		print("Quads ===============================")
-		print([x.get_list() for x in cls.quad_list])
+		l = [x.get_list() for x in cls.quad_list]
+		for e in l:
+			print e
 		pass

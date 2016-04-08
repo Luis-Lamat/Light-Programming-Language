@@ -249,6 +249,7 @@ class SemanticInfo:
 arim_ops = ['+', '-', '*', '/']
 cond_ops = ['<', '>', '<=', '>=', '==', '!=', 'and', 'or']
 num_types = ['int', 'decimal']
+prim_types = num_types + ['boolean']
 
 for type in num_types:
 	# Setting the matrix diagonals
@@ -257,8 +258,10 @@ for type in num_types:
 	SemanticCube.set_return_value_for('int', arim_ops, type, type)
 	# decimal with anything always returns decimal
 	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
-	# every numerical conditional comparison returns a boolean value
-	SemanticCube.set_return_value_for(type, cond_ops, type, 'boolean')
+
+	for type2 in prim_types:
+		# every numerical conditional comparison returns a boolean value
+		SemanticCube.set_return_value_for(type, cond_ops, type2, 'boolean')
 
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
-
+SemanticCube.set_return_value_for('boolean', cond_ops, 'boolean', 'boolean')

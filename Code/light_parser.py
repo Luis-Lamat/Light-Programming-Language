@@ -40,8 +40,6 @@ def exp_quad_helper(p, op_list):
 		return_type = SemanticCube.cube[op][t1][t2]
 		if return_type == -1:
 			Error.type_mismatch(p.lexer.lineno, t1, t2, str_op)
-		sys.stdout.write("OPERAND STACK INSIDE = ")
-		operand_stack.pprint()
 		o1 = operand_stack.pop()
 		o2 = operand_stack.pop()
 		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
@@ -51,9 +49,10 @@ def exp_quad_helper(p, op_list):
 		tmp_quad.build(op, o2, o1, tmp_var_id)
 		Quadruples.push_quad(tmp_quad)
 		operator_stack.pop()
-		# TODO: push the tmp_var_is to the operand_stack...
-		print("")
-		Quadruples.print_all()
+
+		# push the tmp_var_id and the return type to stack
+		operand_stack.push(tmp_var_id)
+		type_stack.push(return_type)
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -65,6 +64,7 @@ def p_program (p):
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
+	Quadruples.print_all()
 
 def p_pr_a (p):
 	'''
@@ -146,7 +146,7 @@ def p_add_return_val (p):
 	'''
 	add_return_val : epsilon
 	'''
-	if (p[1] == "returns"):
+	if (p[-1] == "returns"):
 		missing_return_stmt = True
 	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
 
@@ -305,7 +305,7 @@ def p_for_var_cte(p):
 		| VAR_INT
 		| VAR_DECIMAL
 	'''
-def p_verift_variable(p):
+def p_verify_variable(p):
 	'''
 	verify_variable : epsilon
 	'''
@@ -377,8 +377,6 @@ def p_oper_a(p):
 		| OR
 	'''
 	operator_stack.push(operator_dict[p[1]])
-	sys.stdout.write('OPERATOR STACK = ')
-	operator_stack.pprint()
 
 def p_quad_helper_and_or(p):
 	'quad_helper_and_or : '
@@ -392,7 +390,7 @@ def p_expresion(p):
 
 def p_expresion_a(p):
 	'''
-	expresion_a : ex_a exp
+	expresion_a : ex_a expresion
 		| epsilon
 	'''
 
@@ -406,13 +404,9 @@ def p_ex_a (p):
 		| OP_LESS_EQUAL
 	'''
 	operator_stack.push(operator_dict[p[1]])
-	sys.stdout.write('OPERATOR STACK = ')
-	operator_stack.pprint()
 
 def p_quad_helper_cond(p):
 	'quad_helper_cond : '
-	sys.stdout.write(">>>>>>>>>>>>>> AGUAS ")
-	operator_stack.pprint()
 	exp_quad_helper(p, ['<', '>', '!=', '==', '>=', '<='])
 
 def p_exp (p):
@@ -434,8 +428,6 @@ def p_exp_b (p):
 		| OP_MINUS
 	'''
 	operator_stack.push(operator_dict[p[1]])
-	sys.stdout.write('OPERATOR STACK = ')
-	operator_stack.pprint()
 
 def p_quad_helper_sum(p):
 	'quad_helper_sum : '
@@ -458,8 +450,6 @@ def p_term_b (p):
 		| OP_DIVISION
 	'''
 	operator_stack.push(operator_dict[p[1]])
-	sys.stdout.write('OPERATOR STACK = ')
-	operator_stack.pprint()
 
 def p_quad_helper_mult(p):
 	'quad_helper_mult : '
@@ -481,8 +471,6 @@ def p_factor (p):
 def p_quad_push_lpar(p):
 	'quad_push_lpar : '
 	operator_stack.push(operator_dict[p[-1]])
-	sys.stdout.write('OPERATOR STACK = ')
-	operator_stack.pprint()
 
 def p_quad_pop_lpar(p):
 	'quad_pop_lpar : '
@@ -491,23 +479,9 @@ def p_quad_pop_lpar(p):
 def p_var_cte(p):
 	'''
 	var_cte : VAR_IDENTIFIER verify_variable push_id
-		| VAR_INT
-		| VAR_DECIMAL
+		| VAR_INT push_num
+		| VAR_DECIMAL push_num
 	'''
-	# Code to push the correct VAR type to the type_stack
-	try:
-		num = eval(p[1])
-		if (isinstance(num, (int, long))):
-			type_stack.push(type_dict['int'])
-		elif (isinstance(num, (float))):
-			type_stack.push(type_dict['decimal'])
-		operand_stack.push(num)
-
-	# Will get called when eval func cannot parse string
-	except:
-		func = FunctionTable.function_dict[function_stack.peek()]
-		type_stack.push(func.vars[p[1]].type)
-		operand_stack.push(func.vars[p[1]].name)
 
 def p_push_id(p):
 
@@ -515,8 +489,6 @@ def p_push_id(p):
 	func = FunctionTable.function_dict[function_stack.peek()]
 	type_stack.push(func.vars[p[-2]].type)
 	operand_stack.push(func.vars[p[-2]].name)
-	sys.stdout.write('OPERAND STACK = ')
-	operand_stack.pprint()	
 
 def p_push_num(p):
 	'push_num : '
@@ -526,8 +498,6 @@ def p_push_num(p):
 	elif (isinstance(num, (float))):
 		type_stack.push(type_dict['decimal'])
 	operand_stack.push(num)
-	sys.stdout.write('OPERAND STACK = ')
-	operand_stack.pprint()
 
 def p_increment (p):
 	'''
