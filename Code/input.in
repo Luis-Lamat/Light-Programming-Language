@@ -12,6 +12,7 @@ program lolz {
         # Outputs correct type mismatch error
         # var a:string
         # a = a + 8
+        # a = "LOL" #=> ERROR
 
     	if( 2 <  3 ) do
     		print("Truestuff")

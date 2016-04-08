@@ -7,20 +7,20 @@ type_dict = {
     'int'       : 2,
     'decimal'   : 3,
     'string'    : 4,
-    'fraction'  : 5,
 
     # Figure types
-    'point'     : 6,
-    'line'      : 7,
-    'triangle'  : 8,
-    'square'    : 9,
-    'rectangle' : 10,
-    'polygon'   : 11,
-    'star'      : 12,
-    'circle'    : 13 
+    'point'     : 5,
+    'line'      : 6,
+    'triangle'  : 7,
+    'square'    : 8,
+    'rectangle' : 9,
+    'polygon'   : 10,
+    'star'      : 11,
+    'circle'    : 12 
 }
 inv_type_dict = {v: k for k, v in type_dict.items()}
 
+# WARNING: each time you add an op below, you create a 13x13 matrix of '-1'
 operator_dict = {
     '+'  : 0,
     '-'  : 1,
@@ -31,7 +31,11 @@ operator_dict = {
     '<=' : 6,
     '>=' : 7,
     '==' : 8,
-    '!=' : 9
+    '!=' : 9,
+    'and': 10,
+    'or' : 11,
+    '('  : 12,
+    ')'  : 13
 }
 inv_op_dict = {v: k for k, v in operator_dict.items()}
 
