@@ -6,13 +6,24 @@ from quadruple import *
 tokens = lexer.tokens
 function_stack = Stack()
 tmp_var = Var()
+
 tmp_function = Function()
 function_stack.push('program')
+
+#TODO: Chech what data structure is the best for this case
+function_queue = Queue()
+
+#Default functions in queue
+function_queue.enqueue('program')
+function_queue.enqueue('window_size')
+function_queue.enqueue('coordinates')
 
 # Quads global structures
 operand_stack   = Stack()
 operator_stack  = Stack()
 type_stack      = Stack()
+
+
 
 # Conditions
 missing_return_stmt = False
@@ -156,6 +167,7 @@ def p_opt_exp(p):
 def p_new_func_scope(p):
 	'new_func_scope :'
 	function_stack.push(p[-1])
+	function_queue.enqueue(p[-1])
 	tmp_function.name = p[-1]
 	tmp_function.type = type_dict['void']
 	FunctionTable.add_function(tmp_function)
@@ -177,8 +189,19 @@ def p_param_a (p):
 
 def p_function_call(p):
 	'''
-	function_call : VAR_IDENTIFIER test SEP_LPAR call_parameters SEP_RPAR
+	function_call : VAR_IDENTIFIER verify_function_call test SEP_LPAR call_parameters SEP_RPAR
 	'''
+
+def p_verify_function_call(p):
+	'''
+	verify_function_call : epsilon
+	'''
+	print("Function queue")
+	function_queue.pprint()
+	if not function_queue.inQueue(p[-1]):
+		Error.function_not_defined(p[-1],p.lexer.lineno)
+
+
 def p_test(p):
 	'''
 	test : 
@@ -481,10 +504,11 @@ def p_var_cte(p):
 		operand_stack.push(func.vars[p[1]].name)
 
 def p_push_id(p):
+
 	'push_id : '
 	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-1]].type)
-	operand_stack.push(func.vars[p[-1]].name)
+	type_stack.push(func.vars[p[-2]].type)
+	operand_stack.push(func.vars[p[-2]].name)
 	sys.stdout.write('OPERAND STACK = ')
 	operand_stack.pprint()	
 

@@ -3,54 +3,6 @@
 from error import * # Includes light_data_structures.py
 import pprint
 
-# INITIALIZE DICTIONARIES
-type_dict = {
-	# Primitive Types
-	'void'		: 0,
-	'boolean'	: 1,
-	'int'		: 2,
-	'decimal'	: 3,
-	'string'	: 4,
-	'fraction'	: 5,
-
-	# Figure types
-	'point'	 : 6,
-	'line'	  : 7,
-	'triangle'  : 8,
-	'square'	: 9,
-	'rectangle' : 10,
-	'polygon'   : 11,
-	'star'	  : 12,
-	'circle'	: 13 
-}
-
-operator_dict = {
-	'+' 	: 0,
-	'-' 	: 1,
-	'*' 	: 2,
-	'/' 	: 3
-}
-
-initializer_dict = {
-	# Primitive Types
-	0	:	"", 		#void
-	1	:	False,		#boolean
-	2	:	0,			#int
-	3	:	0.0,		#decimal
-	4	:	"", 		#string
-	5	:	"",			#decimal, missing probably a fraction class
-
-	#figure types, missing class 
-	6	:	"",			#point
-	7	:	"",			#line
-	8	:	"",			#triangle
-	9	:	"",			#square
-	10	:	"",			#rectangle
-	11	:	"",			#polygon
-	12	:	"",			#star
-	13	:	"", 		#circle
-}
-
 pp = pprint.PrettyPrinter(indent=4)
 
 # DEFINE CLASSES
@@ -289,11 +241,6 @@ class SemanticInfo:
 
 		cls.current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 
 							  9000, 10000, 11000, 12000]
-
-	@staticmethod
-	def variable_not_defined(name, line):
-		print "Semanic Error: Variable '" + name +"' not defined in line: " + str(line)
-		sys.exit()
 
 ################################################################################
 # Filling out the SemanticCube matrix ##########################################

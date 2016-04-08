@@ -82,6 +82,9 @@ class Stack(object):
         return len(self.values)
     def pprint(self):
         print self.values
+    def inStack(self, var_name):
+    	return var_name in self.values
+
 
 class Queue(object):
     def __init__(self):
@@ -99,3 +102,7 @@ class Queue(object):
         return self.values[len(self.values)-1]
     def size(self):
         return len(self.values)
+    def pprint(self):
+        print self.values
+    def inQueue(self, var_name):
+    	return var_name in self.values
