@@ -3,7 +3,6 @@
 from error import * # Includes light_data_structures.py
 import pprint
 
-<<<<<<< HEAD
 # INITIALIZE DICTIONARIES
 type_dict = {
 	# Primitive Types
@@ -51,9 +50,8 @@ initializer_dict = {
 	12	:	"",			#star
 	13	:	"", 		#circle
 }
-=======
+
 pp = pprint.PrettyPrinter(indent=4)
->>>>>>> origin/basic_semantics
 
 # DEFINE CLASSES
 class Var:
