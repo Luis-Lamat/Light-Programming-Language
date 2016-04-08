@@ -66,11 +66,15 @@ program lolz {
         var sum:int = 0
         var index:int = 0
         for (sum = first; index < sum; index += 1) do
+        	if(sum > 2) do
+        		print("Greater")
+        	end
             sum = 23 + index
         	sum += index
         	sum = sum + index
         end
-        print("true") 
+        print("true")
+        print(sum)
         return sum
     }
 

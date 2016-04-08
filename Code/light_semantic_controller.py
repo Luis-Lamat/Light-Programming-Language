@@ -16,14 +16,14 @@ type_dict = {
 	'fraction'	: 5,
 
 	# Figure types
-    'point'     : 6,
-    'line'      : 7,
-    'triangle'  : 8,
-    'square'    : 9,
-    'rectangle' : 10,
-    'polygon'   : 11,
-    'star'      : 12,
-    'circle'    : 13 
+	'point'	 : 6,
+	'line'	  : 7,
+	'triangle'  : 8,
+	'square'	: 9,
+	'rectangle' : 10,
+	'polygon'   : 11,
+	'star'	  : 12,
+	'circle'	: 13 
 }
 
 operator_dict = {
@@ -128,8 +128,6 @@ class Array:
  	def print_var(self):
  		self.print_arr()
 
- 	
-
 
 class Function:
 	def __init__(self):
@@ -173,6 +171,11 @@ class Function:
 		else:
 			Error.already_defined('variable array', arr.name)
 
+	def var_in_func(self, name):
+		if name in self.vars.keys():
+			return True
+		else :
+			return False
 
 	def print_all(self):
 		print "\tid: " + str(self.id) + ",\n\tname: " + self.name  + ",\n\ttype: " + str(self.type)
@@ -216,6 +219,14 @@ class FunctionTable:
 	@classmethod
 	def add_var_to_func(cls, function_name, var_obj):
 		cls.function_dict[function_name].add_var(var_obj)
+
+	@classmethod
+	def verify_var_in_func(cls, function_name, var_name):
+		return cls.function_dict[function_name].var_in_func(var_name) or cls.verift_var_global(var_name)
+
+	@classmethod
+	def verift_var_global(cls, var_name):
+		return cls.function_dict["program"].var_in_func(var_name)
 
 	@classmethod
 	def add_arr_empty_to_func(cls, function_name, arr_obj):
@@ -282,6 +293,11 @@ class Error:
 	@staticmethod
 	def out_of_bounds(name, num):
 		print "Semanic Error: Array '" + name +"' out of bounds at index: " + num
+		sys.exit()
+
+	@staticmethod
+	def variable_not_defined(name, line):
+		print "Semanic Error: Variable '" + name +"' not defined in line: " + str(line)
 		sys.exit()
 
 ################################################################################

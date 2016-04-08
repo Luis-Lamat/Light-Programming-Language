@@ -171,13 +171,13 @@ def p_call_param_a(p):
 
 def p_assignment (p):
 	'''
-	assignment : VAR_IDENTIFIER OP_EQUALS assgn_a 
+	assignment : VAR_IDENTIFIER verify_variable OP_EQUALS assgn_a 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
 
 def p_assgn_a(p):
 	'''
-	assgn_a : VAR_IDENTIFIER
+	assgn_a : VAR_IDENTIFIER verify_variable
 		| exp
 		| function_call
 	 
@@ -215,20 +215,45 @@ def p_for_each_collection(p):
 
 def p_for (p):
 	'''
-	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR
+	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR 
 	'''
 	print("for" + str(p.lexer.lineno))
 
 def p_for_a (p):
 	'''
-	for_a : assignment
+	for_a : for_assignment 
 		| epsilon
 	'''
+
+def p_for_assignment (p) :
+	'''
+	for_assignment : VAR_IDENTIFIER verify_variable OP_EQUALS for_var_cte
+	'''
+
 def p_for_b (p):
 	'''
-	for_b : increment
-		| assignment
+	for_b : for_increment
+		| for_assignment
 	'''
+
+def p_for_increment (p):
+	'''
+	for_increment : VAR_IDENTIFIER verify_variable inc_a for_var_cte
+	'''
+
+def p_for_var_cte(p): 
+	'''
+	for_var_cte : VAR_IDENTIFIER verify_variable
+		| VAR_INT
+		| VAR_DECIMAL
+	'''
+def p_verift_variable(p):
+	'''
+	verify_variable : epsilon
+	'''
+	func = function_stack.peek()
+	if not FunctionTable.verify_var_in_func(func, p[-1]):
+		Error.variable_not_defined(p[-1], p.lexer.lineno)
 
 def p_action (p):
 	'''
@@ -370,7 +395,7 @@ def p_factor (p):
 
 def p_var_cte(p):
 	'''
-	var_cte : VAR_IDENTIFIER
+	var_cte : VAR_IDENTIFIER verify_variable
 		| VAR_INT
 		| VAR_DECIMAL
 	'''
@@ -391,7 +416,7 @@ def p_var_cte(p):
 
 def p_increment (p):
 	'''
-	increment : VAR_IDENTIFIER inc_a exp
+	increment : VAR_IDENTIFIER verify_variable inc_a exp
 	'''
 
 def p_inc_a (p):
@@ -623,7 +648,7 @@ def p_print_a (p):
 	print_a : exp
 		| function_call
 		| VAR_STRING
-		| VAR_IDENTIFIER
+		| VAR_IDENTIFIER verify_variable
 	'''
 	
 
