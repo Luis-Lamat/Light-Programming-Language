@@ -247,7 +247,8 @@ class SemanticInfo:
 ################################################################################
 
 arim_ops = ['+', '-', '*', '/']
-cond_ops = ['<', '>', '<=', '>=', '==', '!=', 'and', 'or']
+comp_ops = ['<', '>', '<=', '>=', '==', '!=']
+cond_ops = ['and', 'or']
 num_types = ['int', 'decimal']
 prim_types = num_types + ['boolean']
 
@@ -261,7 +262,7 @@ for type in num_types:
 
 	for type2 in prim_types:
 		# every numerical conditional comparison returns a boolean value
-		SemanticCube.set_return_value_for(type, cond_ops, type2, 'boolean')
+		SemanticCube.set_return_value_for(type, comp_ops, type2, 'boolean')
 
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
 SemanticCube.set_return_value_for('boolean', cond_ops, 'boolean', 'boolean')
