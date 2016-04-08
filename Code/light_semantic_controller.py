@@ -1,10 +1,9 @@
-#Semantic Controller
-from light_datastructures import *
-import sys
-import pprint
-from data_structures import *
-pp = pprint.PrettyPrinter(indent=4)
+# Semantic Controller
 
+from error import * # Includes light_data_structures.py
+import pprint
+
+<<<<<<< HEAD
 # INITIALIZE DICTIONARIES
 type_dict = {
 	# Primitive Types
@@ -52,6 +51,9 @@ initializer_dict = {
 	12	:	"",			#star
 	13	:	"", 		#circle
 }
+=======
+pp = pprint.PrettyPrinter(indent=4)
+>>>>>>> origin/basic_semantics
 
 # DEFINE CLASSES
 class Var:
@@ -149,7 +151,7 @@ class Function:
 
 	def add_var(self, var):
 		if var.name not in self.vars:
-			tmp_var = Var()
+			tmp_var = Var() # TODO: dafuq with this????
 			tmp_var.init_var(SemanticInfo.get_next_var_id(var.type), var.name, var.type, var.value)
 			self.vars[var.name] = tmp_var
 		else:
@@ -276,24 +278,18 @@ class SemanticInfo:
 	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000]
 
 	__shared_state = {}
-	def __init__(self):
-		self.__dict__ = self.__shared_state
+	def __init__(cls):
+		cls.__dict__ = cls.__shared_state
 
 	@classmethod
-	def get_next_var_id(self, type):
-		self.current_var_id[type] = self.current_var_id[type] + 1
-		return self.current_var_id[type] - 1
+	def get_next_var_id(cls, type):
+		cls.current_var_id[type] = cls.current_var_id[type] + 1
+		return cls.current_var_id[type] - 1
 
-class Error:
-	@staticmethod
-	def already_defined(type, name):
-		print "Semantic Error: " + type + " '" + name + "' already defined"
-		sys.exit()
-
-	@staticmethod
-	def out_of_bounds(name, num):
-		print "Semanic Error: Array '" + name +"' out of bounds at index: " + num
-		sys.exit()
+	@classmethod
+	def reset_var_ids(cls):
+		cls.current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 
+							  9000, 10000, 11000, 12000, 13000]
 
 	@staticmethod
 	def variable_not_defined(name, line):
@@ -316,6 +312,4 @@ for type in num_types:
 	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
 
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
-
-SemanticCube.print_cube()
 

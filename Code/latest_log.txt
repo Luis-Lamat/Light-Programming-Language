@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \n[Thu Apr  7 22:31:38 CDT 2016] =========================================== 
 [   [   [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
         [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -578,3 +579,14 @@ expresion68
 condition68
 for68
 Semanic Error: Variable 'sum2' not defined in line: 69
+=======
+
+[Tue Apr  5 15:49:02 CDT 2016] =========================================== 
+['a']
+factor: 13
+term: 13
+['a', 8]
+factor: 15
+term: 15
+Type Mismatch (line 13): expresion 'int + string' is invalid
+>>>>>>> origin/basic_semantics

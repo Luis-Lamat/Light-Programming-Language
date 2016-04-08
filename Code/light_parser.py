@@ -8,7 +8,6 @@ function_stack = Stack()
 tmp_var = Var()
 tmp_function = Function()
 function_stack.push('program')
-tmp_quad = Quadruple()
 
 # Quads global structures
 operand_stack   = Stack()
@@ -26,6 +25,7 @@ def p_program (p):
 	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
 
 def p_pr_a (p):
@@ -45,6 +45,7 @@ def p_main_func (p):
 	main_func : LIGHT_TOKEN new_func_scope SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 
 def p_type (p):
 	'''
@@ -90,6 +91,7 @@ def p_function (p):
 	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	SemanticInfo.reset_var_ids()
 	missing_return_stmt = False # resetting var
 
 def p_func_a (p):
@@ -340,11 +342,11 @@ def p_ex_a (p):
 		| OP_GREATER_EQUAL
 		| OP_LESS_EQUAL
 	'''
-	operator_stack.push(p[1])
+	operator_stack.push(operator_dict[p[1]])
 
 def p_exp (p):
 	'''
-	exp : term exp_a
+	exp : term cuad_helper_sum exp_a
 	'''
 	print("exp: " + str(p.lexer.lineno))
 
@@ -360,7 +362,31 @@ def p_exp_b (p):
 	exp_b : OP_PLUS
 		| OP_MINUS
 	'''
-	operator_stack.push(p[1])
+	operator_stack.push(operator_dict[p[1]])
+
+def p_cuad_helper_sum(p):
+	'cuad_helper_sum : '
+	if operator_stack.isEmpty():
+		return
+	op = operator_stack.pop()
+	str_op = inv_op_dict[op]
+	if str_op == '+' or str_op == '-':
+		t1 = type_stack.pop()
+		t2 = type_stack.pop()
+		return_type = SemanticCube.cube[op][t1][t2]
+		if return_type == -1:
+			Error.type_mismatch(p.lexer.lineno, t1, t2, str_op)
+		
+		o1 = operand_stack.pop()
+		o2 = operand_stack.pop()
+		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
+
+		# Generate Quadruple and push it to the list
+		tmp_quad = Quadruple()
+		tmp_quad.build(op, o2, o1, tmp_var_id)
+		Quadruples.push_quad(tmp_quad)
+		Quadruples.print_all()
+
 
 def p_term (p):
 	'''
@@ -378,7 +404,7 @@ def p_term_b (p):
 	term_b : OP_TIMES
 		| OP_DIVISION
 	'''
-	operator_stack.push(p[1])
+	operator_stack.push(operator_dict[p[1]])
 
 def p_factor (p):
 	'''
@@ -400,19 +426,20 @@ def p_var_cte(p):
 		| VAR_DECIMAL
 	'''
 	# Code to push the correct VAR type to the type_stack
-	print p[1] + ' ========================='
 	try:
-		tok_type = eval(p[1])
-		print str(tok_type) + ' =========='
-		if (isinstance(tok_type, (int, long))):
+		num = eval(p[1])
+		if (isinstance(num, (int, long))):
 			type_stack.push(type_dict['int'])
-		elif (isinstance(tok_type, (float))):
+		elif (isinstance(num, (float))):
 			type_stack.push(type_dict['decimal'])
-	except Exception as e:
-		FunctionTable.print_all()
+		operand_stack.push(num)
+
+	# Will get called when eval func cannot parse string
+	except:
 		func = FunctionTable.function_dict[function_stack.peek()]
 		type_stack.push(func.vars[p[1]].type)
-	type_stack.pprint()
+		operand_stack.push(func.vars[p[1]].name)
+	operand_stack.pprint()
 
 def p_increment (p):
 	'''

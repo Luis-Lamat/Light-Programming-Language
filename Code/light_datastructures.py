@@ -1,4 +1,62 @@
 
+# INITIALIZE DICTIONARIES
+type_dict = {
+    # Primitive Types
+    'void'      : 0,
+    'boolean'   : 1,
+    'int'       : 2,
+    'decimal'   : 3,
+    'string'    : 4,
+    'fraction'  : 5,
+
+    # Figure types
+    'point'     : 6,
+    'line'      : 7,
+    'triangle'  : 8,
+    'square'    : 9,
+    'rectangle' : 10,
+    'polygon'   : 11,
+    'star'      : 12,
+    'circle'    : 13 
+}
+inv_type_dict = {v: k for k, v in type_dict.items()}
+
+operator_dict = {
+    '+'  : 0,
+    '-'  : 1,
+    '*'  : 2,
+    '/'  : 3,
+    '<'  : 4,
+    '>'  : 5,
+    '<=' : 6,
+    '>=' : 7,
+    '==' : 8,
+    '!=' : 9
+}
+inv_op_dict = {v: k for k, v in operator_dict.items()}
+
+initializer_dict = {
+    # Primitive Types
+    0   :   "",         #void
+    1   :   False,      #boolean
+    2   :   0,          #int
+    3   :   0.0,        #decimal
+    4   :   "",         #string
+    5   :   "",         #decimal, missing probably a fraction class
+
+    #figure types, missing class 
+    6   :   "",         #point
+    7   :   "",         #line
+    8   :   "",         #triangle
+    9   :   "",         #square
+    10  :   "",         #rectangle
+    11  :   "",         #polygon
+    12  :   "",         #star
+    13  :   "",         #circle
+}
+
+# Helper Classes
+
 class Stack(object):
     def __init__(self):
         self.values = []
@@ -37,147 +95,3 @@ class Queue(object):
         return self.values[len(self.values)-1]
     def size(self):
         return len(self.values)
-
-class HashTable(object):
-    def __init__(self, size, hashValue):
-        self.values = [[] for x in range(size)]
-        self.hashValue = hashValue
-        self.keyList = []
-
-    def hashValueLocation(self, key):
-        if(isinstance(key, str)):
-            sum = 0
-            for x in key:
-                sum += ord(x)
-            return sum % self.hashValue
-        else:
-            return key % self.hashValue
-
-    def containsKey(self, key):
-        if(self.values[self.hashValueLocation(key)] == []):
-            return False
-        else:
-            for x in self.values[self.hashValueLocation(key)]:
-                if (x[0] == key):
-                    return True
-            return False
-
-
-    def put(self, key, value):
-        self.values[self.hashValueLocation(key)].append((key, value))
-        self.keyList.append(key)
-
-    def get(self, key):
-        if(self.values[self.hashValueLocation(key)] == []):
-            return []
-        else:
-            for x in self.values[self.hashValueLocation(key)]:
-                if (x[0] == key):
-                    return x[1]
-            return []
-
-    def isEmpty(self):
-        if len(self.keyList) > 0:
-            return False
-        else:
-            return True
-
-    def getKeys(self):
-        return self.keyList
-
-    def remove(self, key):
-        if(self.values[self.hashValueLocation(key)] == []):
-            return False
-        else:
-            for x in self.values[self.hashValueLocation(key)]:
-                if (x[0] == key):
-                    self.values[self.hashValueLocation(key)].remove((x[0], x[1]))
-                    return True
-            return False
-
-    def size(self):
-        return len(self.keyList)
-
-    def printTable(self):
-        for x in self.values:
-            print("[]")
-            for y in x:
-                print(y)
-
-
-
-# table = [[] for x in range(10)]
-# print(table)
-
-# myHashtable = HashTable(20,11)
-# print(myHashtable.isEmpty())
-# myHashtable.put("hello", 25)
-# myHashtable.put("bye", 45)
-# myHashtable.put("a", 2)
-# myHashtable.put("b", 3)
-# myHashtable.put("k", 4)
-# myHashtable.put("i", 5)
-# myHashtable.put("f", 6)
-# myHashtable.put("e", 7)
-# # colision a and l
-# myHashtable.put("l", 8)
-
-
-
-# print("PrintTable")
-# myHashtable.printTable()
-
-# print(" ")
-# print(" ")
-
-# print(myHashtable.get("l"))
-# print(myHashtable.containsKey("a"))
-# print(myHashtable.containsKey("z"))
-# print(myHashtable.isEmpty())
-# print(myHashtable.size())
-# print(myHashtable.getKeys())
-
-# print(" ")
-# print(" ")
-
-# mylist  = []
-# mylist.append(("one", 1))
-# mylist.append(("two", 2))
-# mylist.append(("thee", 3))
-# print(mylist)
-
-# for x in mylist:
-#     if(x[0] == "one"):
-#         print("yesOne")
-#         print(x)
-#     else:
-#         print("noOne")
-#         print(x)
-
-# print("")
-# print("Stack")
-# mystack = Stack()
-# mystack.push(3)
-# mystack.push(2)
-# mystack.push(1)
-# print mystack.isEmpty()
-# print mystack.pop()
-# print mystack.pop()
-# print mystack.peek()
-# print mystack.pop()
-# print mystack.pop()
-# print mystack.isEmpty()
-
-# print("")
-# print("Queue")
-# myqueue = Queue()
-# myqueue.enqueue(1)
-# myqueue.enqueue(2)
-# myqueue.enqueue(3)
-# print myqueue.isEmpty()
-# print(myqueue.dequeue())
-# print(myqueue.dequeue())
-# print(myqueue.isEmpty())
-# print(myqueue.dequeue())
-# print(myqueue.dequeue())
-# print(myqueue.isEmpty())
