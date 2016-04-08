@@ -99,7 +99,6 @@ def p_primitive_type (p):
 				| INT 
 				| DECIMAL 
 				| STRING 
-				| FRACTION
 	'''
 	p[0] = p[1]
 	tmp_var.type = type_dict[p[1]]
@@ -139,12 +138,18 @@ def p_func_a (p):
 	'''
 def p_func_b (p):
 	'''
-	func_b : RETURNS primitive_type
+	func_b : RETURNS add_return_val primitive_type
 		| epsilon
+	'''
+
+def p_add_return_val (p):
+	'''
+	add_return_val : epsilon
 	'''
 	if (p[1] == "returns"):
 		missing_return_stmt = True
 	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
+
 
 def p_func_c (p):
 	'''
@@ -231,6 +236,7 @@ def p_assgn_a(p):
 	'''
 	assgn_a : VAR_IDENTIFIER verify_variable
 		| exp
+		| VAR_STRING
 		| function_call
 	 
 	'''
@@ -737,7 +743,6 @@ def p_cnt_prim (p):
 	'''
 	cnt_prim : VAR_INT
 		| VAR_DECIMAL
-		| VAR_FRACTION
 		| VAR_STRING
 	'''
 

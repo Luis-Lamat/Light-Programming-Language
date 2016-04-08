@@ -9,10 +9,10 @@ program lolz {
 
   function verifyAndOr(){
 
-        # Outputs correct type mismatch error
-        # var a:string
+        # Outputs NOT correct type mismatch error
+        var a:string
         # a = a + 8
-        # a = "LOL" #=> ERROR
+        a = "LOL" #=> ERROR
 
     	if( 2 <  3 ) do
     		print("Truestuff")
@@ -40,6 +40,10 @@ program lolz {
 
         print("This")
         return 0
+    }
+    function noRetArg(num: int){
+        var num2: int
+        print(num2)
     }
 
     function sayText(text: string){
