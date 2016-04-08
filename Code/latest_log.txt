@@ -1,0 +1,9 @@
+\n[Thu Apr  7 23:25:43 CDT 2016] =========================================== 
+Traceback (most recent call last):
+  File "light_parser.py", line 3, in <module>
+    from light_semantic_controller import *
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 314, in <module>
+    SemanticCube.set_return_value_for(type, cond_ops, type, 'boolean')
+  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 258, in set_return_value_for
+    indeces = [operator_dict[x] for x in op_or_list] # cool but no need
+KeyError: '<'

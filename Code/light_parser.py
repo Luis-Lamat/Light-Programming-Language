@@ -461,8 +461,7 @@ def p_quad_pop_lpar(p):
 
 def p_var_cte(p):
 	'''
-<<<<<<< HEAD
-	var_cte : VAR_IDENTIFIER verify_variable
+	var_cte : VAR_IDENTIFIER verify_variable push_id
 		| VAR_INT
 		| VAR_DECIMAL
 	'''
@@ -480,11 +479,6 @@ def p_var_cte(p):
 		func = FunctionTable.function_dict[function_stack.peek()]
 		type_stack.push(func.vars[p[1]].type)
 		operand_stack.push(func.vars[p[1]].name)
-=======
-	var_cte : VAR_IDENTIFIER push_id
-		| VAR_INT push_num
-		| VAR_DECIMAL push_num
-	'''
 
 def p_push_id(p):
 	'push_id : '
@@ -503,7 +497,6 @@ def p_push_num(p):
 		type_stack.push(type_dict['decimal'])
 	operand_stack.push(num)
 	sys.stdout.write('OPERAND STACK = ')
->>>>>>> origin/basic_semantics
 	operand_stack.pprint()
 
 def p_increment (p):
