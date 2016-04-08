@@ -1,8 +1,582 @@
-\n[Thu Apr  7 22:34:08 CDT 2016] =========================================== 
-Traceback (most recent call last):
-  File "light_parser.py", line 3, in <module>
-    from light_semantic_controller import *
-  File "/Users/enriqueohernandez/Dropbox/Escuela-/TEC/8 Semestre/Compiladores/Proyecto/Git/Light-Programming-Language/Code/light_semantic_controller.py", line 6
-    <<<<<<< HEAD
-     ^
-SyntaxError: invalid syntax
+\n[Thu Apr  7 22:34:41 CDT 2016] =========================================== 
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There is 1 unused token
+WARNING: Symbol 'var_b' is unreachable
+WARNING: Symbol 'var_a' is unreachable
+Generating LALR tables
+WARNING: 7 shift/reduce conflicts
+WARNING: 13 reduce/reduce conflicts
+WARNING: reduce/reduce conflict in state 264 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable)
+WARNING: rejected rule (print_a -> VAR_IDENTIFIER verify_variable) in state 264
+WARNING: reduce/reduce conflict in state 298 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable)
+WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable) in state 298
+WARNING: Rule (print_a -> VAR_IDENTIFIER verify_variable) is never reduced
+[2]
+factor: 16
+term: 16
+exp: 16
+[2, 3]
+factor: 16
+term: 16
+exp: 16
+expresion16
+condition16
+print 18
+doBlock 20
+conditionBlock 20
+[2, 3, 1]
+factor: 20
+term: 20
+exp: 20
+[2, 3, 1, 2]
+factor: 20
+term: 20
+exp: 20
+expresion20
+[2, 3, 1, 2, 3]
+factor: 20
+[2, 3, 1, 2, 3, 4.8]
+factor: 20
+term: 20
+term: 20
+exp: 20
+expresion20
+condition20
+factor: 20
+term: 20
+exp: 20
+[2, 3, 1, 2, 3, 4.8, 9]
+factor: 20
+term: 20
+exp: 20
+expresion20
+condition20
+factor: 20
+term: 20
+exp: 20
+expresion20
+condition20
+condition20
+print 22
+doBlock 25
+conditionBlock 25
+[2, 3, 1, 2, 3, 4.8, 9, 1]
+factor: 25
+term: 25
+[2, 3, 1, 2, 3, 4.8, 9, 1, 4.0]
+factor: 25
+term: 25
+Quads ===============================
+[[0, 1, 4.0, 3001]]
+exp: 25
+exp: 25
+[2, 3, 1, 2, 3, 4.8, 9, 5]
+factor: 25
+term: 25
+exp: 25
+expresion25
+condition25
+factor: 25
+term: 25
+exp: 25
+expresion25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4]
+factor: 25
+term: 25
+exp: 25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2]
+factor: 25
+term: 25
+exp: 25
+expresion25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4]
+factor: 25
+term: 25
+exp: 25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3]
+factor: 25
+term: 25
+exp: 25
+expresion25
+condition25
+condition25
+factor: 25
+term: 25
+exp: 25
+expresion25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5]
+factor: 25
+term: 25
+exp: 25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2]
+factor: 25
+term: 25
+exp: 25
+expresion25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4]
+factor: 25
+term: 25
+exp: 25
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3]
+factor: 25
+term: 25
+exp: 25
+expresion25
+condition25
+condition25
+condition25
+condition25
+print 27
+doBlock 29
+conditionBlock 29
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1]
+factor: 36
+term: 36
+exp: 36
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2]
+factor: 36
+term: 36
+exp: 36
+expresion36
+condition36
+print 38
+doBlock 40
+conditionBlock 40
+print 41
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0]
+factor: 42
+term: 42
+exp: 42
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text']
+factor: 46
+term: 46
+exp: 46
+print 47
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 'number']
+factor: 49
+term: 49
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 'number', 1]
+factor: 50
+term: 50
+Quads ===============================
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001]]
+exp: 50
+exp: 50
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1]
+factor: 64
+term: 64
+exp: 64
+doBlock 66
+cycle: 66
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>]
+factor: 67
+term: 67
+exp: 67
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index']
+factor: 72
+term: 72
+exp: 72
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>]
+factor: 72
+term: 72
+exp: 72
+expresion72
+condition72
+for72
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>]
+factor: 73
+term: 73
+exp: 73
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2]
+factor: 73
+term: 73
+exp: 73
+expresion73
+condition73
+print 75
+doBlock 76
+conditionBlock 76
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 23]
+factor: 76
+term: 76
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 23, 'index']
+factor: 77
+term: 77
+Quads ===============================
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004]]
+exp: 77
+exp: 77
+ASSIGN A: 77
+assignment: 77
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index']
+factor: 78
+term: 78
+exp: 78
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>]
+factor: 78
+term: 78
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, 'index']
+factor: 79
+term: 79
+Quads ===============================
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004], [0, <built-in function sum>, 'index', 2005]]
+exp: 79
+exp: 79
+ASSIGN A: 79
+assignment: 79
+doBlock 80
+cycle: 80
+print 81
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>]
+factor: 81
+term: 81
+exp: 81
+print 82
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>]
+factor: 83
+term: 83
+exp: 83
+test: 86
+test: 91
+test: 94
+test: 101
+print 104
+test: 104
+print 108
+test: 108
+test: 109
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3]
+factor: 115
+term: 115
+exp: 115
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5]
+factor: 115
+term: 115
+exp: 115
+expresion115
+condition115
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0]
+factor: 117
+term: 117
+exp: 117
+ASSIGN A: 117
+assignment: 117
+doBlock 118
+conditionBlock 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7]
+factor: 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8]
+factor: 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 9]
+factor: 118
+term: 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 9, 9]
+factor: 118
+term: 118
+Quads ===============================
+[[0, 1, 4.0, 3001], [0, 'number', 1, 2001], [0, 23, 'index', 2004], [0, <built-in function sum>, 'index', 2005], [0, 9, 9, 2003]]
+exp: 118
+exp: 118
+expresion118
+condition118
+factor: 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5]
+factor: 118
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2]
+factor: 118
+term: 118
+term: 118
+term: 118
+term: 118
+term: 118
+exp: 118
+expresion118
+condition118
+factor: 119
+term: 119
+exp: 119
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1]
+factor: 120
+term: 120
+exp: 120
+doBlock 122
+cycle: 122
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0]
+factor: 125
+term: 125
+exp: 125
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0]
+factor: 125
+term: 125
+exp: 125
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2]
+factor: 126
+term: 126
+exp: 126
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0]
+factor: 126
+term: 126
+exp: 126
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4]
+factor: 127
+term: 127
+exp: 127
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2]
+factor: 127
+term: 127
+exp: 127
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1]
+factor: 134
+term: 134
+exp: 134
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2]
+factor: 134
+term: 134
+exp: 134
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2]
+factor: 135
+term: 135
+exp: 135
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4]
+factor: 135
+term: 135
+exp: 135
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4]
+factor: 136
+term: 136
+exp: 136
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5]
+factor: 136
+term: 136
+exp: 136
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5]
+factor: 143
+term: 143
+exp: 143
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2]
+factor: 151
+term: 151
+exp: 151
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5]
+factor: 152
+term: 152
+exp: 152
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5]
+factor: 153
+term: 153
+exp: 153
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6]
+factor: 155
+term: 155
+exp: 155
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5]
+factor: 157
+term: 157
+exp: 157
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9]
+factor: 158
+term: 158
+exp: 158
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9]
+factor: 159
+term: 159
+exp: 159
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10]
+factor: 161
+term: 161
+exp: 161
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1]
+factor: 163
+term: 163
+exp: 163
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2]
+factor: 164
+term: 164
+exp: 164
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5]
+factor: 166
+term: 166
+exp: 166
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10]
+factor: 168
+term: 168
+exp: 168
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15]
+factor: 170
+term: 170
+exp: 170
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15, 16]
+factor: 172
+term: 172
+exp: 172
+[2, 3, 1, 2, 3, 4.8, 9, 5, 4, 2, 4, 3, 5, 2, 4, 3, 1, 2, 0, 'text', 1, <built-in function sum>, 'index', <built-in function sum>, <built-in function sum>, 2, 'index', <built-in function sum>, <built-in function sum>, 3, 5, 0, 7, 8, 5, 2, 1, 0, 0, 2, 0, 4, 2, 1, 2, 2, 4, 4, 5, 5, 2, 5, 5, 6, 5, 9, 9, 10, 1, 2, 5, 10, 15, 16, 17]
+factor: 174
+term: 174
+exp: 174
+sumNumbers:
+	id: 7,
+	name: sumNumbers,
+	type: 2
+	VAR - index:
+		id: 2003,
+		name: index,
+		type: 2,
+		value: None
+		---------
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 5,
+	name: printArray,
+	type: 2
+	VAR - numbers:
+		id: 2000,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 6,
+	name: sumTimes,
+	type: 2
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 3,
+	name: sayText,
+	type: 4
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 4,
+	name: addOne,
+	type: 2
+	VAR - number:
+		id: 2000,
+		name: number,
+		type: 2,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	VAR - a:
+		id: 2000,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
+		value: None
+		---------
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+light:
+	id: 8,
+	name: light,
+	type: 0
+	VAR - numberOne:
+		id: 2000,
+		name: numberOne,
+		type: 2,
+		value: None
+		---------
+	VAR - xpos:
+		id: 2001,
+		name: xpos,
+		type: 2,
+		value: None
+		---------
+	VAR - ypos:
+		id: 2002,
+		name: ypos,
+		type: 2,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+example:
+	id: 2,
+	name: example,
+	type: 2
+	VAR - y:
+		id: 2001,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2000,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3000,
+		name: z,
+		type: 3,
+		value: None
+		---------
+Successful
