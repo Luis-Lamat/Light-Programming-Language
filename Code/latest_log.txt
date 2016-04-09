@@ -1,5 +1,4 @@
-
-[Fri Apr  8 14:21:10 CDT 2016] =========================================== 
+\n[Sat Apr  9 18:43:12 CDT 2016] =========================================== 
 ASSIGN A: 17
 assignment: 17
 factor: 17
@@ -108,6 +107,8 @@ condition: 26
 print 28
 doBlock 30
 conditionBlock 30
+okokok
+3
 factor: 37
 term: 37
 exp: 37
@@ -132,12 +133,16 @@ factor: 51
 term: 51
 exp: 51
 print 52
+okokok
+2
 factor: 54
 term: 54
 factor: 55
 term: 55
 exp: 55
 exp: 55
+okokok
+2
 factor: 69
 term: 69
 exp: 69
@@ -146,6 +151,8 @@ cycle: 71
 factor: 72
 term: 72
 exp: 72
+okokok
+2
 factor: 77
 term: 77
 exp: 77
@@ -187,90 +194,87 @@ exp: 84
 exp: 84
 ASSIGN A: 84
 assignment: 84
-doBlock 85
-cycle: 85
-print 86
-factor: 86
-term: 86
-exp: 86
+factor: 85
+term: 85
+exp: 85
+doBlock 86
+cycle: 86
 print 87
-factor: 88
-term: 88
-exp: 88
+factor: 87
+term: 87
+exp: 87
+print 88
+factor: 89
+term: 89
+exp: 89
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 91
+test: 92
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 96
+test: 97
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 99
+test: 100
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 106
-print 109
+test: 107
+print 110
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 109
-print 113
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 113
+test: 110
+print 114
 Function queue
 ['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
 test: 114
-factor: 120
-term: 120
-exp: 120
-factor: 120
-term: 120
-exp: 120
-expresion: 120
-expresion: 120
-condition: 120
-factor: 122
-term: 122
-exp: 122
-ASSIGN A: 122
-assignment: 122
-doBlock 123
-conditionBlock 123
-factor: 123
-factor: 123
-factor: 123
-term: 123
+Function queue
+['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
+test: 115
+factor: 121
+term: 121
+exp: 121
+factor: 121
+term: 121
+exp: 121
+expresion: 121
+expresion: 121
+condition: 121
 factor: 123
 term: 123
 exp: 123
-exp: 123
-expresion: 123
-condition: 123
-factor: 123
-factor: 123
-factor: 123
-term: 123
-term: 123
-term: 123
-term: 123
-term: 123
-exp: 123
-expresion: 123
-condition: 123
+ASSIGN A: 123
+assignment: 123
+doBlock 124
+conditionBlock 124
+factor: 124
+factor: 124
+factor: 124
+term: 124
 factor: 124
 term: 124
 exp: 124
+exp: 124
+expresion: 124
+condition: 124
+factor: 124
+factor: 124
+factor: 124
+term: 124
+term: 124
+term: 124
+term: 124
+term: 124
+exp: 124
+expresion: 124
+condition: 124
 factor: 125
 term: 125
 exp: 125
-doBlock 127
-cycle: 127
-factor: 130
-term: 130
-exp: 130
-factor: 130
-term: 130
-exp: 130
+factor: 126
+term: 126
+exp: 126
+doBlock 128
+cycle: 128
 factor: 131
 term: 131
 exp: 131
@@ -283,12 +287,12 @@ exp: 132
 factor: 132
 term: 132
 exp: 132
-factor: 139
-term: 139
-exp: 139
-factor: 139
-term: 139
-exp: 139
+factor: 133
+term: 133
+exp: 133
+factor: 133
+term: 133
+exp: 133
 factor: 140
 term: 140
 exp: 140
@@ -301,54 +305,60 @@ exp: 141
 factor: 141
 term: 141
 exp: 141
-factor: 148
-term: 148
-exp: 148
-factor: 156
-term: 156
-exp: 156
+factor: 142
+term: 142
+exp: 142
+factor: 142
+term: 142
+exp: 142
+factor: 149
+term: 149
+exp: 149
 factor: 157
 term: 157
 exp: 157
 factor: 158
 term: 158
 exp: 158
-factor: 160
-term: 160
-exp: 160
-factor: 162
-term: 162
-exp: 162
+factor: 159
+term: 159
+exp: 159
+factor: 161
+term: 161
+exp: 161
 factor: 163
 term: 163
 exp: 163
 factor: 164
 term: 164
 exp: 164
-factor: 166
-term: 166
-exp: 166
-factor: 168
-term: 168
-exp: 168
+factor: 165
+term: 165
+exp: 165
+factor: 167
+term: 167
+exp: 167
 factor: 169
 term: 169
 exp: 169
-factor: 171
-term: 171
-exp: 171
-factor: 173
-term: 173
-exp: 173
-factor: 175
-term: 175
-exp: 175
-factor: 177
-term: 177
-exp: 177
-factor: 179
-term: 179
-exp: 179
+factor: 170
+term: 170
+exp: 170
+factor: 172
+term: 172
+exp: 172
+factor: 174
+term: 174
+exp: 174
+factor: 176
+term: 176
+exp: 176
+factor: 178
+term: 178
+exp: 178
+factor: 180
+term: 180
+exp: 180
 sumNumbers:
 	id: 8,
 	name: sumNumbers,

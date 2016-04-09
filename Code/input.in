@@ -81,6 +81,7 @@ program lolz {
             sum = 23 + index
         	sum += index
         	sum = sum + index
+        	return sum
         end
         print("true")
         print(sum)
