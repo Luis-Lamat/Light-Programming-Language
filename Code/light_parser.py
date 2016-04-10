@@ -54,6 +54,31 @@ def exp_quad_helper(p, op_list):
 		operand_stack.push(tmp_var_id)
 		type_stack.push(return_type)
 
+		print_stacks()
+		Quadruples.print_all()
+
+def assign_quad_helper():
+	t1 = type_stack.pop()
+	t2 = type_stack.pop()
+	if t1 != t2:
+		Error.type_mismatch(p.lexer.lineno, t1, t2, '=')
+	op = operator_stack.pop()
+	o1 = operand_stack.pop()
+	o2 = operand_stack.pop()
+
+	# Generate Quadruple and push it to the list
+	tmp_quad = Quadruple()
+	tmp_quad.build(op, o1, None, o2)
+	Quadruples.push_quad(tmp_quad)
+	operator_stack.pop()
+
+def print_stacks():
+	sys.stdout.write("> Operand Stack = ")
+	operand_stack.pprint()
+
+	sys.stdout.write("> Operator Stack = ")
+	operator_stack.pprint()
+
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
 
@@ -202,7 +227,6 @@ def p_verify_function_call(p):
 	verify_function_call : epsilon
 	'''
 	print("Function queue")
-	function_queue.pprint()
 	if not function_queue.inQueue(p[-1]):
 		Error.function_not_defined(p[-1],p.lexer.lineno)
 
@@ -228,17 +252,18 @@ def p_call_param_a(p):
 
 def p_assignment (p):
 	'''
-	assignment : VAR_IDENTIFIER verify_variable OP_EQUALS assgn_a 
+	assignment : VAR_IDENTIFIER verify_variable push_id OP_EQUALS push_operator assgn_a 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
+	assign_quad_helper()
+
 
 def p_assgn_a(p):
 	'''
-	assgn_a : VAR_IDENTIFIER verify_variable
+	assgn_a : VAR_IDENTIFIER verify_variable push_id
 		| exp
-		| VAR_STRING
+		| VAR_STRING push_string
 		| function_call
-	 
 	'''
 	print("ASSIGN A: " + str(p.lexer.lineno))
 
@@ -305,13 +330,6 @@ def p_for_var_cte(p):
 		| VAR_INT
 		| VAR_DECIMAL
 	'''
-def p_verify_variable(p):
-	'''
-	verify_variable : epsilon
-	'''
-	func = function_stack.peek()
-	if not FunctionTable.verify_var_in_func(func, p[-1]):
-		Error.variable_not_defined(p[-1], p.lexer.lineno)
 
 def p_action (p):
 	'''
@@ -483,22 +501,6 @@ def p_var_cte(p):
 		| VAR_DECIMAL push_num
 	'''
 
-def p_push_id(p):
-
-	'push_id : '
-	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].name)
-
-def p_push_num(p):
-	'push_num : '
-	num = eval(p[-1])
-	if (isinstance(num, (int, long))):
-		type_stack.push(type_dict['int'])
-	elif (isinstance(num, (float))):
-		type_stack.push(type_dict['decimal'])
-	operand_stack.push(num)
-
 def p_increment (p):
 	'''
 	increment : VAR_IDENTIFIER verify_variable inc_a exp
@@ -563,21 +565,6 @@ def p_statement (p):
 				| return
 	'''
 
-def p_vars_start (p):
-	'''
-	vars_start : VARS var_a SEP_COLON
-	'''
-
-def p_var_a(p):
-	'''
-	var_a : VAR_IDENTIFIER var_b
-	'''
-def p_var_b (p):
-	'''
-	var_b : SEP_COMMA var_a
-		| epsilon
-	'''
-
 def p_vars (p):
 	'''
 	vars : vars_start v_a
@@ -595,6 +582,7 @@ def p_vars_start (p):
 	'''
 	vars_start : VAR VAR_IDENTIFIER SEP_COLON
 	'''
+	p[0] = p[2]
 	tmp_var.name = p[2]
 
 def p_vars_figs (p):
@@ -622,8 +610,15 @@ def p_var_p_a (p):
 
 def p_init_prim (p):
 	'''
-	init_prim : OP_EQUALS init_a
+	init_prim : push_tmp_var OP_EQUALS push_operator init_a
 	'''
+	assign_quad_helper()
+
+def p_push_tmp_var(p):
+	'push_tmp_var : '
+	print_stacks()
+	type_stack.push(tmp_var.type)
+	operand_stack.push(tmp_var.name)
 
 #array
 def p_vars_arr (p):
@@ -667,7 +662,7 @@ def p_arr_init_arr (p):
 def p_init_a (p):
 	'''
 	init_a : function_call
-		| VAR_IDENTIFIER
+		| VAR_IDENTIFIER verify_variable push_id
 		| cnt_prim
 	'''
 
@@ -711,9 +706,9 @@ def p_vector (p):
 
 def p_cnt_prim (p):
 	'''
-	cnt_prim : VAR_INT
-		| VAR_DECIMAL
-		| VAR_STRING
+	cnt_prim : VAR_INT push_num
+		| VAR_DECIMAL push_num
+		| VAR_STRING push_string
 	'''
 
 def p_return (p):
@@ -740,6 +735,36 @@ def p_figure_creations (p):
 	figure_creations : VAR VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
 	'''
 	pass
+
+def p_push_id(p):
+	'push_id : '
+	func = FunctionTable.function_dict[function_stack.peek()]
+	type_stack.push(func.vars[p[-2]].type)
+	operand_stack.push(func.vars[p[-2]].name)
+
+def p_push_num(p):
+	'push_num : '
+	num = eval(p[-1])
+	if (isinstance(num, (int, long))):
+		type_stack.push(type_dict['int'])
+	elif (isinstance(num, (float))):
+		type_stack.push(type_dict['decimal'])
+	operand_stack.push(num)
+
+def p_push_string(p):
+	'push_string : '
+	type_stack.push(type_dict['string'])
+	operand_stack.push(p[-1])
+
+def p_push_operator(p):
+	'push_operator : '
+	operator_stack.push(operator_dict[p[-1]])
+
+def p_verify_variable(p):
+	'verify_variable : '
+	func = function_stack.peek()
+	if not FunctionTable.verify_var_in_func(func, p[-1]):
+		Error.variable_not_defined(p[-1], p.lexer.lineno)
 
 def p_epsilon(p):
 	'epsilon :'

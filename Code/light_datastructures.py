@@ -35,7 +35,8 @@ operator_dict = {
     'and': 10,
     'or' : 11,
     '('  : 12,
-    ')'  : 13
+    ')'  : 13,
+    '='  : 14
 }
 inv_op_dict = {v: k for k, v in operator_dict.items()}
 

@@ -7,7 +7,7 @@ program lolz {
 
     var global:int = 0
 
-  function verifyAndOr(){
+    function verifyAndOr(){
 
         # Outputs correct type mismatch error
         var a:string
