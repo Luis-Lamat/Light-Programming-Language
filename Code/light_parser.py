@@ -24,7 +24,6 @@ operator_stack  = Stack()
 type_stack      = Stack()
 
 
-
 # Conditions
 missing_return_stmt = False
 
@@ -535,7 +534,7 @@ def p_inc_a (p):
 
 def p_if (p):
 	'''
-	if : IF condition_block if_a if_b
+	if : IF SEP_LPAR condition SEP_RPAR quad_if_helper do_block if_a if_b end_if_stmt_quad_helper
 	'''
 def p_if_a (p):
 	'''
@@ -548,15 +547,107 @@ def p_if_b (p):
 		| epsilon
 	'''
 
+def p_quad_if_helper(p):
+	'''
+	quad_if_helper : epsilon
+	'''
+
+	aux = type_stack.pop()
+	if aux != 1 :
+		Error.not_a_condition(aux, p.lexer.lineno)
+	else :
+		res = operand_stack.pop()
+		operator = special_operator_dict['gotof']
+
+		# Generate Quadruple and push it to the list
+		tmp_quad = Quadruple()
+		tmp_quad.build(operator, res, None, None)
+		Quadruples.push_quad(tmp_quad)
+
+		#Push into jump stack
+		Quadruples.push_jump()
+
+		print("PUSH JUMP :")
+		Quadruples.print_jump_stack()
+
 def p_elsif (p):
 	'''
-	elsif : ELSIF condition_block
+	elsif : ELSIF quad_elif_helper condition_block
 	'''
+
+def p_quad_elif_helper(p):
+	'''
+	quad_elif_helper : epsilon
+	'''
+
+	#####IF
+
+	aux = type_stack.pop()
+	if aux != 1 :
+		Error.not_a_condition(aux, p.lexer.lineno)
+	else :
+		res = operand_stack.pop()
+		operator = special_operator_dict['gotof']
+
+		# Generate Quadruple and push it to the list
+		tmp_quad = Quadruple()
+		tmp_quad.build(operator, res, None, None)
+		Quadruples.push_quad(tmp_quad)
+
+		#Push into jump stack
+		Quadruples.push_jump()
+
+	###ELSE
+
+	operator = special_operator_dict['goto']
+
+	tmp_quad = Quadruple()
+	tmp_quad.build(operator, None, None, None)
+	Quadruples.push_quad(tmp_quad)
+
+	tmp_false = Quadruples.pop_jump()
+	tmp_count = Quadruples.next_free_quad
+	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
+
+	Quadruples.push_jump()
+
+
 
 def p_else (p):
 	'''
-	else : ELSE do_block
+	else : ELSE quad_else_helper do_block
 	'''
+
+def p_quad_else_helper(p):
+	'''
+	quad_else_helper : epsilon
+	'''
+	operator = special_operator_dict['goto']
+
+	tmp_quad = Quadruple()
+	tmp_quad.build(operator, None, None, None)
+	Quadruples.push_quad(tmp_quad)
+
+	tmp_false = Quadruples.pop_jump()
+	tmp_count = Quadruples.next_free_quad
+	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
+
+	Quadruples.push_jump()
+
+def p_end_if_stmt_quad_helper(p):
+	'''
+	end_if_stmt_quad_helper : epsilon
+	'''
+
+	print("PUSH JUMP BEF POP:")
+	Quadruples.print_jump_stack()
+
+	tmp_end = Quadruples.pop_jump()
+	print("POPJUMP")
+	print(tmp_end)	
+	tmp_count = Quadruples.next_free_quad
+	tmp_quad = Quadruples.fill_missing_quad(tmp_end, tmp_count)
+
 
 def p_condition_block (p):
 	'''

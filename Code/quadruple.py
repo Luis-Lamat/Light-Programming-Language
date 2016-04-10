@@ -1,4 +1,5 @@
 from light_datastructures import *
+import sys
 
 class Quadruple(object):
 	def __init__(self):
@@ -39,8 +40,8 @@ class Quadruples(object):
 
 	# Jump Stack Methods
 	@classmethod
-	def push_jump(cls, quad_id):
-		cls.jump_stack.push(quad_id)
+	def push_jump(cls):
+		cls.jump_stack.push(cls.next_free_quad - 1)
 
 	@classmethod
 	def pop_jump(cls):
@@ -51,9 +52,16 @@ class Quadruples(object):
 		return cls.jump_stack.peek()
 
 	@classmethod
+	def print_jump_stack(cls):
+		cls.jump_stack.pprint()
+
+	@classmethod
 	def print_all(cls):
+		count = 0
 		print("Quads ===============================")
 		l = [x.get_list() for x in cls.quad_list]
 		for e in l:
+			sys.stdout.write(str(count) + ":\t")
 			print e
+			count += 1
 		pass

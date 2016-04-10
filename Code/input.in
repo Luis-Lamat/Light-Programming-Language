@@ -15,7 +15,11 @@ program lolz {
         # a = a + 8
 
     	if( 2 <  3 ) do
+    		a += 3
     		print("Truestuff")
+    	end
+    	else do
+    		print("OTherStuff")
     	end
 
     	if( 1<2 and ((3 * 4.8) > 9 )) do
