@@ -85,19 +85,22 @@ class Function:
 	def __init__(self):
 		self.id = -1
 		self.name = ""
-		self.type = ""
+		self.type = 0 # "" before
 		self.vars = {}
+		self.has_return = False
 
 	def erase(self):
 		self.id = -1
 		self.name = ""
-		self.type = ""
+		self.type = 0 # "" before
 		self.vars = {}
+		self.has_return = False
 
 	def init_func(self, id, name, type):
 		self.id = id
 		self.name = name
 		self.type = type
+		self.has_return = False
 
 	def add_var(self, var):
 		if var.name not in self.vars:
@@ -135,6 +138,15 @@ class Function:
 			print "\tVAR - " + k + ":"
 			self.vars[k].print_var()
 
+	def function_is_void(self):
+		return self.type == 0
+
+	def set_has_Return(self, type):
+		self.has_return = type
+
+	def get_has_Return(self):
+		return self.has_return
+
 
 class FunctionTable:
 	global_func = Function()
@@ -161,6 +173,8 @@ class FunctionTable:
 	@classmethod
 	def add_return_type_to_func(cls, name, type):
 		cls.function_dict[name].type = type
+		print("okokok")
+		print(cls.function_dict[name].type)
 
 	@classmethod
 	def print_all(cls):
@@ -187,6 +201,18 @@ class FunctionTable:
 	@classmethod
 	def add_arr_complete_to_func(cls, function_name, arr_obj):
 		cls.function_dict[function_name].add_arr_complete(arr_obj)
+
+	@classmethod
+	def function_returns_void(cls, function_name):
+		return cls.function_dict[function_name].function_is_void()
+
+	@classmethod
+	def set_return_found(cls, function_name, type):
+		cls.function_dict[function_name].set_has_Return(type)
+
+	@classmethod
+	def function_has_return_stmt(cls, function_name):
+		return cls.function_dict[function_name].get_has_Return()
 
 
 class SemanticCube(object):

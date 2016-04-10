@@ -21,10 +21,21 @@ class Error:
 
 	@staticmethod
 	def variable_not_defined(name, line):
-		print "Syntax Error: Variable '" + name +"' not defined in line: " + str(line)
+		print "Semantic Error: Variable '" + name +"' not defined in line: " + str(line)
 		sys.exit()
 
 	@staticmethod
 	def function_not_defined(name, line):
-		print "Syntax Error: Function '" + name +"' not defined in line: " + str(line)
+		print "Semantic Error: Function '" + name +"' not defined in line: " + str(line)
 		sys.exit()
+
+	@staticmethod
+	def return_type_function_void(name, line):
+		print "Semantic Error: Function '" + name +"' is void, return invalid, in line:  " + str(line)
+		sys.exit()
+
+	@staticmethod
+	def no_return_type(name, line):
+		print "Semantic Error: Function '" + name +"' do not have a return, in line " + str(line)
+		sys.exit()
+

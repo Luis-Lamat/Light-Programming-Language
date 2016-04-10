@@ -150,7 +150,7 @@ def p_stmt_loop (p):
 
 def p_function (p):
 	'''
-	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return SEP_RCBRACKET
+	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return verify_return_stmt SEP_RCBRACKET
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
@@ -173,8 +173,8 @@ def p_add_return_val (p):
 	'''
 	if (p[-1] == "returns"):
 		missing_return_stmt = True
-	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
 
+	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
 
 def p_func_c (p):
 	'''
@@ -190,9 +190,30 @@ def p_tmp_return(p):
 
 def p_opt_exp(p):
 	'''
-	opt_exp : exp 
+	opt_exp : exp return_found 
 		| epsilon
 	'''
+
+def p_return_found(p):
+	'''
+	return_found : epsilon 
+	'''
+	#if function is void and has return
+	if FunctionTable.function_returns_void(function_stack.peek()):
+		Error.return_type_function_void(function_stack.peek(), p.lexer.lineno)
+
+	#found Return Type
+	FunctionTable.set_return_found(function_stack.peek(), True)
+
+def p_verify_return_stmt(p):
+	'''
+	verify_return_stmt : 
+	'''
+	#if function is not void
+	if not FunctionTable.function_returns_void(function_stack.peek()):
+		if not FunctionTable.function_has_return_stmt(function_stack.peek()):
+			Error.no_return_type(function_stack.peek(), p.lexer.lineno)
+
 
 def p_new_func_scope(p):
 	'new_func_scope :'
