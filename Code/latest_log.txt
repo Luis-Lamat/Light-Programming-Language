@@ -1,5 +1,19 @@
 
-[Sat Apr  9 18:43:12 CDT 2016] =========================================== 
+[Sat Apr  9 23:33:13 CDT 2016] =========================================== 
+WARNING: Token 'VAR_FRACTION' defined, but not used
+WARNING: Token 'FRACTION' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: There are 3 unused tokens
+Generating LALR tables
+WARNING: 7 shift/reduce conflicts
+WARNING: 13 reduce/reduce conflicts
+WARNING: reduce/reduce conflict in state 278 resolved using rule (print_a -> VAR_IDENTIFIER verify_variable)
+WARNING: rejected rule (push_id -> <empty>) in state 278
+WARNING: reduce/reduce conflict in state 354 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 354
+> Operand Stack = []
+> Operator Stack = []
+Empty Stack
 ASSIGN A: 17
 assignment: 17
 Empty Stack
@@ -375,14 +389,11 @@ Quads ===============================
 [0, 'number', 1, 2001]
 exp: 55
 exp: 55
-<<<<<<< HEAD
+okokok
+2
 > Operand Stack = [1000, 1003, 1012, 1000, 0, 2001]
 > Operator Stack = []
 Empty Stack
-=======
-okokok
-2
->>>>>>> 23a3f81eb051be9067b36a91f51ec02165ae6d9e
 factor: 69
 term: 69
 exp: 69
@@ -391,17 +402,14 @@ cycle: 71
 factor: 72
 term: 72
 exp: 72
-<<<<<<< HEAD
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum']
-> Operator Stack = []
-Empty Stack
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum']
-> Operator Stack = []
-Empty Stack
-=======
 okokok
 2
->>>>>>> 23a3f81eb051be9067b36a91f51ec02165ae6d9e
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum']
+> Operator Stack = []
+Empty Stack
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum']
+> Operator Stack = []
+Empty Stack
 factor: 77
 term: 77
 exp: 77
@@ -555,47 +563,49 @@ exp: 84
 exp: 84
 ASSIGN A: 84
 assignment: 84
-<<<<<<< HEAD
 Empty Stack
-doBlock 85
-cycle: 85
-print 86
+factor: 85
+term: 85
+exp: 85
+doBlock 86
+cycle: 86
 print 87
-factor: 88
-term: 88
-exp: 88
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum']
+print 88
+factor: 89
+term: 89
+exp: 89
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum']
 > Operator Stack = []
 Function queue
-test: 91
+test: 92
 Empty Stack
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum']
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum']
 > Operator Stack = []
 Empty Stack
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum']
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum']
 > Operator Stack = []
 Empty Stack
 Function queue
-test: 96
+test: 97
 Function queue
-test: 99
+test: 100
 Function queue
-test: 106
-print 109
+test: 107
+print 110
 Function queue
-test: 109
-print 113
-Function queue
-test: 113
+test: 110
+print 114
 Function queue
 test: 114
-factor: 120
-term: 120
-exp: 120
-factor: 120
-term: 120
-exp: 120
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000]
+Function queue
+test: 115
+factor: 121
+term: 121
+exp: 121
+factor: 121
+term: 121
+exp: 121
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000]
 > Operator Stack = []
 Quads ===============================
 [14, 0, None, 'global']
@@ -630,20 +640,20 @@ Quads ===============================
 [14, 0, None, 'xpos']
 [14, 0, None, 'ypos']
 [5, 3, 5, 1000]
-expresion: 120
-expresion: 120
-condition: 120
-factor: 122
-term: 122
-exp: 122
-ASSIGN A: 122
-assignment: 122
+expresion: 121
+expresion: 121
+condition: 121
+factor: 123
+term: 123
+exp: 123
+ASSIGN A: 123
+assignment: 123
 Empty Stack
-doBlock 123
-conditionBlock 123
-factor: 123
-factor: 123
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2003]
+doBlock 124
+conditionBlock 124
+factor: 124
+factor: 124
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2003]
 > Operator Stack = [12]
 Quads ===============================
 [14, 0, None, 'global']
@@ -680,11 +690,11 @@ Quads ===============================
 [5, 3, 5, 1000]
 [14, 0, None, 'xpos']
 [2, 7, 8, 2003]
-factor: 123
-term: 123
-factor: 123
-term: 123
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2003, 2004]
+factor: 124
+term: 124
+factor: 124
+term: 124
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2003, 2004]
 > Operator Stack = [12, 3, 12]
 Quads ===============================
 [14, 0, None, 'global']
@@ -722,12 +732,12 @@ Quads ===============================
 [14, 0, None, 'xpos']
 [2, 7, 8, 2003]
 [0, 9, 9, 2004]
-exp: 123
-exp: 123
-expresion: 123
-condition: 123
-factor: 123
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2005]
+exp: 124
+exp: 124
+expresion: 124
+condition: 124
+factor: 124
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2005]
 > Operator Stack = [12]
 Quads ===============================
 [14, 0, None, 'global']
@@ -766,8 +776,8 @@ Quads ===============================
 [2, 7, 8, 2003]
 [0, 9, 9, 2004]
 [3, 2003, 2004, 2005]
-factor: 123
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2006]
+factor: 124
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2006]
 > Operator Stack = [12]
 Quads ===============================
 [14, 0, None, 'global']
@@ -807,8 +817,8 @@ Quads ===============================
 [0, 9, 9, 2004]
 [3, 2003, 2004, 2005]
 [2, 2005, 5, 2006]
-factor: 123
-> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2007]
+factor: 124
+> Operand Stack = [1000, 1003, 1012, 1000, 0, 2001, 1, 'sum', 1000, 1001, 'index', 'sum', 'sum', '"hello"', 10, 20, 10, 20, 1000, 1000, 100, 100, 1000, 2007]
 > Operator Stack = [12]
 Quads ===============================
 [14, 0, None, 'global']
@@ -849,78 +859,6 @@ Quads ===============================
 [3, 2003, 2004, 2005]
 [2, 2005, 5, 2006]
 [3, 2006, 2, 2007]
-term: 123
-term: 123
-term: 123
-term: 123
-term: 123
-=======
-factor: 85
-term: 85
-exp: 85
-doBlock 86
-cycle: 86
-print 87
-factor: 87
-term: 87
-exp: 87
-print 88
-factor: 89
-term: 89
-exp: 89
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 92
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 97
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 100
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 107
-print 110
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 110
-print 114
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 114
-Function queue
-['light', 'sumNumbers', 'sumTimes', 'printArray', 'addOne', 'sayText', 'noRetArg', 'example', 'verifyAndOr', 'coordinates', 'window_size', 'program']
-test: 115
-factor: 121
-term: 121
-exp: 121
-factor: 121
-term: 121
-exp: 121
-expresion: 121
-expresion: 121
-condition: 121
-factor: 123
-term: 123
->>>>>>> 23a3f81eb051be9067b36a91f51ec02165ae6d9e
-exp: 123
-ASSIGN A: 123
-assignment: 123
-doBlock 124
-conditionBlock 124
-factor: 124
-factor: 124
-factor: 124
-term: 124
-factor: 124
-term: 124
-exp: 124
-exp: 124
-expresion: 124
-condition: 124
-factor: 124
-factor: 124
-factor: 124
 term: 124
 term: 124
 term: 124
