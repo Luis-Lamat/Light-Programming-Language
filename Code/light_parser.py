@@ -159,6 +159,8 @@ def p_function (p):
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
+	# Generates the 'RET' action at the end of the function
+	build_and_push_quad(special_operator_dict['ret'], None, None, None)
 	missing_return_stmt = False # resetting var
 
 def p_func_a (p):
@@ -226,6 +228,8 @@ def p_new_func_scope(p):
 	function_queue.enqueue(p[-1])
 	tmp_function.name = p[-1]
 	tmp_function.type = type_dict['void']
+	tmp_function.quad_index = Quadruples.next_free_quad
+	print "------------------------------------------> " + str(tmp_function.quad_index)
 	FunctionTable.add_function(tmp_function)
 
 def p_parameters (p):

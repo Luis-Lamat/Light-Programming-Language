@@ -89,6 +89,7 @@ class Function:
 		self.type = 0 # "" before
 		self.vars = {}
 		self.params = []
+		self.quad_index = -1
 		self.has_return = False
 
 	def erase(self):
@@ -97,12 +98,14 @@ class Function:
 		self.type = 0 # "" before
 		self.vars = {}
 		self.params = []
+		self.quad_index = -1
 		self.has_return = False
 
-	def init_func(self, id, name, type):
+	def init_func(self, id, name, type, q_index):
 		self.id = id
 		self.name = name
 		self.type = type
+		self.quad_index = q_index
 		self.has_return = False
 
 	def add_var(self, var):
@@ -129,6 +132,7 @@ class Function:
 		else:
 			Error.already_defined('variable array', arr.name)
 
+	# TODO: Oh gosh, refactor please...
 	def var_in_func(self, name):
 		if name in self.vars.keys():
 			return True
@@ -139,6 +143,7 @@ class Function:
 		print "\tid: " + str(self.id) + ",\n\tname: " + self.name  + ",\n\ttype: " + str(self.type)
 		sys.stdout.write("\tParams: ")
 		print self.params
+		print "\tStarting quad index = " + str(self.quad_index)
 		for k in self.vars:
 			print "\tVAR - " + k + ":"
 			self.vars[k].print_var()
@@ -155,7 +160,7 @@ class Function:
 
 class FunctionTable:
 	global_func = Function()
-	global_func.init_func(0, 'program', type_dict['void'])
+	global_func.init_func(0, 'program', type_dict['void'], None)
 	
 	function_dict = {
 		'program' : global_func
@@ -168,8 +173,8 @@ class FunctionTable:
 	@classmethod
 	def add_function(cls, func):
 		if func.name not in cls.function_dict:
-			tmp_func = Function()
-			tmp_func.init_func(cls.next_func_id, func.name, func.type)
+			tmp_func = Function() # TODO: Why so much copy?
+			tmp_func.init_func(cls.next_func_id, func.name, func.type, func.quad_index)
 			cls.function_dict[func.name] = tmp_func
 			cls.next_func_id += 1
 		else:
