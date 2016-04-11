@@ -1,5 +1,5 @@
 
-[Mon Apr 11 15:04:06 CDT 2016] =========================================== 
+[Mon Apr 11 15:47:22 CDT 2016] =========================================== 
 > Operand Stack = []
 > Operator Stack = []
 ASSIGN A: 17
@@ -1687,6 +1687,7 @@ sumNumbers:
 	id: 8,
 	name: sumNumbers,
 	type: 2
+	Params: [2, 2]
 	VAR - index:
 		id: 2003,
 		name: index,
@@ -1715,6 +1716,7 @@ printArray:
 	id: 6,
 	name: printArray,
 	type: 0
+	Params: [2]
 	VAR - numbers:
 		id: 2000,
 		name: numbers,
@@ -1725,6 +1727,7 @@ sumTimes:
 	id: 7,
 	name: sumTimes,
 	type: 2
+	Params: [2, 2]
 	VAR - sum:
 		id: 2002,
 		name: sum,
@@ -1747,6 +1750,7 @@ sayText:
 	id: 4,
 	name: sayText,
 	type: 0
+	Params: [4]
 	VAR - text:
 		id: 4000,
 		name: text,
@@ -1763,6 +1767,7 @@ addOne:
 	id: 5,
 	name: addOne,
 	type: 2
+	Params: [2]
 	VAR - number:
 		id: 2000,
 		name: number,
@@ -1773,6 +1778,7 @@ example:
 	id: 2,
 	name: example,
 	type: 3
+	Params: [2, 2, 3]
 	VAR - y:
 		id: 2001,
 		name: y,
@@ -1795,6 +1801,7 @@ program:
 	id: 0,
 	name: program,
 	type: 0
+	Params: []
 	VAR - a:
 		id: 2000,
 		name: a,
@@ -1827,6 +1834,7 @@ light:
 	id: 9,
 	name: light,
 	type: 0
+	Params: []
 	VAR - numberOne:
 		id: 2000,
 		name: numberOne,
@@ -1849,6 +1857,7 @@ noRetArg:
 	id: 3,
 	name: noRetArg,
 	type: 0
+	Params: [2]
 	VAR - num:
 		id: 2000,
 		name: num,
@@ -1865,6 +1874,7 @@ verifyAndOr:
 	id: 1,
 	name: verifyAndOr,
 	type: 0
+	Params: []
 	VAR - a:
 		id: 4000,
 		name: a,

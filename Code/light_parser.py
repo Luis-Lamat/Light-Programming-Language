@@ -236,6 +236,7 @@ def p_new_param_seen(p):
 	tmp_var.name = p[-3]
 	tmp_var.type = type_dict[p[-1]]
 	FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
+	FunctionTable.add_param_to_func(tmp_function.name, tmp_var.type)
 
 def p_param_a (p):
 	'''
@@ -700,7 +701,6 @@ def p_vars_start (p):
 	'''
 	vars_start : VAR VAR_IDENTIFIER SEP_COLON
 	'''
-	p[0] = p[2]
 	tmp_var.name = p[2]
 
 def p_vars_figs (p):

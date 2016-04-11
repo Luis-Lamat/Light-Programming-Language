@@ -1,6 +1,7 @@
 # Semantic Controller
 
 from error import * # Includes light_data_structures.py
+import sys
 import pprint
 
 pp = pprint.PrettyPrinter(indent=4)
@@ -87,6 +88,7 @@ class Function:
 		self.name = ""
 		self.type = 0 # "" before
 		self.vars = {}
+		self.params = []
 		self.has_return = False
 
 	def erase(self):
@@ -94,6 +96,7 @@ class Function:
 		self.name = ""
 		self.type = 0 # "" before
 		self.vars = {}
+		self.params = []
 		self.has_return = False
 
 	def init_func(self, id, name, type):
@@ -134,6 +137,8 @@ class Function:
 
 	def print_all(self):
 		print "\tid: " + str(self.id) + ",\n\tname: " + self.name  + ",\n\ttype: " + str(self.type)
+		sys.stdout.write("\tParams: ")
+		print self.params
 		for k in self.vars:
 			print "\tVAR - " + k + ":"
 			self.vars[k].print_var()
@@ -189,6 +194,10 @@ class FunctionTable:
 	@classmethod
 	def verify_var_in_func(cls, function_name, var_name):
 		return cls.function_dict[function_name].var_in_func(var_name) or cls.verift_var_global(var_name)
+
+	@classmethod
+	def add_param_to_func(cls, function_name, param_type):
+		cls.function_dict[function_name].params.append(param_type)
 
 	@classmethod
 	def verift_var_global(cls, var_name):
