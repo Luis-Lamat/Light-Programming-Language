@@ -39,3 +39,14 @@ class Error:
 		print "Semantic Error: Function '" + name +"' do not have a return, in line " + str(line)
 		sys.exit()
 
+	@staticmethod
+	def condit(txt, line):
+		print "Semantic Error: " + txt + ", in line " + str(line)
+		sys.exit()
+
+	@staticmethod
+	def not_a_condition(t1, lineno):
+		t1 = inv_type_dict[t1]
+		print "Semantic Error: Expected type Bool and got type " + str(t1) + ", in line " + str(lineno)
+		sys.exit()
+

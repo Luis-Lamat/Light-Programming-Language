@@ -38,7 +38,16 @@ operator_dict = {
     ')'  : 13,
     '='  : 14
 }
+
 inv_op_dict = {v: k for k, v in operator_dict.items()}
+
+special_operator_dict = {
+	
+	'gotof'	:	14,
+	'gotot'	:	15,
+	'goto'	:	16
+
+}
 
 initializer_dict = {
     # Primitive Types

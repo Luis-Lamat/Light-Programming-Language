@@ -15,10 +15,31 @@ program lolz {
         # a = a + 8
 
     	if( 2 <  3 ) do
+    		#a += 8 
+    		a = "ifelse"
     		print("Truestuff")
     	end
+    	else do
+    		a = "else"
+    		print("OTherStuff")
+    	end
+
+    	if( 2 <  3 ) do
+    		#a += 8 
+    		a = "ifelse"
+    		print("Truestuff")
+    	end
+    	elsif (4 < 2) do
+    		a = "elif"
+    		print("OTherStuff")
+    	end
+    	else do
+    		a = "else2"
+    	end
+
 
     	if( 1<2 and ((3 * 4.8) > 9 )) do
+    		a = "ifsolo"
     		print("true")
             return
     	end
