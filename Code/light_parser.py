@@ -572,7 +572,7 @@ def p_quad_if_helper(p):
 
 def p_elsif (p):
 	'''
-	elsif : ELSIF quad_elif_helper condition_block
+	elsif : ELSIF condition_block quad_elif_helper
 	'''
 
 def p_quad_elif_helper(p):
@@ -581,7 +581,7 @@ def p_quad_elif_helper(p):
 	'''
 
 	#####IF
-
+	type_stack.pprint()
 	aux = type_stack.pop()
 	if aux != 1 :
 		Error.not_a_condition(aux, p.lexer.lineno)

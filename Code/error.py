@@ -45,7 +45,7 @@ class Error:
 		sys.exit()
 
 	@staticmethod
-	def not_a_condition(lineno, t1):
+	def not_a_condition(t1, lineno):
 		t1 = inv_type_dict[t1]
 		print "Semantic Error: Expected type Bool and got type " + str(t1) + ", in line " + str(lineno)
 		sys.exit()
