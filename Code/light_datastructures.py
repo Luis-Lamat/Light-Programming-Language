@@ -34,20 +34,18 @@ operator_dict = {
     '!=' : 9,
     'and': 10,
     'or' : 11,
-    '('  : 12,
-    ')'  : 13,
-    '='  : 14
 }
-
-inv_op_dict = {v: k for k, v in operator_dict.items()}
-
 special_operator_dict = {
-	
-	'gotof'	:	14,
-	'gotot'	:	15,
-	'goto'	:	16
-
+    '('     : 12,
+    ')'     : 13,
+	'='     : 14,
+	'gotof'	: 15,
+	'gotot'	: 16,
+	'goto'	: 17
 }
+
+merged_dict = dict(operator_dict, **special_operator_dict)
+inv_op_dict = {v: k for k, v in merged_dict.items()}
 
 initializer_dict = {
     # Primitive Types

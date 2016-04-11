@@ -508,7 +508,7 @@ def p_factor (p):
 
 def p_quad_push_lpar(p):
 	'quad_push_lpar : '
-	operator_stack.push(operator_dict[p[-1]])
+	operator_stack.push(special_operator_dict[p[-1]])
 
 def p_quad_pop_lpar(p):
 	'quad_pop_lpar : '
@@ -870,7 +870,11 @@ def p_push_string(p):
 
 def p_push_operator(p):
 	'push_operator : '
-	operator_stack.push(operator_dict[p[-1]])
+	try:
+		op = operator_dict[p[-1]]
+	except KeyError:
+		op = special_operator_dict[p[-1]]
+	operator_stack.push(op)
 
 def p_verify_variable(p):
 	'verify_variable : '
