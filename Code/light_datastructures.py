@@ -41,7 +41,13 @@ special_operator_dict = {
 	'='     : 14,
 	'gotof'	: 15,
 	'gotot'	: 16,
-	'goto'	: 17
+	'goto'	: 17,
+    'ret'   : 18,
+    'return': 19,
+    'gosub' : 20,
+    'era'   : 21,
+    'param' : 22,
+    'print' : 23
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)

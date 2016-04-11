@@ -28,6 +28,11 @@ type_stack      = Stack()
 missing_return_stmt = False
 
 # Helper Functions
+def build_and_push_quad(op, l_op, r_op, res):
+	tmp_quad = Quadruple()
+	tmp_quad.build(op, l_op, r_op, res)
+	Quadruples.push_quad(tmp_quad)
+
 def exp_quad_helper(p, op_list):
 	if operator_stack.isEmpty():
 		return
@@ -44,9 +49,7 @@ def exp_quad_helper(p, op_list):
 		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
 
 		# Generate Quadruple and push it to the list
-		tmp_quad = Quadruple()
-		tmp_quad.build(op, o2, o1, tmp_var_id)
-		Quadruples.push_quad(tmp_quad)
+		build_and_push_quad(op, o2, o1, tmp_var_id)
 		operator_stack.pop()
 
 		# push the tmp_var_id and the return type to stack
@@ -66,10 +69,13 @@ def assign_quad_helper():
 	o2 = operand_stack.pop()
 
 	# Generate Quadruple and push it to the list
-	tmp_quad = Quadruple()
-	tmp_quad.build(op, o1, None, o2)
-	Quadruples.push_quad(tmp_quad)
-	operator_stack.pop()
+	build_and_push_quad(op, o1, None, o2)
+
+def print_quad_helper():
+	operand = operand_stack.pop()
+	op = operator_stack.pop()
+	build_and_push_quad(op, None, None, operand)
+	type_stack.pop()
 
 def print_stacks():
 	sys.stdout.write("> Operand Stack = ")
@@ -830,7 +836,7 @@ def p_return (p):
 
 def p_print (p):
 	'''
-	print : PRINT SEP_LPAR print_a SEP_RPAR
+	print : PRINT push_operator SEP_LPAR print_a SEP_RPAR
 	'''
 	print("print " + str(p.lexer.lineno))
 
@@ -838,9 +844,10 @@ def p_print_a (p):
 	'''
 	print_a : exp
 		| function_call
-		| VAR_STRING
-		| VAR_IDENTIFIER verify_variable
+		| VAR_STRING push_string
+		| VAR_IDENTIFIER verify_variable push_id
 	'''
+	print_quad_helper()
 	
 def p_figure_creations (p):
 	'''
