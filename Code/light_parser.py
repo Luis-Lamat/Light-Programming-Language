@@ -924,6 +924,7 @@ def p_cnt_prim (p):
 	cnt_prim : VAR_INT push_num
 		| VAR_DECIMAL push_num
 		| VAR_STRING push_string
+		| VAR_BOOLEAN push_bool
 	'''
 
 def p_return (p):

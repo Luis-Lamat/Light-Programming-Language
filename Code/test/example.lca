@@ -12,7 +12,7 @@ program lolz {
 
     light() {
         var tmp_var:int = 0
-
+        var b:boolean = true
         example_func(attr1: 1+1*2, attr2: 0.0)
     }
 }
