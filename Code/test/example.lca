@@ -1,0 +1,18 @@
+program lolz {
+
+
+    var global:int = 0
+
+    function example_func(attr1: int) {
+        var a:int = 0
+        a = a + 1
+        global = a
+    }
+  
+
+    light() {
+        var tmp_var:int = 0
+
+        example_func(attr1: 1+1*2)
+    }
+}

@@ -16,7 +16,8 @@ class Quadruple(object):
 		self.result = result
 
 	def get_list(self):
-		return [self.operator, self.left_operand, self.right_operand, self.result]
+		op = inv_op_dict[self.operator]
+		return [op, self.left_operand, self.right_operand, self.result]
 
 class Quadruples(object):
 	# Class variables

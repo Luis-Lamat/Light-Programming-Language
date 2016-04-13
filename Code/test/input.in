@@ -133,8 +133,9 @@ program lolz {
 
 
         # camera
-        window_size(width: 1000, height: 1000)
-        coordinates(x: 100, y: 100)
+        # TODO: Make reserved words and syntax rules
+        # window_size(width: 1000, height: 1000)
+        # coordinates(x: 100, y: 100)
     
         # Arrays are troublesome!
         # var points:[point] = [5]

@@ -198,15 +198,23 @@ class FunctionTable:
 
 	@classmethod
 	def verify_var_in_func(cls, function_name, var_name):
-		return cls.function_dict[function_name].var_in_func(var_name) or cls.verift_var_global(var_name)
+		return cls.function_dict[function_name].var_in_func(var_name) or cls.verify_var_global(var_name)
 
 	@classmethod
 	def add_param_to_func(cls, function_name, param_type):
 		cls.function_dict[function_name].params.append(param_type)
 
 	@classmethod
-	def verift_var_global(cls, var_name):
+	def verify_var_global(cls, var_name):
 		return cls.function_dict["program"].var_in_func(var_name)
+
+	@classmethod
+	def get_var_in_scope(cls, function_name, var_name):
+		try:
+			var = cls.function_dict[function_name].vars[var_name]
+		except KeyError:
+			var = cls.function_dict["program"].vars[var_name]
+		return var
 
 	@classmethod
 	def add_arr_empty_to_func(cls, function_name, arr_obj):

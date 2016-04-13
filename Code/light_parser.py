@@ -56,9 +56,6 @@ def exp_quad_helper(p, op_list):
 		operand_stack.push(tmp_var_id)
 		type_stack.push(return_type)
 
-		print_stacks()
-		Quadruples.print_all()
-
 def assign_quad_helper():
 	t1 = type_stack.pop()
 	t2 = type_stack.pop()
@@ -114,6 +111,9 @@ def p_main_func (p):
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
+	# Generates the 'END' action to finish execution
+	build_and_push_quad(special_operator_dict['end'], None, None, None)
+	# TODO: Liberar tabla de variables
 
 def p_type (p):
 	'''
@@ -162,6 +162,7 @@ def p_function (p):
 	# Generates the 'RET' action at the end of the function
 	build_and_push_quad(special_operator_dict['ret'], None, None, None)
 	missing_return_stmt = False # resetting var
+	# TODO: Liberar tabla de variables
 
 def p_func_a (p):
 	'''
@@ -229,7 +230,6 @@ def p_new_func_scope(p):
 	tmp_function.name = p[-1]
 	tmp_function.type = type_dict['void']
 	tmp_function.quad_index = Quadruples.next_free_quad
-	print "------------------------------------------> " + str(tmp_function.quad_index)
 	FunctionTable.add_function(tmp_function)
 
 def p_parameters (p):
@@ -252,14 +252,19 @@ def p_function_call(p):
 	'''
 	function_call : VAR_IDENTIFIER verify_function_call test SEP_LPAR call_parameters SEP_RPAR
 	'''
+	address = FunctionTable.function_dict[p[1]].quad_index
+	build_and_push_quad(special_operator_dict['gosub'], p[1], address, None)
 
 def p_verify_function_call(p):
 	'''
 	verify_function_call : epsilon
 	'''
-	print("Function queue")
+	# print("Function queue")
+	# TODO: delegate this task to FunctionTable class
 	if not function_queue.inQueue(p[-1]):
 		Error.function_not_defined(p[-1],p.lexer.lineno)
+	func = FunctionTable.function_dict[p[-1]]
+	build_and_push_quad(special_operator_dict['era'], func.name, None, None)
 
 
 def p_test(p):
@@ -270,7 +275,7 @@ def p_test(p):
 
 def p_call_parameters(p):
 	'''
-	call_parameters : VAR_IDENTIFIER SEP_COLON cnt_prim call_param_a
+	call_parameters : VAR_IDENTIFIER SEP_COLON exp call_param_a
 		| epsilon
 	'''
 def p_call_param_a(p):
@@ -861,9 +866,9 @@ def p_figure_creations (p):
 
 def p_push_id(p):
 	'push_id : '
-	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].name)
+	var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
+	type_stack.push(var.type)
+	operand_stack.push(var.name)
 
 def p_push_num(p):
 	'push_num : '
