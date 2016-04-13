@@ -20,6 +20,17 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def param_mismatch(lineno, p, t):
+		t = inv_type_dict[t]
+		print "Parameter Mismatch (line {}): param '{}' is not valid or can't be of type '{}'".format(lineno, p, t)
+		sys.exit()
+
+	@staticmethod
+	def param_number_mismatch(lineno, f, n, m):
+		print "Parameter Mismatch (line {}): function '{}' takes {} arguments, {} given".format(lineno, f, n, m)
+		sys.exit()
+
+	@staticmethod
 	def variable_not_defined(name, line):
 		print "Semantic Error: Variable '" + name +"' not defined in line: " + str(line)
 		sys.exit()

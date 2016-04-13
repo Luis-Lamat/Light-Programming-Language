@@ -23,6 +23,9 @@ operand_stack   = Stack()
 operator_stack  = Stack()
 type_stack      = Stack()
 
+# Global track keeping
+last_func_called = ""
+param_counter = 0
 
 # Conditions
 missing_return_stmt = False
@@ -240,7 +243,7 @@ def p_new_param_seen(p):
 	tmp_var.name = p[-3]
 	tmp_var.type = type_dict[p[-1]]
 	FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
-	FunctionTable.add_param_to_func(tmp_function.name, tmp_var.type)
+	FunctionTable.add_param_to_func(tmp_function.name, p[-3], tmp_var.type)
 
 def p_param_a (p):
 	'''
@@ -252,17 +255,26 @@ def p_function_call(p):
 	'''
 	function_call : VAR_IDENTIFIER verify_function_call test SEP_LPAR call_parameters SEP_RPAR
 	'''
-	address = FunctionTable.function_dict[p[1]].quad_index
-	build_and_push_quad(special_operator_dict['gosub'], p[1], address, None)
+	func = FunctionTable.function_dict[p[1]]
+	address = func.quad_index
+	build_and_push_quad(special_operator_dict['gosub'], p[1], None, address)
+
+	# verify arguments count
+	global param_counter
+	n = len(func.params)
+	if param_counter != n:
+		Error.param_number_mismatch(p.lexer.lineno-1, p[1], n, param_counter)
+
+	param_counter = 0 # global var reset
 
 def p_verify_function_call(p):
-	'''
-	verify_function_call : epsilon
-	'''
+	'verify_function_call : epsilon'
 	# print("Function queue")
 	# TODO: delegate this task to FunctionTable class
 	if not function_queue.inQueue(p[-1]):
 		Error.function_not_defined(p[-1],p.lexer.lineno)
+	global last_func_called
+	last_func_called = p[-1]
 	func = FunctionTable.function_dict[p[-1]]
 	build_and_push_quad(special_operator_dict['era'], func.name, None, None)
 
@@ -275,7 +287,7 @@ def p_test(p):
 
 def p_call_parameters(p):
 	'''
-	call_parameters : VAR_IDENTIFIER SEP_COLON exp call_param_a
+	call_parameters : VAR_IDENTIFIER SEP_COLON exp verify_param call_param_a
 		| epsilon
 	'''
 def p_call_param_a(p):
@@ -283,9 +295,17 @@ def p_call_param_a(p):
 	call_param_a : SEP_COMMA call_parameters
 		| epsilon
 	'''
-	pass
+def p_verify_param(p):
+	'verify_param : '
+	param_name = p[-3]
+	arg = operand_stack.pop()
+	arg_type = type_stack.pop()
+	if not FunctionTable.verify_param_at_index(last_func_called, param_name, arg_type, param_counter):
+		Error.param_mismatch( p.lexer.lineno, param_name, arg_type)
+	build_and_push_quad(special_operator_dict['param'], arg, None, param_counter)
+	global param_counter
+	param_counter = param_counter + 1
  
-
 def p_assignment (p):
 	'''
 	assignment : VAR_IDENTIFIER verify_variable push_id OP_EQUALS push_operator assgn_a 

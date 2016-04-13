@@ -3,7 +3,7 @@ program lolz {
 
     var global:int = 0
 
-    function example_func(attr1: int) {
+    function example_func(attr1: int, attr2: decimal) {
         var a:int = 0
         a = a + 1
         global = a
@@ -13,6 +13,6 @@ program lolz {
     light() {
         var tmp_var:int = 0
 
-        example_func(attr1: 1+1*2)
+        example_func(attr1: 1+1*2, attr2: 0.0)
     }
 }

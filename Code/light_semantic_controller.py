@@ -201,8 +201,8 @@ class FunctionTable:
 		return cls.function_dict[function_name].var_in_func(var_name) or cls.verify_var_global(var_name)
 
 	@classmethod
-	def add_param_to_func(cls, function_name, param_type):
-		cls.function_dict[function_name].params.append(param_type)
+	def add_param_to_func(cls, function_name, param_name, param_type):
+		cls.function_dict[function_name].params.append((param_name, param_type))
 
 	@classmethod
 	def verify_var_global(cls, var_name):
@@ -215,6 +215,14 @@ class FunctionTable:
 		except KeyError:
 			var = cls.function_dict["program"].vars[var_name]
 		return var
+
+	@classmethod
+	def verify_param_at_index(cls, function_name, param_name, param_type, index):
+		func = cls.function_dict[function_name]
+		if index >= len(func.params):
+			return False
+		param_tuple = func.params[index]
+		return (param_tuple[0] == param_name and param_tuple[1] == param_type)
 
 	@classmethod
 	def add_arr_empty_to_func(cls, function_name, arr_obj):

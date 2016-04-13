@@ -1,30 +1,35 @@
 
-[Wed Apr 13 12:50:16 CDT 2016] =========================================== 
+[Wed Apr 13 16:45:38 CDT 2016] =========================================== 
+light_parser.py:306: SyntaxWarning: name 'param_counter' is used prior to global declaration
+  global param_counter
 > Operand Stack = []
 > Operator Stack = []
 > Operand Stack = []
 > Operator Stack = []
 factor: 8
 term: 8
-factor: 13
-term: 13
-exp: 13
-exp: 13
-ASSIGN A: 13
-assignment: 13
-ASSIGN A: 14
-assignment: 14
+factor: 9
+term: 9
+exp: 9
+exp: 9
+ASSIGN A: 9
+assignment: 9
+ASSIGN A: 10
+assignment: 10
 > Operand Stack = []
 > Operator Stack = []
-test: 20
-factor: 20
-term: 20
-factor: 20
-factor: 20
-term: 20
-term: 20
-exp: 20
-exp: 20
+test: 16
+factor: 16
+term: 16
+factor: 16
+factor: 16
+term: 16
+term: 16
+exp: 16
+exp: 16
+factor: 16
+term: 16
+exp: 16
 light:
 	id: 2,
 	name: light,
@@ -53,12 +58,18 @@ example_func:
 	id: 1,
 	name: example_func,
 	type: 0
-	Params: [2]
+	Params: [('attr1', 2), ('attr2', 3)]
 	Starting quad index = 1
 	VAR - a:
 		id: 2002,
 		name: a,
 		type: 2,
+		value: None
+		---------
+	VAR - attr2:
+		id: 3000,
+		name: attr2,
+		type: 3,
 		value: None
 		---------
 	VAR - attr1:
@@ -78,6 +89,8 @@ Quads ===============================
 7:	['era', 'example_func', None, None]
 8:	['*', 1, 2, 2001]
 9:	['+', 1, 2001, 2002]
-10:	['gosub', 'example_func', 1, None]
-11:	['end', None, None, None]
+10:	['param', 2002, None, 0]
+11:	['param', 0.0, None, 1]
+12:	['gosub', 'example_func', None, 1]
+13:	['end', None, None, None]
 Successful
