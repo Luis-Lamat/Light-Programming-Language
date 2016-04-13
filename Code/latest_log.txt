@@ -1,27 +1,28 @@
-\n[Tue Apr 12 22:33:04 CDT 2016] =========================================== 
+\n[Wed Apr 13 00:26:59 CDT 2016] =========================================== 
 WARNING: Token 'VAR_FRACTION' defined, but not used
 WARNING: Token 'FRACTION' defined, but not used
 WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: light_parser.py:676: Rule 'condition_block' defined, but not used
+WARNING: light_parser.py:731: Rule 'condition_block' defined, but not used
 WARNING: There are 3 unused tokens
 WARNING: There is 1 unused rule
 WARNING: Symbol 'condition_block' is unreachable
 Generating LALR tables
 WARNING: 7 shift/reduce conflicts
-WARNING: 37 reduce/reduce conflicts
-WARNING: reduce/reduce conflict in state 316 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (print_a -> VAR_IDENTIFIER verify_variable push_id) in state 316
-WARNING: reduce/reduce conflict in state 332 resolved using rule (var_cte -> VAR_INT push_num)
-WARNING: rejected rule (inc_var_cte -> VAR_INT push_num) in state 332
-WARNING: reduce/reduce conflict in state 353 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 353
-WARNING: reduce/reduce conflict in state 367 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 367
+WARNING: 41 reduce/reduce conflicts
+WARNING: reduce/reduce conflict in state 311 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (print_a -> VAR_IDENTIFIER verify_variable push_id) in state 311
+WARNING: reduce/reduce conflict in state 324 resolved using rule (var_cte -> VAR_INT push_num)
+WARNING: rejected rule (inc_var_cte -> VAR_INT push_num) in state 324
+WARNING: reduce/reduce conflict in state 343 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 343
+WARNING: reduce/reduce conflict in state 361 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 361
 WARNING: Rule (print_a -> VAR_IDENTIFIER verify_variable push_id) is never reduced
 WARNING: Rule (inc_var_cte -> VAR_INT push_num) is never reduced
 WARNING: Rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) is never reduced
 > Operand Stack = []
 > Operator Stack = []
+> Type Stack = []
 ------------------------------------------> 1
 factor: 20
 term: 20
@@ -40,6 +41,7 @@ exp: 23
 +=
 > Operand Stack = ['j', 2005]
 > Operator Stack = []
+> Type Stack = [2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -52,6 +54,7 @@ exp: 25
 +=
 > Operand Stack = ['i', 2006]
 > Operator Stack = []
+> Type Stack = [2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -59,16 +62,17 @@ Quads ===============================
 3:	[0, 'j', 'i', 2005]
 4:	[14, 2005, None, 'j']
 5:	[0, 'i', 2, 2006]
-ASSIGN A: 30
-assignment: 30
-factor: 30
-term: 30
-exp: 30
-factor: 30
-term: 30
-exp: 30
+ASSIGN A: 32
+assignment: 32
+factor: 32
+term: 32
+exp: 32
+factor: 32
+term: 32
+exp: 32
 > Operand Stack = [1000]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -79,31 +83,32 @@ Quads ===============================
 6:	[14, 2006, None, 'i']
 7:	[14, '"LOL"', None, 'a']
 8:	[4, 2, 3, 1000]
-expresion: 30
-expresion: 30
-condition: 30
+expresion: 32
+expresion: 32
+condition: 32
 PUSH JUMP :
 [9]
-ASSIGN A: 33
-assignment: 33
-print 34
-doBlock 35
-ASSIGN A: 37
-assignment: 37
-print 38
-doBlock 40
+ASSIGN A: 35
+assignment: 35
+print 36
+doBlock 37
+ASSIGN A: 39
+assignment: 39
+print 40
+doBlock 42
 [12]
 12
-ASSIGN A: 43
-assignment: 43
-factor: 43
-term: 43
-exp: 43
-factor: 43
-term: 43
-exp: 43
+ASSIGN A: 45
+assignment: 45
+factor: 45
+term: 45
+exp: 45
+factor: 45
+term: 45
+exp: 45
 > Operand Stack = [1001]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -122,25 +127,26 @@ Quads ===============================
 14:	[23, None, None, '"OTherStuff"']
 15:	[14, '"COMIENZOELIF"', None, 'b']
 16:	[4, 27, 35, 1001]
-expresion: 43
-expresion: 43
-condition: 43
+expresion: 45
+expresion: 45
+condition: 45
 PUSH JUMP :
 [17]
-ASSIGN A: 46
-assignment: 46
-print 47
-doBlock 48
+ASSIGN A: 48
+assignment: 48
+print 49
+doBlock 50
 [17]
 17
-factor: 48
-term: 48
-exp: 48
-factor: 48
-term: 48
-exp: 48
+factor: 50
+term: 50
+exp: 50
+factor: 50
+term: 50
+exp: 50
 > Operand Stack = [1002]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -163,30 +169,31 @@ Quads ===============================
 18:	[14, '"ifelseElif"', None, 'a']
 19:	[23, None, None, '"Truestuff"']
 20:	[4, 4, 2, 1002]
-expresion: 48
-expresion: 48
-condition: 48
+expresion: 50
+expresion: 50
+condition: 50
 PUSH JUMP :
 [21]
-ASSIGN A: 50
-assignment: 50
-print 51
-doBlock 52
-ASSIGN A: 54
-assignment: 54
-doBlock 56
+ASSIGN A: 52
+assignment: 52
+print 53
+doBlock 54
+ASSIGN A: 56
+assignment: 56
+doBlock 58
 [24]
 24
-ASSIGN A: 58
-assignment: 58
-factor: 58
-term: 58
-exp: 58
-factor: 58
-term: 58
-exp: 58
+ASSIGN A: 60
+assignment: 60
+factor: 60
+term: 60
+exp: 60
+factor: 60
+term: 60
+exp: 60
 > Operand Stack = [1003]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -216,12 +223,13 @@ Quads ===============================
 25:	[14, '"else2"', None, 'a']
 26:	[14, '"TERMINOELIF"', None, 'b']
 27:	[4, 1, 2, 1003]
-expresion: 58
-expresion: 58
-factor: 58
-factor: 58
+expresion: 60
+expresion: 60
+factor: 60
+factor: 60
 > Operand Stack = [1003, 3001]
 > Operator Stack = [10, 12, 12]
+> Type Stack = [1, 3]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -252,19 +260,20 @@ Quads ===============================
 26:	[14, '"TERMINOELIF"', None, 'b']
 27:	[4, 1, 2, 1003]
 28:	[2, 3, 4.8, 3001]
-term: 58
-term: 58
-exp: 58
-expresion: 58
-condition: 58
-factor: 58
-term: 58
-exp: 58
-factor: 58
-term: 58
-exp: 58
+term: 60
+term: 60
+exp: 60
+expresion: 60
+condition: 60
+factor: 60
+term: 60
+exp: 60
+factor: 60
+term: 60
+exp: 60
 > Operand Stack = [1003, 1004]
 > Operator Stack = [10, 12]
+> Type Stack = [1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -296,15 +305,16 @@ Quads ===============================
 27:	[4, 1, 2, 1003]
 28:	[2, 3, 4.8, 3001]
 29:	[5, 3001, 9, 1004]
-expresion: 58
-expresion: 58
-condition: 58
-factor: 58
-term: 58
-exp: 58
-expresion: 58
+expresion: 60
+expresion: 60
+condition: 60
+factor: 60
+term: 60
+exp: 60
+expresion: 60
 > Operand Stack = [1005]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -337,22 +347,23 @@ Quads ===============================
 28:	[2, 3, 4.8, 3001]
 29:	[5, 3001, 9, 1004]
 30:	[10, 1003, 1004, 1005]
-condition: 58
-condition: 58
+condition: 60
+condition: 60
 PUSH JUMP :
 [31]
-ASSIGN A: 60
-assignment: 60
-print 61
-doBlock 64
+ASSIGN A: 62
+assignment: 62
+print 63
+doBlock 66
 [31]
 31
-factor: 64
-term: 64
-factor: 64
-term: 64
+factor: 66
+term: 66
+factor: 66
+term: 66
 > Operand Stack = [3002]
 > Operator Stack = [12]
+> Type Stack = [3]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -389,13 +400,14 @@ Quads ===============================
 32:	[14, '"ifsolo"', None, 'a']
 33:	[23, None, None, '"true"']
 34:	[0, 1, 4.0, 3002]
-exp: 64
-exp: 64
-factor: 64
-term: 64
-exp: 64
+exp: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
 > Operand Stack = [1006]
 > Operator Stack = [12]
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -433,21 +445,22 @@ Quads ===============================
 33:	[23, None, None, '"true"']
 34:	[0, 1, 4.0, 3002]
 35:	[5, 3002, 5, 1006]
-expresion: 64
-expresion: 64
-condition: 64
-factor: 64
-term: 64
-exp: 64
-expresion: 64
-factor: 64
-term: 64
-exp: 64
-factor: 64
-term: 64
-exp: 64
+expresion: 66
+expresion: 66
+condition: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
 > Operand Stack = [1006, 1007]
 > Operator Stack = [10, 12]
+> Type Stack = [1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -486,16 +499,17 @@ Quads ===============================
 34:	[0, 1, 4.0, 3002]
 35:	[5, 3002, 5, 1006]
 36:	[9, 4, 2, 1007]
-expresion: 64
-expresion: 64
-factor: 64
-term: 64
-exp: 64
-factor: 64
-term: 64
-exp: 64
+expresion: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
 > Operand Stack = [1006, 1007, 1008]
 > Operator Stack = [10, 12, 11]
+> Type Stack = [1, 1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -535,10 +549,11 @@ Quads ===============================
 35:	[5, 3002, 5, 1006]
 36:	[9, 4, 2, 1007]
 37:	[5, 4, 3, 1008]
-expresion: 64
-expresion: 64
+expresion: 66
+expresion: 66
 > Operand Stack = [1006, 1009]
 > Operator Stack = [10, 12]
+> Type Stack = [1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -579,14 +594,15 @@ Quads ===============================
 36:	[9, 4, 2, 1007]
 37:	[5, 4, 3, 1008]
 38:	[11, 1007, 1008, 1009]
-condition: 64
-condition: 64
-factor: 64
-term: 64
-exp: 64
-expresion: 64
+condition: 66
+condition: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
 > Operand Stack = [1010]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -628,14 +644,15 @@ Quads ===============================
 37:	[5, 4, 3, 1008]
 38:	[11, 1007, 1008, 1009]
 39:	[10, 1006, 1009, 1010]
-factor: 64
-term: 64
-exp: 64
-factor: 64
-term: 64
-exp: 64
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
 > Operand Stack = [1010, 1011]
 > Operator Stack = [10]
+> Type Stack = [1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -678,10 +695,11 @@ Quads ===============================
 38:	[11, 1007, 1008, 1009]
 39:	[10, 1006, 1009, 1010]
 40:	[7, 5, 2, 1011]
-expresion: 64
-expresion: 64
+expresion: 66
+expresion: 66
 > Operand Stack = [1012]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -725,14 +743,15 @@ Quads ===============================
 39:	[10, 1006, 1009, 1010]
 40:	[7, 5, 2, 1011]
 41:	[10, 1010, 1011, 1012]
-factor: 64
-term: 64
-exp: 64
-factor: 64
-term: 64
-exp: 64
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
 > Operand Stack = [1012, 1013]
 > Operator Stack = [11]
+> Type Stack = [1, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -777,10 +796,11 @@ Quads ===============================
 40:	[7, 5, 2, 1011]
 41:	[10, 1010, 1011, 1012]
 42:	[5, 4, 3, 1013]
-expresion: 64
-expresion: 64
+expresion: 66
+expresion: 66
 > Operand Stack = [1014]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -826,28 +846,29 @@ Quads ===============================
 41:	[10, 1010, 1011, 1012]
 42:	[5, 4, 3, 1013]
 43:	[11, 1012, 1013, 1014]
-condition: 64
-condition: 64
-condition: 64
-condition: 64
+condition: 66
+condition: 66
+condition: 66
+condition: 66
 PUSH JUMP :
 [44]
-print 66
-doBlock 68
+print 68
+doBlock 70
 [44]
 44
 ------------------------------------------> 47
 ------------------------------------------> 48
 okokok
 3
-factor: 76
-term: 76
-exp: 76
-factor: 76
-term: 76
-exp: 76
+factor: 78
+term: 78
+exp: 78
+factor: 78
+term: 78
+exp: 78
 > Operand Stack = [1000]
 > Operator Stack = []
+> Type Stack = [1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -898,38 +919,39 @@ Quads ===============================
 46:	[18, None, None, None]
 47:	[18, None, None, None]
 48:	[4, 1, 2, 1000]
-expresion: 76
-expresion: 76
-condition: 76
+expresion: 78
+expresion: 78
+condition: 78
 PUSH JUMP :
 [49]
-print 78
-doBlock 80
+print 80
+doBlock 82
 [49]
 49
-print 81
-factor: 82
-term: 82
-exp: 82
+print 83
+factor: 84
+term: 84
+exp: 84
 ------------------------------------------> 53
-factor: 85
-term: 85
-exp: 85
-print 86
+factor: 87
+term: 87
+exp: 87
+print 88
 ------------------------------------------> 55
-factor: 90
-term: 90
-exp: 90
-print 91
+factor: 92
+term: 92
+exp: 92
+print 93
 ------------------------------------------> 57
 okokok
 2
-factor: 93
-term: 93
-factor: 94
-term: 94
+factor: 95
+term: 95
+factor: 96
+term: 96
 > Operand Stack = [0, 2001]
 > Operator Stack = []
+> Type Stack = [2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -989,21 +1011,23 @@ Quads ===============================
 55:	[23, None, None, 'text']
 56:	[18, None, None, None]
 57:	[0, 'number', 1, 2001]
-exp: 94
-exp: 94
+exp: 96
+exp: 96
 ------------------------------------------> 59
 ------------------------------------------> 60
 okokok
 2
 > Operand Stack = [0, 2001]
 > Operator Stack = []
+> Type Stack = [2, 2]
 +=
-factor: 108
-term: 108
-exp: 108
+factor: 110
+term: 110
+exp: 110
 +=
 > Operand Stack = [0, 2001, 'sum', 2003]
 > Operator Stack = []
+> Type Stack = [2, 2, 2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1067,191 +1091,33 @@ Quads ===============================
 59:	[18, None, None, None]
 60:	[14, 0, None, 'sum']
 61:	[0, 'sum', 1, 2003]
-doBlock 110
-cycle: 110
-factor: 111
-term: 111
-exp: 111
+doBlock 112
+cycle: 112
+factor: 113
+term: 113
+exp: 113
 ------------------------------------------> 64
 okokok
 2
 > Operand Stack = [0, 2001, 'sum']
 > Operator Stack = []
+> Type Stack = [2, 2, 2]
 > Operand Stack = [0, 2001, 'sum']
 > Operator Stack = []
-factor: 116
-term: 116
-exp: 116
-factor: 116
-term: 116
-exp: 116
-> Operand Stack = [0, 2001, 'sum', 1000]
-> Operator Stack = []
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-expresion: 116
-expresion: 116
-condition: 116
-+=
-for116
-factor: 117
-term: 117
-exp: 117
-factor: 117
-term: 117
-exp: 117
-> Operand Stack = [0, 2001, 'sum', 1000, 1001]
-> Operator Stack = []
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-expresion: 117
-expresion: 117
-condition: 117
-PUSH JUMP :
-[68]
-print 119
-doBlock 120
-[68]
-68
+> Type Stack = [2, 2, 2]
+ASSIGN A: 120
+assignment: 120
+ASSIGN A: 120
+assignment: 120
 factor: 120
 term: 120
-factor: 121
-term: 121
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 2004]
-> Operator Stack = [14]
+exp: 120
+factor: 120
+term: 120
+exp: 120
+> Operand Stack = [0, 2001, 'sum', 1000]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1319,102 +1185,103 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-exp: 121
-exp: 121
-ASSIGN A: 121
-assignment: 121
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+expresion: 120
+expresion: 120
+condition: 120
 +=
+factor: 120
+term: 120
+exp: 120
++=
+> Operand Stack = [0, 2001, 'sum', 'index', 2004]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, None]
+70:	[0, 'index', 1, 2004]
+ASSIGN A: 122
+assignment: 122
 factor: 122
 term: 122
 exp: 122
-+=
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 2005]
-> Operator Stack = []
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
 factor: 122
 term: 122
-factor: 123
-term: 123
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 2006]
-> Operator Stack = [14]
+exp: 122
+> Operand Stack = [0, 2001, 'sum', 1001]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1482,63 +1349,346 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-exp: 123
-exp: 123
-ASSIGN A: 123
-assignment: 123
-factor: 124
-term: 124
-exp: 124
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, None]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+expresion: 122
+expresion: 122
+condition: 122
+PUSH JUMP :
+[69, 69, 74]
+print 124
 doBlock 125
-cycle: 125
-print 126
+[69, 69, 74]
+74
+factor: 125
+term: 125
 factor: 126
 term: 126
+> Operand Stack = [0, 2001, 'sum', 'sum', 2005]
+> Operator Stack = [14]
+> Type Stack = [2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, None]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
 exp: 126
-print 127
+exp: 126
+ASSIGN A: 126
+assignment: 126
++=
+factor: 127
+term: 127
+exp: 127
++=
+> Operand Stack = [0, 2001, 'sum', 'sum', 2006]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, None]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+factor: 127
+term: 127
 factor: 128
 term: 128
+> Operand Stack = [0, 2001, 'sum', 'sum', 2007]
+> Operator Stack = [14]
+> Type Stack = [2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, None]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
 exp: 128
-------------------------------------------> 79
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum']
+exp: 128
+ASSIGN A: 128
+assignment: 128
+ASSIGN A: 129
+assignment: 129
+factor: 130
+term: 130
+exp: 130
+doBlock 131
+for131
+cycle: 131
+ASSIGN A: 132
+assignment: 132
+print 133
+factor: 133
+term: 133
+exp: 133
+print 134
+factor: 135
+term: 135
+exp: 135
+------------------------------------------> 88
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum']
 > Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2]
 Function queue
-test: 131
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum']
+test: 138
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum']
 > Operator Stack = []
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum']
+> Type Stack = [2, 2, 2, 2, 2]
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum']
 > Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2]
 Function queue
-test: 136
-Function queue
-test: 139
+test: 143
 Function queue
 test: 146
-print 149
-Function queue
-test: 149
-print 153
 Function queue
 test: 153
+print 156
 Function queue
-test: 154
-factor: 160
-term: 160
-exp: 160
-factor: 160
-term: 160
-exp: 160
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 1000]
+test: 156
+print 160
+Function queue
+test: 160
+Function queue
+test: 161
+factor: 167
+term: 167
+exp: 167
+factor: 167
+term: 167
+exp: 167
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 1000]
 > Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 1]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1606,43 +1756,53 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-expresion: 160
-expresion: 160
-condition: 160
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+expresion: 167
+expresion: 167
+condition: 167
 PUSH JUMP :
-[85]
-factor: 162
-term: 162
-exp: 162
-ASSIGN A: 162
-assignment: 162
-doBlock 163
-[85]
-85
+[94]
+factor: 169
+term: 169
+exp: 169
+ASSIGN A: 169
+assignment: 169
+doBlock 170
+[94]
+94
 +=
-factor: 163
-factor: 163
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2003]
+factor: 170
+factor: 170
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2003]
 > Operator Stack = [12]
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1710,34 +1870,44 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-factor: 163
-term: 163
-factor: 163
-term: 163
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2003, 2004]
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+factor: 170
+term: 170
+factor: 170
+term: 170
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2003, 2004]
 > Operator Stack = [12, 3, 12]
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 Quads ===============================
 0:	[14, 0, None, 'global']
 1:	[14, 3, None, 'j']
@@ -1805,600 +1975,647 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-exp: 163
-exp: 163
-expresion: 163
-condition: 163
-factor: 163
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2005]
-> Operator Stack = [12]
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-factor: 163
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2006]
-> Operator Stack = [12]
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-90:	[2, 2005, 5, 2006]
-factor: 163
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2007]
-> Operator Stack = [12]
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-90:	[2, 2005, 5, 2006]
-91:	[3, 2006, 2, 2007]
-term: 163
-term: 163
-term: 163
-term: 163
-term: 163
-exp: 163
-expresion: 163
-condition: 163
-factor: 164
-term: 164
-exp: 164
-+=
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 2008]
-> Operator Stack = []
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-90:	[2, 2005, 5, 2006]
-91:	[3, 2006, 2, 2007]
-92:	[0, 'xpos', 2007, 2008]
-+=
-factor: 165
-term: 165
-exp: 165
-+=
-> Operand Stack = [0, 2001, 'sum', 1000, 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'ypos', 2009]
-> Operator Stack = []
-Quads ===============================
-0:	[14, 0, None, 'global']
-1:	[14, 3, None, 'j']
-2:	[14, 2, None, 'i']
-3:	[0, 'j', 'i', 2005]
-4:	[14, 2005, None, 'j']
-5:	[0, 'i', 2, 2006]
-6:	[14, 2006, None, 'i']
-7:	[14, '"LOL"', None, 'a']
-8:	[4, 2, 3, 1000]
-9:	[15, 1000, None, 13]
-10:	[14, '"ifelse"', None, 'a']
-11:	[23, None, None, '"Truestuff"']
-12:	[17, None, None, 15]
-13:	[14, '"else"', None, 'a']
-14:	[23, None, None, '"OTherStuff"']
-15:	[14, '"COMIENZOELIF"', None, 'b']
-16:	[4, 27, 35, 1001]
-17:	[15, 1001, None, 20]
-18:	[14, '"ifelseElif"', None, 'a']
-19:	[23, None, None, '"Truestuff"']
-20:	[4, 4, 2, 1002]
-21:	[15, 1002, None, 25]
-22:	[14, '"elif"', None, 'a']
-23:	[23, None, None, '"OTherStuff"']
-24:	[17, None, None, 26]
-25:	[14, '"else2"', None, 'a']
-26:	[14, '"TERMINOELIF"', None, 'b']
-27:	[4, 1, 2, 1003]
-28:	[2, 3, 4.8, 3001]
-29:	[5, 3001, 9, 1004]
-30:	[10, 1003, 1004, 1005]
-31:	[15, 1005, None, 34]
-32:	[14, '"ifsolo"', None, 'a']
-33:	[23, None, None, '"true"']
-34:	[0, 1, 4.0, 3002]
-35:	[5, 3002, 5, 1006]
-36:	[9, 4, 2, 1007]
-37:	[5, 4, 3, 1008]
-38:	[11, 1007, 1008, 1009]
-39:	[10, 1006, 1009, 1010]
-40:	[7, 5, 2, 1011]
-41:	[10, 1010, 1011, 1012]
-42:	[5, 4, 3, 1013]
-43:	[11, 1012, 1013, 1014]
-44:	[15, 1014, None, 46]
-45:	[23, None, None, '"false"']
-46:	[18, None, None, None]
-47:	[18, None, None, None]
-48:	[4, 1, 2, 1000]
-49:	[15, 1000, None, 51]
-50:	[23, None, None, '"true"']
-51:	[23, None, None, '"This"']
-52:	[18, None, None, None]
-53:	[23, None, None, 'num2']
-54:	[18, None, None, None]
-55:	[23, None, None, 'text']
-56:	[18, None, None, None]
-57:	[0, 'number', 1, 2001]
-58:	[18, None, None, None]
-59:	[18, None, None, None]
-60:	[14, 0, None, 'sum']
-61:	[0, 'sum', 1, 2003]
-62:	[14, 2003, None, 'sum']
-63:	[18, None, None, None]
-64:	[14, 0, None, 'sum']
-65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-90:	[2, 2005, 5, 2006]
-91:	[3, 2006, 2, 2007]
-92:	[0, 'xpos', 2007, 2008]
-93:	[14, 2008, None, 'xpos']
-94:	[0, 'ypos', 1, 2009]
-doBlock 167
-cycle: 167
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+exp: 170
+exp: 170
+expresion: 170
+condition: 170
 factor: 170
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2005]
+> Operator Stack = [12]
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+factor: 170
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2006]
+> Operator Stack = [12]
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+99:	[2, 2005, 5, 2006]
+factor: 170
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 'xpos', 2007]
+> Operator Stack = [12]
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+99:	[2, 2005, 5, 2006]
+100:	[3, 2006, 2, 2007]
+term: 170
+term: 170
+term: 170
+term: 170
 term: 170
 exp: 170
-factor: 170
-term: 170
-exp: 170
+expresion: 170
+condition: 170
 factor: 171
 term: 171
 exp: 171
-factor: 171
-term: 171
-exp: 171
++=
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'xpos', 2008]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+99:	[2, 2005, 5, 2006]
+100:	[3, 2006, 2, 2007]
+101:	[0, 'xpos', 2007, 2008]
++=
 factor: 172
 term: 172
 exp: 172
-factor: 172
-term: 172
-exp: 172
++=
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum', '"hello"', 10, 10, 1000, 1000, 100, 100, 'ypos', 2009]
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2]
+Quads ===============================
+0:	[14, 0, None, 'global']
+1:	[14, 3, None, 'j']
+2:	[14, 2, None, 'i']
+3:	[0, 'j', 'i', 2005]
+4:	[14, 2005, None, 'j']
+5:	[0, 'i', 2, 2006]
+6:	[14, 2006, None, 'i']
+7:	[14, '"LOL"', None, 'a']
+8:	[4, 2, 3, 1000]
+9:	[15, 1000, None, 13]
+10:	[14, '"ifelse"', None, 'a']
+11:	[23, None, None, '"Truestuff"']
+12:	[17, None, None, 15]
+13:	[14, '"else"', None, 'a']
+14:	[23, None, None, '"OTherStuff"']
+15:	[14, '"COMIENZOELIF"', None, 'b']
+16:	[4, 27, 35, 1001]
+17:	[15, 1001, None, 20]
+18:	[14, '"ifelseElif"', None, 'a']
+19:	[23, None, None, '"Truestuff"']
+20:	[4, 4, 2, 1002]
+21:	[15, 1002, None, 25]
+22:	[14, '"elif"', None, 'a']
+23:	[23, None, None, '"OTherStuff"']
+24:	[17, None, None, 26]
+25:	[14, '"else2"', None, 'a']
+26:	[14, '"TERMINOELIF"', None, 'b']
+27:	[4, 1, 2, 1003]
+28:	[2, 3, 4.8, 3001]
+29:	[5, 3001, 9, 1004]
+30:	[10, 1003, 1004, 1005]
+31:	[15, 1005, None, 34]
+32:	[14, '"ifsolo"', None, 'a']
+33:	[23, None, None, '"true"']
+34:	[0, 1, 4.0, 3002]
+35:	[5, 3002, 5, 1006]
+36:	[9, 4, 2, 1007]
+37:	[5, 4, 3, 1008]
+38:	[11, 1007, 1008, 1009]
+39:	[10, 1006, 1009, 1010]
+40:	[7, 5, 2, 1011]
+41:	[10, 1010, 1011, 1012]
+42:	[5, 4, 3, 1013]
+43:	[11, 1012, 1013, 1014]
+44:	[15, 1014, None, 46]
+45:	[23, None, None, '"false"']
+46:	[18, None, None, None]
+47:	[18, None, None, None]
+48:	[4, 1, 2, 1000]
+49:	[15, 1000, None, 51]
+50:	[23, None, None, '"true"']
+51:	[23, None, None, '"This"']
+52:	[18, None, None, None]
+53:	[23, None, None, 'num2']
+54:	[18, None, None, None]
+55:	[23, None, None, 'text']
+56:	[18, None, None, None]
+57:	[0, 'number', 1, 2001]
+58:	[18, None, None, None]
+59:	[18, None, None, None]
+60:	[14, 0, None, 'sum']
+61:	[0, 'sum', 1, 2003]
+62:	[14, 2003, None, 'sum']
+63:	[18, None, None, None]
+64:	[14, 0, None, 'sum']
+65:	[14, 0, None, 'index']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+99:	[2, 2005, 5, 2006]
+100:	[3, 2006, 2, 2007]
+101:	[0, 'xpos', 2007, 2008]
+102:	[14, 2008, None, 'xpos']
+103:	[0, 'ypos', 1, 2009]
+doBlock 174
+cycle: 174
+factor: 177
+term: 177
+exp: 177
+factor: 177
+term: 177
+exp: 177
+factor: 178
+term: 178
+exp: 178
+factor: 178
+term: 178
+exp: 178
 factor: 179
 term: 179
 exp: 179
 factor: 179
 term: 179
 exp: 179
-factor: 180
-term: 180
-exp: 180
-factor: 180
-term: 180
-exp: 180
-factor: 181
-term: 181
-exp: 181
-factor: 181
-term: 181
-exp: 181
+factor: 186
+term: 186
+exp: 186
+factor: 186
+term: 186
+exp: 186
+factor: 187
+term: 187
+exp: 187
+factor: 187
+term: 187
+exp: 187
 factor: 188
 term: 188
 exp: 188
-factor: 196
-term: 196
-exp: 196
-factor: 197
-term: 197
-exp: 197
-factor: 198
-term: 198
-exp: 198
-factor: 200
-term: 200
-exp: 200
-factor: 202
-term: 202
-exp: 202
+factor: 188
+term: 188
+exp: 188
+factor: 195
+term: 195
+exp: 195
 factor: 203
 term: 203
 exp: 203
 factor: 204
 term: 204
 exp: 204
-factor: 206
-term: 206
-exp: 206
-factor: 208
-term: 208
-exp: 208
+factor: 205
+term: 205
+exp: 205
+factor: 207
+term: 207
+exp: 207
 factor: 209
 term: 209
 exp: 209
+factor: 210
+term: 210
+exp: 210
 factor: 211
 term: 211
 exp: 211
@@ -2408,12 +2625,24 @@ exp: 213
 factor: 215
 term: 215
 exp: 215
-factor: 217
-term: 217
-exp: 217
-factor: 219
-term: 219
-exp: 219
+factor: 216
+term: 216
+exp: 216
+factor: 218
+term: 218
+exp: 218
+factor: 220
+term: 220
+exp: 220
+factor: 222
+term: 222
+exp: 222
+factor: 224
+term: 224
+exp: 224
+factor: 226
+term: 226
+exp: 226
 sumNumbers:
 	id: 9,
 	name: sumNumbers,
@@ -2436,6 +2665,12 @@ sumNumbers:
 		id: 2001,
 		name: last,
 		type: 2,
+		value: None
+		---------
+	VAR - s:
+		id: 4000,
+		name: s,
+		type: 4,
 		value: None
 		---------
 	VAR - first:
@@ -2579,7 +2814,7 @@ light:
 	name: light,
 	type: 0
 	Params: []
-	Starting quad index = 79
+	Starting quad index = 88
 	VAR - numberOne:
 		id: 2000,
 		name: numberOne,
@@ -2713,34 +2948,43 @@ Quads ===============================
 63:	[18, None, None, None]
 64:	[14, 0, None, 'sum']
 65:	[14, 0, None, 'index']
-66:	[4, 'index', 'sum', 1000]
-67:	[5, 'sum', 2, 1001]
-68:	[15, 1001, None, 70]
-69:	[23, None, None, '"Greater"']
-70:	[0, 23, 'index', 2004]
-71:	[14, 2004, None, 'sum']
-72:	[0, 'sum', 'index', 2005]
-73:	[14, 2005, None, 'sum']
-74:	[0, 'sum', 'index', 2006]
-75:	[14, 2006, None, 'sum']
-76:	[23, None, None, '"true"']
-77:	[23, None, None, 'sum']
-78:	[18, None, None, None]
-79:	[14, 25, None, 'numberOne']
-80:	[14, 0, None, 'xpos']
-81:	[14, 0, None, 'ypos']
-82:	[23, None, None, 20]
-83:	[23, None, None, 20]
-84:	[5, 3, 5, 1000]
-85:	[15, 1000, None, 87]
-86:	[14, 0, None, 'xpos']
-87:	[2, 7, 8, 2003]
-88:	[0, 9, 9, 2004]
-89:	[3, 2003, 2004, 2005]
-90:	[2, 2005, 5, 2006]
-91:	[3, 2006, 2, 2007]
-92:	[0, 'xpos', 2007, 2008]
-93:	[14, 2008, None, 'xpos']
-94:	[0, 'ypos', 1, 2009]
-95:	[14, 2009, None, 'ypos']
+66:	[14, '"STARTFOR"', None, 's']
+67:	[14, 'first', None, 'sum']
+68:	[4, 'index', 'sum', 1000]
+69:	[15, 1000, None, 84]
+70:	[0, 'index', 1, 2004]
+71:	[14, 2004, None, 'index']
+72:	[14, '"INSIDEFIRSTFOR"', None, 's']
+73:	[5, 'sum', 2, 1001]
+74:	[15, 1001, None, 76]
+75:	[23, None, None, '"Greater"']
+76:	[0, 23, 'index', 2005]
+77:	[14, 2005, None, 'sum']
+78:	[0, 'sum', 'index', 2006]
+79:	[14, 2006, None, 'sum']
+80:	[0, 'sum', 'index', 2007]
+81:	[14, 2007, None, 'sum']
+82:	[14, '"BEFORERETURN"', None, 's']
+83:	[17, None, None, 68]
+84:	[14, '"ENDFOR"', None, 's']
+85:	[23, None, None, '"true"']
+86:	[23, None, None, 'sum']
+87:	[18, None, None, None]
+88:	[14, 25, None, 'numberOne']
+89:	[14, 0, None, 'xpos']
+90:	[14, 0, None, 'ypos']
+91:	[23, None, None, 20]
+92:	[23, None, None, 20]
+93:	[5, 3, 5, 1000]
+94:	[15, 1000, None, 96]
+95:	[14, 0, None, 'xpos']
+96:	[2, 7, 8, 2003]
+97:	[0, 9, 9, 2004]
+98:	[3, 2003, 2004, 2005]
+99:	[2, 2005, 5, 2006]
+100:	[3, 2006, 2, 2007]
+101:	[0, 'xpos', 2007, 2008]
+102:	[14, 2008, None, 'xpos']
+103:	[0, 'ypos', 1, 2009]
+104:	[14, 2009, None, 'ypos']
 Successful

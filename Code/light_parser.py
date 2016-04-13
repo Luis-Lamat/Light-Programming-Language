@@ -25,6 +25,7 @@ type_stack      = Stack()
 
 
 # Conditions
+#NO SE NECESITA
 missing_return_stmt = False
 
 # Helper Functions
@@ -84,6 +85,9 @@ def print_stacks():
 
 	sys.stdout.write("> Operator Stack = ")
 	operator_stack.pprint()
+
+	sys.stdout.write("> Type Stack = ")
+	type_stack.pprint()
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -301,21 +305,22 @@ def p_assgn_a(p):
 
 def p_cycle (p):
 	'''
-	cycle : loop do_block
+	cycle : loop 
 		| for_each do_block
-		| for do_block
+		| for 
 	'''
 	print("cycle: " + str(p.lexer.lineno))
 
 def p_loop (p):
 	'''
-	loop : LOOP SEP_LPAR l_a SEP_DOT SEP_DOT l_a SEP_RPAR 
+	loop : LOOP SEP_LPAR VAR_IDENTIFIER verify_variable SEP_DOT SEP_DOT l_a SEP_RPAR do_block
 	'''
+
 
 def p_l_a (p):
 	'''
 	l_a : VAR_INT
-		| VAR_IDENTIFIER 
+		| VAR_IDENTIFIER verify_variable
 	'''
 
 def p_for_each (p):
@@ -330,40 +335,90 @@ def p_for_each_collection(p):
 
 def p_for (p):
 	'''
-	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition SEP_SEMICOLON for_b SEP_RPAR 
+	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition start_for_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
 	'''
 	print("for" + str(p.lexer.lineno))
 
+def p_start_for_helper (p):
+	'''
+	start_for_helper : epsilon
+	'''
+
+	#Put count in JUMPSTACK
+	Quadruples.push_jump(0)
+
+	aux = type_stack.pop()
+	if aux != 1 :
+		Error.not_a_condition(aux, p.lexer.lineno)
+	else :
+		res = operand_stack.pop()
+		operator = special_operator_dict['gotof']
+
+		# Generate Quadruple and push it to the list
+		tmp_quad = Quadruple()
+		tmp_quad.build(operator, res, None, None)
+		Quadruples.push_quad(tmp_quad)
+
+		#Push into jump stack
+		Quadruples.push_jump(-1)
+
+def p_end_for_helper (p) :
+	'''
+	end_for_helper : epsilon
+	'''
+	tmp_false = Quadruples.pop_jump()
+	tmp_return = Quadruples.pop_jump()
+
+	offset = p[-3]
+	#fill the return value
+	build_and_push_quad(17, None, None, tmp_return - offset)
+
+
+	#fill false with count
+	tmp_count = Quadruples.next_free_quad
+	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
+
+
 def p_for_a (p):
 	'''
-	for_a : for_assignment 
+	for_a : assignment 
 		| epsilon
 	'''
 
-def p_for_assignment (p) :
-	'''
-	for_assignment : VAR_IDENTIFIER verify_variable OP_EQUALS for_var_cte
-	'''
+
+# def p_for_assignment (p) :
+# 	'''
+# 	for_assignment : VAR_IDENTIFIER verify_variable OP_EQUALS for_var_cte
+# 	'''
 
 def p_for_b (p):
 	'''
-	for_b : for_increment
-		| for_assignment
+	for_b : increment tmp_increment
+		| assignment tmp_assign
 	'''
+	p[0] = p[2]
 
-def p_for_increment (p):
-	'''
-	for_increment : VAR_IDENTIFIER verify_variable inc_a for_var_cte
-	'''
-	#push_operator
+def p_tmp_increment (p):
+	'tmp_increment : epsilon'
+	p[0] = 1
+
+def p_tmp_assign (p):
+	'tmp_assign : epsilon'
+	p[0] = 0
+
+# def p_for_increment (p):
+# 	'''
+# 	for_increment : VAR_IDENTIFIER verify_variable inc_a for_var_cte
+# 	'''
+# 	#push_operator
 
 
-def p_for_var_cte(p): 
-	'''
-	for_var_cte : VAR_IDENTIFIER verify_variable
-		| VAR_INT
-		| VAR_DECIMAL
-	'''
+# def p_for_var_cte(p): 
+# 	'''
+# 	for_var_cte : VAR_IDENTIFIER verify_variable
+# 		| VAR_INT
+# 		| VAR_DECIMAL
+# 	'''
 
 def p_action (p):
 	'''
@@ -625,7 +680,7 @@ def p_quad_if_helper(p):
 		Quadruples.push_quad(tmp_quad)
 
 		#Push into jump stack
-		Quadruples.push_jump()
+		Quadruples.push_jump(-1)
 
 		print("PUSH JUMP :")
 		Quadruples.print_jump_stack()
@@ -654,7 +709,7 @@ def p_quad_else_helper(p):
 	tmp_count = Quadruples.next_free_quad
 	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
 
-	Quadruples.push_jump()
+	Quadruples.push_jump(-1)
 
 def p_end_if_stmt_quad_helper(p):
 	'''
