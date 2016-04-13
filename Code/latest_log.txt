@@ -1,120 +1,889 @@
 
-[Wed Apr 13 16:57:18 CDT 2016] =========================================== 
+[Wed Apr 13 17:25:12 CDT 2016] =========================================== 
 light_parser.py:311: SyntaxWarning: name 'param_counter' is used prior to global declaration
   global param_counter
-WARNING: Token 'VAR_FRACTION' defined, but not used
-WARNING: Token 'FRACTION' defined, but not used
-WARNING: Token 'VAR_BOOLEAN' defined, but not used
-WARNING: light_parser.py:756: Rule 'condition_block' defined, but not used
-WARNING: There are 3 unused tokens
-WARNING: There is 1 unused rule
-WARNING: Symbol 'condition_block' is unreachable
-Generating LALR tables
-WARNING: 7 shift/reduce conflicts
-WARNING: 41 reduce/reduce conflicts
-WARNING: reduce/reduce conflict in state 309 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (print_a -> VAR_IDENTIFIER verify_variable push_id) in state 309
-WARNING: reduce/reduce conflict in state 322 resolved using rule (var_cte -> VAR_INT push_num)
-WARNING: rejected rule (inc_var_cte -> VAR_INT push_num) in state 322
-WARNING: reduce/reduce conflict in state 343 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 343
-WARNING: reduce/reduce conflict in state 362 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable push_id)
-WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 362
-WARNING: Rule (print_a -> VAR_IDENTIFIER verify_variable push_id) is never reduced
-WARNING: Rule (inc_var_cte -> VAR_INT push_num) is never reduced
-WARNING: Rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) is never reduced
 > Operand Stack = []
 > Operator Stack = []
 > Type Stack = []
-> Operand Stack = []
+factor: 20
+term: 20
+exp: 20
+ASSIGN A: 20
+assignment: 20
+factor: 22
+term: 22
+exp: 22
+ASSIGN A: 22
+assignment: 22
++=
+factor: 23
+term: 23
+exp: 23
++=
++=
+factor: 25
+term: 25
+exp: 25
++=
+ASSIGN A: 32
+assignment: 32
+factor: 32
+term: 32
+exp: 32
+factor: 32
+term: 32
+exp: 32
+expresion: 32
+expresion: 32
+condition: 32
+PUSH JUMP :
+[9]
+ASSIGN A: 35
+assignment: 35
+factor: 35
+term: 35
+exp: 35
+print 36
+doBlock 37
+ASSIGN A: 39
+assignment: 39
+factor: 39
+term: 39
+exp: 39
+print 40
+doBlock 42
+[12]
+12
+ASSIGN A: 45
+assignment: 45
+factor: 45
+term: 45
+exp: 45
+factor: 45
+term: 45
+exp: 45
+expresion: 45
+expresion: 45
+condition: 45
+PUSH JUMP :
+[17]
+ASSIGN A: 48
+assignment: 48
+factor: 48
+term: 48
+exp: 48
+print 49
+doBlock 50
+[17]
+17
+factor: 50
+term: 50
+exp: 50
+factor: 50
+term: 50
+exp: 50
+expresion: 50
+expresion: 50
+condition: 50
+PUSH JUMP :
+[21]
+ASSIGN A: 52
+assignment: 52
+factor: 52
+term: 52
+exp: 52
+print 53
+doBlock 54
+ASSIGN A: 56
+assignment: 56
+doBlock 58
+[24]
+24
+ASSIGN A: 60
+assignment: 60
+factor: 60
+term: 60
+exp: 60
+factor: 60
+term: 60
+exp: 60
+expresion: 60
+expresion: 60
+factor: 60
+factor: 60
+term: 60
+term: 60
+exp: 60
+expresion: 60
+condition: 60
+factor: 60
+term: 60
+exp: 60
+factor: 60
+term: 60
+exp: 60
+expresion: 60
+expresion: 60
+condition: 60
+factor: 60
+term: 60
+exp: 60
+expresion: 60
+condition: 60
+condition: 60
+PUSH JUMP :
+[31]
+ASSIGN A: 62
+assignment: 62
+factor: 62
+term: 62
+exp: 62
+print 63
+doBlock 66
+[31]
+31
+factor: 66
+term: 66
+factor: 66
+term: 66
+exp: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+expresion: 66
+condition: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+expresion: 66
+condition: 66
+condition: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+expresion: 66
+factor: 66
+term: 66
+exp: 66
+factor: 66
+term: 66
+exp: 66
+expresion: 66
+expresion: 66
+condition: 66
+condition: 66
+condition: 66
+condition: 66
+PUSH JUMP :
+[44]
+factor: 67
+term: 67
+exp: 67
+print 68
+doBlock 70
+[44]
+44
+okokok
+3
+factor: 78
+term: 78
+exp: 78
+factor: 78
+term: 78
+exp: 78
+expresion: 78
+expresion: 78
+condition: 78
+PUSH JUMP :
+[49]
+factor: 79
+term: 79
+exp: 79
+print 80
+doBlock 82
+[49]
+49
+factor: 82
+term: 82
+exp: 82
+print 83
+factor: 84
+term: 84
+exp: 84
+factor: 87
+term: 87
+exp: 87
+print 88
+factor: 92
+term: 92
+exp: 92
+print 93
+okokok
+2
+factor: 95
+term: 95
+factor: 96
+term: 96
+exp: 96
+exp: 96
+okokok
+2
+> Operand Stack = [0, 2001]
 > Operator Stack = []
-> Type Stack = []
-factor: 8
-term: 8
-factor: 9
-term: 9
-exp: 9
-exp: 9
-ASSIGN A: 9
-assignment: 9
-ASSIGN A: 10
-assignment: 10
-> Operand Stack = []
+> Type Stack = [2, 2]
++=
+factor: 110
+term: 110
+exp: 110
++=
+doBlock 112
+cycle: 112
+factor: 113
+term: 113
+exp: 113
+okokok
+2
+> Operand Stack = [0, 2001, 'sum']
 > Operator Stack = []
-> Type Stack = []
-test: 16
-factor: 16
-term: 16
-factor: 16
-factor: 16
-term: 16
-term: 16
-exp: 16
-exp: 16
-factor: 16
-term: 16
-exp: 16
-light:
-	id: 2,
-	name: light,
-	type: 0
-	Params: []
-	Starting quad index = 6
-	VAR - tmp_var:
-		id: 2000,
-		name: tmp_var,
+> Type Stack = [2, 2, 2]
+> Operand Stack = [0, 2001, 'sum']
+> Operator Stack = []
+> Type Stack = [2, 2, 2]
+ASSIGN A: 120
+assignment: 120
+ASSIGN A: 120
+assignment: 120
+factor: 120
+term: 120
+exp: 120
+factor: 120
+term: 120
+exp: 120
+expresion: 120
+expresion: 120
+condition: 120
++=
+factor: 120
+term: 120
+exp: 120
++=
+ASSIGN A: 122
+assignment: 122
+factor: 122
+term: 122
+exp: 122
+factor: 122
+term: 122
+exp: 122
+expresion: 122
+expresion: 122
+condition: 122
+PUSH JUMP :
+[69, 69, 74]
+factor: 123
+term: 123
+exp: 123
+print 124
+doBlock 125
+[69, 69, 74]
+74
+factor: 125
+term: 125
+factor: 126
+term: 126
+exp: 126
+exp: 126
+ASSIGN A: 126
+assignment: 126
++=
+factor: 127
+term: 127
+exp: 127
++=
+factor: 127
+term: 127
+factor: 128
+term: 128
+exp: 128
+exp: 128
+ASSIGN A: 128
+assignment: 128
+ASSIGN A: 129
+assignment: 129
+factor: 130
+term: 130
+exp: 130
+doBlock 131
+for131
+cycle: 131
+ASSIGN A: 132
+assignment: 132
+factor: 132
+term: 132
+exp: 132
+print 133
+factor: 133
+term: 133
+exp: 133
+print 134
+factor: 135
+term: 135
+exp: 135
+> Operand Stack = [0, 2001, 'sum', 'sum', 'sum']
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2, 2]
+test: 138
+factor: 138
+term: 138
+exp: 138
+> Operand Stack = [0, 2001, 'sum', 'sum']
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2]
+> Operand Stack = [0, 2001, 'sum', 'sum']
+> Operator Stack = []
+> Type Stack = [2, 2, 2, 2]
+test: 143
+factor: 143
+term: 143
+exp: 143
+test: 146
+test: 153
+factor: 153
+term: 153
+exp: 153
+factor: 153
+term: 153
+exp: 153
+print 156
+test: 156
+factor: 156
+term: 156
+exp: 156
+factor: 156
+term: 156
+exp: 156
+print 167
+factor: 168
+term: 168
+exp: 168
+factor: 168
+term: 168
+exp: 168
+expresion: 168
+expresion: 168
+condition: 168
+PUSH JUMP :
+[110]
+factor: 170
+term: 170
+exp: 170
+ASSIGN A: 170
+assignment: 170
+doBlock 171
+[110]
+110
++=
+factor: 171
+factor: 171
+factor: 171
+term: 171
+factor: 171
+term: 171
+exp: 171
+exp: 171
+expresion: 171
+condition: 171
+factor: 171
+factor: 171
+factor: 171
+term: 171
+term: 171
+term: 171
+term: 171
+term: 171
+exp: 171
+expresion: 171
+condition: 171
+factor: 172
+term: 172
+exp: 172
++=
++=
+factor: 173
+term: 173
+exp: 173
++=
+doBlock 175
+cycle: 175
+factor: 178
+term: 178
+exp: 178
+factor: 178
+term: 178
+exp: 178
+factor: 179
+term: 179
+exp: 179
+factor: 179
+term: 179
+exp: 179
+factor: 180
+term: 180
+exp: 180
+factor: 180
+term: 180
+exp: 180
+factor: 187
+term: 187
+exp: 187
+factor: 187
+term: 187
+exp: 187
+factor: 188
+term: 188
+exp: 188
+factor: 188
+term: 188
+exp: 188
+factor: 189
+term: 189
+exp: 189
+factor: 189
+term: 189
+exp: 189
+factor: 196
+term: 196
+exp: 196
+factor: 204
+term: 204
+exp: 204
+factor: 205
+term: 205
+exp: 205
+factor: 206
+term: 206
+exp: 206
+factor: 208
+term: 208
+exp: 208
+factor: 210
+term: 210
+exp: 210
+factor: 211
+term: 211
+exp: 211
+factor: 212
+term: 212
+exp: 212
+factor: 214
+term: 214
+exp: 214
+factor: 216
+term: 216
+exp: 216
+factor: 217
+term: 217
+exp: 217
+factor: 219
+term: 219
+exp: 219
+factor: 221
+term: 221
+exp: 221
+factor: 223
+term: 223
+exp: 223
+factor: 225
+term: 225
+exp: 225
+factor: 227
+term: 227
+exp: 227
+sumNumbers:
+	id: 9,
+	name: sumNumbers,
+	type: 2
+	Params: [('first', 2), ('last', 2)]
+	Starting quad index = 64
+	VAR - index:
+		id: 2003,
+		name: index,
 		type: 2,
 		value: None
 		---------
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - s:
+		id: 4000,
+		name: s,
+		type: 4,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+printArray:
+	id: 7,
+	name: printArray,
+	type: 0
+	Params: [('numbers', 2)]
+	Starting quad index = 59
+	VAR - numbers:
+		id: 2000,
+		name: numbers,
+		type: 2,
+		value: None
+		---------
+sumTimes:
+	id: 8,
+	name: sumTimes,
+	type: 2
+	Params: [('first', 2), ('last', 2)]
+	Starting quad index = 60
+	VAR - sum:
+		id: 2002,
+		name: sum,
+		type: 2,
+		value: None
+		---------
+	VAR - last:
+		id: 2001,
+		name: last,
+		type: 2,
+		value: None
+		---------
+	VAR - first:
+		id: 2000,
+		name: first,
+		type: 2,
+		value: None
+		---------
+sayText:
+	id: 5,
+	name: sayText,
+	type: 0
+	Params: [('text', 4)]
+	Starting quad index = 55
+	VAR - text:
+		id: 4000,
+		name: text,
+		type: 4,
+		value: None
+		---------
+	VAR - exam:
+		id: 4001,
+		name: exam,
+		type: 4,
+		value: None
+		---------
+addOne:
+	id: 6,
+	name: addOne,
+	type: 2
+	Params: [('number', 2)]
+	Starting quad index = 57
+	VAR - number:
+		id: 2000,
+		name: number,
+		type: 2,
+		value: None
+		---------
+example:
+	id: 3,
+	name: example,
+	type: 3
+	Params: [('x', 2), ('y', 2), ('z', 3)]
+	Starting quad index = 48
+	VAR - y:
+		id: 2001,
+		name: y,
+		type: 2,
+		value: None
+		---------
+	VAR - x:
+		id: 2000,
+		name: x,
+		type: 2,
+		value: None
+		---------
+	VAR - z:
+		id: 3000,
+		name: z,
+		type: 3,
+		value: None
+		---------
+emptyFunc:
+	id: 2,
+	name: emptyFunc,
+	type: 0
+	Params: []
+	Starting quad index = 47
 program:
 	id: 0,
 	name: program,
 	type: 0
 	Params: []
 	Starting quad index = None
-	VAR - global:
-		id: 2000,
-		name: global,
-		type: 2,
-		value: None
-		---------
-example_func:
-	id: 1,
-	name: example_func,
-	type: 0
-	Params: [('attr1', 2), ('attr2', 3)]
-	Starting quad index = 1
 	VAR - a:
-		id: 2002,
+		id: 2000,
 		name: a,
 		type: 2,
 		value: None
 		---------
-	VAR - attr2:
-		id: 3000,
-		name: attr2,
-		type: 3,
+	VAR - arr:
+		ARRAY! 
+		id: 2001,
+		name: arr,
+		type: 2,
+		length: 0
+		[]
+		---------
+	VAR - global:
+		id: 2002,
+		name: global,
+		type: 2,
 		value: None
 		---------
-	VAR - attr1:
+	VAR - arr2:
+		ARRAY! 
+		id: 3000,
+		name: arr2,
+		type: 3,
+		length: 9
+		[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		---------
+light:
+	id: 10,
+	name: light,
+	type: 0
+	Params: []
+	Starting quad index = 88
+	VAR - numberOne:
+		id: 2000,
+		name: numberOne,
+		type: 2,
+		value: None
+		---------
+	VAR - xpos:
 		id: 2001,
-		name: attr1,
+		name: xpos,
+		type: 2,
+		value: None
+		---------
+	VAR - ypos:
+		id: 2002,
+		name: ypos,
+		type: 2,
+		value: None
+		---------
+verifyAndOr:
+	id: 1,
+	name: verifyAndOr,
+	type: 0
+	Params: []
+	Starting quad index = 1
+	VAR - a:
+		id: 4000,
+		name: a,
+		type: 4,
+		value: None
+		---------
+	VAR - i:
+		id: 2003,
+		name: i,
+		type: 2,
+		value: None
+		---------
+	VAR - b:
+		id: 4001,
+		name: b,
+		type: 4,
+		value: None
+		---------
+	VAR - j:
+		id: 2004,
+		name: j,
+		type: 2,
+		value: None
+		---------
+noRetArg:
+	id: 4,
+	name: noRetArg,
+	type: 0
+	Params: [('num', 2)]
+	Starting quad index = 53
+	VAR - num:
+		id: 2000,
+		name: num,
+		type: 2,
+		value: None
+		---------
+	VAR - num2:
+		id: 2001,
+		name: num2,
 		type: 2,
 		value: None
 		---------
 Quads ===============================
 0:	['=', 0, None, 'global']
-1:	['=', 0, None, 'a']
-2:	['+', 'a', 1, 2003]
-3:	['=', 2003, None, 'a']
-4:	['=', 'a', None, 'global']
-5:	['ret', None, None, None]
-6:	['=', 0, None, 'tmp_var']
-7:	['era', 'example_func', None, None]
-8:	['*', 1, 2, 2001]
-9:	['+', 1, 2001, 2002]
-10:	['param', 2002, None, 0]
-11:	['param', 0.0, None, 1]
-12:	['gosub', 'example_func', None, 1]
-13:	['end', None, None, None]
+1:	['=', 3, None, 'j']
+2:	['=', 2, None, 'i']
+3:	['+', 'j', 'i', 2005]
+4:	['=', 2005, None, 'j']
+5:	['+', 'i', 2, 2006]
+6:	['=', 2006, None, 'i']
+7:	['=', '"LOL"', None, 'a']
+8:	['<', 2, 3, 1000]
+9:	['gotof', 1000, None, 13]
+10:	['=', '"ifelse"', None, 'a']
+11:	['print', None, None, '"Truestuff"']
+12:	['goto', None, None, 15]
+13:	['=', '"else"', None, 'a']
+14:	['print', None, None, '"OTherStuff"']
+15:	['=', '"COMIENZOELIF"', None, 'b']
+16:	['<', 27, 35, 1001]
+17:	['gotof', 1001, None, 20]
+18:	['=', '"ifelseElif"', None, 'a']
+19:	['print', None, None, '"Truestuff"']
+20:	['<', 4, 2, 1002]
+21:	['gotof', 1002, None, 25]
+22:	['=', '"elif"', None, 'a']
+23:	['print', None, None, '"OTherStuff"']
+24:	['goto', None, None, 26]
+25:	['=', '"else2"', None, 'a']
+26:	['=', '"TERMINOELIF"', None, 'b']
+27:	['<', 1, 2, 1003]
+28:	['*', 3, 4.8, 3001]
+29:	['>', 3001, 9, 1004]
+30:	['and', 1003, 1004, 1005]
+31:	['gotof', 1005, None, 34]
+32:	['=', '"ifsolo"', None, 'a']
+33:	['print', None, None, '"true"']
+34:	['+', 1, 4.0, 3002]
+35:	['>', 3002, 5, 1006]
+36:	['!=', 4, 2, 1007]
+37:	['>', 4, 3, 1008]
+38:	['or', 1007, 1008, 1009]
+39:	['and', 1006, 1009, 1010]
+40:	['>=', 5, 2, 1011]
+41:	['and', 1010, 1011, 1012]
+42:	['>', 4, 3, 1013]
+43:	['or', 1012, 1013, 1014]
+44:	['gotof', 1014, None, 46]
+45:	['print', None, None, '"false"']
+46:	['ret', None, None, None]
+47:	['ret', None, None, None]
+48:	['<', 1, 2, 1000]
+49:	['gotof', 1000, None, 51]
+50:	['print', None, None, '"true"']
+51:	['print', None, None, '"This"']
+52:	['ret', None, None, None]
+53:	['print', None, None, 'num2']
+54:	['ret', None, None, None]
+55:	['print', None, None, 'text']
+56:	['ret', None, None, None]
+57:	['+', 'number', 1, 2001]
+58:	['ret', None, None, None]
+59:	['ret', None, None, None]
+60:	['=', 0, None, 'sum']
+61:	['+', 'sum', 1, 2003]
+62:	['=', 2003, None, 'sum']
+63:	['ret', None, None, None]
+64:	['=', 0, None, 'sum']
+65:	['=', 0, None, 'index']
+66:	['=', '"STARTFOR"', None, 's']
+67:	['=', 'first', None, 'sum']
+68:	['<', 'index', 'sum', 1000]
+69:	['gotof', 1000, None, 84]
+70:	['+', 'index', 1, 2004]
+71:	['=', 2004, None, 'index']
+72:	['=', '"INSIDEFIRSTFOR"', None, 's']
+73:	['>', 'sum', 2, 1001]
+74:	['gotof', 1001, None, 76]
+75:	['print', None, None, '"Greater"']
+76:	['+', 23, 'index', 2005]
+77:	['=', 2005, None, 'sum']
+78:	['+', 'sum', 'index', 2006]
+79:	['=', 2006, None, 'sum']
+80:	['+', 'sum', 'index', 2007]
+81:	['=', 2007, None, 'sum']
+82:	['=', '"BEFORERETURN"', None, 's']
+83:	['goto', None, None, 68]
+84:	['=', '"ENDFOR"', None, 's']
+85:	['print', None, None, '"true"']
+86:	['print', None, None, 'sum']
+87:	['ret', None, None, None]
+88:	['era', 'addOne', None, None]
+89:	['param', 25, None, 0]
+90:	['gosub', 'addOne', None, 57]
+91:	['=', 'numberOne', None, 'sum']
+92:	['=', 0, None, 'xpos']
+93:	['=', 0, None, 'ypos']
+94:	['era', 'sayText', None, None]
+95:	['param', '"hello"', None, 0]
+96:	['gosub', 'sayText', None, 55]
+97:	['era', 'verifyAndOr', None, None]
+98:	['gosub', 'verifyAndOr', None, 1]
+99:	['era', 'sumTimes', None, None]
+100:	['param', 10, None, 0]
+101:	['param', 20, None, 1]
+102:	['gosub', 'sumTimes', None, 60]
+103:	['print', None, None, 'sum']
+104:	['era', 'sumNumbers', None, None]
+105:	['param', 10, None, 0]
+106:	['param', 20, None, 1]
+107:	['gosub', 'sumNumbers', None, 64]
+108:	['print', None, None, 'sum']
+109:	['>', 3, 5, 1000]
+110:	['gotof', 1000, None, 112]
+111:	['=', 0, None, 'xpos']
+112:	['*', 7, 8, 2003]
+113:	['+', 9, 9, 2004]
+114:	['/', 2003, 2004, 2005]
+115:	['*', 2005, 5, 2006]
+116:	['/', 2006, 2, 2007]
+117:	['+', 'xpos', 2007, 2008]
+118:	['=', 2008, None, 'xpos']
+119:	['+', 'ypos', 1, 2009]
+120:	['=', 2009, None, 'ypos']
+121:	['end', None, None, None]
 Successful

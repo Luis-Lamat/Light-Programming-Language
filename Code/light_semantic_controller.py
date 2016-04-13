@@ -66,7 +66,6 @@ class Array:
  		if sum < self.length:
  			return data[num]
  		else:
- 			#index out of bounds
  			Error.out_of_bounds(self.name, num)
 
  	def print_arr(self):

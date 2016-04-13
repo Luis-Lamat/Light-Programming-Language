@@ -613,6 +613,7 @@ def p_var_cte(p):
 	var_cte : VAR_IDENTIFIER verify_variable push_id
 		| VAR_INT push_num
 		| VAR_DECIMAL push_num
+		| VAR_STRING push_string
 	'''
 
 def p_increment (p):
