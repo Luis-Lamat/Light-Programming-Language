@@ -1,11 +1,34 @@
 
-[Wed Apr 13 16:45:38 CDT 2016] =========================================== 
-light_parser.py:306: SyntaxWarning: name 'param_counter' is used prior to global declaration
+[Wed Apr 13 16:57:18 CDT 2016] =========================================== 
+light_parser.py:311: SyntaxWarning: name 'param_counter' is used prior to global declaration
   global param_counter
+WARNING: Token 'VAR_FRACTION' defined, but not used
+WARNING: Token 'FRACTION' defined, but not used
+WARNING: Token 'VAR_BOOLEAN' defined, but not used
+WARNING: light_parser.py:756: Rule 'condition_block' defined, but not used
+WARNING: There are 3 unused tokens
+WARNING: There is 1 unused rule
+WARNING: Symbol 'condition_block' is unreachable
+Generating LALR tables
+WARNING: 7 shift/reduce conflicts
+WARNING: 41 reduce/reduce conflicts
+WARNING: reduce/reduce conflict in state 309 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (print_a -> VAR_IDENTIFIER verify_variable push_id) in state 309
+WARNING: reduce/reduce conflict in state 322 resolved using rule (var_cte -> VAR_INT push_num)
+WARNING: rejected rule (inc_var_cte -> VAR_INT push_num) in state 322
+WARNING: reduce/reduce conflict in state 343 resolved using rule (var_cte -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 343
+WARNING: reduce/reduce conflict in state 362 resolved using rule (assgn_a -> VAR_IDENTIFIER verify_variable push_id)
+WARNING: rejected rule (var_cte -> VAR_IDENTIFIER verify_variable push_id) in state 362
+WARNING: Rule (print_a -> VAR_IDENTIFIER verify_variable push_id) is never reduced
+WARNING: Rule (inc_var_cte -> VAR_INT push_num) is never reduced
+WARNING: Rule (inc_var_cte -> VAR_IDENTIFIER verify_variable push_id) is never reduced
 > Operand Stack = []
 > Operator Stack = []
+> Type Stack = []
 > Operand Stack = []
 > Operator Stack = []
+> Type Stack = []
 factor: 8
 term: 8
 factor: 9
@@ -18,6 +41,7 @@ ASSIGN A: 10
 assignment: 10
 > Operand Stack = []
 > Operator Stack = []
+> Type Stack = []
 test: 16
 factor: 16
 term: 16

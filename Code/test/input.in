@@ -11,8 +11,23 @@ program lolz {
 
         # Outputs correct type mismatch error
         var a:string
+        var b:string
+
+        var i:int
+        var j:int
+
+        j = 3
+        i = 2
+
+        j += i
+        i += 2
+
         a = "LOL"
-        # a = a + 8
+        #BUG da error, unexpected token
+        #a = a + "OK"
+
+        #type mismatch
+        #a = a + 8
 
     	if( 2 <  3 ) do
     		#a += 8 
@@ -24,9 +39,12 @@ program lolz {
     		print("OTherStuff")
     	end
 
-    	if( 2 <  3 ) do
+    	b = "COMIENZOELIF"
+
+
+    	if( 27 <  35 ) do
     		#a += 8 
-    		a = "ifelse"
+    		a = "ifelseElif"
     		print("Truestuff")
     	end
     	elsif (4 < 2) do
@@ -37,6 +55,7 @@ program lolz {
     		a = "else2"
     	end
 
+    	b = "TERMINOELIF"
 
     	if( 1<2 and ((3 * 4.8) > 9 )) do
     		a = "ifsolo"
@@ -96,15 +115,20 @@ program lolz {
     function sumNumbers(first: int, last: int) returns int{
         var sum:int = 0
         var index:int = 0
+        var s:string
+        s = "STARTFOR"
         for (sum = first; index < sum; index += 1) do
+        	s = "INSIDEFIRSTFOR"
         	if(sum > 2) do
         		print("Greater")
         	end
             sum = 23 + index
         	sum += index
         	sum = sum + index
+        	s = "BEFORERETURN"
         	return sum
         end
+        s = "ENDFOR"
         print("true")
         print(sum)
         return sum

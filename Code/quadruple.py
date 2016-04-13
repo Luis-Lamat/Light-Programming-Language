@@ -41,8 +41,8 @@ class Quadruples(object):
 
 	# Jump Stack Methods
 	@classmethod
-	def push_jump(cls):
-		cls.jump_stack.push(cls.next_free_quad - 1)
+	def push_jump(cls, offset):
+		cls.jump_stack.push(cls.next_free_quad + offset)
 
 	@classmethod
 	def pop_jump(cls):

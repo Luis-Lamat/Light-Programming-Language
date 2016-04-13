@@ -144,6 +144,10 @@ def t_OP_NOT_EQUAL (t):
     return t
 
 def t_OP_MINUS_EQUALS (t):
+    r'\-='
+    return t
+
+def t_OP_PLUS_EQUALS (t):
     r'\+='
     return t
 
@@ -161,10 +165,6 @@ def t_OP_TIMES (t):
 
 def t_OP_DIVISION (t):
     r'/'
-    return t
-
-def t_OP_PLUS_EQUALS (t):
-    r'-='
     return t
 
 def t_OP_LESS_EQUAL (t):
