@@ -111,6 +111,7 @@ class Function:
 		if var.name not in self.vars:
 			tmp_var = Var() # TODO: dafuq with this????
 			tmp_var.init_var(SemanticInfo.get_next_var_id(var.type), var.name, var.type, var.value)
+			tmp_var.id = ( -tmp_var.id if self.name == 'program' else tmp_var.id)
 			self.vars[var.name] = tmp_var
 		else:
 			Error.already_defined('variable', var.name)
