@@ -614,6 +614,7 @@ def p_var_cte(p):
 		| VAR_INT push_num
 		| VAR_DECIMAL push_num
 		| VAR_STRING push_string
+		| VAR_BOOLEAN push_bool
 	'''
 
 def p_increment (p):
@@ -969,6 +970,11 @@ def p_push_num(p):
 def p_push_string(p):
 	'push_string : '
 	type_stack.push(type_dict['string'])
+	operand_stack.push(p[-1])
+
+def p_push_bool(p):
+	'push_bool : '
+	type_stack.push(type_dict['boolean'])
 	operand_stack.push(p[-1])
 
 def p_push_operator(p):

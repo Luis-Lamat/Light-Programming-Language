@@ -6,6 +6,8 @@ reserved_words = {
     'light'     : 'LIGHT_TOKEN',
     'var'       : 'VAR',
     'print'     : 'PRINT',
+    'true'      : 'VAR_BOOLEAN',
+    'false'     : 'VAR_BOOLEAN',
 
     # Function tokens
     'function'  : 'FUNCTION',

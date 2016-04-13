@@ -315,7 +315,7 @@ for type in num_types:
 	# decimal with anything always returns decimal
 	SemanticCube.set_return_value_for('decimal', arim_ops, type, 'decimal')
 
-	for type2 in prim_types:
+	for type2 in num_types:
 		# every numerical conditional comparison returns a boolean value
 		SemanticCube.set_return_value_for(type, comp_ops, type2, 'boolean')
 

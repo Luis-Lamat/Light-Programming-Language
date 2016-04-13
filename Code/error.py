@@ -16,7 +16,7 @@ class Error:
 	def type_mismatch(lineno, t1, t2, op):
 		t1 = inv_type_dict[t1]
 		t2 = inv_type_dict[t2]
-		print "Type Mismatch (line {}): expresion '{} {} {}' is invalid".format(lineno-2, t1, op, t2)
+		print "Type Mismatch (line {}): expresion '{} {} {}' is invalid".format(lineno-2, t2, op, t1)
 		sys.exit()
 
 	@staticmethod
