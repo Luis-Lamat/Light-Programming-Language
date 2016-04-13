@@ -71,6 +71,7 @@ def assign_quad_helper():
 	# Generate Quadruple and push it to the list
 	build_and_push_quad(op, o1, None, o2)
 
+
 def print_quad_helper():
 	operand = operand_stack.pop()
 	op = operator_stack.pop()
@@ -354,6 +355,8 @@ def p_for_increment (p):
 	'''
 	for_increment : VAR_IDENTIFIER verify_variable inc_a for_var_cte
 	'''
+	#push_operator
+
 
 def p_for_var_cte(p): 
 	'''
@@ -533,15 +536,61 @@ def p_var_cte(p):
 	'''
 
 def p_increment (p):
+	#exp 			
 	'''
-	increment : VAR_IDENTIFIER verify_variable inc_a exp
+	increment : VAR_IDENTIFIER verify_variable double_pushID inc_a inc_var_cte do_sum_rest
 	'''
+
+	#push equals
+	op = special_operator_dict["="]
+	operator_stack.push(op)
+
+	assign_quad_helper()
+
+def p_double_pushID (p):
+	'''
+	double_pushID : epsilon
+	'''
+
+	func = FunctionTable.function_dict[function_stack.peek()]
+	type_stack.push(func.vars[p[-2]].type)
+	operand_stack.push(func.vars[p[-2]].name)
+
+	func = FunctionTable.function_dict[function_stack.peek()]
+	type_stack.push(func.vars[p[-2]].type)
+	operand_stack.push(func.vars[p[-2]].name)
+
+def p_do_sum_rest (p):
+	'''
+	do_sum_rest : epsilon
+	'''
+
+	print(p[-2])
+	if p[-2] == "+=":
+		operator_stack.push(0)
+	else:
+		operator_stack.push(1)
+
+	exp_quad_helper(p, ['+', '-'])
+
 
 def p_inc_a (p):
 	'''
 	inc_a :  OP_PLUS_EQUALS
 		| OP_MINUS_EQUALS
 	'''
+
+	print(p[1])
+	p[0] = p[1]
+	
+
+def p_inc_var_cte(p): 
+	'''
+	inc_var_cte : VAR_IDENTIFIER verify_variable push_id
+		| VAR_INT push_num 
+		| exp
+	'''
+#PROBADO VAR_INT y VAR_IDENTIFIER
 
 def p_if (p):
 	'''
@@ -583,46 +632,8 @@ def p_quad_if_helper(p):
 
 def p_elsif (p):
 	'''
-	elsif : ELSIF condition_block quad_elif_helper
+	elsif : ELSIF end_if_stmt_quad_helper SEP_LPAR condition SEP_RPAR quad_if_helper do_block if_a
 	'''
-
-def p_quad_elif_helper(p):
-	'''
-	quad_elif_helper : epsilon
-	'''
-
-	#####IF
-	type_stack.pprint()
-	aux = type_stack.pop()
-	if aux != 1 :
-		Error.not_a_condition(aux, p.lexer.lineno)
-	else :
-		res = operand_stack.pop()
-		operator = special_operator_dict['gotof']
-
-		# Generate Quadruple and push it to the list
-		tmp_quad = Quadruple()
-		tmp_quad.build(operator, res, None, None)
-		Quadruples.push_quad(tmp_quad)
-
-		#Push into jump stack
-		Quadruples.push_jump()
-
-	###ELSE
-
-	operator = special_operator_dict['goto']
-
-	tmp_quad = Quadruple()
-	tmp_quad.build(operator, None, None, None)
-	Quadruples.push_quad(tmp_quad)
-
-	tmp_false = Quadruples.pop_jump()
-	tmp_count = Quadruples.next_free_quad
-	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
-
-	Quadruples.push_jump()
-
-
 
 def p_else (p):
 	'''
@@ -650,11 +661,11 @@ def p_end_if_stmt_quad_helper(p):
 	end_if_stmt_quad_helper : epsilon
 	'''
 
-	print("PUSH JUMP BEF POP:")
+	#print("PUSH JUMP BEF POP:")
 	Quadruples.print_jump_stack()
 
 	tmp_end = Quadruples.pop_jump()
-	print("POPJUMP")
+	#print("POPJUMP")
 	print(tmp_end)	
 	tmp_count = Quadruples.next_free_quad
 	tmp_quad = Quadruples.fill_missing_quad(tmp_end, tmp_count)

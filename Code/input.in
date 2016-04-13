@@ -11,7 +11,20 @@ program lolz {
 
         # Outputs correct type mismatch error
         var a:string
+        var b:string
+
+        var i:int
+        var j:int
+
+        j = 3
+        i = 2
+
+        j += i
+        i += 2
+
         a = "LOL"
+        #a = a + "OK"
+
         # a = a + 8
 
     	if( 2 <  3 ) do
@@ -24,9 +37,12 @@ program lolz {
     		print("OTherStuff")
     	end
 
-    	if( 2 <  3 ) do
+    	b = "COMIENZOELIF"
+
+
+    	if( 27 <  35 ) do
     		#a += 8 
-    		a = "ifelse"
+    		a = "ifelseElif"
     		print("Truestuff")
     	end
     	elsif (4 < 2) do
@@ -37,6 +53,7 @@ program lolz {
     		a = "else2"
     	end
 
+    	b = "TERMINOELIF"
 
     	if( 1<2 and ((3 * 4.8) > 9 )) do
     		a = "ifsolo"
