@@ -105,14 +105,10 @@ program lolz {
     function sumTimes(first: int, last: int) returns int{
 
         var sum:int = 0 
-        var s:string
-        s = "STARTWHILE"
         while (first < last) do
             sum += 1
-        	s = "INWHILE"
         end 
-        s = "ENDWHILE"
-              
+        
         return sum
     }
 
@@ -161,9 +157,8 @@ program lolz {
 
 
         # camera
-        # TODO: Make reserved words and syntax rules
-        # window_size(width: 1000, height: 1000)
-        # coordinates(x: 100, y: 100)
+        window_size(width: 1000, height: 1000)
+        coordinates(x: 100, y: 100)
     
         # Arrays are troublesome!
         # var points:[point] = [5]
