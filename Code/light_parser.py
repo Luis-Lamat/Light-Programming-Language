@@ -313,7 +313,7 @@ def p_verify_param(p):
  
 def p_assignment (p):
 	'''
-	assignment : VAR_IDENTIFIER verify_variable push_id OP_EQUALS push_operator assgn_a 
+	assignment : var_id OP_EQUALS push_operator assgn_a 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
 	assign_quad_helper()
@@ -321,9 +321,7 @@ def p_assignment (p):
 
 def p_assgn_a(p):
 	'''
-	assgn_a : VAR_IDENTIFIER verify_variable push_id
-		| exp
-		| VAR_STRING push_string
+	assgn_a : exp
 		| function_call
 	'''
 	print("ASSIGN A: " + str(p.lexer.lineno))
@@ -610,11 +608,8 @@ def p_quad_pop_lpar(p):
 
 def p_var_cte(p):
 	'''
-	var_cte : VAR_IDENTIFIER verify_variable push_id
-		| VAR_INT push_num
-		| VAR_DECIMAL push_num
-		| VAR_STRING push_string
-		| VAR_BOOLEAN push_bool
+	var_cte : var_id
+		| cnt_prim
 	'''
 
 def p_increment (p):
@@ -668,7 +663,7 @@ def p_inc_a (p):
 
 def p_inc_var_cte(p): 
 	'''
-	inc_var_cte : VAR_IDENTIFIER verify_variable push_id
+	inc_var_cte : var_id
 		| VAR_INT push_num 
 		| exp
 	'''
@@ -877,8 +872,7 @@ def p_arr_init_arr (p):
 def p_init_a (p):
 	'''
 	init_a : function_call
-		| VAR_IDENTIFIER verify_variable push_id
-		| cnt_prim
+		| var_cte
 	'''
 
 def p_init_fig (p):
@@ -942,8 +936,6 @@ def p_print_a (p):
 	'''
 	print_a : exp
 		| function_call
-		| VAR_STRING push_string
-		| VAR_IDENTIFIER verify_variable push_id
 	'''
 	print_quad_helper()
 	
@@ -952,6 +944,9 @@ def p_figure_creations (p):
 	figure_creations : VAR VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
 	'''
 	pass
+
+def p_var_id(p):
+	'var_id : VAR_IDENTIFIER verify_variable push_id'
 
 def p_push_id(p):
 	'push_id : '
