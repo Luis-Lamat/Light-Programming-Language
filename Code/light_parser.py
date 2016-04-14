@@ -330,23 +330,38 @@ def p_assgn_a(p):
 
 def p_cycle (p):
 	'''
-	cycle : loop 
+	cycle : while 
 		| for_each do_block
 		| for 
 	'''
 	print("cycle: " + str(p.lexer.lineno))
 
-def p_loop (p):
+def p_while (p):
 	'''
-	loop : LOOP SEP_LPAR VAR_IDENTIFIER verify_variable SEP_DOT SEP_DOT l_a SEP_RPAR do_block
+	while : WHILE SEP_LPAR condition SEP_RPAR start_loop_helper do_block end_while_helper
 	'''
 
+def p_end_while_helper (p) :
+	'''
+	end_while_helper : epsilon
+	'''
+	tmp_false = Quadruples.pop_jump()
+	tmp_return = Quadruples.pop_jump()
 
-def p_l_a (p):
-	'''
-	l_a : VAR_INT
-		| VAR_IDENTIFIER verify_variable
-	'''
+	#fill the return value
+	build_and_push_quad(17, None, None, tmp_return - 1)
+
+
+	#fill false with count
+	tmp_count = Quadruples.next_free_quad
+	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
+
+
+# def p_l_a (p):
+# 	'''
+# 	l_a : VAR_INT
+# 		| VAR_IDENTIFIER verify_variable
+# 	'''
 
 def p_for_each (p):
 	'''
@@ -360,13 +375,13 @@ def p_for_each_collection(p):
 
 def p_for (p):
 	'''
-	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition start_for_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
+	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition start_loop_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
 	'''
 	print("for" + str(p.lexer.lineno))
 
-def p_start_for_helper (p):
+def p_start_loop_helper (p):
 	'''
-	start_for_helper : epsilon
+	start_loop_helper : epsilon
 	'''
 
 	#Put count in JUMPSTACK
