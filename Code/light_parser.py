@@ -1021,6 +1021,8 @@ def p_error(p):
 
 # MAIN #########################################################################
 
+from virtual_machine import *
+
 parser = yacc.yacc()
 
 if __name__ == '__main__':
@@ -1035,3 +1037,6 @@ if __name__ == '__main__':
 	parser.parse(data, tracking=True)
 
 	print("Successful")
+
+	RUN_AT_LIGHTSPEED()
+
