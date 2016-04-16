@@ -1,0 +1,118 @@
+
+[Fri Apr 15 21:53:16 CDT 2016] =========================================== 
+light_parser.py:323: SyntaxWarning: name 'param_counter' is used prior to global declaration
+  global param_counter
+> Operand Stack = []
+> Operator Stack = []
+> Type Stack = []
+> Operand Stack = []
+> Operator Stack = []
+> Type Stack = []
+Empty Stack
+factor: 8
+term: 8
+factor: 9
+term: 9
+exp: 9
+exp: 9
+ASSIGN A: 9
+assignment: 9
+factor: 10
+term: 10
+exp: 10
+ASSIGN A: 10
+assignment: 10
+> Operand Stack = []
+> Operator Stack = []
+> Type Stack = []
+Empty Stack
+> Operand Stack = []
+> Operator Stack = []
+> Type Stack = []
+test: 16
+factor: 16
+term: 16
+factor: 16
+factor: 16
+Empty Stack
+term: 16
+term: 16
+Empty Stack
+exp: 16
+exp: 16
+factor: 16
+term: 16
+exp: 16
+Empty Stack
+light:
+	id: 2,
+	name: light,
+	type: 0
+	Params: []
+	Starting quad index = 6
+	VAR - tmp_var:
+		id: 2000,
+		name: tmp_var,
+		type: 2,
+		value: None
+		---------
+	VAR - b:
+		id: 1000,
+		name: b,
+		type: 1,
+		value: None
+		---------
+program:
+	id: 0,
+	name: program,
+	type: 0
+	Params: []
+	Starting quad index = None
+	VAR - global:
+		id: -2000,
+		name: global,
+		type: 2,
+		value: None
+		---------
+example_func:
+	id: 1,
+	name: example_func,
+	type: 0
+	Params: [('attr1', 2), ('attr2', 3)]
+	Starting quad index = 1
+	VAR - a:
+		id: 2002,
+		name: a,
+		type: 2,
+		value: None
+		---------
+	VAR - attr2:
+		id: 3000,
+		name: attr2,
+		type: 3,
+		value: None
+		---------
+	VAR - attr1:
+		id: 2001,
+		name: attr1,
+		type: 2,
+		value: None
+		---------
+Constants dict: {0: 14000, 1: 14001, 2: 14003, 'true': 14002}
+Quads ===============================
+0:	['=', 14000, None, 'global']
+1:	['=', 'a', None, None]
+2:	['+', 'a', 14001, 2003]
+3:	['=', 2003, None, 'a']
+4:	['=', 'a', None, 'global']
+5:	['ret', None, None, None]
+6:	['=', 'tmp_var', None, None]
+7:	['=', 14002, None, 'b']
+8:	['era', 'example_func', None, None]
+9:	['*', None, 14003, 2001]
+10:	['+', None, 2001, 2002]
+11:	['param', 2002, None, 0]
+12:	['param', None, None, 1]
+13:	['gosub', 'example_func', None, 1]
+14:	['end', None, None, None]
+Successful
