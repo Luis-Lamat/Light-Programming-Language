@@ -19,7 +19,7 @@ class MemoryHandler(object):
 		cls.__dict__ = cls.__shared_state
 
 	@classmethod
-	def binary_operator(cls, quad, index):
+	def binary_operator(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
 		right_op = cls.get_address_value(quad.right_operand)
 		result = execute_binary_operator(quad.operator, left_op, right_op)
@@ -43,16 +43,17 @@ class MemoryHandler(object):
 		return ops[val]
 
 	@classmethod
-	def assign_operator(cls, quad, index):
+	def assign_operator(cls, quad):
 		from_value = cls.get_address_value(quad.left_operand)
 		cls.set_address_value(quad.result, from_value)
 
-	def and_or_operator(cls, quad, index):
+	@classmethod
+	def and_or_operator(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
 		right_op = cls.get_address_value(quad.right_operand)
 		if quad.operator == 10 :
 			cls.set_address_value(quad.result, (left_op and right_op))
-		else if quad.operator == 11 :
+		elif quad.operator == 11 :
 			cls.set_address_value(quad.result, (left_op or right_op))
 
 	@classmethod
@@ -69,9 +70,9 @@ class MemoryHandler(object):
 		relative_address = addr - type
 		# use heap for search if addr is negative, else the current local mem
 		if addr < 0:
-			cls.heap[type][relative_address] = val
+			cls.heap.memory[type][relative_address] = val
 		else:
-			cls.stack.peek().[type][relative_address] = val
+			cls.stack.peek().memory[type][relative_address] = val
 
 	@classmethod
 	def era_operator(cls, quad):
@@ -81,4 +82,3 @@ class MemoryHandler(object):
 		print "> Created new memory for '{}': {}".format(func_name, mem_to_push.memory)
 
 	
-

@@ -1,5 +1,6 @@
 from light_datastructures import *
 from quadruple import *
+from memory_handler import *
 
 def execute_operator(argument, quad, index):
 	switcher = {
@@ -15,8 +16,6 @@ def execute_operator(argument, quad, index):
 		9	:	notEqual,
 		10	:	_and,
 		11	:	_or,
-		12	:	lPar,
-		13	:	rPar,
 		14	:	equal,
 		15	:	gotof,
 		16	:	gotot,
@@ -38,49 +37,43 @@ def execute_operator(argument, quad, index):
 
 
 def plus(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def minus(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def times(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def over(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def lessThan(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def greaterThan(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def lessEqThan(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def greaterEqThan(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def equals(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def notEqual(quad, index):
-	pass
+	MemoryHandler.binary_operator(quad)
 
 def _and(quad, index):
-	pass
+	MemoryHandler.and_or_operator(quad)
 
 def _or(quad, index):
-	pass
-
-def lPar(quad, index):
-	pass
-
-def rPar(quad, index):
-	pass
+	MemoryHandler.and_or_operator(quad)
 
 def equal(quad, index):
-	pass
+	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
 	pass
@@ -101,7 +94,7 @@ def gosub(quad, index):
 	pass
 
 def era(quad, index):
-	pass
+	MemoryHandler.era_operator(quad)
 
 def param(quad, index):
 	pass
