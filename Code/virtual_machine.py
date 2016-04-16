@@ -1,7 +1,6 @@
 from light_datastructures import *
 from quadruple import *
 
-
 def execute_operator(argument, quad, index):
 	switcher = {
 		0	: 	plus,
@@ -18,7 +17,7 @@ def execute_operator(argument, quad, index):
 		11	:	_or,
 		12	:	lPar,
 		13	:	rPar,
-		14	:	equal
+		14	:	equal,
 		15	:	gotof,
 		16	:	gotot,
 		17	:	goto,
@@ -35,6 +34,7 @@ def execute_operator(argument, quad, index):
 	func = switcher.get(argument, lambda: "nothing")
 	# Execute the function
 	return func(quad, index)
+
 
 
 def plus(quad, index):
@@ -85,7 +85,7 @@ def equal(quad, index):
 def gotof(quad, index):
 	pass
 
-def gotof(quad, index):
+def gotot(quad, index):
 	pass
 
 def goto(quad, index):
@@ -113,12 +113,11 @@ def end(quad, index):
 	pass
 
 
+def RUN_AT_LIGHTSPEED():
+	quads = Quadruples.quad_list
 
+	for i in xrange(len(quads)):
 
-quads = Quadruples.quad_list
-
-for i in xrange(len(quads)):
-
-	op = quads[i].operator
-	execute_operator(op, quads[i], i)
+		op = quads[i].operator
+		execute_operator(op, quads[i], i)
 
