@@ -87,6 +87,7 @@ class Function:
 		self.name = ""
 		self.type = 0 # "" before
 		self.vars = {}
+		self.var_quantities = [0 for x in xrange(len(type_dict))]
 		self.params = []
 		self.quad_index = -1
 		self.has_return = False
@@ -96,6 +97,7 @@ class Function:
 		self.name = ""
 		self.type = 0 # "" before
 		self.vars = {}
+		self.var_quantities = [0 for x in xrange(len(type_dict))]
 		self.params = []
 		self.quad_index = -1
 		self.has_return = False
@@ -194,6 +196,7 @@ class FunctionTable:
 
 	@classmethod
 	def add_var_to_func(cls, function_name, var_obj):
+		cls.function_dict[function_name].var_quantities[var_obj.type] += 1
 		cls.function_dict[function_name].add_var(var_obj)
 
 	@classmethod
