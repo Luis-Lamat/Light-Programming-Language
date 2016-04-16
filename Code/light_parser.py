@@ -24,6 +24,7 @@ operator_stack  = Stack()
 type_stack      = Stack()
 
 # Global track keeping
+constant_dict = {}
 last_func_called = ""
 param_counter = 0
 
@@ -79,6 +80,14 @@ def print_quad_helper():
 	build_and_push_quad(op, None, None, operand)
 	type_stack.pop()
 
+def push_const_operand_and_type(operand, type):
+	type_stack.push(type_dict[type])
+	if operand in constant_dict.keys():
+		return
+	addr = SemanticInfo.get_next_const_id()
+	operand_stack.push(addr)
+	constant_dict[operand] = addr
+
 def print_stacks():
 	sys.stdout.write("> Operand Stack = ")
 	operand_stack.pprint()
@@ -99,7 +108,10 @@ def p_program (p):
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
+	sys.stdout.write("Constants dict: ")
+	print constant_dict
 	Quadruples.print_all()
+	
 
 def p_pr_a (p):
 	'''
@@ -972,21 +984,16 @@ def p_push_id(p):
 def p_push_num(p):
 	'push_num : '
 	num = eval(p[-1])
-	if (isinstance(num, (int, long))):
-		type_stack.push(type_dict['int'])
-	elif (isinstance(num, (float))):
-		type_stack.push(type_dict['decimal'])
-	operand_stack.push(num)
+	type = 'decimal' if isinstance(num, (float)) else 'int'
+	push_const_operand_and_type(num, type)
 
 def p_push_string(p):
 	'push_string : '
-	type_stack.push(type_dict['string'])
-	operand_stack.push(p[-1])
+	push_const_operand_and_type(p[-1], 'string')
 
 def p_push_bool(p):
 	'push_bool : '
-	type_stack.push(type_dict['boolean'])
-	operand_stack.push(p[-1])
+	push_const_operand_and_type(p[-1], 'boolean')
 
 def p_push_operator(p):
 	'push_operator : '

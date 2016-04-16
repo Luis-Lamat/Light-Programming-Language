@@ -282,6 +282,7 @@ class SemanticCube(object):
 class SemanticInfo:
 	#void, boolean, int, decimal, string,, point, line, triangle, square, rectangle, polygon, star, circle
 	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000]
+	current_const_id = 14000
 
 	__shared_state = {}
 	def __init__(cls):
@@ -289,8 +290,13 @@ class SemanticInfo:
 
 	@classmethod
 	def get_next_var_id(cls, type):
-		cls.current_var_id[type] = cls.current_var_id[type] + 1
+		cls.current_var_id[type] += 1
 		return cls.current_var_id[type] - 1
+
+	@classmethod
+	def get_next_const_id(cls):
+		cls.current_const_id += 1
+		return cls.current_const_id - 1
 
 	@classmethod
 	def reset_var_ids(cls):
