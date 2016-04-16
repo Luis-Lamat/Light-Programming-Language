@@ -24,7 +24,6 @@ operator_stack  = Stack()
 type_stack      = Stack()
 
 # Global track keeping
-constant_dict = {}
 last_func_called = ""
 param_counter = 0
 
@@ -82,12 +81,12 @@ def print_quad_helper():
 
 def push_const_operand_and_type(operand, type):
 	type_stack.push(type_dict[type])
-	if operand in constant_dict.keys():
-		operand_stack.push(constant_dict[operand])
+	if operand in FunctionTable.constant_dict.keys():
+		operand_stack.push(FunctionTable.constant_dict[operand])
 		return
 	addr = SemanticInfo.get_next_const_id()
 	operand_stack.push(addr)
-	constant_dict[operand] = addr
+	FunctionTable.constant_dict[operand] = addr
 
 def print_stacks():
 	sys.stdout.write("> Operand Stack = ")
@@ -110,7 +109,7 @@ def p_program (p):
 	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
 	sys.stdout.write("Constants dict: ")
-	print constant_dict
+	print FunctionTable.constant_dict
 	Quadruples.print_all()
 	
 

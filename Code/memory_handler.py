@@ -10,8 +10,12 @@ class MemoryHandler(object):
 	global_function = FunctionTable.function_dict['program']
 	global_size = len(global_function.vars)
 
-	heap  = Memory(global_size, global_function.var_quantities) # Global Memory
-	stack = Stack()  # Local Memory, stores Memory objects
+	# Global Memory
+	const_vars = {v: k for k, v in FunctionTable.constant_dict.items()}
+	heap = Memory(global_size, global_function.var_quantities)
+
+	# Local Memory, stores Memory objects
+	stack = Stack()
 	mem_to_push = None
 
 	__shared_state = {}
@@ -61,16 +65,28 @@ class MemoryHandler(object):
 		type = (addr // 1000) # integer division
 		relative_address = addr - type
 		# use heap for search if addr is negative, else the current local mem
-		heap_or_stack = cls.heap if addr < 0 else cls.stack.peek()
-		return heap_or_stack.memory[type][abs(relative_address)]
+		if addr >= 14000:
+			print FunctionTable.constant_dict
+			print ""
+			print {v: k for k, v in FunctionTable.constant_dict.items()}
+			print ""
+			print cls.const_vars
+			print ""
+			print cls.heap.memory
+			return cls.const_vars[addr]
+		elif addr < 0:
+			return cls.heap.memory[type][abs(relative_address)]
+		return cls.stack.peek().memory[type][relative_address]
 
 	@classmethod
 	def set_address_value(cls, addr, val):
 		type = (addr // 1000) # integer division
 		relative_address = addr - type
 		# use heap for search if addr is negative, else the current local mem
-		if addr < 0:
-			cls.heap.memory[type][relative_address] = val
+		if addr >= 14000:
+			cls.const_vars[addr] = val
+		elif addr < 0:
+			cls.heap.memory[type][abs(relative_address)] = val
 		else:
 			cls.stack.peek().memory[type][relative_address] = val
 

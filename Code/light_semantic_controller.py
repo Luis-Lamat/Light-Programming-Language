@@ -167,6 +167,9 @@ class FunctionTable:
 	function_dict = {
 		'program' : global_func
 	}
+
+	constant_dict = {}
+
 	next_func_id = 1
 	__shared_state = {}
 	def __init__(self):
