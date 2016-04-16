@@ -83,6 +83,7 @@ def print_quad_helper():
 def push_const_operand_and_type(operand, type):
 	type_stack.push(type_dict[type])
 	if operand in constant_dict.keys():
+		operand_stack.push(constant_dict[operand])
 		return
 	addr = SemanticInfo.get_next_const_id()
 	operand_stack.push(addr)

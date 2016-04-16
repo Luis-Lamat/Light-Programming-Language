@@ -3,9 +3,6 @@ from light_semantic_controller import *
 from memory import *
 import operator
 
-
-
-
 class MemoryHandler(object):
 	"""MemoryHandler class"""
 
@@ -15,6 +12,7 @@ class MemoryHandler(object):
 
 	heap  = Memory(global_size, global_function.var_quantities) # Global Memory
 	stack = Stack()  # Local Memory, stores Memory objects
+	mem_to_push = None
 
 	__shared_state = {}
 	def __init__(cls):
@@ -61,5 +59,12 @@ class MemoryHandler(object):
 		else:
 			cls.stack.peek().[type][relative_address] = val
 
+	@classmethod
+	def era_operator(cls, quad):
+		func_name = quad.left_operand
+		func = FunctionTable.function_dict[func_name]
+		mem_to_push = Memory(len(func.vars), func.var_quantities) 
+		print "> Created new memory for '{}': {}".format(func_name, mem_to_push.memory)
 
+	
 
