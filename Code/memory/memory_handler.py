@@ -8,7 +8,8 @@ class MemoryHandler(object):
 	# Global and local memory declarations
 	global_size = len(FunctionTable.function_dict['program'].vars)
 
-	heap = Memory()
+	heap  = Memory() # Global Memory
+	stack = Stack()  # Local Memory, stores Memory objects
 
 	__shared_state = {}
 	def __init__(cls):
