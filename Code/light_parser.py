@@ -104,7 +104,7 @@ def print_stacks():
 
 def p_program (p):
 	'''
-	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a pr_b main_func SEP_RCBRACKET
+	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET main_gosub_quad pr_a pr_b main_func SEP_RCBRACKET
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
@@ -113,6 +113,12 @@ def p_program (p):
 	print FunctionTable.constant_dict
 	Quadruples.print_all()
 	
+
+def p_main_gosub_quad(p):
+	'main_gosub_quad : '
+	build_and_push_quad(special_operator_dict['era'], 'light', None, None)
+	build_and_push_quad(special_operator_dict['gosub'], 'light', None, None)
+	Quadruples.push_jump(-1)
 
 def p_pr_a (p):
 	'''
@@ -128,13 +134,19 @@ def p_pr_b (p):
 
 def p_main_func (p):
 	'''
-	main_func : LIGHT_TOKEN new_func_scope SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
+	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	# Generates the 'END' action to finish execution
 	build_and_push_quad(special_operator_dict['end'], None, None, None)
 	# TODO: Liberar tabla de variables
+
+def p_main_fill_quad(p):
+	'main_fill_quad : '
+	tmp_end = Quadruples.pop_jump()
+	tmp_count = Quadruples.next_free_quad
+	Quadruples.fill_missing_quad(tmp_end, tmp_count)
 
 def p_type (p):
 	'''

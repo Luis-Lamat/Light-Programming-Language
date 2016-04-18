@@ -169,7 +169,6 @@ class FunctionTable:
 	}
 
 	constant_dict = {}
-	not_so_constant_dict = {1:2, 2:3, 3:4}
 
 	next_func_id = 1
 	__shared_state = {}

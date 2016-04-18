@@ -71,6 +71,7 @@ def _or(quad, index):
 	MemoryHandler.and_or_operator(quad)
 
 def equal(quad, index):
+	print quad.get_list()
 	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
