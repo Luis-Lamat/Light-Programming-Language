@@ -1,26 +1,30 @@
-from light_datastructures import *
+import operator
 from light_semantic_controller import *
 from memory import *
-import operator
 
-class MemoryHandler(object):
-	"""MemoryHandler class"""
-
+class MemoryHandler:
 	# Global and local memory declarations
-	global_function = FunctionTable.function_dict['program']
-	global_size = len(global_function.vars)
+	global_size = len(FunctionTable.function_dict['program'].vars)
 
 	# Global Memory
-	const_vars = {v: k for k, v in FunctionTable.constant_dict.items()}
-	heap = Memory(global_size, global_function.var_quantities)
+	const_vars = FunctionTable.flipped_constant_dict()
+	heap = Memory(global_size, FunctionTable.function_dict['program'].var_quantities)
 
 	# Local Memory, stores Memory objects
 	stack = Stack()
-	mem_to_push = None
+	mem_to_push = 90
 
 	__shared_state = {}
 	def __init__(cls):
 		cls.__dict__ = cls.__shared_state
+
+	@classmethod
+	def init_class_vars(cls):
+		cls.global_size = len(FunctionTable.function_dict['program'].vars)
+		cls.const_vars = FunctionTable.flipped_constant_dict()
+		cls.heap = Memory(cls.global_size, FunctionTable.function_dict['program'].var_quantities)
+		cls.stack = Stack()
+		cls.mem_to_push = None
 
 	@classmethod
 	def binary_operator(cls, quad):
@@ -66,13 +70,6 @@ class MemoryHandler(object):
 		relative_address = addr - type
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
-			print FunctionTable.constant_dict
-			print ""
-			print {v: k for k, v in FunctionTable.constant_dict.items()}
-			print ""
-			print cls.const_vars
-			print ""
-			print cls.heap.memory
 			return cls.const_vars[addr]
 		elif addr < 0:
 			return cls.heap.memory[type][abs(relative_address)]
@@ -80,12 +77,15 @@ class MemoryHandler(object):
 
 	@classmethod
 	def set_address_value(cls, addr, val):
+		print addr
 		type = (addr // 1000) # integer division
 		relative_address = addr - type
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
 			cls.const_vars[addr] = val
 		elif addr < 0:
+			print cls.heap.memory
+			print "Access: [{}][{}] = {}".format(type, abs(relative_address), val)
 			cls.heap.memory[type][abs(relative_address)] = val
 		else:
 			cls.stack.peek().memory[type][relative_address] = val

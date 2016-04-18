@@ -1,6 +1,6 @@
+from memory_handler import *
 from light_datastructures import *
 from quadruple import *
-from memory_handler import *
 
 def execute_operator(argument, quad, index):
 	switcher = {
@@ -33,8 +33,6 @@ def execute_operator(argument, quad, index):
 	func = switcher.get(argument, lambda: "nothing")
 	# Execute the function
 	return func(quad, index)
-
-
 
 def plus(quad, index):
 	MemoryHandler.binary_operator(quad)
@@ -107,6 +105,7 @@ def end(quad, index):
 
 
 def RUN_AT_LIGHTSPEED():
+	MemoryHandler.init_class_vars() # Supah weird hack...
 	quads = Quadruples.quad_list
 
 	for i in xrange(len(quads)):

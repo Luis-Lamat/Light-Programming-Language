@@ -169,6 +169,7 @@ class FunctionTable:
 	}
 
 	constant_dict = {}
+	not_so_constant_dict = {1:2, 2:3, 3:4}
 
 	next_func_id = 1
 	__shared_state = {}
@@ -249,6 +250,11 @@ class FunctionTable:
 	@classmethod
 	def function_has_return_stmt(cls, function_name):
 		return cls.function_dict[function_name].get_has_Return()
+
+	@classmethod
+	def flipped_constant_dict(cls):
+		print "\n\nCALLED\n"
+		return {v: k for k, v in cls.constant_dict.items()}
 
 
 class SemanticCube(object):

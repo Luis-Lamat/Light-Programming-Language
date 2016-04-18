@@ -68,6 +68,7 @@ def assign_quad_helper():
 	op = operator_stack.pop()
 	o1 = operand_stack.pop()
 	o2 = operand_stack.pop()
+	print "YAAAAAAAAASSSS {}".format(o2)
 
 	# Generate Quadruple and push it to the list
 	build_and_push_quad(op, o1, None, o2)
@@ -658,11 +659,11 @@ def p_double_pushID (p):
 
 	func = FunctionTable.function_dict[function_stack.peek()]
 	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].name)
+	operand_stack.push(func.vars[p[-2]].id)
 
 	func = FunctionTable.function_dict[function_stack.peek()]
 	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].name)
+	operand_stack.push(func.vars[p[-2]].id)
 
 def p_do_sum_rest (p):
 	'''
@@ -855,7 +856,8 @@ def p_push_tmp_var(p):
 	'push_tmp_var : '
 	print_stacks()
 	type_stack.push(tmp_var.type)
-	operand_stack.push(tmp_var.name)
+	tmp_var.id = SemanticInfo.current_var_id[tmp_var.type]
+	operand_stack.push(tmp_var.id)
 
 #array
 def p_vars_arr (p):
@@ -979,7 +981,7 @@ def p_push_id(p):
 	'push_id : '
 	var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
 	type_stack.push(var.type)
-	operand_stack.push(var.name)
+	operand_stack.push(var.id)
 
 def p_push_num(p):
 	'push_num : '
