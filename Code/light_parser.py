@@ -51,6 +51,8 @@ def exp_quad_helper(p, op_list):
 		o1 = operand_stack.pop()
 		o2 = operand_stack.pop()
 		tmp_var_id = SemanticInfo.get_next_var_id(return_type)
+		# FunctionTable.function_dict[function_stack.peek()].var_quantities[return_type] += 1
+
 
 		# Generate Quadruple and push it to the list
 		build_and_push_quad(op, o2, o1, tmp_var_id)
@@ -137,6 +139,7 @@ def p_main_func (p):
 	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	SemanticInfo.reset_var_ids()
 	# Generates the 'END' action to finish execution
 	build_and_push_quad(special_operator_dict['end'], None, None, None)
@@ -191,6 +194,7 @@ def p_function (p):
 	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return verify_return_stmt SEP_RCBRACKET
 	'''
 	function_stack.pop()
+	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	SemanticInfo.reset_var_ids()
 	# Generates the 'RET' action at the end of the function
 	build_and_push_quad(special_operator_dict['ret'], None, None, None)

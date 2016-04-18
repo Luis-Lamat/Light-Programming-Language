@@ -90,10 +90,12 @@ def _return(quad, index):
 	pass
 
 def gosub(quad, index):
-	pass
+	index = MemoryHandler.gosub(quad)
+	return index
 
 def era(quad, index):
 	MemoryHandler.era_operator(quad)
+	pass 
 
 def param(quad, index):
 	pass
@@ -109,8 +111,12 @@ def RUN_AT_LIGHTSPEED():
 	MemoryHandler.init_class_vars() # Supah weird hack...
 	quads = Quadruples.quad_list
 	print "\nVIRTUAL MACHINE ==============================="
-	for i in xrange(len(quads)):
+	QuadIterator(0, quads)
 
-		op = quads[i].operator
-		execute_operator(op, quads[i], i)
+def QuadIterator(index, quads):
 
+	while(index < len(quads)):
+		op = quads[index].operator
+		print("> EXECUTION LINE:\t " + str(index))
+		new_index = execute_operator(op, quads[index], index)
+		index = new_index if new_index else (index + 1)

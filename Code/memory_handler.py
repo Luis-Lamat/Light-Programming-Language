@@ -30,7 +30,7 @@ class MemoryHandler:
 	def binary_operator(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
 		right_op = cls.get_address_value(quad.right_operand)
-		result = execute_binary_operator(quad.operator, left_op, right_op)
+		result = cls.execute_binary_operator(quad.operator, left_op, right_op)
 		cls.set_address_value(quad.result, result)
 
 	@classmethod
@@ -49,6 +49,10 @@ class MemoryHandler:
 			9	: operator.ne(x,y),
 		}
 		return ops[val]
+
+	@classmethod
+	def gosub(cls, quad):
+		return quad.result
 
 	@classmethod
 	def assign_operator(cls, quad):
@@ -95,6 +99,7 @@ class MemoryHandler:
 	def era_operator(cls, quad):
 		func_name = quad.left_operand
 		func = FunctionTable.function_dict[func_name]
+		print("> Func Var Quantities: {} , left_operand {}".format(func.var_quantities, quad.left_operand))
 		mem_to_push = Memory(len(type_dict), func.var_quantities) 
 		print "> Created new memory for '{}': {}".format(func_name, mem_to_push.memory)
 		cls.stack.push(mem_to_push)
