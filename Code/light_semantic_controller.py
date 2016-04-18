@@ -252,7 +252,6 @@ class FunctionTable:
 
 	@classmethod
 	def flipped_constant_dict(cls):
-		print "\n\nCALLED\n"
 		return {v: k for k, v in cls.constant_dict.items()}
 
 

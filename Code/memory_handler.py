@@ -77,7 +77,6 @@ class MemoryHandler:
 
 	@classmethod
 	def set_address_value(cls, addr, val):
-		print addr
 		type = (addr // 1000) # integer division
 		relative_address = addr - (type * 1000)
 		# use heap for search if addr is negative, else the current local mem

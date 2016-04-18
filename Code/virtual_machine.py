@@ -108,7 +108,7 @@ def end(quad, index):
 def RUN_AT_LIGHTSPEED():
 	MemoryHandler.init_class_vars() # Supah weird hack...
 	quads = Quadruples.quad_list
-
+	print "\nVIRTUAL MACHINE ==============================="
 	for i in xrange(len(quads)):
 
 		op = quads[i].operator
