@@ -67,7 +67,7 @@ class MemoryHandler:
 	@classmethod
 	def get_address_value(cls, addr):
 		type = (addr // 1000) # integer division
-		relative_address = addr - type
+		relative_address = addr - (type * 1000)
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
 			return cls.const_vars[addr]
