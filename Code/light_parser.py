@@ -106,7 +106,7 @@ def print_stacks():
 
 def p_program (p):
 	'''
-	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET main_gosub_quad pr_a pr_b main_func SEP_RCBRACKET
+	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET main_gosub_quad pr_a prog_var_quantities pr_b main_func SEP_RCBRACKET
 	'''
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
@@ -115,6 +115,9 @@ def p_program (p):
 	print FunctionTable.constant_dict
 	Quadruples.print_all()
 	
+def p_prog_var_quantities(p):
+	'prog_var_quantities : '
+	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 
 def p_main_gosub_quad(p):
 	'main_gosub_quad : '
@@ -138,8 +141,8 @@ def p_main_func (p):
 	'''
 	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
 	'''
-	function_stack.pop()
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
+	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	# Generates the 'END' action to finish execution
 	build_and_push_quad(special_operator_dict['end'], None, None, None)
@@ -193,8 +196,8 @@ def p_function (p):
 	'''
 	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return verify_return_stmt SEP_RCBRACKET
 	'''
-	function_stack.pop()
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
+	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	# Generates the 'RET' action at the end of the function
 	build_and_push_quad(special_operator_dict['ret'], None, None, None)

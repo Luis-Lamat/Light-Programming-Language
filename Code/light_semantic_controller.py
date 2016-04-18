@@ -194,6 +194,7 @@ class FunctionTable:
 	@classmethod
 	def add_var_quantities_to_func(cls, function_name):
 		q = [(x%1000) for x in SemanticInfo.current_var_id]
+		print "> Var q's for func '{}': {}".format(function_name, q)
 		cls.function_dict[function_name].var_quantities = q
 
 	@classmethod

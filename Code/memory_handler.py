@@ -12,7 +12,7 @@ class MemoryHandler:
 
 	# Local Memory, stores Memory objects
 	stack = Stack()
-	mem_to_push = 90
+	mem_to_push = None
 
 	__shared_state = {}
 	def __init__(cls):
@@ -52,6 +52,8 @@ class MemoryHandler:
 
 	@classmethod
 	def gosub(cls, quad):
+		print "> Pushing memory to stack: {}".format(cls.mem_to_push.memory)
+		cls.stack.push(cls.mem_to_push)
 		return quad.result
 
 	@classmethod
@@ -99,9 +101,6 @@ class MemoryHandler:
 	def era_operator(cls, quad):
 		func_name = quad.left_operand
 		func = FunctionTable.function_dict[func_name]
-		print("> Func Var Quantities: {} , left_operand {}".format(func.var_quantities, quad.left_operand))
-		mem_to_push = Memory(len(type_dict), func.var_quantities) 
-		print "> Created new memory for '{}': {}".format(func_name, mem_to_push.memory)
-		cls.stack.push(mem_to_push)
-
+		cls.mem_to_push = Memory(len(type_dict), func.var_quantities) 
+		print "> Created new memory for '{}': {}".format(func_name, cls.mem_to_push.memory)
 	

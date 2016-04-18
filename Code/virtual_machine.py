@@ -71,7 +71,6 @@ def _or(quad, index):
 	MemoryHandler.and_or_operator(quad)
 
 def equal(quad, index):
-	print quad.get_list()
 	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
@@ -117,6 +116,6 @@ def QuadIterator(index, quads):
 
 	while(index < len(quads)):
 		op = quads[index].operator
-		print("> EXECUTION LINE:\t " + str(index))
+		print("> EXECUTION LINE: {}, Quad: {}".format(index, quads[index].get_list()))
 		new_index = execute_operator(op, quads[index], index)
 		index = new_index if new_index else (index + 1)
