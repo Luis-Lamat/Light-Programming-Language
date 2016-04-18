@@ -20,9 +20,9 @@ class MemoryHandler:
 
 	@classmethod
 	def init_class_vars(cls):
-		cls.global_size = len(FunctionTable.function_dict['program'].vars)
 		cls.const_vars = FunctionTable.flipped_constant_dict()
-		cls.heap = Memory(cls.global_size, FunctionTable.function_dict['program'].var_quantities)
+		print "-----> HEAP VAR Q's: {}".format(FunctionTable.function_dict['program'].var_quantities)
+		cls.heap = Memory(len(type_dict), FunctionTable.function_dict['program'].var_quantities)
 		cls.stack = Stack()
 		cls.mem_to_push = None
 
@@ -72,8 +72,8 @@ class MemoryHandler:
 
 	@classmethod
 	def get_address_value(cls, addr):
-		type = (addr // 1000) # integer division
-		relative_address = addr - (type * 1000)
+		type = abs(addr // 1000) # integer division
+		relative_address = abs(addr) - (type * 1000)
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
 			return cls.const_vars[addr]
@@ -83,19 +83,19 @@ class MemoryHandler:
 
 	@classmethod
 	def set_address_value(cls, addr, val):
-		type = (addr // 1000) # integer division
-		relative_address = addr - (type * 1000)
+		type = abs(addr // 1000) # integer division
+		relative_address = abs(addr) - (type * 1000)
 		# use heap for search if addr is negative, else the current local mem
 		print "> Set mem value: type = {}, addr = {}, val = {}".format(type, abs(relative_address), val)
 		if addr >= 14000:
-			cls.const_vars[addr] = val
 			print "> Const vars memory: {}".format(cls.const_vars)
+			cls.const_vars[addr] = val
 		elif addr < 0:
-			cls.heap.memory[type][abs(relative_address)] = val
 			print "> Heap memory: {}".format(cls.heap.memory)
+			cls.heap.memory[type][abs(relative_address)] = val
 		else:
-			cls.stack.peek().memory[type][relative_address] = val
 			print "> Stack memory: {}".format(cls.stack.peek().memory)
+			cls.stack.peek().memory[type][relative_address] = val
 
 	@classmethod
 	def era_operator(cls, quad):

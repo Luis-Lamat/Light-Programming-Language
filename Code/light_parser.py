@@ -109,7 +109,6 @@ def p_program (p):
 	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET main_gosub_quad pr_a prog_var_quantities pr_b main_func SEP_RCBRACKET
 	'''
 	function_stack.pop()
-	SemanticInfo.reset_var_ids()
 	FunctionTable.print_all()
 	sys.stdout.write("Constants dict: ")
 	print FunctionTable.constant_dict
@@ -118,6 +117,7 @@ def p_program (p):
 def p_prog_var_quantities(p):
 	'prog_var_quantities : '
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
+	SemanticInfo.reset_var_ids()
 
 def p_main_gosub_quad(p):
 	'main_gosub_quad : '
@@ -277,10 +277,11 @@ def p_parameters (p):
 
 def p_new_param_seen(p):
 	'new_param_seen : '
+	global tmp_var
 	tmp_var.name = p[-3]
 	tmp_var.type = type_dict[p[-1]]
-	FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
-	FunctionTable.add_param_to_func(tmp_function.name, p[-3], tmp_var.type)
+	tmp_var = FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
+	FunctionTable.add_param_to_func(tmp_function.name, p[-3], tmp_var)
 
 def p_param_a (p):
 	'''

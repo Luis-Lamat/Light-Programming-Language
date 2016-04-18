@@ -115,6 +115,7 @@ class Function:
 			tmp_var.init_var(SemanticInfo.get_next_var_id(var.type), var.name, var.type, var.value)
 			tmp_var.id = ( -tmp_var.id if self.name == 'program' else tmp_var.id)
 			self.vars[var.name] = tmp_var
+			return tmp_var
 		else:
 			Error.already_defined('variable', var.name)
 
@@ -206,15 +207,15 @@ class FunctionTable:
 	@classmethod
 	def add_var_to_func(cls, function_name, var_obj):
 		# cls.function_dict[function_name].var_quantities[var_obj.type] += 1
-		cls.function_dict[function_name].add_var(var_obj)
+		return cls.function_dict[function_name].add_var(var_obj)
 
 	@classmethod
 	def verify_var_in_func(cls, function_name, var_name):
 		return cls.function_dict[function_name].var_in_func(var_name) or cls.verify_var_global(var_name)
 
 	@classmethod
-	def add_param_to_func(cls, function_name, param_name, param_type):
-		cls.function_dict[function_name].params.append((param_name, param_type))
+	def add_param_to_func(cls, function_name, param_name, param_var):
+		cls.function_dict[function_name].params.append((param_name, param_var.type, param_var.id))
 
 	@classmethod
 	def verify_var_global(cls, var_name):
