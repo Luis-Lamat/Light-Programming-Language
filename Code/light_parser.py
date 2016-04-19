@@ -277,11 +277,12 @@ def p_parameters (p):
 
 def p_new_param_seen(p):
 	'new_param_seen : '
-	global tmp_var
+	aux_var = Var() # TODO: Wtf hack
 	tmp_var.name = p[-3]
 	tmp_var.type = type_dict[p[-1]]
-	tmp_var = FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
-	FunctionTable.add_param_to_func(tmp_function.name, p[-3], tmp_var)
+	aux_var = tmp_var
+	aux_var = FunctionTable.add_var_to_func(tmp_function.name, tmp_var)
+	FunctionTable.add_param_to_func(tmp_function.name, p[-3], aux_var)
 
 def p_param_a (p):
 	'''
