@@ -1,0 +1,22 @@
+program lolz {
+
+
+    function tryBool() {
+        var a:boolean = false
+        var s:string
+
+        if(a)do
+        	s = "true"
+        end
+    	else do
+    		s = "false"
+    	end
+
+    }
+  
+
+    light() {
+
+        tryBool()
+    }
+}

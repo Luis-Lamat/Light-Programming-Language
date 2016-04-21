@@ -74,13 +74,16 @@ def equal(quad, index):
 	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
-	pass
+	index = MemoryHandler.gotof(quad)
+	return index
 
 def gotot(quad, index):
-	pass
+	index = MemoryHandler.gotot(quad)
+	return index
 
 def goto(quad, index):
-	pass
+	index = MemoryHandler.goto(quad)
+	return index
 
 def ret(quad, index):
 	pass

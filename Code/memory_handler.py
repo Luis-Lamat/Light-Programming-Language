@@ -57,6 +57,26 @@ class MemoryHandler:
 		return quad.result
 
 	@classmethod
+	def gotof(cls, quad):
+		left_op = cls.get_address_value(quad.left_operand)
+		if left_op == "false" :
+			return cls.get_address_value(quad.result)
+		else:
+			return 1 #if false continue next cuadriple
+
+	@classmethod
+	def gotot(cls, quad):
+		left_op = cls.get_address_value(quad.left_operand)
+		if left_op == "true" :
+			return cls.get_address_value(quad.result)
+		else:
+			return 1 #if false continue next cuadriple
+
+	@classmethod
+	def goto(cls, quad):
+		return quad.result	
+
+	@classmethod
 	def assign_operator(cls, quad):
 		from_value = cls.get_address_value(quad.left_operand)
 		cls.set_address_value(quad.result, from_value)

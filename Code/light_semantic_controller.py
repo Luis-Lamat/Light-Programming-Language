@@ -119,6 +119,7 @@ class Function:
 		else:
 			Error.already_defined('variable', var.name)
 
+
 	def add_arr_empty(self, arr):
 		if arr.name not in self.vars:
 			tmp_arr = Array()
