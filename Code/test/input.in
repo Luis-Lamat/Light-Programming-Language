@@ -197,6 +197,8 @@ program lolz {
         camera t1
 
         var c1:circle has
+        	posX: 3,
+            posY: 9,
             size: 5,
             color: red
         end
