@@ -2,14 +2,16 @@ program lolz {
 
 
     function tryBool() {
-        var a:boolean = false
+        var a:boolean = true
         var s:string
 
         if(a)do
-        	s = "true"
+        	print("true")
+        	print(5*4/10)
         end
     	else do
-    		s = "false"
+    		print("false")
+    		print(25)
     	end
 
     }

@@ -104,7 +104,7 @@ def param(quad, index):
 	MemoryHandler.param_operator(quad)
 
 def _print(quad, index):
-	pass
+	MemoryHandler._print(quad)
 
 def end(quad, index):
 	print "> PROGRAM EXIT"
