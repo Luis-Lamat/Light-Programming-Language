@@ -63,14 +63,14 @@ class MemoryHandler:
 		left_op = cls.get_address_value(quad.left_operand)
 		print "> GoTo False with **{}** to {}".format(left_op, index+1)
 		# return +1 to continue with next quadruple
-		return quad.result if left_op == "false" else index + 1
+		return quad.result if left_op == "false" or left_op == False else index + 1
 
 	@classmethod
 	def gotot(cls, quad, index):
 		left_op = cls.get_address_value(quad.left_operand)
 		print "> GoTo True with **{}** to {}".format(left_op, index+1)
 		# return +1 to continue with next quadruple
-		return quad.result if left_op == "true" else index + 1
+		return quad.result if left_op == "true" or left_op == True else index + 1
 
 	@classmethod
 	def goto(cls, quad):
