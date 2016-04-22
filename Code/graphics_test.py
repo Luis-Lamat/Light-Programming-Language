@@ -25,13 +25,14 @@ square = L_Square(300, 300, 50)
 
 def main():
     win = GraphWin("My Circle", 500, 500)
+
     c = Circle(cir.getPointCenter(), cir.radius)
     c.setFill(cir.getColor())
     c.draw(win)
 
     #t = Polygon(Point(triangle.getVertex(0)), Point(triangle.getVertex(1)), Point(triangle.getVertex(2)))
     t = Polygon(triangle.getPointsList())
-    t.setFill(color_rgb(triangle.color.r, triangle.color.g, triangle.color.b))
+    t.setFill(triangle.getColor())
     t.draw(win)
 
     p = Polygon(ply.getPointsList())
@@ -53,6 +54,8 @@ def main():
     # 	c.move(1, 1)
     # 	time.sleep(0.05)
     # 	#win.getMouse()
+
+
 
     win.getMouse() # Pause to view result
     win.close()    # Close window when done
