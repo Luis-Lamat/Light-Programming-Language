@@ -74,11 +74,11 @@ def equal(quad, index):
 	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
-	index = MemoryHandler.gotof(quad)
+	index = MemoryHandler.gotof(quad, index)
 	return index
 
 def gotot(quad, index):
-	index = MemoryHandler.gotot(quad)
+	index = MemoryHandler.gotot(quad, index)
 	return index
 
 def goto(quad, index):
@@ -86,13 +86,14 @@ def goto(quad, index):
 	return index
 
 def ret(quad, index):
-	pass
+	index = MemoryHandler.ret_operator()
+	return index
 
 def _return(quad, index):
 	pass
 
 def gosub(quad, index):
-	index = MemoryHandler.gosub(quad)
+	index = MemoryHandler.gosub(quad, index)
 	return index
 
 def era(quad, index):
@@ -100,13 +101,14 @@ def era(quad, index):
 	pass 
 
 def param(quad, index):
-	pass
+	MemoryHandler.param_operator(quad)
 
 def _print(quad, index):
 	pass
 
 def end(quad, index):
-	pass
+	print "> PROGRAM EXIT"
+	sys.exit(0)
 
 
 def RUN_AT_LIGHTSPEED():
@@ -119,6 +121,6 @@ def QuadIterator(index, quads):
 
 	while(index < len(quads)):
 		op = quads[index].operator
-		print("> EXECUTION LINE: {}, Quad: {}".format(index, quads[index].get_list()))
+		print("\n> EXECUTION LINE: {}, Quad: {}".format(index, quads[index].get_list()))
 		new_index = execute_operator(op, quads[index], index)
 		index = new_index if new_index else (index + 1)
