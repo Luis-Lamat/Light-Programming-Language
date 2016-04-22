@@ -4,6 +4,7 @@ program lolz {
     function tryBool() {
         var a:boolean = false
         var s:string
+        var i:int
 
         if(a)do
         	print("true")
@@ -12,6 +13,13 @@ program lolz {
     	else do
     		print("false")
     		print(25)
+    	end
+
+
+    	for(i = 0; i < 5; i += 1)do
+
+    		print(i)
+    	
     	end
 
     }

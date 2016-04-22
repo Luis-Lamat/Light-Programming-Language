@@ -144,6 +144,23 @@ program lolz {
         var ypos:int = 0
         var t0:triangle
 
+
+        var t1:triangle has
+            v1: (1,2),
+            v2: (2,4),
+            v3: (4,5),
+            color: green
+        end
+
+
+        var c1:circle has
+        	posX: 3,
+            posY: 9,
+            size: 5,
+            color: red
+        end
+
+
         sayText(text: "hello")
 
         #verify and and or working
@@ -168,15 +185,15 @@ program lolz {
         # Arrays are troublesome!
         # var points:[point] = [5]
 
-        foreach (i in [1..5]) do 
-            if(3 > 5) do
-                xpos = 0
-            end
-            xpos += (7 * 8 / (9 + 9) * 5 / 2)
-            ypos += 1
-        end 
+        #foreach (i in [1..5]) do 
+        #    if(3 > 5) do
+        #        xpos = 0
+        #    end
+        #    xpos += (7 * 8 / (9 + 9) * 5 / 2)
+        #    ypos += 1
+        #end 
 
-        camera points
+        #camera points
 
         t0 has
             v1: (0,0),
@@ -187,22 +204,8 @@ program lolz {
 
         camera t0
 
-        var t1:triangle has
-            v1: (1,2),
-            v2: (2,4),
-            v3: (4,5),
-            color: green
-        end
-
         camera t1
-
-        var c1:circle has
-        	posX: 3,
-            posY: 9,
-            size: 5,
-            color: red
-        end
-            
+  
         camera c1
 
         #action
