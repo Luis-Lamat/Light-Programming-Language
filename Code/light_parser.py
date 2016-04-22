@@ -341,7 +341,7 @@ def p_verify_param(p):
 	arg_type = type_stack.pop()
 	if not FunctionTable.verify_param_at_index(last_func_called, param_name, arg_type, param_counter):
 		Error.param_mismatch( p.lexer.lineno, param_name, arg_type)
-	build_and_push_quad(special_operator_dict['param'], arg, None, param_counter)
+	build_and_push_quad(special_operator_dict['param'], arg, last_func_called, param_counter)
 	global param_counter
 	param_counter = param_counter + 1
  

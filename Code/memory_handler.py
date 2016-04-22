@@ -51,26 +51,36 @@ class MemoryHandler:
 		return ops[val]
 
 	@classmethod
-	def gosub(cls, quad):
+	def gosub(cls, quad, return_index):
 		print "> Pushing memory to stack: {}".format(cls.mem_to_push.memory)
+		print "> Returning addr for quad: {}".format(return_index)
+		cls.mem_to_push.return_address = return_index + 1
 		cls.stack.push(cls.mem_to_push)
 		return quad.result
 
 	@classmethod
-	def gotof(cls, quad):
+	def gotof(cls, quad, index):
 		left_op = cls.get_address_value(quad.left_operand)
-		# return 1 to continue with next quadruple
-		return quad.result if left_op == "false" else 1
+		print "> GoTo False with **{}** to {}".format(left_op, index+1)
+		# return +1 to continue with next quadruple
+		return quad.result if not left_op else index + 1
 
 	@classmethod
-	def gotot(cls, quad):
+	def gotot(cls, quad, index):
 		left_op = cls.get_address_value(quad.left_operand)
-		# return 1 to continue with next quadruple
-		return quad.result if left_op == "true" else 1
+		print "> GoTo True with **{}** to {}".format(left_op, index+1)
+		# return +1 to continue with next quadruple
+		return quad.result if left_op else index + 1
 
 	@classmethod
 	def goto(cls, quad):
 		return quad.result
+
+	@classmethod
+	def ret_operator(cls):
+		mem = cls.stack.pop()
+		print "> Returning to quad index: {}".format(mem.return_address)
+		return mem.return_address
 
 	@classmethod
 	def assign_operator(cls, quad):
@@ -85,6 +95,31 @@ class MemoryHandler:
 			cls.set_address_value(quad.result, (left_op and right_op))
 		elif quad.operator == 11 :
 			cls.set_address_value(quad.result, (left_op or right_op))
+
+	@classmethod
+	def era_operator(cls, quad):
+		func_name = quad.left_operand
+		func = FunctionTable.function_dict[func_name]
+		cls.mem_to_push = Memory(len(type_dict), func.var_quantities) 
+		print "> Created new memory for '{}': {}".format(func_name, cls.mem_to_push.memory)
+
+	@classmethod # TODO: Refactor if possible
+	def param_operator(cls, quad):
+		func_name 	 = quad.right_operand
+		param_index  = quad.result
+		param_tuple  = FunctionTable.function_dict[func_name].params[param_index]
+		print "> Param: func = {}, index = {}, tuple = {}".format(func_name, param_index, param_tuple[2])
+		new_rel_addr = cls.get_type_and_rel_addr(param_tuple[2])
+		val = cls.get_address_value(quad.left_operand)
+
+		print "> Param: val = {} @ {}, to = {}".format(val, quad.left_operand, new_rel_addr)
+		cls.mem_to_push.memory[new_rel_addr[0]][new_rel_addr[1]] = val
+
+	@classmethod
+	def get_type_and_rel_addr(cls, addr):
+		type = abs(addr // 1000) # integer division
+		relative_address = abs(addr) - (type * 1000)
+		return (type, relative_address)
 
 	@classmethod
 	def get_address_value(cls, addr):
@@ -118,11 +153,4 @@ class MemoryHandler:
 		else:
 			cls.stack.peek().memory[type][relative_address] = val
 			print "> Stack memory: {}".format(cls.stack.peek().memory)
-
-	@classmethod
-	def era_operator(cls, quad):
-		func_name = quad.left_operand
-		func = FunctionTable.function_dict[func_name]
-		cls.mem_to_push = Memory(len(type_dict), func.var_quantities) 
-		print "> Created new memory for '{}': {}".format(func_name, cls.mem_to_push.memory)
 	
