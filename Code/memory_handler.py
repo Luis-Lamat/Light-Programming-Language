@@ -59,22 +59,18 @@ class MemoryHandler:
 	@classmethod
 	def gotof(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
-		if left_op == "false" :
-			return cls.get_address_value(quad.result)
-		else:
-			return 1 #if false continue next cuadriple
+		# return 1 to continue with next quadruple
+		return quad.result if left_op == "false" else 1
 
 	@classmethod
 	def gotot(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
-		if left_op == "true" :
-			return cls.get_address_value(quad.result)
-		else:
-			return 1 #if false continue next cuadriple
+		# return 1 to continue with next quadruple
+		return quad.result if left_op == "true" else 1
 
 	@classmethod
 	def goto(cls, quad):
-		return quad.result	
+		return quad.result
 
 	@classmethod
 	def assign_operator(cls, quad):
@@ -92,30 +88,36 @@ class MemoryHandler:
 
 	@classmethod
 	def get_address_value(cls, addr):
+		print "> Called get_address_value({})".format(addr)
 		type = abs(addr // 1000) # integer division
 		relative_address = abs(addr) - (type * 1000)
+		print "> Get mem value: type = {}, addr = {}".format(type, abs(relative_address))
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
+			print "> Const vars memory: {}".format(cls.const_vars)
 			return cls.const_vars[addr]
 		elif addr < 0:
+			print "> Heap memory: {}".format(cls.heap.memory)
 			return cls.heap.memory[type][abs(relative_address)]
+		print "> Stack memory: {}".format(cls.stack.peek().memory)
 		return cls.stack.peek().memory[type][relative_address]
 
 	@classmethod
 	def set_address_value(cls, addr, val):
+		print "> Called set_address_value({}, {})".format(addr, val)
 		type = abs(addr // 1000) # integer division
 		relative_address = abs(addr) - (type * 1000)
-		# use heap for search if addr is negative, else the current local mem
 		print "> Set mem value: type = {}, addr = {}, val = {}".format(type, abs(relative_address), val)
+		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
-			print "> Const vars memory: {}".format(cls.const_vars)
 			cls.const_vars[addr] = val
+			print "> Const vars memory: {}".format(cls.const_vars)
 		elif addr < 0:
-			print "> Heap memory: {}".format(cls.heap.memory)
 			cls.heap.memory[type][abs(relative_address)] = val
+			print "> Heap memory: {}".format(cls.heap.memory)
 		else:
-			print "> Stack memory: {}".format(cls.stack.peek().memory)
 			cls.stack.peek().memory[type][relative_address] = val
+			print "> Stack memory: {}".format(cls.stack.peek().memory)
 
 	@classmethod
 	def era_operator(cls, quad):
