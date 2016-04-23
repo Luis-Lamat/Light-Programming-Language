@@ -101,6 +101,14 @@ class MemoryHandler:
 		cls.set_address_value(quad.result, from_value)
 
 	@classmethod
+	def allocate_array_space(cls, quad):
+		from_value = quad.left_operand
+		size = quad.right_operand
+		empty_list = [None] * int(size)
+		cls.set_address_value(from_value, empty_list)
+		#HERE
+
+	@classmethod
 	def and_or_operator(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
 		right_op = cls.get_address_value(quad.right_operand)

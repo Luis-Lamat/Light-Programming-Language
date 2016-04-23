@@ -38,43 +38,44 @@ class Array:
 		self.name = ""
 		self.type = 0
 		self.length = 0
-		self.data = []
+		#self.data = []
 
-	#initialize when length is received 
-	def init_arr_all(self, id, name, type, length):
-		self.id = id
-		self.name = name
-		self.type = type 
-		self.length = int(length)
-		for i in range(self.length):
- 			self.data.append(initializer_dict[type])
+	# #initialize when length is received 
+	# def init_arr_all(self, id, name, type, length):
+	# 	self.id = id
+	# 	self.name = name
+	# 	self.type = type 
+	# 	self.length = int(length)
+	# 	for i in range(self.length):
+ # 			self.data.append(initializer_dict[type])
 
  	#initialize when length is unknown
- 	def init_empty_arr(self, id, name, type):
+ 	def init_arr(self, id, name, type, length):
  		self.id = id
 		self.name = name
 		self.type = type
-
-	# add length when known
-	def add_length(self, length):
 		self.length = length
-		for i in range(length):
- 			self.data.append(initializer_dict[self.type])
 
- 	#return n element on the array
- 	def get_element(self, num):
- 		if sum < self.length:
- 			return data[num]
- 		else:
- 			Error.out_of_bounds(self.name, num)
+	# # add length when known
+	# def add_length(self, length):
+	# 	self.length = length
+	# 	for i in range(length):
+ # 			self.data.append(initializer_dict[self.type])
+
+ # 	#return n element on the array
+ # 	def get_element(self, num):
+ # 		if sum < self.length:
+ # 			return data[num]
+ # 		else:
+ # 			Error.out_of_bounds(self.name, num)
 
  	def print_arr(self):
  		print "\t\tARRAY! \n\t\tid: " + str(self.id) + ",\n\t\tname: " + self.name  + ",\n\t\ttype: " + str(self.type) + ",\n\t\tlength: " + str(self.length)
- 		if isinstance(self.data, str) :
-			print(', '.join(self.data))
-		else:
- 			print("\t\t" + str(self.data))
- 		print "\t\t---------"
+ 	# 	if isinstance(self.data, str) :
+		# 	print(', '.join(self.data))
+		# else:
+ 	# 		print("\t\t" + str(self.data))
+ 	# 	print "\t\t---------"
 
  	#to be able to print all
  	def print_var(self):
@@ -126,21 +127,23 @@ class Function:
 			Error.already_defined('variable', var.name)
 
 
-	def add_arr_empty(self, arr):
+	def add_arr(self, arr):
 		if arr.name not in self.vars:
 			tmp_arr = Array()
-			tmp_arr.init_empty_arr(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type)
+			tmp_arr.init_arr(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type, arr.length)
+			####TODO: negativas si globales
 			self.vars[arr.name] = tmp_arr
+			return tmp_arr
 		else:
 			Error.already_defined('variable array', arr.name)
 
-	def add_arr_complete(self, arr):
-		if arr.name not in self.vars:
-			tmp_arr = Array()
-			tmp_arr.init_arr_all(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type, arr.length)
-			self.vars[arr.name] = tmp_arr
-		else:
-			Error.already_defined('variable array', arr.name)
+	# def add_arr_complete(self, arr):
+	# 	if arr.name not in self.vars:
+	# 		tmp_arr = Array()
+	# 		tmp_arr.init_arr_all(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type, arr.length)
+	# 		self.vars[arr.name] = tmp_arr
+	# 	else:
+	# 		Error.already_defined('variable array', arr.name)
 
 	# TODO: Oh gosh, refactor please...
 	def var_in_func(self, name):
@@ -253,12 +256,12 @@ class FunctionTable:
 		return (param_tuple[0] == param_name and param_tuple[1] == param_type)
 
 	@classmethod
-	def add_arr_empty_to_func(cls, function_name, arr_obj):
-		cls.function_dict[function_name].add_arr_empty(arr_obj)
+	def add_arr_to_func(cls, function_name, arr_obj):
+		return cls.function_dict[function_name].add_arr(arr_obj)
 
-	@classmethod
-	def add_arr_complete_to_func(cls, function_name, arr_obj):
-		cls.function_dict[function_name].add_arr_complete(arr_obj)
+	# @classmethod
+	# def add_arr_complete_to_func(cls, function_name, arr_obj):
+	# 	cls.function_dict[function_name].add_arr_complete(arr_obj)
 
 	@classmethod
 	def function_returns_void(cls, function_name):

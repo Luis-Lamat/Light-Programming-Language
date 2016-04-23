@@ -1,0 +1,17 @@
+program lolz {
+
+    function tryArr() {
+        var a:boolean = false
+        var i:int
+        var numArray:[int](2)
+
+        numArray[0] = 1
+
+    }
+  
+
+    light() {
+
+        tryArr()
+    }
+}

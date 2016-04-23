@@ -27,6 +27,7 @@ def execute_operator(argument, quad, index):
 		22	:	param,
 		23	:	_print,
 		24	:	end,	
+		25	:	alloc,
 
 	}
 	# Get the function from switcher dictionary
@@ -110,6 +111,10 @@ def _print(quad, index):
 def end(quad, index):
 	print "> PROGRAM EXIT"
 	sys.exit(0)
+
+def alloc(quad, index):
+	MemoryHandler.allocate_array_space(quad)
+	pass
 
 
 def RUN_AT_LIGHTSPEED():
