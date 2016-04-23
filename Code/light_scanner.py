@@ -74,7 +74,7 @@ tokens = (
     'SEP_COMMA', 'OP_EQUALS', 'WHILE', 'SEP_DOT', 'FOR_EACH', 'IN', 
     'SEP_SEMICOLON', 'ACTION', 'DO', 'BEGINS', 'ENDS', 'MOVE', 'POS_X', 'POS_Y',
     'END', 'SCALE', 'SIZE', 'HIDE', 'SHOW', 'CAMERA', 'OP_LESS_THAN', 
-    'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 
+    'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 'OP_EQUALSS', 
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
     'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR'
@@ -187,6 +187,10 @@ def t_OP_LESS_THAN (t):
 
 def t_OP_NOT_EQUAL(t):
     r'!='
+    return t
+
+def t_OP_EQUALSS (t):
+    r'=='
     return t
 
 def t_OP_EQUALS (t):
