@@ -318,7 +318,7 @@ def p_var_array_ver(p):#HERE
 	'''
 
 def p_var_array_ver_aux(p):
-	'var_array_ver_aux : epsilon'
+	'var_array_ver_aux : epsilon' #ERROR HERE
 	tmp_array_index.push(operand_stack.pop())
 
 
@@ -372,7 +372,7 @@ def p_call_param_a(p):
 	'''
 def p_verify_param(p):
 	'verify_param : '
-	param_name = p[-3]
+	param_name = p[-4]
 	arg = operand_stack.pop()
 	arg_type = type_stack.pop()
 	if not FunctionTable.verify_param_at_index(last_func_called, param_name, arg_type, param_counter):

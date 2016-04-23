@@ -1,21 +1,15 @@
+program test {
 
-program lolz {
+    function rec(n: int) returns int {
+        if (n < 1) do
+            return n
+        end
 
-
-    function recursive(num: int) returns int{
-    	var x:int
-
-    	if(num < 1) do
-    		return 0
-    	end
-    	x = num-1
-    	return recursive(num: x) + num
-
+        return rec(n: n-1) + n
     }
   
 
     light() {
-
-        print(recursive(num: 5))
+        print(rec(n: 5))
     }
 }
