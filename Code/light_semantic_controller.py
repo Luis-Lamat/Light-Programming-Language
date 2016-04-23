@@ -112,8 +112,14 @@ class Function:
 	def add_var(self, var):
 		if var.name not in self.vars:
 			tmp_var = Var() # TODO: dafuq with this????
-			tmp_var.init_var(SemanticInfo.get_next_var_id(var.type), var.name, var.type, var.value)
-			tmp_var.id = ( -tmp_var.id if self.name == 'program' else tmp_var.id)
+			tmp_var.init_var(None, var.name, var.type, var.value)
+
+			# leave this code as if else, DON'T refactor
+			if self.name == 'program':
+				tmp_var.id = SemanticInfo.get_next_global_var_id(var.type)
+			else:
+				tmp_var.id = SemanticInfo.get_next_var_id(var.type)
+
 			self.vars[var.name] = tmp_var
 			return tmp_var
 		else:
@@ -190,12 +196,20 @@ class FunctionTable:
 	@classmethod
 	def add_return_type_to_func(cls, name, type):
 		cls.function_dict[name].type = type
-		print("okokok")
-		print(cls.function_dict[name].type)
+		# Here we add a global var with the name of the func to make return
+		# values easier to handle
+		tmp_var = Var()
+		tmp_var.init_var(-1, name, type, None)
+		cls.function_dict['program'].add_var(tmp_var)
 
 	@classmethod
 	def add_var_quantities_to_func(cls, function_name):
-		q = [(x%1000) for x in SemanticInfo.current_var_id]
+		if function_name == 'program':
+			var_qs = SemanticInfo.current_global_var_id
+		else:
+			var_qs = SemanticInfo.current_var_id
+
+		q = [(x%1000) for x in var_qs]
 		print "> Var q's for func '{}': {}".format(function_name, q)
 		cls.function_dict[function_name].var_quantities = q
 
@@ -300,6 +314,7 @@ class SemanticCube(object):
 class SemanticInfo:
 	#void, boolean, int, decimal, string,, point, line, triangle, square, rectangle, polygon, star, circle
 	current_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000]
+	current_global_var_id = [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000]
 	current_const_id = 14000
 
 	__shared_state = {}
@@ -310,6 +325,11 @@ class SemanticInfo:
 	def get_next_var_id(cls, type):
 		cls.current_var_id[type] += 1
 		return cls.current_var_id[type] - 1
+
+	@classmethod
+	def get_next_global_var_id(cls, type):
+		cls.current_global_var_id[type] += 1
+		return -1 * (cls.current_global_var_id[type] - 1)
 
 	@classmethod
 	def get_next_const_id(cls):

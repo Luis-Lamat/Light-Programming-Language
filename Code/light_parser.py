@@ -27,10 +27,6 @@ type_stack      = Stack()
 last_func_called = ""
 param_counter = 0
 
-# Conditions
-#NO SE NECESITA
-missing_return_stmt = False
-
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
 	tmp_quad = Quadruple()
@@ -106,18 +102,15 @@ def print_stacks():
 
 def p_program (p):
 	'''
-	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET main_gosub_quad pr_a prog_var_quantities pr_b main_func SEP_RCBRACKET
+	program  : PROGRAM VAR_IDENTIFIER SEP_LCBRACKET pr_a main_gosub_quad pr_b main_func SEP_RCBRACKET
 	'''
+	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	function_stack.pop()
 	FunctionTable.print_all()
 	sys.stdout.write("Constants dict: ")
 	print FunctionTable.constant_dict
 	Quadruples.print_all()
 	
-def p_prog_var_quantities(p):
-	'prog_var_quantities : '
-	FunctionTable.add_var_quantities_to_func(function_stack.peek())
-	SemanticInfo.reset_var_ids()
 
 def p_main_gosub_quad(p):
 	'main_gosub_quad : '
@@ -194,14 +187,13 @@ def p_stmt_loop (p):
 
 def p_function (p):
 	'''
-	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b SEP_LCBRACKET func_c stmt_loop tmp_return verify_return_stmt SEP_RCBRACKET
+	function : FUNCTION VAR_IDENTIFIER new_func_scope SEP_LPAR func_a SEP_RPAR func_b add_return_val SEP_LCBRACKET func_c stmt_loop tmp_return verify_return_stmt SEP_RCBRACKET
 	'''
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	function_stack.pop()
 	SemanticInfo.reset_var_ids()
 	# Generates the 'RET' action at the end of the function
 	build_and_push_quad(special_operator_dict['ret'], None, None, None)
-	missing_return_stmt = False # resetting var
 	# TODO: Liberar tabla de variables
 
 def p_func_a (p):
@@ -211,18 +203,18 @@ def p_func_a (p):
 	'''
 def p_func_b (p):
 	'''
-	func_b : RETURNS add_return_val primitive_type
-		| epsilon
+	func_b : RETURNS primitive_type
+		| epsilon epsilon
 	'''
+	p[0] = p[2] # IMPORTANT, TODO: ugh, this is ugly
 
 def p_add_return_val (p):
 	'''
 	add_return_val : epsilon
 	'''
-	if (p[-1] == "returns"):
-		missing_return_stmt = True
-
-	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_function.type)
+	tmp_type = type_dict[p[-1]] if p[-1] else type_dict['void']
+	print "\n> Adding return value to '{}': type = {}".format(tmp_function.name, tmp_type)
+	FunctionTable.add_return_type_to_func(tmp_function.name, tmp_type)
 
 def p_func_c (p):
 	'''
@@ -239,19 +231,27 @@ def p_tmp_return(p):
 def p_opt_exp(p):
 	'''
 	opt_exp : exp return_found 
-		| epsilon
+		| empty_return_found
 	'''
 
 def p_return_found(p):
-	'''
-	return_found : epsilon 
-	'''
+	'return_found : epsilon '
 	#if function is void and has return
 	if FunctionTable.function_returns_void(function_stack.peek()):
 		Error.return_type_function_void(function_stack.peek(), p.lexer.lineno)
 
 	#found Return Type
 	FunctionTable.set_return_found(function_stack.peek(), True)
+
+	# building and pushing the 'return' quad
+	op = special_operator_dict['return']
+	glbl_addr = FunctionTable.function_dict['program'].vars[tmp_function.name].id
+	build_and_push_quad(op, operand_stack.pop(), None, glbl_addr)
+
+def p_empty_return_found(p):
+	'empty_return_found : '
+	# building and pushing the 'ret' quad becuase of empty return stmt
+	build_and_push_quad(special_operator_dict['ret'], None, None, None)
 
 def p_verify_return_stmt(p):
 	'''
@@ -317,6 +317,10 @@ def p_verify_function_call(p):
 	func = FunctionTable.function_dict[p[-1]]
 	build_and_push_quad(special_operator_dict['era'], func.name, None, None)
 
+	# Pushing the fucntion as a variable id when a function is called
+	func_var = FunctionTable.get_var_in_scope('program', func.name)
+	operand_stack.push(func_var.id)
+	type_stack.push(func_var.type)
 
 def p_test(p):
 	'''
@@ -637,6 +641,7 @@ def p_quad_helper_mult(p):
 def p_factor (p):
 	'''
 	factor : SEP_LPAR quad_push_lpar condition SEP_RPAR quad_pop_lpar
+		| function_call
 		| var_cte
 	'''
 	print("factor: " + str(p.lexer.lineno))
@@ -858,7 +863,8 @@ def p_vars_prim (p):
 	'''
 	vars_prim : primitive_type var_p_a
 	'''
-	FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
+	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
+	tmp_var.id = aux_var.id # Nasty hack brawh
 
 
 def p_var_p_a (p):
@@ -875,9 +881,12 @@ def p_init_prim (p):
 
 def p_push_tmp_var(p):
 	'push_tmp_var : '
-	print_stacks()
 	type_stack.push(tmp_var.type)
-	tmp_var.id = SemanticInfo.current_var_id[tmp_var.type]
+	# TODO: Refactor this nasty shieeet
+	if function_stack.peek() == 'program':
+		tmp_var.id = -SemanticInfo.current_global_var_id[tmp_var.type]
+	else:
+		tmp_var.id = SemanticInfo.current_var_id[tmp_var.type]
 	operand_stack.push(tmp_var.id)
 
 #array
@@ -983,10 +992,7 @@ def p_print (p):
 	print("print " + str(p.lexer.lineno))
 
 def p_print_a (p):
-	'''
-	print_a : exp
-		| function_call
-	'''
+	'print_a : exp'
 	print_quad_helper()
 	
 def p_figure_creations (p):

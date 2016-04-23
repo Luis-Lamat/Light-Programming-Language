@@ -1,18 +1,19 @@
 program lolz {
 
 
-    var global:int = 0
+    var global:int = 80
 
-    function example_func(attr1: int, attr2: decimal) {
+    function example_func(attr1: int, attr2: decimal) returns int {
         var a:int = 0
         a = a + 1
         global = a
+        return a
     }
   
 
     light() {
         var tmp_var:int = 0
         var b:boolean = true
-        example_func(attr1: 1+1*2, attr2: 0.0)
+        print(example_func(attr1: 1+1*2, attr2: 0.0) + 9)
     }
 }

@@ -1,5 +1,5 @@
 program lolz {
-
+    var lol:int = 0
 
     function tryBool() {
         var a:boolean = false

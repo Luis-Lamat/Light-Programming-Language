@@ -90,7 +90,8 @@ def ret(quad, index):
 	return index
 
 def _return(quad, index):
-	pass
+	index = MemoryHandler.return_operator(quad)
+	return index
 
 def gosub(quad, index):
 	index = MemoryHandler.gosub(quad, index)

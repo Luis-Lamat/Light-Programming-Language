@@ -88,6 +88,14 @@ class MemoryHandler:
 		return mem.return_address
 
 	@classmethod
+	def return_operator(cls, quad):
+		val = cls.get_address_value(quad.left_operand)
+		cls.set_address_value(quad.result, val)
+		mem = cls.stack.pop()
+		print "> Returning to quad index: {}".format(mem.return_address)
+		return mem.return_address
+
+	@classmethod
 	def assign_operator(cls, quad):
 		from_value = cls.get_address_value(quad.left_operand)
 		cls.set_address_value(quad.result, from_value)
@@ -96,6 +104,7 @@ class MemoryHandler:
 	def and_or_operator(cls, quad):
 		left_op = cls.get_address_value(quad.left_operand)
 		right_op = cls.get_address_value(quad.right_operand)
+		# TODO: The next set of lines will fail at a specific case
 		if quad.operator == 10 :
 			cls.set_address_value(quad.result, (left_op and right_op))
 		elif quad.operator == 11 :
@@ -129,9 +138,9 @@ class MemoryHandler:
 	@classmethod
 	def get_address_value(cls, addr):
 		print "> Called get_address_value({})".format(addr)
-		type = abs(addr // 1000) # integer division
+		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
-		print "> Get mem value: type = {}, addr = {}".format(type, abs(relative_address))
+		print "> Get mem value: type = {}, addr = {}".format(type, relative_address)
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
 			print "> Const vars memory: {}".format(cls.const_vars)
@@ -145,9 +154,10 @@ class MemoryHandler:
 	@classmethod
 	def set_address_value(cls, addr, val):
 		print "> Called set_address_value({}, {})".format(addr, val)
-		type = abs(addr // 1000) # integer division
+		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
-		print "> Set mem value: type = {}, addr = {}, val = {}".format(type, abs(relative_address), val)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Set mem value: type = {}, addr = {}, val = {}".format(type, relative_address, val)
 		# use heap for search if addr is negative, else the current local mem
 		if addr >= 14000:
 			cls.const_vars[addr] = val
