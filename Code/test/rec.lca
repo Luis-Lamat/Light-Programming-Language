@@ -1,0 +1,18 @@
+program test {
+
+    function fibo(n: int) returns int {
+        if (n < 1) do
+            return 1
+        end
+        elsif (n < 2) do
+            return 1
+        end
+
+        return (fibo(n: n-2) + fibo(n: n-1))
+    }
+  
+
+    light() {
+        print(fibo(n: 2))
+    }
+}

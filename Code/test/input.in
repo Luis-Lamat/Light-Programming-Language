@@ -154,8 +154,7 @@ program lolz {
 
 
         var c1:circle has
-        	posX: 3,
-            posY: 9,
+        	v1: (3,9),
             size: 5,
             color: red
         end

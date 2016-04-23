@@ -7,7 +7,7 @@ program lolz {
         var a:int = 0
         a = a + 1
         global = a
-        return a
+        return attr1 + 1
     }
   
 
