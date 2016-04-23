@@ -212,7 +212,7 @@ def t_VAR_INT (t):
     return t
 
 def t_VAR_STRING (t) :    
-    r'\"[a-zA-Z]([a-zA-Z0-9])*\"'
+    r'("(\\"|[^"])*")|(\'(\\\'|[^\'])*\')'
     return t
 
 def t_VAR_BOOLEAN (t):

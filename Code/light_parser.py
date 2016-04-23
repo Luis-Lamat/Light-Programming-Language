@@ -27,6 +27,9 @@ type_stack      = Stack()
 last_func_called = ""
 param_counter = 0
 
+# Temp QuadQueue
+tmp_quad_stack = Stack()
+
 # Conditions
 #NO SE NECESITA
 missing_return_stmt = False
@@ -442,6 +445,12 @@ def p_end_for_helper (p) :
 	tmp_return = Quadruples.pop_jump()
 
 	offset = p[-3]
+
+	Quadruples.push_quad(tmp_quad_stack.pop())
+	if(offset == 1) :
+		Quadruples.push_quad(tmp_quad_stack.pop())
+
+
 	#fill the return value
 	build_and_push_quad(17, None, None, tmp_return - offset)
 
@@ -473,10 +482,14 @@ def p_for_b (p):
 def p_tmp_increment (p):
 	'tmp_increment : epsilon'
 	p[0] = 1
+	tmp_quad_stack.push(Quadruples.pop_quad())
+	tmp_quad_stack.push(Quadruples.pop_quad()) #HERE
 
 def p_tmp_assign (p):
 	'tmp_assign : epsilon'
 	p[0] = 0
+	tmp_quad_queue.push(Quadruples.pop_quad())
+
 
 # def p_for_increment (p):
 # 	'''

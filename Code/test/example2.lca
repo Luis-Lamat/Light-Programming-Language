@@ -15,11 +15,18 @@ program lolz {
     		print(25)
     	end
 
-
     	for(i = 0; i < 5; i += 1)do
 
     		print(i)
-    	
+
+    	end
+
+    	i = 0
+    	print("Begin While MTHFO ar't 352 !")
+
+    	while(i < 5) do
+    		print(i)
+   			i += 1
     	end
 
     }
