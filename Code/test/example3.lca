@@ -3,9 +3,11 @@ program lolz {
     function tryArr() {
         var a:boolean = false
         var i:int
-        var numArray:[int](2)
+        var numArray:[int](5)
 
-        numArray[0] = 1
+        numArray[0] = 0
+        numArray[1] = 1
+        numArray[2] = 2
 
     }
   

@@ -75,7 +75,15 @@ def assign_quad_helper():
 	print "YAAAAAAAAASSSS {}".format(o2)
 
 	# Generate Quadruple and push it to the list
-	build_and_push_quad(op, o1, None, o2)
+
+	#HERE
+	if not tmp_array_index.isEmpty():
+		print(">Temp array index {}".format(tmp_array_index.peek()))
+		build_and_push_quad(op, o1, tmp_array_index.pop(), o2)
+	else:
+		build_and_push_quad(op, o1, None, o2)
+
+		
 
 def allocate_arr_helper(addr, size):
 	op = special_operator_dict['alloc']
@@ -305,13 +313,13 @@ def p_param_a (p):
 
 def p_var_array_ver(p):#HERE
 	'''
-	var_array_ver : SEP_LBRACKET VAR_INT var_array_ver_aux SEP_RBRACKET
+	var_array_ver : SEP_LBRACKET exp var_array_ver_aux SEP_RBRACKET
 		| epsilon
 	'''
 
 def p_var_array_ver_aux(p):
 	'var_array_ver_aux : epsilon'
-	tmp_array_index.push(p[-1])
+	tmp_array_index.push(operand_stack.pop())
 
 
 def p_function_call(p):

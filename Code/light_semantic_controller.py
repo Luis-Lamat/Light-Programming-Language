@@ -137,6 +137,12 @@ class Function:
 		else:
 			Error.already_defined('variable array', arr.name)
 
+	def is_arr(self, name):
+		if hasattr(self.vars[name], 'length'):
+			return True
+		else:
+			return False
+
 	# def add_arr_complete(self, arr):
 	# 	if arr.name not in self.vars:
 	# 		tmp_arr = Array()
@@ -230,6 +236,10 @@ class FunctionTable:
 	@classmethod
 	def verify_var_in_func(cls, function_name, var_name):
 		return cls.function_dict[function_name].var_in_func(var_name) or cls.verify_var_global(var_name)
+
+	@classmethod
+	def verify_if_arr(cls, function_name, var_name):
+		return cls.function_dict[function_name].is_arr(var_name)
 
 	@classmethod
 	def add_param_to_func(cls, function_name, param_name, param_var):
