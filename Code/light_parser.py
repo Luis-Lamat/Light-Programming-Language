@@ -30,6 +30,9 @@ param_counter = 0
 # Temp QuadQueue
 tmp_quad_stack = Stack()
 
+# Temp ArrayIndex
+tmp_array_index = Stack()
+
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
 	tmp_quad = Quadruple()
@@ -61,7 +64,7 @@ def exp_quad_helper(p, op_list):
 		operand_stack.push(tmp_var_id)
 		type_stack.push(return_type)
 
-def assign_quad_helper():
+def assign_quad_helper(p):
 	t1 = type_stack.pop()
 	t2 = type_stack.pop()
 	if t1 != t2:
@@ -72,7 +75,21 @@ def assign_quad_helper():
 	print "YAAAAAAAAASSSS {}".format(o2)
 
 	# Generate Quadruple and push it to the list
-	build_and_push_quad(op, o1, None, o2)
+
+	#HERE
+	if not tmp_array_index.isEmpty():
+		print(">Temp array index {}".format(tmp_array_index.peek()))
+		build_and_push_quad(op, o1, tmp_array_index.pop(), o2)
+	else:
+		build_and_push_quad(op, o1, None, o2)
+
+		
+
+def allocate_arr_helper(addr, size):
+	op = special_operator_dict['alloc']
+	o1 = addr
+	o2 = size
+	build_and_push_quad(op, o1, o2, None)
 
 
 def print_quad_helper():
@@ -275,6 +292,7 @@ def p_new_func_scope(p):
 	tmp_function.quad_index = Quadruples.next_free_quad
 	FunctionTable.add_function(tmp_function)
 
+##TODO VERIFY VAR_IDENTIFIER
 def p_parameters (p):
 	'parameters : VAR_IDENTIFIER SEP_COLON type new_param_seen param_a'
 
@@ -292,6 +310,17 @@ def p_param_a (p):
 	param_a : SEP_COMMA parameters
 		| epsilon
 	'''
+
+def p_var_array_ver(p):#HERE
+	'''
+	var_array_ver : SEP_LBRACKET exp var_array_ver_aux SEP_RBRACKET
+		| epsilon
+	'''
+
+def p_var_array_ver_aux(p):
+	'var_array_ver_aux : epsilon' #ERROR HERE
+	tmp_array_index.push(operand_stack.pop())
+
 
 def p_function_call(p):
 	'''
@@ -333,7 +362,7 @@ def p_test(p):
 
 def p_call_parameters(p):
 	'''
-	call_parameters : VAR_IDENTIFIER SEP_COLON exp verify_param call_param_a
+	call_parameters : VAR_IDENTIFIER var_array_ver SEP_COLON exp verify_param call_param_a
 		| epsilon
 	'''
 def p_call_param_a(p):
@@ -343,7 +372,7 @@ def p_call_param_a(p):
 	'''
 def p_verify_param(p):
 	'verify_param : '
-	param_name = p[-3]
+	param_name = p[-4]
 	arg = operand_stack.pop()
 	arg_type = type_stack.pop()
 	if not FunctionTable.verify_param_at_index(last_func_called, param_name, arg_type, param_counter):
@@ -357,7 +386,7 @@ def p_assignment (p):
 	assignment : var_id OP_EQUALS push_operator assgn_a 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 
 def p_assgn_a(p):
@@ -387,8 +416,8 @@ def p_end_while_helper (p) :
 	tmp_false = Quadruples.pop_jump()
 	tmp_return = Quadruples.pop_jump()
 
-	#fill the return value
-	build_and_push_quad(17, None, None, tmp_return - 1)
+	#fill the return value #CHANGED
+	build_and_push_quad(special_operator_dict['goto'], None, None, tmp_return - 1)
 
 
 	#fill false with count
@@ -401,11 +430,12 @@ def p_end_while_helper (p) :
 # 	l_a : VAR_INT
 # 		| VAR_IDENTIFIER verify_variable
 # 	'''
-
+ #DEPRECATED
 def p_for_each (p):
 	'''
 	for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN for_each_collection SEP_RPAR
 	'''
+#DEPRECATED
 def p_for_each_collection(p):
 	'''
 	for_each_collection : VAR_IDENTIFIER
@@ -485,7 +515,7 @@ def p_tmp_increment (p):
 	'tmp_increment : epsilon'
 	p[0] = 1
 	tmp_quad_stack.push(Quadruples.pop_quad())
-	tmp_quad_stack.push(Quadruples.pop_quad()) #HERE
+	tmp_quad_stack.push(Quadruples.pop_quad())
 
 def p_tmp_assign (p):
 	'tmp_assign : epsilon'
@@ -680,14 +710,14 @@ def p_var_cte(p):
 def p_increment (p):
 	#exp 			
 	'''
-	increment : VAR_IDENTIFIER verify_variable double_pushID inc_a inc_var_cte do_sum_rest
+	increment : VAR_IDENTIFIER verify_variable var_array_ver double_pushID inc_a inc_var_cte do_sum_rest
 	'''
 
 	#push equals
 	op = special_operator_dict["="]
 	operator_stack.push(op)
 
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 def p_double_pushID (p):
 	'''
@@ -695,12 +725,12 @@ def p_double_pushID (p):
 	'''
 
 	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].id)
+	type_stack.push(func.vars[p[-3]].type)
+	operand_stack.push(func.vars[p[-3]].id)
 
 	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].id)
+	type_stack.push(func.vars[p[-3]].type)
+	operand_stack.push(func.vars[p[-3]].id)
 
 def p_do_sum_rest (p):
 	'''
@@ -877,7 +907,6 @@ def p_vars_prim (p):
 	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 	tmp_var.id = aux_var.id # Nasty hack brawh
 
-
 def p_var_p_a (p):
 	'''
 	var_p_a : init_prim
@@ -888,7 +917,7 @@ def p_init_prim (p):
 	'''
 	init_prim : push_tmp_var OP_EQUALS push_operator init_a
 	'''
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 def p_push_tmp_var(p):
 	'push_tmp_var : '
@@ -903,39 +932,24 @@ def p_push_tmp_var(p):
 #array
 def p_vars_arr (p):
 	'''
-	vars_arr : SEP_LBRACKET primitive_type SEP_RBRACKET arr_a
+	vars_arr : SEP_LBRACKET primitive_type SEP_RBRACKET SEP_LPAR VAR_INT SEP_RPAR init_arr 
 	'''
 
-#array
-def p_arr_a (p):
-	'''
-	arr_a : arr_init_arr
-		| init_empty_arr
-	'''
-
-#array
+#SEP_LPAR VAR_INT SEP_RPAR
 #initalization of empty array
-def p_init_empty_arr(p):
+def p_init_arr(p):
 	'''
-	init_empty_arr : 
+	init_arr : 
 	'''
 	arr_var = Array()
 	arr_var.name = tmp_var.name
 	arr_var.type = tmp_var.type
+	arr_var.length = p[-2]
 
-	FunctionTable.add_arr_empty_to_func(function_stack.peek(), arr_var)
+	arr_var = FunctionTable.add_arr_to_func(function_stack.peek(), arr_var)
+	allocate_arr_helper(arr_var.id, arr_var.length)
 
-#array 
-#missing array initialization 
-def p_arr_init_arr (p):
-	'''
-	arr_init_arr : SEP_LPAR VAR_INT SEP_RPAR
-	'''	
-	arr_var = Array()
-	arr_var.name = tmp_var.name
-	arr_var.type = tmp_var.type
-	arr_var.length = p[2]
-	FunctionTable.add_arr_complete_to_func(function_stack.peek(), arr_var)
+	#FunctionTable.get_var_in_scope(function_stack.peek(), arr_var.name)
 
 
 # WARNING: Adds a shift reduce conflict because of function_call
@@ -1013,11 +1027,11 @@ def p_figure_creations (p):
 	pass
 
 def p_var_id(p):
-	'var_id : VAR_IDENTIFIER verify_variable push_id'
+	'var_id : VAR_IDENTIFIER verify_variable var_array_ver push_id'
 
 def p_push_id(p):
 	'push_id : '
-	var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
+	var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-3])
 	type_stack.push(var.type)
 	operand_stack.push(var.id)
 

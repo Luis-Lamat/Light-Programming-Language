@@ -7,10 +7,10 @@ class Error:
 		print "Semantic Error: {} '{}' already defined".format(type, name)
 		sys.exit()
 
-	@staticmethod #TODO: Dafuq we need this for, #ANSWER: To check if we are accesing a valid array space
-	def out_of_bounds(name, num):
-		print "Out Of Bounds Error: Array '{}' out of bounds at index: {}".format(name, num)
-		sys.exit()
+	# @staticmethod #TODO: Dafuq we need this for, #ANSWER: To check if we are accesing a valid array space
+	# def out_of_bounds(name, num):
+	# 	print "Out Of Bounds Error: Array '{}' out of bounds at index: {}".format(name, num)
+	# 	sys.exit()
 
 	@staticmethod
 	def type_mismatch(lineno, t1, t2, op):

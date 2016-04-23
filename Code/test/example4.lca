@@ -1,0 +1,15 @@
+program test {
+
+    function rec(n: int) returns int {
+        if (n < 1) do
+            return n
+        end
+
+        return rec(n: n-1) + n
+    }
+  
+
+    light() {
+        print(rec(n: 5))
+    }
+}

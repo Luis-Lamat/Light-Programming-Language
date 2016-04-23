@@ -24,6 +24,8 @@ rect = L_Rectangle(200, 200, 250, 280)
 square = L_Square(300, 300, 50)
 
 def main():
+
+	
     win = GraphWin("My Circle", 500, 500)
 
     c = Circle(cir.getPointCenter(), cir.radius)

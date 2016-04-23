@@ -97,8 +97,19 @@ class MemoryHandler:
 
 	@classmethod
 	def assign_operator(cls, quad):
-		from_value = cls.get_address_value(quad.left_operand)
-		cls.set_address_value(quad.result, from_value)
+		value = cls.get_address_value(quad.left_operand)
+		if quad.right_operand :
+			cls.set_arr_value(quad.result, quad.right_operand, value)
+		else:
+			cls.set_address_value(quad.result, value)
+
+	@classmethod
+	def allocate_array_space(cls, quad):
+		from_value = quad.left_operand
+		size = quad.right_operand
+		empty_list = [None] * int(size)
+		cls.set_address_value(from_value, empty_list)
+		#HERE
 
 	@classmethod
 	def and_or_operator(cls, quad):
@@ -168,4 +179,17 @@ class MemoryHandler:
 		else:
 			cls.stack.peek().memory[type][relative_address] = val
 			print "> Stack memory: {}".format(cls.stack.peek().memory)
-	
+
+	@classmethod
+	def set_arr_value(cls, addr, sub_addr, val):
+		index = cls.get_address_value(sub_addr)
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Set mem value: type = {}, addr[{}] = {},  val = {}".format(type, index, relative_address, val)
+		if addr < 0:
+			cls.heap.memory[type][abs(relative_address)][index] = val
+			print "> Heap memory: {}".format(cls.heap.memory)
+		else:
+			cls.stack.peek().memory[type][relative_address][index] = val
+			print "> Stack memory: {}".format(cls.stack.peek().memory)

@@ -1,0 +1,26 @@
+program lolz {
+
+	var numArrayGlob:[decimal](5)
+
+    function tryArr() {
+        var a:boolean = false
+        var i:int
+        var numArray:[int](5)
+
+        for(i = 0; i < 5; i += 1)do
+
+    		numArray[i] = i*2
+    		print("YOU MOM")
+
+    	end
+
+        numArrayGlob[0] = 5.5
+        print(numArrayGlob[0])
+    }
+  
+
+    light() {
+
+        tryArr()
+    }
+}
