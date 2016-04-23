@@ -36,6 +36,11 @@ class Quadruples(object):
 		cls.next_free_quad = len(cls.quad_list)
 
 	@classmethod
+	def pop_quad(cls):
+		cls.next_free_quad = len(cls.quad_list) - 1
+		return cls.quad_list.pop()
+
+	@classmethod
 	def fill_missing_quad(cls, quad_id, value):
 		cls.quad_list[quad_id].result = value
 
