@@ -130,8 +130,14 @@ class Function:
 	def add_arr(self, arr):
 		if arr.name not in self.vars:
 			tmp_arr = Array()
-			tmp_arr.init_arr(SemanticInfo.get_next_var_id(arr.type), arr.name, arr.type, arr.length)
-			####TODO: negativas si globales
+			tmp_arr.init_arr(None, arr.name, arr.type, arr.length)
+			
+			# leave this code as if else, DON'T refactor
+			if self.name == 'program':
+				tmp_arr.id = SemanticInfo.get_next_global_var_id(arr.type)
+			else:
+				tmp_arr.id = SemanticInfo.get_next_var_id(arr.type)
+
 			self.vars[arr.name] = tmp_arr
 			return tmp_arr
 		else:

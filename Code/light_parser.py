@@ -64,7 +64,7 @@ def exp_quad_helper(p, op_list):
 		operand_stack.push(tmp_var_id)
 		type_stack.push(return_type)
 
-def assign_quad_helper():
+def assign_quad_helper(p):
 	t1 = type_stack.pop()
 	t2 = type_stack.pop()
 	if t1 != t2:
@@ -294,7 +294,7 @@ def p_new_func_scope(p):
 
 ##TODO VERIFY VAR_IDENTIFIER
 def p_parameters (p):
-	'parameters : VAR_IDENTIFIER var_array_ver SEP_COLON type new_param_seen param_a'
+	'parameters : VAR_IDENTIFIER SEP_COLON type new_param_seen param_a'
 
 def p_new_param_seen(p):
 	'new_param_seen : '
@@ -386,7 +386,7 @@ def p_assignment (p):
 	assignment : var_id OP_EQUALS push_operator assgn_a 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 
 def p_assgn_a(p):
@@ -717,7 +717,7 @@ def p_increment (p):
 	op = special_operator_dict["="]
 	operator_stack.push(op)
 
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 def p_double_pushID (p):
 	'''
@@ -725,12 +725,12 @@ def p_double_pushID (p):
 	'''
 
 	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].id)
+	type_stack.push(func.vars[p[-3]].type)
+	operand_stack.push(func.vars[p[-3]].id)
 
 	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-2]].type)
-	operand_stack.push(func.vars[p[-2]].id)
+	type_stack.push(func.vars[p[-3]].type)
+	operand_stack.push(func.vars[p[-3]].id)
 
 def p_do_sum_rest (p):
 	'''
@@ -917,7 +917,7 @@ def p_init_prim (p):
 	'''
 	init_prim : push_tmp_var OP_EQUALS push_operator init_a
 	'''
-	assign_quad_helper()
+	assign_quad_helper(p)
 
 def p_push_tmp_var(p):
 	'push_tmp_var : '

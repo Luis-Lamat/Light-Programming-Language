@@ -1,0 +1,21 @@
+
+program lolz {
+
+
+    function recursive(num: int) returns int{
+    	var x:int
+
+    	if(num < 1) do
+    		return 0
+    	end
+    	x = num-1
+    	return recursive(num: x) + num
+
+    }
+  
+
+    light() {
+
+        print(recursive(num: 5))
+    }
+}
