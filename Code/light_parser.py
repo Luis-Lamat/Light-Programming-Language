@@ -623,7 +623,7 @@ def p_ex_a (p):
 	ex_a : OP_LESS_THAN
 		| OP_GREATER_THAN
 		| OP_NOT_EQUAL
-		| OP_EQUALS
+		| OP_EQUALSS
 		| OP_GREATER_EQUAL
 		| OP_LESS_EQUAL
 	'''

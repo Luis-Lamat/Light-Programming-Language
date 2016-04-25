@@ -1,7 +1,7 @@
 program test {
 
     function rec(n: int) returns int {
-        if (n < 1) do
+        if (n == 0) do
             return n
         end
 

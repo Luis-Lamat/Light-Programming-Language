@@ -36,7 +36,6 @@ class MemoryHandler:
 	@classmethod
 	def execute_binary_operator(cls, val, x, y):
 		ops = {
-
 			0	: operator.add(x,y),
 			1	: operator.sub(x,y),
 			2	: operator.mul(x,y),
@@ -46,7 +45,7 @@ class MemoryHandler:
 			6	: operator.le(x,y),
 			7	: operator.ge(x,y),
 			8	: operator.eq(x,y),
-			9	: operator.ne(x,y),
+			9	: operator.ne(x,y)
 		}
 		return ops[val]
 
