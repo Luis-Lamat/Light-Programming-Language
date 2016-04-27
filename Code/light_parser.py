@@ -327,7 +327,7 @@ def p_var_array_ver_aux(p):
 
 def p_function_call(p):
 	'''
-	function_call : VAR_IDENTIFIER verify_function_call test SEP_LPAR call_parameters SEP_RPAR
+	function_call : VAR_IDENTIFIER verify_function_call SEP_LPAR call_parameters SEP_RPAR pop_ff
 	'''
 	func = FunctionTable.function_dict[p[1]]
 	address = func.quad_index
@@ -350,9 +350,10 @@ def p_function_call(p):
 	param_counter = 0 # global var reset
 
 def p_verify_function_call(p):
-	'verify_function_call : epsilon'
+	'verify_function_call : push_ff'
 	# print("Function queue")
 	# TODO: delegate this task to FunctionTable class
+
 	if not function_queue.inQueue(p[-1]):
 		Error.function_not_defined(p[-1],p.lexer.lineno)
 	global last_func_called
@@ -658,6 +659,8 @@ def p_exp_b (p):
 
 def p_quad_helper_sum(p):
 	'quad_helper_sum : '
+	print "\n> QUAD HELPER SUM:"
+	print_stacks()
 	exp_quad_helper(p, ['+', '-'])
 
 def p_term (p):
@@ -685,16 +688,18 @@ def p_quad_helper_mult(p):
 def p_factor (p):
 	'''
 	factor : SEP_LPAR quad_push_lpar condition SEP_RPAR quad_pop_lpar
-		| function_call
+		| function_call 
 		| var_cte
 	'''
 	print("factor: " + str(p.lexer.lineno))
 
-# def p_fact_a(p):
-# 	'''
-# 	fact_a : exp_b
-# 		| epsilon
-# 	'''
+def p_push_ff(p):
+	'push_ff : '
+	operator_stack.push(special_operator_dict['('])
+
+def p_pop_ff(p):
+	'pop_ff : '
+	operator_stack.pop()
 
 def p_quad_push_lpar(p):
 	'quad_push_lpar : '
