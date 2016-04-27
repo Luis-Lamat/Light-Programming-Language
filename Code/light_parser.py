@@ -64,6 +64,9 @@ def exp_quad_helper(p, op_list):
 		operand_stack.push(tmp_var_id)
 		type_stack.push(return_type)
 
+		print "\n> PUSHING OPERATOR '{}' -> op2 = {}, op1 = {}, res = {}".format(str_op, o2, o1, tmp_var_id)
+		print_stacks()
+
 def assign_quad_helper(p):
 	t1 = type_stack.pop()
 	t2 = type_stack.pop()
@@ -330,6 +333,14 @@ def p_function_call(p):
 	address = func.quad_index
 	build_and_push_quad(special_operator_dict['gosub'], p[1], None, address)
 
+	# create a temporal var_id on the function as the same type of func_call
+	next_id = SemanticInfo.get_next_var_id(func.type)
+	# glbl_addr = FunctionTable.get_var_in_scope('program', func.name).id
+	glbl_addr = operand_stack.pop(); type_stack.pop();
+	build_and_push_quad(special_operator_dict['='], glbl_addr, None, next_id)
+	operand_stack.push(next_id)
+	type_stack.push(func.type)
+
 	# verify arguments count
 	global param_counter
 	n = len(func.params)
@@ -383,18 +394,10 @@ def p_verify_param(p):
  
 def p_assignment (p):
 	'''
-	assignment : var_id OP_EQUALS push_operator assgn_a 
+	assignment : var_id OP_EQUALS push_operator exp 
 	'''
 	print("assignment: " + str(p.lexer.lineno))
 	assign_quad_helper(p)
-
-
-def p_assgn_a(p):
-	'''
-	assgn_a : exp
-		| function_call
-	'''
-	print("ASSIGN A: " + str(p.lexer.lineno))
 
 def p_cycle (p):
 	'''

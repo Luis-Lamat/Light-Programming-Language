@@ -343,6 +343,7 @@ class SemanticInfo:
 	@classmethod
 	def get_next_var_id(cls, type):
 		cls.current_var_id[type] += 1
+		print "\n> Asking for a new var id -> {}".format(cls.current_var_id[type] - 1)
 		return cls.current_var_id[type] - 1
 
 	@classmethod

@@ -84,14 +84,16 @@ class MemoryHandler:
 	def ret_operator(cls):
 		mem = cls.stack.pop()
 		print "> Returning to quad index: {}".format(mem.return_address)
+		print "> Returning memory = {}".format(mem.memory)
 		return mem.return_address
 
 	@classmethod
 	def return_operator(cls, quad):
 		val = cls.get_address_value(quad.left_operand)
-		cls.set_address_value(quad.result, val)
 		mem = cls.stack.pop()
+		cls.set_address_value(quad.result, val)
 		print "> Returning to quad index: {}".format(mem.return_address)
+		print "> Returning memory = {}".format(cls.stack.peek().memory)
 		return mem.return_address
 
 	@classmethod
