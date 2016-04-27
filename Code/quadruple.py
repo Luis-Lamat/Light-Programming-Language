@@ -68,6 +68,10 @@ class Quadruples(object):
 		l = [x.get_list() for x in cls.quad_list]
 		for e in l:
 			sys.stdout.write(str(count) + ":\t")
-			print e
+			for se in e:
+				if not se == None:
+					sys.stdout.write(str(se))
+				sys.stdout.write("\t")
 			count += 1
+			print ""
 		pass
