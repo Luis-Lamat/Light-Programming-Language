@@ -52,7 +52,7 @@ class Figure(object):
 		return color_rgb(self.color.r, self.color.g, self.color.b)
 
 class L_Circle(Figure):
-	def __init__(self, x, y, radius):
+	def __init__(self, x = 0, y = 0, radius = 0):
 		super(self.__class__, self).__init__()
 		self.radius = radius
 		self.center = Vertex(x, y)
@@ -79,7 +79,7 @@ class L_Triangle(Figure):
 		return l
 
 class L_Rectangle(Figure):
-	def __init__(self, x1, y1, x2, y2):
+	def __init__(self, x1 = 0, y1 = 0, x2 = 0, y2 = 0):
 		super(self.__class__, self).__init__()
 		self.v1 = Vertex(x1, y1)
 		self.v2 = Vertex(x2, y2)
@@ -88,7 +88,7 @@ class L_Rectangle(Figure):
 		return (Point(self.v1.x, self.v1.y), Point(self.v2.x, self.v2.y))
 
 class L_Point(Figure):
-	def __init__(self, x, y):
+	def __init__(self, x = 0, y = 0):
 		super(self.__class__, self).__init__()
 		self.center = Vertex(x, y)
 
@@ -96,7 +96,7 @@ class L_Point(Figure):
 		return Point(self.center.x, self.center.y)
 
 class L_Square(Figure):
-	def __init__(self, x, y, size):
+	def __init__(self, x = 0, y = 0, size = 0):
 		super(self.__class__, self).__init__()
 		self.size = size
 		self.v1 = Vertex(x, y)
@@ -106,7 +106,7 @@ class L_Square(Figure):
 		return (Point(self.v1.x, self.v1.y), Point(self.v2.x, self.v2.y))
 
 class L_Polygon(Figure):
-	def __init__(self, numVertices):
+	def __init__(self, numVertices = 0):
 		super(self.__class__, self).__init__()
 		self.vertices = []
 		self.numVertices = numVertices

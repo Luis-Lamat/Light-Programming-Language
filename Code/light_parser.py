@@ -2,6 +2,7 @@ import light_scanner as lexer
 import ply.yacc as yacc
 from light_semantic_controller import *
 from quadruple import *
+from figures import *
 
 tokens = lexer.tokens
 function_stack = Stack()
@@ -37,6 +38,10 @@ tmp_array_index = Stack()
 # IF ELDA:
 #	IGNORE
 IS_ARRAY = True
+
+#Figure Array
+
+
 
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
@@ -1044,7 +1049,7 @@ def p_print_a (p):
 	
 def p_figure_creations (p):
 	'''
-	figure_creations : VAR VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
+	figure_creations : FIGURE VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
 	'''
 	pass
 
