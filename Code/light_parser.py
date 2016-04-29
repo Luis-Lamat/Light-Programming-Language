@@ -920,7 +920,6 @@ def p_statement (p):
 				| function_call 
 				| print
 				| increment
-				| figure_creations 
 				| fig_description
 				| return
 	'''
