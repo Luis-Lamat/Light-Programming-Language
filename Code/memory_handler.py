@@ -183,14 +183,30 @@ class MemoryHandler:
 
 	@classmethod
 	def set_arr_value(cls, addr, sub_addr, val):
-		index = cls.get_address_value(sub_addr)
+		sub_index = cls.get_address_value(sub_addr)
 		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
-		print "> Set mem value: type = {}, addr[{}] = {},  val = {}".format(type, index, relative_address, val)
+		print "> Set ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, relative_address, val)
 		if addr < 0:
-			cls.heap.memory[type][abs(relative_address)][index] = val
+			cls.heap.memory[type][abs(relative_address)][sub_index] = val
 			print "> Heap memory: {}".format(cls.heap.memory)
 		else:
-			cls.stack.peek().memory[type][relative_address][index] = val
+			cls.stack.peek().memory[type][relative_address][sub_index] = val
 			print "> Stack memory: {}".format(cls.stack.peek().memory)
+
+	@classmethod
+	def get_array_value(cls, quad):
+		addr = quad.left_operand
+		sub_index = cls.get_address_value(quad.right_operand)
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Get ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, quad.right_operand, quad.result)
+
+		if addr < 0:
+			val = cls.heap.memory[type][abs(relative_address)][sub_index]
+		else:
+			val = cls.stack.peek().memory[type][relative_address][sub_index]
+
+		cls.set_address_value(quad.result, val)

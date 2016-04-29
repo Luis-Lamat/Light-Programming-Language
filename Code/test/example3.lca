@@ -7,6 +7,8 @@ program lolz {
         var i:int
         var numArray:[int](5)
 
+        print(numArray[10])
+
         for(i = 0; i < 5; i += 1)do
 
     		numArray[i] = i*2
@@ -14,8 +16,12 @@ program lolz {
 
     	end
 
-        numArrayGlob[0] = 5.5
-        print(numArrayGlob[0])
+        numArray[0] = 0
+
+        numArray[numArray[0]] = numArray[0] + 2
+
+        print(numArray[4])
+        #print(numArrayGlob[0])
     }
   
 

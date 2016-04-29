@@ -28,6 +28,7 @@ def execute_operator(argument, quad, index):
 		23	:	_print,
 		24	:	end,	
 		25	:	alloc,
+		26	:	eqarr
 
 	}
 	# Get the function from switcher dictionary
@@ -115,6 +116,9 @@ def end(quad, index):
 def alloc(quad, index):
 	MemoryHandler.allocate_array_space(quad)
 	pass
+
+def eqarr(quad, index):
+	MemoryHandler.get_array_value(quad)
 
 
 def RUN_AT_LIGHTSPEED():

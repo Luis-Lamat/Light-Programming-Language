@@ -33,6 +33,11 @@ tmp_quad_stack = Stack()
 # Temp ArrayIndex
 tmp_array_index = Stack()
 
+# STUFF 4 PUSSEYS
+# IF ELDA:
+#	IGNORE
+IS_ARRAY = True
+
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
 	tmp_quad = Quadruple()
@@ -86,7 +91,12 @@ def assign_quad_helper(p):
 	else:
 		build_and_push_quad(op, o1, None, o2)
 
-		
+def temporary_quad_4_array():
+	o1 = operand_stack.pop()
+	temp_id = SemanticInfo.get_next_var_id(abs(o1 // 1000))
+
+	operand_stack.push(temp_id)
+	build_and_push_quad(special_operator_dict['eqarr'], o1, tmp_array_index.pop(), temp_id)
 
 def allocate_arr_helper(addr, size):
 	op = special_operator_dict['alloc']
@@ -316,9 +326,11 @@ def p_param_a (p):
 
 def p_var_array_ver(p):#HERE
 	'''
-	var_array_ver : SEP_LBRACKET exp var_array_ver_aux SEP_RBRACKET
+	var_array_ver : SEP_LBRACKET exp var_array_ver_aux SEP_RBRACKET 
 		| epsilon
 	'''
+	if(len(p) > 3):
+		p[0] = True
 
 def p_var_array_ver_aux(p):
 	'var_array_ver_aux : epsilon' #ERROR HERE
@@ -711,14 +723,16 @@ def p_quad_pop_lpar(p):
 
 def p_var_cte(p):
 	'''
-	var_cte : var_id
+	var_cte : var_id 
 		| cnt_prim
 	'''
+	if p[1] == IS_ARRAY:
+		temporary_quad_4_array()
 
 def p_increment (p):
 	#exp 			
 	'''
-	increment : VAR_IDENTIFIER verify_variable var_array_ver double_pushID inc_a inc_var_cte do_sum_rest
+	increment : VAR_IDENTIFIER verify_variable var_array_ver double_pushID inc_a exp do_sum_rest
 	'''
 
 	#push equals
@@ -763,7 +777,7 @@ def p_inc_a (p):
 	print(p[1])
 	p[0] = p[1]
 	
-
+#This was in increment
 def p_inc_var_cte(p): 
 	'''
 	inc_var_cte : var_id
@@ -1036,6 +1050,8 @@ def p_figure_creations (p):
 
 def p_var_id(p):
 	'var_id : VAR_IDENTIFIER verify_variable var_array_ver push_id'
+	if p[3]:
+		p[0] = True
 
 def p_push_id(p):
 	'push_id : '

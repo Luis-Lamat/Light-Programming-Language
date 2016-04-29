@@ -49,7 +49,8 @@ special_operator_dict = {
     'param' : 22,
     'print' : 23,
     'end'   : 24,
-    'alloc'	: 25
+    'alloc'	: 25,
+    'eqarr'	: 26
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)
