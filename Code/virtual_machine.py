@@ -46,7 +46,7 @@ def times(quad, index):
 	MemoryHandler.binary_operator(quad)
 
 def over(quad, index):
-	MemoryHandler.binary_operator(quad)
+	MemoryHandler.division(quad)
 
 def lessThan(quad, index):
 	MemoryHandler.binary_operator(quad)

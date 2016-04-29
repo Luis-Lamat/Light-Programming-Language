@@ -1,6 +1,7 @@
 import operator
 from light_semantic_controller import *
 from memory import *
+from error import *
 
 class MemoryHandler:
 	# Global and local memory declarations
@@ -34,12 +35,19 @@ class MemoryHandler:
 		cls.set_address_value(quad.result, result)
 
 	@classmethod
+	def division(cls, quad):
+		left_op = cls.get_address_value(quad.left_operand)
+		right_op = cls.get_address_value(quad.right_operand)
+		result = operator.div(left_op, right_op)
+		cls.set_address_value(quad.result, result)
+
+	@classmethod
 	def execute_binary_operator(cls, val, x, y):
 		ops = {
 			0	: operator.add(x,y),
 			1	: operator.sub(x,y),
 			2	: operator.mul(x,y),
-			3	: operator.div(x,y),
+			# 3	: operator.div(x,y),
 			4	: operator.lt(x,y),
 			5	: operator.gt(x,y),
 			6	: operator.le(x,y),
@@ -189,11 +197,18 @@ class MemoryHandler:
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
 		print "> Set ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, relative_address, val)
 		if addr < 0:
-			cls.heap.memory[type][abs(relative_address)][sub_index] = val
-			print "> Heap memory: {}".format(cls.heap.memory)
+			#out_of_bounds(name, num)
+			if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
+				cls.heap.memory[type][abs(relative_address)][sub_index] = val
+				print "> Heap memory: {}".format(cls.heap.memory)
+			else:
+				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 		else:
-			cls.stack.peek().memory[type][relative_address][sub_index] = val
-			print "> Stack memory: {}".format(cls.stack.peek().memory)
+			if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
+				cls.stack.peek().memory[type][relative_address][sub_index] = val
+				print "> Stack memory: {}".format(cls.stack.peek().memory)
+			else:
+				Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
 
 	@classmethod
 	def get_array_value(cls, quad):
@@ -205,8 +220,14 @@ class MemoryHandler:
 		print "> Get ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, quad.right_operand, quad.result)
 
 		if addr < 0:
-			val = cls.heap.memory[type][abs(relative_address)][sub_index]
+			if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
+				val = cls.heap.memory[type][abs(relative_address)][sub_index]
+			else:
+				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 		else:
-			val = cls.stack.peek().memory[type][relative_address][sub_index]
+			if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
+				val = cls.stack.peek().memory[type][relative_address][sub_index]
+			else:
+				Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
 
 		cls.set_address_value(quad.result, val)
