@@ -51,7 +51,10 @@ special_operator_dict = {
     'end'   : 24,
     'alloc'	: 25,
     'eqarr'	: 26,
-    'newfig': 27
+    'newfig': 27,
+    'addv'	: 28,
+    'addc'	: 29,
+    'adds'	: 30
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)
