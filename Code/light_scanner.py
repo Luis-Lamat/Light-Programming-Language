@@ -131,7 +131,7 @@ def t_SEP_RCBRACKET (t):
     return t
 
 def t_VAR_VECTORID (t):
-    r'v[0-9]+'
+    r'v'
     return t
 
 def t_OP_LESS_THAN (t) : 

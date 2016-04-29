@@ -89,7 +89,6 @@ def assign_quad_helper(p):
 
 	# Generate Quadruple and push it to the list
 
-	#HERE
 	if not tmp_array_index.isEmpty():
 		print(">Temp array index {}".format(tmp_array_index.peek()))
 		build_and_push_quad(op, o1, tmp_array_index.pop(), o2)
@@ -134,6 +133,13 @@ def print_stacks():
 
 	sys.stdout.write("> Type Stack = ")
 	type_stack.pprint()
+
+
+def build_fig_quad():
+	#HERE
+	op = special_operator_dict['newfig']
+
+	build_and_push_quad(op, None, None, tmp_var.id)
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -206,16 +212,16 @@ def p_primitive_type (p):
 
 def p_figure (p):
 	'''
-	figure : POINT 
-			| LINE 
+	figure :  LINE 
 			| TRIANGLE 
 			| SQUARE 
 			| RECTANGLE 
 			| POLYGON 
-			| STAR 
 			| CIRCLE
 	'''
 	p[0] = p[1]
+	type_stack.push(type_dict[p[1]])
+	
 
 def p_stmt_loop (p):
 	'''
@@ -329,7 +335,7 @@ def p_param_a (p):
 		| epsilon
 	'''
 
-def p_var_array_ver(p):#HERE
+def p_var_array_ver(p):
 	'''
 	var_array_ver : SEP_LBRACKET exp var_array_ver_aux SEP_RBRACKET 
 		| epsilon
@@ -900,30 +906,29 @@ def p_statement (p):
 
 def p_vars (p):
 	'''
-	vars : vars_start v_a
+	vars : vars_start
 	'''
 
 #array
 def p_v_a (p):
 	'''
-	v_a : vars_figs
-		| vars_prim
+	v_a : vars_prim
 		| vars_arr
 	'''
 
 def p_vars_start (p):
 	'''
-	vars_start : VAR VAR_IDENTIFIER SEP_COLON
+	vars_start : VAR VAR_IDENTIFIER SEP_COLON v_a
+			| FIGURE VAR_IDENTIFIER fig_push_name SEP_COLON figure add_fig_quad vf_a
 	'''
-	tmp_var.name = p[2]
 
-def p_vars_figs (p):
-	'''
-	vars_figs : figure vf_a
-	'''
+def p_fig_push_name(p):
+	'fig_push_name : epsilon'
+	tmp_var.name = p[-1]
+
 def p_vf_a (p):
 	'''
-	vf_a : init_fig
+	vf_a : HAS fig_create_block
 		| epsilon
 	'''
 
@@ -986,12 +991,6 @@ def p_init_a (p):
 		| var_cte
 	'''
 
-def p_init_fig (p):
-	'''
-	init_fig : OP_EQUALS VAR_IDENTIFIER
-		| HAS fig_create_block
-	'''
-
 def p_fig_create_block (p):
 	'''
 	fig_create_block : fig_a  END
@@ -1049,9 +1048,19 @@ def p_print_a (p):
 	
 def p_figure_creations (p):
 	'''
-	figure_creations : FIGURE VAR_IDENTIFIER SEP_COLON figure HAS fig_create_block
+	figure_creations : FIGURE VAR_IDENTIFIER fig_push_name SEP_COLON figure add_fig_quad HAS fig_create_block
 	'''
 	pass
+
+def p_add_fig_quad(p):
+	'''
+	add_fig_quad : epsilon
+	'''
+	#HERE
+	tmp_var.type = type_stack.pop()
+	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
+	tmp_var.id = aux_var.id
+	build_fig_quad()
 
 def p_var_id(p):
 	'var_id : VAR_IDENTIFIER verify_variable var_array_ver push_id'
