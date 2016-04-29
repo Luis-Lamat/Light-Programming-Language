@@ -61,3 +61,11 @@ class Error:
 		print "Semantic Error: Expected type Bool and got type " + str(t1) + ", in line " + str(lineno)
 		sys.exit()
 
+	@staticmethod
+	def wrong_type(cntxt, t1, t2, lineno):
+		t1 = inv_type_dict[t1]
+		t2 = inv_type_dict[t2]
+		print "Semantic Error (line {}): '{}' cannot be type '{}', must be type '{}'".format(lineno, cntxt, t1, t2)
+		sys.exit()
+
+

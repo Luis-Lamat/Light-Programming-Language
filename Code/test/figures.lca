@@ -7,7 +7,7 @@ program figures {
 				v1: (1,2),
 				v2: (2,4),
 				v3: (4,5),
-				color: green
+				color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
 	}

@@ -59,6 +59,7 @@ reserved_words = {
     'camera'    : 'CAMERA',
     'has'       : 'HAS',
     'color'     : 'COLOR',
+    'rgb'       : 'RGB',
     'angle'     : 'ANGLE',
 
     # AND OR Conditionals
@@ -78,7 +79,8 @@ tokens = (
     'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 'OP_EQUALSS', 
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
-    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE'
+    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE',
+    'RGB'
 )
 
 # Ignoring comments, spaces and tabs
