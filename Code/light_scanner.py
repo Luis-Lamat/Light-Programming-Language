@@ -43,6 +43,7 @@ reserved_words = {
     'circle'    : 'CIRCLE',
 
     # Figure actions tokens
+    'figure'	: 'FIGURE',
     'action'    : 'ACTION',
     'do'        : 'DO',
     'end'       : 'END',
@@ -77,7 +78,7 @@ tokens = (
     'OP_GREATER_THAN', 'OP_NOT_EQUAL', 'OP_GREATER_EQUAL', 'OP_LESS_EQUAL', 'OP_EQUALSS', 
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
-    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR'
+    'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE'
 )
 
 # Ignoring comments, spaces and tabs
