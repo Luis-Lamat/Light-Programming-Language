@@ -2,8 +2,27 @@
 program bubble {
 
     function bubbleSort() {
-        var numArray:[int](5)
+        var arr:[int](5)
+        var i:int
+        var j:int
+        var tmp:int
+        arr[0] = 8
+        arr[1] = 17
+        arr[2] = 2
+        arr[3] = 9
+        arr[4] = 6
 
+        for (i = 0; i < 5; i += 1) do
+        	for (j = 0; j < 4 - i; j += 1) do
+        		if (arr[j+1] < arr[j]) do
+        			tmp = arr[j+1]
+        			arr[j+1] = arr[j]
+        			arr[j] = tmp
+        		end
+        	end
+        end
+
+    	print(arr)
     }
   
 

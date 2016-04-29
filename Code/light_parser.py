@@ -108,12 +108,19 @@ def allocate_arr_helper(addr, size):
 	o2 = size
 	build_and_push_quad(op, o1, o2, None)
 
-
 def print_quad_helper():
 	operand = operand_stack.pop()
 	op = operator_stack.pop()
 	build_and_push_quad(op, None, None, operand)
 	type_stack.pop()
+
+def fig_color_quad_helper(p, color_char, fig_addr):
+	type = type_stack.pop()
+	if type != type_dict['int']:
+		Error.wrong_type('RGB value', type, type_dict['int'], p.lexer.lineno)
+	exp_result = operand_stack.pop()
+	op = special_operator_dict['addc'] # 'Add Color'
+	build_and_push_quad(op, color_char, exp_result, fig_addr)
 
 def push_const_operand_and_type(operand, type):
 	type_stack.push(type_dict[type])
@@ -1009,19 +1016,39 @@ def p_fig_b (p):
 def p_fig_attr (p):
 	'''
 	fig_attr : vector
-		| COLOR SEP_COLON VAR_IDENTIFIER
+		| fig_color_attr
 		| SIZE SEP_COLON exp 
 	'''
 
 def p_fig_description(p):
-	'''
-	fig_description : VAR_IDENTIFIER HAS fig_create_block
-	'''
+	'fig_description : VAR_IDENTIFIER HAS fig_tmp_var fig_create_block'
+
+def p_fig_tmp_var(p):
+	'fig_tmp_var : '
+	aux_var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
+	tmp_var.id = aux_var.id
+	tmp_var.name = aux_var.name
 
 def p_vector (p):
 	'''
 	vector : VAR_VECTORID SEP_COLON SEP_LPAR exp SEP_COMMA exp SEP_RPAR 
 	'''
+
+def p_fig_color_attr(p):
+	'fig_color_attr : COLOR SEP_COLON RGB SEP_LPAR exp add_red SEP_COMMA exp add_green SEP_COMMA exp add_blue SEP_RPAR'
+
+def p_add_red(p):
+	'add_red : '
+	fig_color_quad_helper(p, 'r', tmp_var.id)
+
+def p_add_green(p):
+	'add_green : '
+	fig_color_quad_helper(p, 'g', tmp_var.id)
+	
+def p_add_blue(p):
+	'add_blue : '
+	fig_color_quad_helper(p, 'b', tmp_var.id)
+	
 
 def p_cnt_prim (p):
 	'''
