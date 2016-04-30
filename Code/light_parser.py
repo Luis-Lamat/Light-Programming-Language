@@ -122,6 +122,17 @@ def fig_color_quad_helper(p, color_char, fig_addr):
 	op = special_operator_dict['addc'] # 'Add Color'
 	build_and_push_quad(op, color_char, exp_result, fig_addr)
 
+def fig_size_quad_helper(p, fig_addr):
+	fig_type = (abs(fig_addr) // 1000)
+	if fig_type != type_dict['circle'] and fig_type != type_dict['square']:
+		Error.wrong_attribute_for_figure(fig_type, 'size', p.lexer.lineno)
+	type = type_stack.pop()
+	if type != type_dict['int']:
+		Error.wrong_type('Size value', type, type_dict['int'], p.lexer.lineno)
+	exp_result = operand_stack.pop()
+	op = special_operator_dict['adds'] # 'Add Color'
+	build_and_push_quad(op, None, exp_result, fig_addr)
+
 def push_const_operand_and_type(operand, type):
 	type_stack.push(type_dict[type])
 	if operand in FunctionTable.constant_dict.keys():
@@ -433,7 +444,6 @@ def p_assignment (p):
 def p_cycle (p):
 	'''
 	cycle : while 
-		| for_each do_block
 		| for 
 	'''
 	print("cycle: " + str(p.lexer.lineno))
@@ -453,28 +463,9 @@ def p_end_while_helper (p) :
 	#fill the return value #CHANGED
 	build_and_push_quad(special_operator_dict['goto'], None, None, tmp_return - 1)
 
-
 	#fill false with count
 	tmp_count = Quadruples.next_free_quad
 	tmp_quad = Quadruples.fill_missing_quad(tmp_false, tmp_count)
-
-
-# def p_l_a (p):
-# 	'''
-# 	l_a : VAR_INT
-# 		| VAR_IDENTIFIER verify_variable
-# 	'''
- #DEPRECATED
-def p_for_each (p):
-	'''
-	for_each : FOR_EACH SEP_LPAR VAR_IDENTIFIER IN for_each_collection SEP_RPAR
-	'''
-#DEPRECATED
-def p_for_each_collection(p):
-	'''
-	for_each_collection : VAR_IDENTIFIER
-		| SEP_LBRACKET VAR_INT SEP_DOT SEP_DOT VAR_INT SEP_RBRACKET
-	'''
 
 def p_for (p):
 	'''
@@ -532,12 +523,6 @@ def p_for_a (p):
 		| epsilon
 	'''
 
-
-# def p_for_assignment (p) :
-# 	'''
-# 	for_assignment : VAR_IDENTIFIER verify_variable OP_EQUALS for_var_cte
-# 	'''
-
 def p_for_b (p):
 	'''
 	for_b : increment tmp_increment
@@ -555,21 +540,6 @@ def p_tmp_assign (p):
 	'tmp_assign : epsilon'
 	p[0] = 0
 	tmp_quad_queue.push(Quadruples.pop_quad())
-
-
-# def p_for_increment (p):
-# 	'''
-# 	for_increment : VAR_IDENTIFIER verify_variable inc_a for_var_cte
-# 	'''
-# 	#push_operator
-
-
-# def p_for_var_cte(p): 
-# 	'''
-# 	for_var_cte : VAR_IDENTIFIER verify_variable
-# 		| VAR_INT
-# 		| VAR_DECIMAL
-# 	'''
 
 def p_action (p):
 	'''
@@ -823,10 +793,9 @@ def p_quad_if_helper(p):
 	'''
 	quad_if_helper : epsilon
 	'''
-
-	aux = type_stack.pop()
-	if aux != 1 :
-		Error.not_a_condition(aux, p.lexer.lineno)
+	type = type_stack.pop()
+	if type != type_dict['boolean']:
+		Error.not_a_condition(type, p.lexer.lineno)
 	else :
 		res = operand_stack.pop()
 		operator = special_operator_dict['gotof']
@@ -1016,8 +985,12 @@ def p_fig_attr (p):
 	'''
 	fig_attr : vector
 		| fig_color_attr
-		| SIZE SEP_COLON exp 
+		| SIZE SEP_COLON exp add_size 
 	'''
+
+def p_add_size(p):
+	'add_size : '
+	fig_size_quad_helper(p, tmp_var.id)
 
 def p_fig_description(p):
 	'fig_description : VAR_IDENTIFIER HAS fig_tmp_var fig_create_block'
@@ -1027,6 +1000,7 @@ def p_fig_tmp_var(p):
 	aux_var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
 	tmp_var.id = aux_var.id
 	tmp_var.name = aux_var.name
+	tmp_var.type = aux_var.type
 
 def p_vector (p):
 	'''

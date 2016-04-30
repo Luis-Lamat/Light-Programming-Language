@@ -2,7 +2,7 @@ program figures {
 	
 
 	light(){
-		figure t2:triangle
+		figure t2:circle
 		
 
 		figure t1:triangle has
@@ -12,5 +12,10 @@ program figures {
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
+		t2 has
+			v: (1,1),
+			color: rgb(1, 2, 2),
+			size: 8
+		end
 	}
 }

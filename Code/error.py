@@ -68,4 +68,9 @@ class Error:
 		print "Semantic Error (line {}): '{}' cannot be type '{}', must be type '{}'".format(lineno, cntxt, t1, t2)
 		sys.exit()
 
+	@staticmethod
+	def wrong_attribute_for_figure(fig_t, attr, lineno):
+		fig_t = inv_type_dict[fig_t]
+		print "Semantic Error (line {}): The figure type '{}' does not accept the attribute '{}'".format(lineno, fig_t, attr)
+		sys.exit()
 
