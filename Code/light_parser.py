@@ -156,8 +156,22 @@ def print_stacks():
 def build_fig_quad():
 	#HERE
 	op = special_operator_dict['newfig']
-
 	build_and_push_quad(op, None, None, tmp_var.id)
+
+
+def fig_vertex_quad_helper(p, fig_addr):
+	Y = operand_stack.pop()
+	X = operand_stack.pop()
+	type1 = type_stack.pop()
+	type2 = type_stack.pop()
+
+	if type1 != type_dict['int']:
+		Error.wrong_type('Vertex value', type1, type_dict['int'], p.lexer.lineno)
+	if type2 != type_dict['int']:
+		Error.wrong_type('Vertex value', type2, type_dict['int'], p.lexer.lineno)
+
+	op = special_operator_dict['addv'] # 'Add Vertex'
+	build_and_push_quad(op, X, Y, fig_addr)
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -1006,6 +1020,7 @@ def p_vector (p):
 	'''
 	vector : VAR_VECTORID SEP_COLON SEP_LPAR exp SEP_COMMA exp SEP_RPAR 
 	'''
+	fig_vertex_quad_helper(p, tmp_var.id)
 
 def p_fig_color_attr(p):
 	'fig_color_attr : COLOR SEP_COLON RGB SEP_LPAR exp add_red SEP_COMMA exp add_green SEP_COMMA exp add_blue SEP_RPAR'
