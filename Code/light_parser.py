@@ -16,8 +16,8 @@ function_queue = Queue()
 
 #Default functions in queue
 function_queue.enqueue('program')
-function_queue.enqueue('window_size')
-function_queue.enqueue('coordinates')
+# function_queue.enqueue('window_size')
+# function_queue.enqueue('coordinates')
 
 # Quads global structures
 operand_stack   = Stack()
@@ -208,7 +208,7 @@ def p_pr_b (p):
 
 def p_main_func (p):
 	'''
-	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET pr_a stmt_loop SEP_RCBRACKET
+	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET window_func pr_a stmt_loop SEP_RCBRACKET
 	'''
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	function_stack.pop()
@@ -216,6 +216,22 @@ def p_main_func (p):
 	# Generates the 'END' action to finish execution
 	build_and_push_quad(special_operator_dict['end'], None, None, None)
 	# TODO: Liberar tabla de variables
+
+def p_window_func(p):
+	'window_func : WINDOW_SIZE SEP_LPAR VAR_IDENTIFIER SEP_COLON cnt_prim SEP_COMMA VAR_IDENTIFIER SEP_COLON cnt_prim SEP_RPAR'
+	if p[3] != 'width' or p[7] != 'height':
+		Error.wrong_window_declaration(p.lexer.lineno)
+	t1 = type_stack.pop()
+	t2 = type_stack.pop()
+	int_type = type_dict['int']
+	if t1 != int_type or t2 != int_type:
+		tmp_type = t1 if t1 != int_type else t2
+		Error.wrong_type('window_size', tmp_type, int_type, p.lexer.lineno)
+
+	n1 = operand_stack.pop(); type_stack.pop();
+	n2 = operand_stack.pop(); type_stack.pop();
+	build_and_push_quad(special_operator_dict['wsize'], None, n1, n2)
+
 
 def p_main_fill_quad(p):
 	'main_fill_quad : '

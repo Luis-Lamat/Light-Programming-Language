@@ -61,6 +61,7 @@ reserved_words = {
     'color'     : 'COLOR',
     'rgb'       : 'RGB',
     'angle'     : 'ANGLE',
+    'window_size' : 'WINDOW_SIZE',
 
     # AND OR Conditionals
     'and'		: 'AND',
@@ -80,7 +81,7 @@ tokens = (
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
     'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE',
-    'RGB'
+    'RGB', 'WINDOW_SIZE'
 )
 
 # Ignoring comments, spaces and tabs

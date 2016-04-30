@@ -54,7 +54,8 @@ special_operator_dict = {
     'newfig': 27,
     'addv'	: 28,
     'addc'	: 29,
-    'adds'	: 30
+    'adds'  : 30,
+    'wsize'	: 31
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)

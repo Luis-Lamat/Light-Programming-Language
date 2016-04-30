@@ -65,7 +65,7 @@ class Error:
 	def wrong_type(cntxt, t1, t2, lineno):
 		t1 = inv_type_dict[t1]
 		t2 = inv_type_dict[t2]
-		print "Semantic Error (line {}): '{}' cannot be type '{}', must be type '{}'".format(lineno, cntxt, t1, t2)
+		print "Semantic Error (line {}): '{}' cannot be of type '{}', must be of type '{}'".format(lineno, cntxt, t1, t2)
 		sys.exit()
 
 	@staticmethod
@@ -74,3 +74,7 @@ class Error:
 		print "Semantic Error (line {}): The figure type '{}' does not accept the attribute '{}'".format(lineno, fig_t, attr)
 		sys.exit()
 
+	@staticmethod
+	def wrong_window_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for window size is 'window_size(width: <int>, height: <int>)'".format(lineno)
+		sys.exit()
