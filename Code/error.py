@@ -78,3 +78,10 @@ class Error:
 	def wrong_window_declaration(lineno):
 		print "Syntax Error (line {}): The correct syntax for window size is 'window_size(width: <int>, height: <int>)'".format(lineno)
 		sys.exit()
+
+	@staticmethod
+	def wrong_vertex_number(fig_t):
+		fig_t = inv_type_dict[fig_t]
+		print "RunTime Error: Wrong number of Vertices for figure type '{}'".format(fig_t)
+		sys.exit()
+

@@ -2,7 +2,6 @@ import light_scanner as lexer
 import ply.yacc as yacc
 from light_semantic_controller import *
 from quadruple import *
-from figures import *
 
 tokens = lexer.tokens
 function_stack = Stack()

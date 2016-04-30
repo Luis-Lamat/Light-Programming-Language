@@ -1,6 +1,9 @@
 from memory_handler import *
 from light_datastructures import *
 from quadruple import *
+from figures import *
+
+win = None
 
 def execute_operator(argument, quad, index):
 	switcher = {
@@ -28,7 +31,13 @@ def execute_operator(argument, quad, index):
 		23	:	_print,
 		24	:	end,	
 		25	:	alloc,
-		26	:	eqarr
+		26	:	eqarr,
+		27	:	newfig,
+		28	:	addv,
+		29	:	addc,
+		30	:	adds,
+		31	:	wsize,
+		32	:	cam
 
 	}
 	# Get the function from switcher dictionary
@@ -100,8 +109,7 @@ def gosub(quad, index):
 	return index
 
 def era(quad, index):
-	MemoryHandler.era_operator(quad)
-	pass 
+	MemoryHandler.era_operator(quad) 
 
 def param(quad, index):
 	MemoryHandler.param_operator(quad)
@@ -115,10 +123,35 @@ def end(quad, index):
 
 def alloc(quad, index):
 	MemoryHandler.allocate_array_space(quad)
-	pass
 
 def eqarr(quad, index):
 	MemoryHandler.get_array_value(quad)
+
+def newfig(quad, index):
+	MemoryHandler.set_new_fig(quad)
+
+def addv(quad, index):
+	obj_temp = MemoryHandler.get_fig(quad.result)
+	MemoryHandler.add_vertex_fig(quad, obj_temp)
+	MemoryHandler.set_fig(obj_temp, quad)
+
+def addc(quad, index):
+	obj_temp = MemoryHandler.get_fig(quad.result)
+
+
+def adds(quad, index):
+	obj_temp = MemoryHandler.get_fig(quad.result)
+
+def wsize(quad, index):
+
+	width = MemoryHandler.get_address_value(quad.right_operand)
+	height = MemoryHandler.get_address_value(quad.result)
+
+	global win
+	win = GraphWin("LIGHT", width, height)
+
+def cam(quad, index):
+	pass
 
 
 def RUN_AT_LIGHTSPEED():

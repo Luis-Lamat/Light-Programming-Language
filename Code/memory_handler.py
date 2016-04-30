@@ -2,6 +2,7 @@ import operator
 from light_semantic_controller import *
 from memory import *
 from error import *
+from figures import *
 
 class MemoryHandler:
 	# Global and local memory declarations
@@ -47,7 +48,7 @@ class MemoryHandler:
 			0	: operator.add(x,y),
 			1	: operator.sub(x,y),
 			2	: operator.mul(x,y),
-			# 3	: operator.div(x,y),
+		# 	3	: operator.div(x,y),
 			4	: operator.lt(x,y),
 			5	: operator.gt(x,y),
 			6	: operator.le(x,y),
@@ -231,3 +232,87 @@ class MemoryHandler:
 				Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
 
 		cls.set_address_value(quad.result, val)
+
+
+	#FIGURES
+	@classmethod
+	def create_empty_fig(cls, val):
+		figs = {
+			6	: L_Line(),			#line
+			7	: L_Triangle(),		#triangle
+			8	: L_Square(),		#square
+			9	: L_Rectangle(),	#rectangle
+			10	: L_Polygon(),		#polygon
+			12	: L_Circle(),		#circle
+		}
+		return figs[val]
+
+	@classmethod
+	def fig_can_add_size(cls, val):
+		figs = {
+			6	: False,		#line
+			7	: False,		#triangle
+			8	: True,			#square
+			9	: False,		#rectangle
+			10	: False,		#polygon
+			12	: True,			#circle
+		}
+		return figs[val]
+
+	@classmethod
+	def add_vertex_fig(cls, quad, obj_temp):
+
+		x = cls.get_address_value(quad.left_operand)
+		y = cls.get_address_value(quad.right_operand)
+
+		if not obj_temp.setNextVertex(x, y):
+			type = abs(quad.result) // 1000
+			Error.wrong_vertex_number(type)
+
+	@classmethod
+	def set_new_fig(cls, quad):
+		addr = quad.result
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Set New Fig mem value: type = {}, addr = {}".format(type, relative_address)
+
+		new_obj = cls.create_empty_fig(type)
+
+		if addr < 0:
+			cls.heap.memory[type][abs(relative_address)] = new_obj
+			print "> Heap memory: {}".format(cls.heap.memory)
+		else:
+			cls.stack.peek().memory[type][relative_address] = new_obj
+			print "> Stack memory: {}".format(cls.stack.peek().memory)
+
+
+	@classmethod
+	def set_fig(cls, obj, quad):
+		addr = quad.result
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Set New Fig mem value: type = {}, addr = {}".format(type, relative_address)
+
+		if addr < 0:
+			cls.heap.memory[type][abs(relative_address)] = obj
+			print "> Heap memory: {}".format(cls.heap.memory)
+		else:
+			cls.stack.peek().memory[type][relative_address] = obj
+			print "> Stack memory: {}".format(cls.stack.peek().memory)
+
+	@classmethod
+	def get_fig(cls, addr):
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
+		print "> Get Fig mem value: type = {}, addr = {}".format(type, relative_address)
+
+		if addr < 0:
+			print "> Heap memory: {}".format(cls.heap.memory)
+			return cls.heap.memory[type][abs(relative_address)]
+		else:
+			print "> Stack memory: {}".format(cls.stack.peek().memory)
+			return cls.stack.peek().memory[type][relative_address]
+			
