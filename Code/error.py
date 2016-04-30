@@ -32,7 +32,7 @@ class Error:
 
 	@staticmethod
 	def variable_not_defined(name, line):
-		print "Semantic Error: Variable '" + name +"' not defined in line: " + str(line)
+		print "Semantic Error (line {}): Variable '{}' not defined".format(line, name)
 		sys.exit()
 
 	@staticmethod

@@ -406,7 +406,7 @@ def p_function_call(p):
 
 	# create a temporal var_id on the function as the same type of func_call
 	next_id = SemanticInfo.get_next_var_id(func.type)
-	# glbl_addr = FunctionTable.get_var_in_scope('program', func.name).id
+	# glbl_addr = FunctionTable.get_var_in_scope(p, 'program', func.name).id
 	glbl_addr = operand_stack.pop(); type_stack.pop();
 	build_and_push_quad(special_operator_dict['='], glbl_addr, None, next_id)
 	operand_stack.push(next_id)
@@ -433,7 +433,7 @@ def p_verify_function_call(p):
 	build_and_push_quad(special_operator_dict['era'], func.name, None, None)
 
 	# Pushing the fucntion as a variable id when a function is called
-	func_var = FunctionTable.get_var_in_scope('program', func.name)
+	func_var = FunctionTable.get_var_in_scope(p, 'program', func.name)
 	operand_stack.push(func_var.id)
 	type_stack.push(func_var.type)
 
@@ -585,24 +585,16 @@ def p_act_a (p):
 	'''
 
 def p_act_header (p):
-	'''
-	act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp 
-	'''
+	'act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp'
 
 def p_act_move (p):
-	'''
-	act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp  END
-	'''
+	'act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp END'
 
 def p_act_scale (p):
-	'''
-	act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END
-	'''
+	'act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END'
 
 def p_act_rotate (p):
-	'''
-	act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA  END
-	'''
+	'act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA END'
 
 def p_act_visible (p):
 	'''
@@ -611,10 +603,9 @@ def p_act_visible (p):
 	'''
 
 def p_camera (p):
-	'''
-	camera : CAMERA VAR_IDENTIFIER 
-	'''
-
+	'camera : CAMERA VAR_IDENTIFIER'
+	aux_var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[2])
+	build_and_push_quad(special_operator_dict['cam'], None, None, aux_var.id)
 
 ##AND OR ret
 def p_condition (p):
@@ -986,7 +977,7 @@ def p_init_arr(p):
 	arr_var = FunctionTable.add_arr_to_func(function_stack.peek(), arr_var)
 	allocate_arr_helper(arr_var.id, arr_var.length)
 
-	#FunctionTable.get_var_in_scope(function_stack.peek(), arr_var.name)
+	#FunctionTable.get_var_in_scope(p, function_stack.peek(), arr_var.name)
 
 
 # WARNING: Adds a shift reduce conflict because of function_call
@@ -1027,7 +1018,7 @@ def p_fig_description(p):
 
 def p_fig_tmp_var(p):
 	'fig_tmp_var : '
-	aux_var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-2])
+	aux_var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[-2])
 	tmp_var.id = aux_var.id
 	tmp_var.name = aux_var.name
 	tmp_var.type = aux_var.type
@@ -1100,7 +1091,7 @@ def p_var_id(p):
 
 def p_push_id(p):
 	'push_id : '
-	var = FunctionTable.get_var_in_scope(function_stack.peek(), p[-3])
+	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[-3])
 	type_stack.push(var.type)
 	operand_stack.push(var.id)
 

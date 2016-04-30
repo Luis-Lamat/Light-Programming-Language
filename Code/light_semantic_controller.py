@@ -256,7 +256,9 @@ class FunctionTable:
 		return cls.function_dict["program"].var_in_func(var_name)
 
 	@classmethod
-	def get_var_in_scope(cls, function_name, var_name):
+	def get_var_in_scope(cls, p, function_name, var_name):
+		if not cls.verify_var_in_func(function_name, var_name):
+			Error.variable_not_defined(var_name, p.lexer.lineno)
 		try:
 			var = cls.function_dict[function_name].vars[var_name]
 		except KeyError:

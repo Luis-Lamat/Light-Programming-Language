@@ -20,5 +20,7 @@ program figures {
 			color: rgb(1, 2, 2),
 			size: 8
 		end
+
+		camera t1
 	}
 }
