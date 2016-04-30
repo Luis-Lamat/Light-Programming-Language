@@ -913,12 +913,13 @@ def p_v_a (p):
 
 def p_vars_start (p):
 	'''
-	vars_start : VAR VAR_IDENTIFIER SEP_COLON v_a
-			| FIGURE VAR_IDENTIFIER fig_push_name SEP_COLON figure add_fig_quad vf_a
+	vars_start : VAR VAR_IDENTIFIER push_var_name SEP_COLON v_a
+			| FIGURE VAR_IDENTIFIER push_var_name SEP_COLON figure add_fig_quad vf_a
 	'''
 
-def p_fig_push_name(p):
-	'fig_push_name : epsilon'
+
+def p_push_var_name(p):
+	'push_var_name : epsilon'
 	tmp_var.name = p[-1]
 
 def p_vf_a (p):
@@ -931,6 +932,7 @@ def p_vars_prim (p):
 	'''
 	vars_prim : primitive_type var_p_a
 	'''
+	print "\n> Adding var '{}' to func '{}'".format(tmp_var.name, function_stack.peek())
 	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 	tmp_var.id = aux_var.id # Nasty hack brawh
 
@@ -1069,7 +1071,7 @@ def p_print_a (p):
 	
 def p_figure_creations (p):
 	'''
-	figure_creations : FIGURE VAR_IDENTIFIER fig_push_name SEP_COLON figure add_fig_quad HAS fig_create_block
+	figure_creations : FIGURE VAR_IDENTIFIER push_var_name SEP_COLON figure add_fig_quad HAS fig_create_block
 	'''
 	pass
 

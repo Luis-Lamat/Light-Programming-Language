@@ -111,6 +111,7 @@ class Function:
 		self.has_return = False
 
 	def add_var(self, var):
+		print "\n> Add_var called"
 		if var.name not in self.vars:
 			tmp_var = Var() # TODO: dafuq with this????
 			tmp_var.init_var(None, var.name, var.type, var.value)
@@ -122,8 +123,11 @@ class Function:
 				tmp_var.id = SemanticInfo.get_next_var_id(var.type)
 
 			self.vars[var.name] = tmp_var
+			print self.vars
 			return tmp_var
 		else:
+			print "> Else entered"
+			print self.vars
 			Error.already_defined('variable', var.name)
 
 
@@ -345,7 +349,7 @@ class SemanticInfo:
 	@classmethod
 	def get_next_var_id(cls, type):
 		cls.current_var_id[type] += 1
-		print "\n> Asking for a new var id -> {}".format(cls.current_var_id[type] - 1)
+		print "> Asking for a new var id -> {}".format(cls.current_var_id[type] - 1)
 		return cls.current_var_id[type] - 1
 
 	@classmethod

@@ -52,6 +52,7 @@ reserved_words = {
     'move'      : 'MOVE',
     'posX'      : 'POS_X',
     'posY'      : 'POS_Y',
+    'v'         : 'VAR_VECTORID',
     'scale'     : 'SCALE',
     'size'      : 'SIZE',
     'hide'      : 'HIDE',
@@ -131,10 +132,6 @@ def t_SEP_LCBRACKET (t):
 
 def t_SEP_RCBRACKET (t):
     r'}'
-    return t
-
-def t_VAR_VECTORID (t):
-    r'v'
     return t
 
 def t_OP_LESS_THAN (t) : 

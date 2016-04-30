@@ -2,11 +2,11 @@ program figures {
 	
 
 	light(){
-
 		window_size(width: 500, height: 500)
 
+		var i:int = 0
+
 		figure t2:circle
-		
 		figure t1:triangle has
 			v: (100,200),
 			v: (300,400),
@@ -14,14 +14,16 @@ program figures {
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
-		t2 has
-			v: (100,100),
-			color: rgb(100, 200, 200),
-			size: 50
-		end
+		for (i = 0; i < 10; i += 1) do
 
-		camera t1
-		camera t2
+			t2 has
+				v: ((10 * i), 100),
+				color: rgb(100, 200, 200),
+				size: 50
+			end
+			camera t2
+
+		end
 
 		
 	}
