@@ -85,3 +85,13 @@ class Error:
 		print "RunTime Error: Wrong number of Vertices for figure type '{}'".format(fig_t)
 		sys.exit()
 
+	@staticmethod
+	def wrong_color_number(color):
+		print "RunTime Error: Wrong color number shuld be in range (0...255) and is '{}'".format(color)
+		sys.exit()
+
+	@staticmethod
+	def wrong_attribute_for_figure_execution(fig_t, attr):
+		fig_t = inv_type_dict[fig_t]
+		print "Semantic Error: The figure type '{}' does not accept the attribute '{}'".format( fig_t, attr)
+		sys.exit()

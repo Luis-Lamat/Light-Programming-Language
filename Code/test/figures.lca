@@ -3,11 +3,10 @@ program figures {
 
 	light(){
 
-		window_size(width: 100, height: 100)
+		window_size(width: 500, height: 500)
 
 		figure t2:circle
 		
-
 		figure t1:triangle has
 			v: (100,200),
 			v: (300,400),
@@ -16,11 +15,14 @@ program figures {
 		end
 
 		t2 has
-			v: (1,1),
-			color: rgb(1, 2, 2),
-			size: 8
+			v: (100,100),
+			color: rgb(100, 200, 200),
+			size: 50
 		end
 
 		camera t1
+		camera t2
+
+		
 	}
 }

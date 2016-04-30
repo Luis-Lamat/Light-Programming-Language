@@ -3,7 +3,8 @@ from light_datastructures import *
 from quadruple import *
 from figures import *
 
-win = GraphWin("LIGHT", 500, 500)
+win = None #GraphWin("LIGHT", 500, 500)
+fig_dict = {}
 
 def execute_operator(argument, quad, index):
 
@@ -134,50 +135,66 @@ def newfig(quad, index):
 def addv(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
 	MemoryHandler.add_vertex_fig(quad, obj_temp)
-	MemoryHandler.set_fig(obj_temp, quad)
+	#MemoryHandler.set_fig(obj_temp, quad)
 
 def addc(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
-
-
+	MemoryHandler.add_color_fig(quad, obj_temp)
+	#MemoryHandler.set_fig(obj_temp, quad)
+	
 def adds(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
+	MemoryHandler.add_size_fig(quad, obj_temp)
+	#MemoryHandler.set_fig(obj_temp, quad)
 
 def wsize(quad, index):
 
 	width = MemoryHandler.get_address_value(quad.right_operand)
 	height = MemoryHandler.get_address_value(quad.result)
 
-	# global win
-	# win = GraphWin("LIGHT", width, height)
+	global win
+	win = GraphWin("LIGHT", width, height)
 
 def cam(quad, index):
-
 	obj_temp = MemoryHandler.get_fig(quad.result)
+
 	type = abs(quad.result) // 1000
-	print("HERE!!!!! TYPE: " + str(type))
 	if type == 7 : #triangle
-		t = Polygon(obj_temp.getPointsList())
-		t.setFill(obj_temp.getColor())
-		t.draw(win)
+		x = Polygon(obj_temp.getPointsList())
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
+
 	elif type == 8 : #square
-		s = Rectangle(obj_temp.getPoints())
-		s.draw(win)
+		x = Rectangle(obj_temp.getPoints())
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
+
 	elif type == 9 : #rectangle
-		r = Rectangle(obj_temp.getPoints())
-		r.setFill(obj_temp.getColor())
-		r.draw(win)
+		x = Rectangle(obj_temp.getPoints())
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
+
 	elif type == 10 : #polygon
-		p = Polygon(obj_temp.getPointsList())
-		p.setFill(obj_temp.getColor())
-		p.draw(win)
+		x = Polygon(obj_temp.getPointsList())
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
+
 	elif type == 12 : #circle
-		c = Circle(obj_temp.getPointCenter(), obj_temp.radius)
-		c.setFill(obj_temp.getColor())
-		c.draw(win)
+		x = Circle(obj_temp.getPointCenter(), obj_temp.radius)
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
 	else:
 		pass
-
 
 def RUN_AT_LIGHTSPEED():
 	MemoryHandler.init_class_vars() # Supah weird hack...

@@ -48,6 +48,20 @@ class Figure(object):
 		self.color.g = g
 		self.color.b = b
 
+	def setTypeColor(self, type, color):
+		if color >= 0 and color <= 255:
+			if type == "r" :
+				self.color.r = color
+			elif type == "g":
+				self.color.g = color
+			elif type == "b":
+				self.color.b = color
+			else :
+				pass
+			return True
+		else:
+			return False
+
 	def getColor(self):
 		return color_rgb(self.color.r, self.color.g, self.color.b)
 

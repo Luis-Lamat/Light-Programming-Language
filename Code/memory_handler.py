@@ -270,6 +270,26 @@ class MemoryHandler:
 			Error.wrong_vertex_number(type)
 
 	@classmethod
+	def add_color_fig(cls, quad, obj_temp):
+
+		type = quad.left_operand
+		color = cls.get_address_value(quad.right_operand)
+
+		if not obj_temp.setTypeColor(type, color):
+			Error.wrong_color_number(color)
+
+	@classmethod
+	def add_size_fig(cls, quad, obj_temp):
+
+		type = abs(quad.result) // 1000 # integer division
+		if not cls.fig_can_add_size(type):
+			Error.wrong_attribute_for_figure_execution(type, "size")
+
+		size = cls.get_address_value(quad.right_operand)
+		obj_temp.setSize(size)
+
+
+	@classmethod
 	def set_new_fig(cls, quad):
 		addr = quad.result
 		type = abs(addr) // 1000 # integer division
