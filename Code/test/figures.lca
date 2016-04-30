@@ -9,9 +9,9 @@ program figures {
 		
 
 		figure t1:triangle has
-			v: (1,2),
-			v: (2,4),
-			v: (4,5),
+			v: (100,200),
+			v: (300,400),
+			v: (350,250),
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 

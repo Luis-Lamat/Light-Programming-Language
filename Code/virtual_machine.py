@@ -3,9 +3,10 @@ from light_datastructures import *
 from quadruple import *
 from figures import *
 
-win = None
+win = GraphWin("LIGHT", 500, 500)
 
 def execute_operator(argument, quad, index):
+
 	switcher = {
 		0	: 	plus,
 		1	: 	minus,
@@ -119,7 +120,7 @@ def _print(quad, index):
 
 def end(quad, index):
 	print "> PROGRAM EXIT"
-	sys.exit(0)
+	# sys.exit(0)
 
 def alloc(quad, index):
 	MemoryHandler.allocate_array_space(quad)
@@ -147,11 +148,35 @@ def wsize(quad, index):
 	width = MemoryHandler.get_address_value(quad.right_operand)
 	height = MemoryHandler.get_address_value(quad.result)
 
-	global win
-	win = GraphWin("LIGHT", width, height)
+	# global win
+	# win = GraphWin("LIGHT", width, height)
 
 def cam(quad, index):
-	pass
+
+	obj_temp = MemoryHandler.get_fig(quad.result)
+	type = abs(quad.result) // 1000
+	print("HERE!!!!! TYPE: " + str(type))
+	if type == 7 : #triangle
+		t = Polygon(obj_temp.getPointsList())
+		t.setFill(obj_temp.getColor())
+		t.draw(win)
+	elif type == 8 : #square
+		s = Rectangle(obj_temp.getPoints())
+		s.draw(win)
+	elif type == 9 : #rectangle
+		r = Rectangle(obj_temp.getPoints())
+		r.setFill(obj_temp.getColor())
+		r.draw(win)
+	elif type == 10 : #polygon
+		p = Polygon(obj_temp.getPointsList())
+		p.setFill(obj_temp.getColor())
+		p.draw(win)
+	elif type == 12 : #circle
+		c = Circle(obj_temp.getPointCenter(), obj_temp.radius)
+		c.setFill(obj_temp.getColor())
+		c.draw(win)
+	else:
+		pass
 
 
 def RUN_AT_LIGHTSPEED():
@@ -159,6 +184,9 @@ def RUN_AT_LIGHTSPEED():
 	quads = Quadruples.quad_list
 	print "\nVIRTUAL MACHINE ==============================="
 	QuadIterator(0, quads)
+
+	win.getMouse() # Pause to view result
+	win.close() 
 
 def QuadIterator(index, quads):
 
