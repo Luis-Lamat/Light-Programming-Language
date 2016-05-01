@@ -630,6 +630,37 @@ def p_wait (p):
 	time_in_ms = operand_stack.pop()
 	build_and_push_quad(special_operator_dict['wait'], None, None, time_in_ms)
 
+def p_move_speed (p):
+	'move_speed : MOVE_SPEED SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[3] != 'ms':
+		Error.wrong_wait_declaration(p.lexer.lineno)
+	type = type_stack.pop();
+	if type != type_dict['int'] and type != type_dict['decimal']:
+		Error.wrong_type('move speed', type, type_dict['decimal'], p.lexer.lineno)	
+	time_in_ms = operand_stack.pop()
+	build_and_push_quad(special_operator_dict['mvs'], None, None, time_in_ms)
+
+def p_hide (p):
+	'hide : HIDE VAR_IDENTIFIER verify_variable fig_tmp_var'
+	build_and_push_quad(special_operator_dict['hide'], None, None, tmp_var.id)
+
+def p_show (p):
+	'show : SHOW VAR_IDENTIFIER verify_variable fig_tmp_var'
+	build_and_push_quad(special_operator_dict['show'], None, None, tmp_var.id)
+
+def p_background_color (p):
+	'background_color : BACKGROUND_COLOR SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[3] != 'r' or p[7] != 'g' or p[11] != 'b':
+		Error.wrong_bgc_declaration(p.lexer.lineno)
+	exp_type_list = [type_stack.pop() for x in xrange(3)]
+	type_list = [type_dict['int'], type_dict['decimal']]
+	intersect = [i for i in exp_type_list if i in type_list]
+	if len(intersect) != len(exp_type_list):
+		diff = [i for i in exp_type_list if i not in intersect]
+		Error.wrong_type('background_color attr', diff[0], type_dict['decimal'], p.lexer.lineno)
+	res = [operand_stack.pop() for x in xrange(3)]
+	build_and_push_quad(special_operator_dict['bgc'], res[0], res[1], res[2])
+
 ##AND OR ret
 def p_condition (p):
 	'''
@@ -912,6 +943,10 @@ def p_statement (p):
 				| camera 
 				| move
 				| wait
+				| move_speed
+				| hide
+				| show
+				| background_color
 				| function_call 
 				| print
 				| increment

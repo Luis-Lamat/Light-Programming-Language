@@ -32,6 +32,11 @@ program figures {
 		#move t2 (x: 20, y: 0)
 		#move t2 (x: 0, y: -20)
 		#move t2 (x:-20, y:20)
+		show t2
+		hide t2
+		background_color(r: 0.0, g: 100, b: 9)
+		move_speed(ms: 9)
+
 
 	}
 }

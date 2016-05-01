@@ -90,6 +90,17 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def wrong_move_speed_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for move speed is 'move_speed (ms: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
+	def wrong_bgc_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for background color is 'background_color (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
+		sys.exit()
+
+
+	@staticmethod
 	def wrong_vertex_number(fig_t):
 		fig_t = inv_type_dict[fig_t]
 		print "RunTime Error: Wrong number of Vertices for figure type '{}'".format(fig_t)
