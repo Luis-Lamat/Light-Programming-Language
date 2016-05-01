@@ -1,0 +1,58 @@
+program fig_rec {
+	
+
+	function fibo(n: int) returns int {
+
+		var x:int 
+		var y:int
+		var ans:int
+
+		# Making the figure
+		figure c1:circle
+		figure center:circle
+
+		x = n * 35
+		y = n * n + 100
+
+		c1 has
+			v: (x: x, y: y),
+			color: (r:20 * n,g: 200 + (n * n),b: 10 * n),
+			size: 5 * n
+		end
+
+		center has
+			v: (x: x, y: y),
+			color: (r:255, g:255, b:255),
+			size: 2 * n
+		end
+
+        if (n < 1) do
+            return 1
+        end
+        elsif (n < 2) do
+            return 1
+        end
+
+        ans = fibo(n: n-2) + fibo(n: n-1)
+
+        # Drawing the figure
+        camera c1
+        camera center
+
+        # printing text
+		text_color(r:0, g:0, b:0)
+		printg(text: ans, x: y - ((5 * n) + 20), y: x)
+
+        return ans
+    }
+
+
+
+	light() {
+		window_size(width: 500, height: 500)
+        # printing text
+		text_color(r:0, g:0, b:200)
+		printg(text: "Fibonacci - Recursive", x: 50, y: 250)
+		fibo(n: 10)
+	}
+}
