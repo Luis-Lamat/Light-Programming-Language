@@ -615,6 +615,16 @@ def p_move (p):
 	x = operand_stack.pop(); type_stack.pop();
 	build_and_push_quad(special_operator_dict['move'], x, y, aux_var.id)
 
+def p_wait (p):
+	'wait : WAIT SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[3] != 'ms':
+		Error.wrong_wait_declaration(p.lexer.lineno)
+	type = type_stack.pop();
+	if type != type_dict['int'] and type != type_dict['decimal']:
+		Error.wrong_type('wait', type, type_dict['decimal'], p.lexer.lineno)
+	time_in_ms = operand_stack.pop()
+	build_and_push_quad(special_operator_dict['wait'], None, None, time_in_ms)
+
 ##AND OR ret
 def p_condition (p):
 	'''
@@ -867,9 +877,7 @@ def p_quad_else_helper(p):
 	Quadruples.push_jump(-1)
 
 def p_end_if_stmt_quad_helper(p):
-	'''
-	end_if_stmt_quad_helper : epsilon
-	'''
+	'end_if_stmt_quad_helper : epsilon'
 
 	#print("PUSH JUMP BEF POP:")
 	Quadruples.print_jump_stack()
@@ -882,15 +890,11 @@ def p_end_if_stmt_quad_helper(p):
 
 
 def p_condition_block (p):
-	'''
-	condition_block : SEP_LPAR condition SEP_RPAR do_block
-	'''
+	'condition_block : SEP_LPAR condition SEP_RPAR do_block'
 	print("conditionBlock " + str(p.lexer.lineno))
 
 def p_do_block (p):
-	'''
-	do_block : DO stmt_loop END
-	'''
+	'do_block : DO stmt_loop END'
 	print("doBlock " + str(p.lexer.lineno))
 
 # WARNING: Watch out for "figure_creations"
@@ -902,6 +906,7 @@ def p_statement (p):
 				| action 
 				| camera 
 				| move
+				| wait
 				| function_call 
 				| print
 				| increment
@@ -910,9 +915,7 @@ def p_statement (p):
 	'''
 
 def p_vars (p):
-	'''
-	vars : vars_start
-	'''
+	'vars : vars_start'
 
 #array
 def p_v_a (p):
@@ -939,9 +942,7 @@ def p_vf_a (p):
 	'''
 
 def p_vars_prim (p):
-	'''
-	vars_prim : primitive_type var_p_a
-	'''
+	'vars_prim : primitive_type var_p_a'
 	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 	tmp_var.id = aux_var.id # Nasty hack brawh
 
@@ -952,9 +953,7 @@ def p_var_p_a (p):
 	'''
 
 def p_init_prim (p):
-	'''
-	init_prim : push_tmp_var OP_EQUALS push_operator init_a
-	'''
+	'init_prim : push_tmp_var OP_EQUALS push_operator init_a'
 	assign_quad_helper(p)
 
 def p_push_tmp_var(p):
