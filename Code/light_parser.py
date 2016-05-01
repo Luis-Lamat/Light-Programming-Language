@@ -1025,6 +1025,7 @@ def p_add_size(p):
 
 def p_fig_description(p):
 	'fig_description : VAR_IDENTIFIER HAS fig_tmp_var fig_create_block'
+	build_and_push_quad(special_operator_dict['rst'], None, None, tmp_var.id)
 
 def p_fig_tmp_var(p):
 	'fig_tmp_var : '
