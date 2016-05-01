@@ -182,7 +182,7 @@ def move(quad, index):
 	for i, j in itertools.izip_longest(range(0, x, x_step), range(0, y, y_step), fillvalue=0):
 	#for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
 		fig.move(i, j)
-		time.sleep(0.05)
+		time.sleep(0.001)
 
 def rst(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
@@ -245,7 +245,7 @@ def RUN_AT_LIGHTSPEED():
 	print "\nVIRTUAL MACHINE ==============================="
 	QuadIterator(0, quads)
 
-	raw_input("Press enter to exit")
+	raw_input("Press enter to exit\n")
 	#win.getMouse() # Pause to view result
 	if win:
 		win.close()
