@@ -291,7 +291,7 @@ class MemoryHandler:
 			Error.wrong_color_number(type, b)
 
 	@classmethod
-	def set_text_color(cls, quad):
+	def get_text_color(cls, quad):
 
 		r = cls.get_address_value(quad.left_operand)
 		g = cls.get_address_value(quad.right_operand)
@@ -326,9 +326,10 @@ class MemoryHandler:
 
 	@classmethod
 	def get_text(cls, quad):
-
 		text = cls.get_address_value(quad.result)
-		return text
+		x = cls.get_address_value(quad.left_operand)
+		y = cls.get_address_value(quad.right_operand)
+		return [x, y, text]
 
 	@classmethod
 	def add_size_fig(cls, quad, obj_temp):

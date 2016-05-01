@@ -209,7 +209,7 @@ def wait(quad, index):
 def backgroundColor(quad, index):
 	checkWindow()
 	color = MemoryHandler.set_background_color(quad)
-	win.setBackground(color_rgb(color[0]%255, color[1]%255, color[2]%255))
+	win.setBackground(color_rgb(color[0]%256, color[1]%256, color[2]%256))
 
 def moveSpeed(quad, index):
 	move_speed = MemoryHandler.set_move_speed(quad)
@@ -232,14 +232,16 @@ def show(quad, index):
 	fig.draw(win)
 
 def textColor(quad, index):
-	color = MemoryHandler.set_text_color(quad)
-	text_color = color
+	global text_color
+	text_color = MemoryHandler.get_text_color(quad)
 
 def gprint(quad, index):
+
 	checkWindow()
 	text = MemoryHandler.get_text(quad)
-	t = Text(text)
-	t.setFill(color_rgb(text_color[0]%255, text_color[1]%255, text_color[2]%255))
+	t = Text(Point(text[0], text[1]), text[2])
+	print(text_color)
+	t.setFill(color_rgb(text_color[0]%256, text_color[1]%256, text_color[2]%256))
 	t.draw(win)
 
 def checkWindow():

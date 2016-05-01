@@ -53,7 +53,7 @@ program figures {
 
 		move poly (x: 20, y: 50)
 
-		text_color(r:20, g:50, b:30)
+		text_color(r:255, g:255, b:255)
 		printg(text: "Hello darkness my old friend", x: 50, y: 20)
 	}
 }
