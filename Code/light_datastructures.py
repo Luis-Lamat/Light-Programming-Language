@@ -65,7 +65,7 @@ special_operator_dict = {
     'hide'	: 38,
     'show'	: 39,
     'txtc'	: 40,
-    'gprint': 41
+    'printg': 41
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)

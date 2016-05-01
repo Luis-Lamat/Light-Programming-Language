@@ -66,6 +66,8 @@ reserved_words = {
     'background_color' : 'BACKGROUND_COLOR',
     'wait'      : 'WAIT',
     'move_speed': 'MOVE_SPEED',
+    'text_color': 'TEXT_COLOR',
+    'printg'    : 'PRINT_G',
 
     # AND OR Conditionals
     'and'		: 'AND',
@@ -85,7 +87,7 @@ tokens = (
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
     'FOR', 'ANGLE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE',
-    'RGB', 'WINDOW_SIZE', 'WAIT', 'MOVE_SPEED', 'BACKGROUND_COLOR'
+    'RGB', 'WINDOW_SIZE', 'WAIT', 'MOVE_SPEED', 'BACKGROUND_COLOR', 'TEXT_COLOR', 'PRINT_G'
 )
 
 # Ignoring comments, spaces and tabs

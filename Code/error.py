@@ -99,6 +99,15 @@ class Error:
 		print "Syntax Error (line {}): The correct syntax for background color is 'background_color (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
 		sys.exit()
 
+	@staticmethod
+	def wrong_txtc_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for text color is 'text_color (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
+	def wrong_printg_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for printg is 'printg (text: <string exp>, x: <exp>, y: <exp>)'".format(lineno)
+		sys.exit()
 
 	@staticmethod
 	def wrong_vertex_number(fig_t):

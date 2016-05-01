@@ -652,14 +652,55 @@ def p_background_color (p):
 	'background_color : BACKGROUND_COLOR SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
 	if p[3] != 'r' or p[7] != 'g' or p[11] != 'b':
 		Error.wrong_bgc_declaration(p.lexer.lineno)
+
 	exp_type_list = [type_stack.pop() for x in xrange(3)]
 	type_list = [type_dict['int'], type_dict['decimal']]
 	intersect = [i for i in exp_type_list if i in type_list]
+
 	if len(intersect) != len(exp_type_list):
 		diff = [i for i in exp_type_list if i not in intersect]
 		Error.wrong_type('background_color attr', diff[0], type_dict['decimal'], p.lexer.lineno)
+
 	res = [operand_stack.pop() for x in xrange(3)]
 	build_and_push_quad(special_operator_dict['bgc'], res[0], res[1], res[2])
+
+# TODO: refactor this and the above rule
+def p_text_color (p):
+	'text_color : TEXT_COLOR SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[3] != 'r' or p[7] != 'g' or p[11] != 'b':
+		Error.wrong_txtc_declaration(p.lexer.lineno)
+
+	exp_type_list = [type_stack.pop() for x in xrange(3)]
+	type_list = [type_dict['int'], type_dict['decimal']]
+	intersect = [i for i in exp_type_list if i in type_list]
+
+	if len(intersect) != len(exp_type_list):
+		diff = [i for i in exp_type_list if i not in intersect]
+		Error.wrong_type('text_color attr', diff[0], type_dict['int'], p.lexer.lineno)
+
+	res = [operand_stack.pop() for x in xrange(3)]
+	build_and_push_quad(special_operator_dict['txtc'], res[0], res[1], res[2])
+
+	# TODO: refactor this and the above rule
+def p_print_g (p):
+	'print_g : PRINT_G SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[3] != 'text' or p[7] != 'x' or p[11] != 'y':
+		Error.wrong_printg_declaration(p.lexer.lineno)
+
+	exp_type_list = [type_stack.pop() for x in xrange(2)]
+	type_list = [type_dict['int']]
+	intersect = [i for i in exp_type_list if i in type_list]
+
+	if len(intersect) != len(exp_type_list):
+		diff = [i for i in exp_type_list if i not in intersect]
+		Error.wrong_type('text_color x or y', diff[0], type_dict['int'], p.lexer.lineno)
+
+	text_type = type_stack.pop()
+	if text_type != type_dict['string']:
+		Error.wrong_type('text_color text', text_type, type_dict['string'], p.lexer.lineno)
+
+	res = [operand_stack.pop() for x in xrange(3)]
+	build_and_push_quad(special_operator_dict['printg'], res[0], res[1], res[2])
 
 ##AND OR ret
 def p_condition (p):
@@ -947,6 +988,8 @@ def p_statement (p):
 				| hide
 				| show
 				| background_color
+				| text_color
+				| print_g
 				| function_call 
 				| print
 				| increment
