@@ -27,8 +27,7 @@ program figures {
 
 		move t2 (x: 100, y: 0)
 		wait (ms: 100)
-		move t2 (x: (100 * (0-1)), y: 0)
+		move t2 (x: 100 * -1, y: 0)
 
-		
 	}
 }

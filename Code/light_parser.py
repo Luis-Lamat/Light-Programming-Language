@@ -813,7 +813,7 @@ def p_inc_a (p):
 def p_inc_var_cte(p): 
 	'''
 	inc_var_cte : var_id
-		| VAR_INT push_num 
+		| sign VAR_INT push_num 
 		| exp
 	'''
 #PROBADO VAR_INT y VAR_IDENTIFIER
@@ -1062,11 +1062,19 @@ def p_add_blue(p):
 
 def p_cnt_prim (p):
 	'''
-	cnt_prim : VAR_INT push_num
-		| VAR_DECIMAL push_num
+	cnt_prim : sign VAR_INT push_num
+		| sign VAR_DECIMAL push_num
 		| VAR_STRING push_string
 		| VAR_BOOLEAN push_bool
 	'''
+
+def p_sign (p):
+	'''
+	sign : OP_PLUS
+		| OP_MINUS
+		| epsilon
+	'''
+	p[0] = p[1]
 
 def p_return (p):
 	'''
@@ -1113,6 +1121,10 @@ def p_push_id(p):
 def p_push_num(p):
 	'push_num : '
 	num = eval(p[-1])
+	if p[-2]:
+		print p[-2]
+		num = num * -1 if p[-2] == '-' else num
+		print num
 	type = 'decimal' if isinstance(num, (float)) else 'int'
 	push_const_operand_and_type(num, type)
 
