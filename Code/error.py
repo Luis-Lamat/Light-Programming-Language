@@ -90,6 +90,16 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def wrong_figure_color_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for figure attribute color is 'color : (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
+	def wrong_figure_vertex_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for figure attribute vertex is 'v : (x: <exp>, y: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
 	def wrong_move_speed_declaration(lineno):
 		print "Syntax Error (line {}): The correct syntax for move speed is 'move_speed (ms: <exp>)'".format(lineno)
 		sys.exit()

@@ -10,10 +10,10 @@ program figures {
 		figure poly:polygon
 
 		figure t1:triangle has
-			v: (100,200),
-			v: (300,400),
-			v: (350,250),
-			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
+			v: (x: 100, y: 200),
+			v: (x: 300, y: 400),
+			v: (x: 350, y: 250),
+			color: (r: (1 + 2 * 8) , g: (4 * 7 + 5) , b:255)
 		end
 
 		# for (i = 1; i < 11; i += 1) do
@@ -36,24 +36,34 @@ program figures {
 		# hide t2
 		# wait(ms:500)
 		# show t2
-		background_color(r: 0.2, g: 100, b: 9)
+
+		t2 has
+			v : (x: 100, y: 100),
+			size : 10,
+			color :(r:0, g:255, b:0)
+		end
+
+		camera t2
+
+		background_color(r: 0, g: 0, b: 255)
 		move_speed(ms: 9)
 
 		poly has
-			v: (200,200),
-			v: (300,500),
-			v: (400,300),
-			v: (500,200),
-			v: (200,100),
-			v: (100,50),
-			color: rgb(20, 50, 80)
+			v: (x: 250, y: 200),
+			v: (x: 260, y: 210),
+			v: (x: 240, y: 205),
+			v: (x: 280, y: 250),
+			v: (x: 210, y: 220),
+			v: (x: 290, y: 260),
+			color:(r:20, g:50, b:80)
 		end
 
 		camera poly
 
-		move poly (x: 20, y: 50)
+		move poly (x: 5, y: 5)
+		#move poly (x: 1, y: 1)
 
-		text_color(r:255, g:255, b:255)
-		printg(text: "Hello darkness my old friend", x: 50, y: 20)
+		text_color(r:255, g:0, b:0)
+		printg(text: "Hello darkness my old friend", x: 100, y: 20)
 	}
 }

@@ -1,34 +1,12 @@
 
 from graphics import *
+import math
 
 class Color(object):
 	def __init__(self, r, g, b):
 		self.r = r
 		self.g = g
 		self.b = b
-
-class Hide(object):
-	begin = -1
-	end = -1
-	active = False
-
-class Show(object):
-	begin = -1
-	end = -1
-	active = False
-
-class Move(object):
-	begin = -1
-	end = -1
-	x = -1
-	y = -1
-	active = False
-
-class Scale(object):
-	begin = -1
-	end = -1
-	size = -1
-	active = False
 
 class Vertex(object):
 	def __init__(self, x, y):
@@ -38,10 +16,9 @@ class Vertex(object):
 
 class Figure(object):
 	def __init__(self):
-		self.hide = Hide()
-		self.show = Show()
-		self.move = Move()
 		self.color = Color(0,0,0)
+		self.avgx = 0.0
+		self.avgy = 0.0
 
 	def setColor(self, r, g, b):
 		self.color.r = r
@@ -65,6 +42,12 @@ class Figure(object):
 	def getColor(self):
 		return color_rgb(self.color.r, self.color.g, self.color.b)
 
+	def move(self, x, y):
+		for ver in self.vertices:
+			ver.x += x
+			ver.y += y
+
+
 class L_Circle(Figure):
 	def __init__(self, x = 0, y = 0, radius = 0):
 		super(self.__class__, self).__init__()
@@ -80,6 +63,10 @@ class L_Circle(Figure):
 		self.center.y = y
 		# self.numVertices += 1
 		return True
+
+	def move(self, x, y):
+		self.center.x += x
+		self.center.y += y
 
 	def setSize(self, size):
 		self.radius = size
@@ -180,6 +167,11 @@ class L_Square(Figure):
 	def reset(self):
 		self.numVertices = 0
 
+	def move(self, x, y):
+		self.v1.x += x
+		self.v1.y += y
+		self.v2.x += x
+		self.v2.y += y
 
 class L_Polygon(Figure):
 	def __init__(self, numVertices = 0):
@@ -211,6 +203,7 @@ class L_Polygon(Figure):
 
 	def reset(self):
 		self.numVertices = 0
+
 
 #NOT READY
 class L_Line(Figure):

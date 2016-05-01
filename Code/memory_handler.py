@@ -274,6 +274,11 @@ class MemoryHandler:
 		# 	type = abs(quad.result) // 1000
 		# 	Error.wrong_vertex_number(type)
 
+	@classmethod
+	def move_fig(cls, quad, obj_temp):
+		x = cls.get_address_value(quad.left_operand)
+		y = cls.get_address_value(quad.right_operand)
+		obj_temp.move(x, y)
 
 	@classmethod
 	def set_move_speed(cls, quad):

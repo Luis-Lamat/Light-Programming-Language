@@ -59,7 +59,7 @@ def execute_operator(argument, quad, index):
 		38	:	hide,
 		39	:	show,
 		40	:	textColor,
-		41	:	gprint
+		41	:	gprint,
 
 	}
 	# Get the function from switcher dictionary
@@ -176,7 +176,9 @@ def wsize(quad, index):
 
 def move(quad, index):
 	checkWindow()
-	#obj_temp = MemoryHandler.get_fig(quad.result)
+	# Dejar comentado,
+	# obj_temp = MemoryHandler.get_fig(quad.result)
+	# MemoryHandler.move_fig(quad, obj_temp)
 
 	if not quad.result in fig_dict:
 		Error.figure_not_in_camera()
@@ -243,6 +245,7 @@ def gprint(quad, index):
 	print(text_color)
 	t.setFill(color_rgb(text_color[0]%256, text_color[1]%256, text_color[2]%256))
 	t.draw(win)
+
 
 def checkWindow():
 	if not win:

@@ -41,7 +41,6 @@ IS_ARRAY = True
 #Figure Array
 
 
-
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
 	tmp_quad = Quadruple()
@@ -575,36 +574,37 @@ def p_tmp_assign (p):
 	p[0] = 0
 	tmp_quad_queue.push(Quadruples.pop_quad())
 
-def p_action (p):
-	'''
-	action : ACTION act_a 
-	'''
 
-def p_act_a (p):
-	'''
-	act_a : act_move
-		| act_scale
-		| act_visible
-		| act_rotate
-	'''
 
-def p_act_header (p):
-	'act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp'
+# def p_action (p):
+# 	'''
+# 	action : ACTION act_a 
+# 	'''
 
-def p_act_move (p):
-	'act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp END'
+# def p_act_a (p):
+# 	'''
+# 	act_a : act_move
+# 		| act_scale
+# 		| act_visible
+# 	'''
 
-def p_act_scale (p):
-	'act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END'
+# def p_act_header (p):
+# 	'act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp'
 
-def p_act_rotate (p):
-	'act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA END'
+# def p_act_move (p):
+# 	'act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp END'
 
-def p_act_visible (p):
-	'''
-	act_visible : HIDE act_header END
-		| SHOW act_header END
-	'''
+# def p_act_scale (p):
+# 	'act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END'
+
+# # def p_act_rotate (p):
+# # 	'act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA END'
+
+# def p_act_visible (p):
+# 	'''
+# 	act_visible : HIDE act_header END
+# 		| SHOW act_header END
+# 	'''
 
 def p_camera (p):
 	'camera : CAMERA VAR_IDENTIFIER verify_variable'
@@ -648,6 +648,28 @@ def p_show (p):
 	'show : SHOW VAR_IDENTIFIER verify_variable fig_tmp_var'
 	build_and_push_quad(special_operator_dict['show'], None, None, tmp_var.id)
 
+# def p_rotate(p):
+# 	'rotate : ROTATE VAR_IDENTIFIER verify_variable SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+# 	if p[5] != 'deg':
+# 		Error.wrong_rotate_declaration(p.lexer.lineno)
+# 	type = type_stack.pop()
+# 	if type != type_dict['int']:
+# 		Error.wrong_type('rotate', type, type_dict['int'], p.lexer.line)
+# 	degree = operand_stack.pop()
+# 	build_and_push_quad(special_operator_dict['rotate'], degree, None, tmp_var.id)
+
+# def p_scale(p):
+# 	'scale : SCALE VAR_IDENTIFIER verify_variable SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+# 	if p[5] != 'by':
+# 		Error.wrong_scale_declaration(p.lexer.lineno)
+# 	type = type_stack.pop()
+# 	if type != type_dict['int']:
+# 		Error.wrong_type('scale', type, type_dict['int'], p.lexer.line)
+
+# 	by = operand_stack.pop()
+# 	build_and_push_quad(special_operator_dict['scale'], by , None, tmp_var.id)
+
+
 def p_background_color (p):
 	'background_color : BACKGROUND_COLOR SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
 	if p[3] != 'r' or p[7] != 'g' or p[11] != 'b':
@@ -662,7 +684,7 @@ def p_background_color (p):
 		Error.wrong_type('background_color attr', diff[0], type_dict['decimal'], p.lexer.lineno)
 
 	res = [operand_stack.pop() for x in xrange(3)]
-	build_and_push_quad(special_operator_dict['bgc'], res[0], res[1], res[2])
+	build_and_push_quad(special_operator_dict['bgc'], res[2], res[1], res[0])
 
 # TODO: refactor this and the above rule
 def p_text_color (p):
@@ -679,7 +701,7 @@ def p_text_color (p):
 		Error.wrong_type('text_color attr', diff[0], type_dict['int'], p.lexer.lineno)
 
 	res = [operand_stack.pop() for x in xrange(3)]
-	build_and_push_quad(special_operator_dict['txtc'], res[0], res[1], res[2])
+	build_and_push_quad(special_operator_dict['txtc'], res[2], res[1], res[0])
 
 	# TODO: refactor this and the above rule
 def p_print_g (p):
@@ -700,7 +722,7 @@ def p_print_g (p):
 		Error.wrong_type('text_color text', text_type, type_dict['string'], p.lexer.lineno)
 
 	res = [operand_stack.pop() for x in xrange(3)]
-	build_and_push_quad(special_operator_dict['printg'], res[0], res[1], res[2])
+	build_and_push_quad(special_operator_dict['printg'], res[1], res[0], res[2])
 
 ##AND OR ret
 def p_condition (p):
@@ -979,8 +1001,7 @@ def p_statement (p):
 	'''
 	statement : assignment 
 				| if 
-				| cycle 
-				| action 
+				| cycle  
 				| camera 
 				| move
 				| wait
@@ -1118,12 +1139,16 @@ def p_fig_tmp_var(p):
 
 def p_vector (p):
 	'''
-	vector : VAR_VECTORID SEP_COLON SEP_LPAR exp SEP_COMMA exp SEP_RPAR 
+	vector : VAR_VECTORID SEP_COLON SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR 
 	'''
+	if p[4] != "x" or p[8] != "y":
+		Error.wrong_figure_vertex_declaration(p.lexer.lineno)
 	fig_vertex_quad_helper(p, tmp_var.id)
 
 def p_fig_color_attr(p):
-	'fig_color_attr : COLOR SEP_COLON RGB SEP_LPAR exp add_red SEP_COMMA exp add_green SEP_COMMA exp add_blue SEP_RPAR'
+	'fig_color_attr : COLOR SEP_COLON SEP_LPAR VAR_IDENTIFIER SEP_COLON exp add_red SEP_COMMA VAR_IDENTIFIER SEP_COLON exp add_green SEP_COMMA VAR_IDENTIFIER SEP_COLON exp add_blue SEP_RPAR'
+	if p[4] != "r" or p[9] != "g" or p[14] != "b":
+		Error.wrong_figure_color_declaration(p.lexer.lineno)	
 
 def p_add_red(p):
 	'add_red : '

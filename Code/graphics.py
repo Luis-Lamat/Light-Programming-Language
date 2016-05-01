@@ -486,7 +486,7 @@ class GraphicsObject:
                 y = dy
             self.canvas.move(self.id, x, y)
             if canvas.autoflush:
-                _root.update()
+                _root.update()          
            
     def _reconfig(self, option, setting):
         # Internal method for changing configuration of the object
