@@ -283,9 +283,9 @@ class MemoryHandler:
 
 	@classmethod
 	def throwColorError(type, r,g,b):
-		if not (r >= 0 and r <= 255): 
+		if not (r >= 0): 
 			Error.wrong_color_number(type, r)
-		elif not (g >= 0 and g <= 255):
+		elif not (g >= 0):
 			Error.wrong_color_number(type, g)
 		else:
 			Error.wrong_color_number(type, b)
@@ -297,7 +297,7 @@ class MemoryHandler:
 		g = cls.get_address_value(quad.right_operand)
 		b = cls.get_address_value(quad.result)
 
-		if r >= 0 and r <= 255 and g >= 0 and g <= 255 and b >= 0 and b <= 255 :
+		if r >= 0 and g >= 0 and b >= 0:
 			return [r,g,b]
 		else:
 			cls.throwColorError("text", r,g,b)
@@ -309,7 +309,7 @@ class MemoryHandler:
 		g = cls.get_address_value(quad.right_operand)
 		b = cls.get_address_value(quad.result)
 
-		if r >= 0 and r <= 255 and g >= 0 and g <= 255 and b >= 0 and b <= 255 :
+		if r >= 0 and g >= 0 and b >= 0:
 			return [r,g,b]
 		else:
 			cls.throwColorError("background",r,g,b)

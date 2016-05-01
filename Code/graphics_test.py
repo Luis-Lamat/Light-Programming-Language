@@ -57,6 +57,7 @@ def main():
     t.setFill(color_rgb(255, 255, 255))
     t.draw(win)
     t.undraw()
+    time.sleep(2)
     t.draw(win)
 
     win.setBackground(color_rgb(50, 20, 50))
