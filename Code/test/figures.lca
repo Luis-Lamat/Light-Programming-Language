@@ -7,6 +7,8 @@ program figures {
 		var i:int = 0
 
 		figure t2:circle
+		figure poly:polygon
+
 		figure t1:triangle has
 			v: (100,200),
 			v: (300,400),
@@ -14,29 +16,42 @@ program figures {
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
-		for (i = 1; i < 11; i += 1) do
+		# for (i = 1; i < 11; i += 1) do
 
-			t2 has
-				v: ((30 * i), (30 * i)),
-				color: rgb(20 * i, 200 + i, 200 / i),
-				size: 5 * i
-			end
-			camera t2
-			wait (ms: 500 / i)
-			move t2 (x: 1* i * 2, y: 0)
-			move t2 (x: 0, y: -1 * i * 2)
-			move t2 (x:-1 * i * 2, y:1 * i * 2)
-			print(i)
-		end
+		# 	t2 has
+		# 		v: ((30 * i), (30 * i)),
+		# 		color: rgb(20 * i, 200 + i, 200 / i),
+		# 		size: 5 * i
+		# 	end
+		# 	camera t2
+		# 	wait (ms: 500 / i)
+		# 	move t2 (x: 1* i * 2, y: 0)
+		# 	move t2 (x: 0, y: -1 * i * 2)
+		# 	move t2 (x:-1 * i * 2, y:1 * i * 2)
+		# 	print(i)
+		# 	background_color(r: i*40, g: i*50, b: i*20)
+		# end
 
-		#move t2 (x: 20, y: 0)
-		#move t2 (x: 0, y: -20)
-		#move t2 (x:-20, y:20)
-		show t2
-		hide t2
-		background_color(r: 0.0, g: 100, b: 9)
+		# show t2
+		# hide t2
+		# wait(ms:500)
+		# show t2
+		background_color(r: 0.2, g: 100, b: 9)
 		move_speed(ms: 9)
 
+		poly has
+			v: (200,200),
+			v: (300,500),
+			v: (400,300),
+			v: (500,200),
+			v: (200,100),
+			v: (100,50),
+			color: rgb(20, 50, 80)
+		end
+
+		camera poly
+
+		move poly (x: 20, y: 50)
 
 		text_color(r:20, g:50, b:30)
 		printg(text: "Hello darkness my old friend", x: 50, y: 20)

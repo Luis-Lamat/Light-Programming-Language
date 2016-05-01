@@ -193,8 +193,7 @@ class L_Polygon(Figure):
 		self.vertices[num].y = y
 
 	def setNextVertex(self, x, y):
-		self.vertices[self.numVertices].x = x
-		self.vertices[self.numVertices].y = y
+		self.vertices.append(Vertex(x, y))
 		self.numVertices += 1
 		return True
 

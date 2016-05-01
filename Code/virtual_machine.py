@@ -177,7 +177,12 @@ def wsize(quad, index):
 def move(quad, index):
 	checkWindow()
 	#obj_temp = MemoryHandler.get_fig(quad.result)
+
+	if not quad.result in fig_dict:
+		Error.figure_not_in_camera()
+
 	fig = fig_dict[quad.result]
+		
 	x = MemoryHandler.get_address_value(quad.left_operand)
 	y = MemoryHandler.get_address_value(quad.right_operand)
 
@@ -204,30 +209,37 @@ def wait(quad, index):
 def backgroundColor(quad, index):
 	checkWindow()
 	color = MemoryHandler.set_background_color(quad)
-	win.setBackground(color_rgb(color[0], color[1], color[2]))
+	win.setBackground(color_rgb(color[0]%255, color[1]%255, color[2]%255))
 
 def moveSpeed(quad, index):
 	move_speed = MemoryHandler.set_move_speed(quad)
 
 def hide(quad, index):
 	checkWindow()
+
+	if not quad.result in fig_dict:
+		Error.figure_not_in_camera()
+
 	fig = fig_dict[quad.result]
 	fig.undraw()
 
 def show(quad, index):
 	checkWindow()
+	if not quad.result in fig_dict:
+		Error.figure_not_in_camera()
+
 	fig = fig_dict[quad.result]
-	fig.undraw()
+	fig.draw(win)
 
 def textColor(quad, index):
-	color = set_text_color(quad)
+	color = MemoryHandler.set_text_color(quad)
 	text_color = color
 
 def gprint(quad, index):
 	checkWindow()
 	text = MemoryHandler.get_text(quad)
 	t = Text(text)
-	t.setFill(color_rgb(text_color[0], text_color[1], text_color[2]))
+	t.setFill(color_rgb(text_color[0]%255, text_color[1]%255, text_color[2]%255))
 	t.draw(win)
 
 def checkWindow():

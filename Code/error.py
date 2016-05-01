@@ -126,7 +126,13 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def figure_not_in_camera():
+		print "RunTime Error: Figure not in camera"
+		sys.exit()
+
+	@staticmethod
 	def wrong_attribute_for_figure_execution(fig_t, attr):
 		fig_t = inv_type_dict[fig_t]
 		print "Semantic Error: The figure type '{}' does not accept the attribute '{}'".format( fig_t, attr)
 		sys.exit()
+
