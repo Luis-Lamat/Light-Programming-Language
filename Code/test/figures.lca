@@ -16,26 +16,26 @@ program figures {
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
-		# for (i = 1; i < 11; i += 1) do
+		for (i = 1; i < 11; i += 1) do
 
-		# 	t2 has
-		# 		v: ((30 * i), (30 * i)),
-		# 		color: rgb(20 * i, 200 + i, 200 / i),
-		# 		size: 5 * i
-		# 	end
-		# 	camera t2
-		# 	wait (ms: 500 / i)
-		# 	move t2 (x: 1* i * 2, y: 0)
-		# 	move t2 (x: 0, y: -1 * i * 2)
-		# 	move t2 (x:-1 * i * 2, y:1 * i * 2)
-		# 	print(i)
-		# 	background_color(r: i*40, g: i*50, b: i*20)
-		# end
+			t2 has
+				v: ((30 * i), (30 * i)),
+				color: rgb(20 * i, 200 + i, 200 / i),
+				size: 5 * i
+			end
+			camera t2
+			wait (ms: 500 / i)
+			move t2 (x: 1* i * 2, y: 0)
+			move t2 (x: 0, y: -1 * i * 2)
+			move t2 (x:-1 * i * 2, y:1 * i * 2)
+			print(i)
+			background_color(r: i*40, g: i*50, b: i*20)
+		end
 
-		# show t2
-		# hide t2
-		# wait(ms:500)
-		# show t2
+		show t2
+		hide t2
+		wait(ms:500)
+		show t2
 		background_color(r: 0.2, g: 100, b: 9)
 		move_speed(ms: 9)
 
@@ -54,6 +54,6 @@ program figures {
 		move poly (x: 20, y: 50)
 
 		text_color(r:255, g:255, b:255)
-		printg(text: "Hello darkness my old friend", x: 50, y: 20)
+		printg(text: "Hello darkness my old friend", x: 250, y: 250)
 	}
 }

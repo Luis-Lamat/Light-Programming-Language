@@ -696,7 +696,8 @@ def p_print_g (p):
 		Error.wrong_type('text_color x or y', diff[0], type_dict['int'], p.lexer.lineno)
 
 	text_type = type_stack.pop()
-	if text_type != type_dict['string']:
+	type_list += [type_dict['decimal'], type_dict['string']]
+	if text_type not in type_list:
 		Error.wrong_type('text_color text', text_type, type_dict['string'], p.lexer.lineno)
 
 	res = [operand_stack.pop() for x in xrange(3)]
@@ -1036,7 +1037,7 @@ def p_var_p_a (p):
 	'''
 
 def p_init_prim (p):
-	'init_prim : push_tmp_var OP_EQUALS push_operator init_a'
+	'init_prim : push_tmp_var OP_EQUALS push_operator exp'
 	assign_quad_helper(p)
 
 def p_push_tmp_var(p):
@@ -1071,13 +1072,12 @@ def p_init_arr(p):
 
 	#FunctionTable.get_var_in_scope(p, function_stack.peek(), arr_var.name)
 
-
 # WARNING: Adds a shift reduce conflict because of function_call
 def p_init_a (p):
-	'''
-	init_a : function_call
-		| var_cte
-	'''
+       '''
+       init_a : function_call
+               | var_cte
+       '''
 
 def p_fig_create_block (p):
 	'''
