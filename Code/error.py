@@ -76,7 +76,17 @@ class Error:
 
 	@staticmethod
 	def wrong_window_declaration(lineno):
-		print "Syntax Error (line {}): The correct syntax for window size is 'window_size(width: <int>, height: <int>)'".format(lineno)
+		print "Syntax Error (line {}): The correct syntax for window size is 'window_size (width: <int>, height: <int>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
+	def wrong_move_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for move is 'move <figure_name> (x: <exp>, y: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
+	def wrong_wait_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for wait is 'wait (ms: <exp>)'".format(lineno)
 		sys.exit()
 
 	@staticmethod
