@@ -160,7 +160,9 @@ def wsize(quad, index):
 def move(quad, index):
 	#obj_temp = MemoryHandler.get_fig(quad.result)
 	fig = fig_dict[quad.result]
-	fig.move(quad.left_operand, quad.right_operand)
+	x = MemoryHandler.get_address_value(quad.left_operand)
+	y = MemoryHandler.get_address_value(quad.right_operand)
+	fig.move(x, y)
 
 def rst(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
