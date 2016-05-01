@@ -80,6 +80,11 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def wrong_move_declaration(lineno):
+		print "Syntax Error (line {}): The correct syntax for move is 'move <figure_name> (x: <exp>, y: <exp>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
 	def wrong_vertex_number(fig_t):
 		fig_t = inv_type_dict[fig_t]
 		print "RunTime Error: Wrong number of Vertices for figure type '{}'".format(fig_t)

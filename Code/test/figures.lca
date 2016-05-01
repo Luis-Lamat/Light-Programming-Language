@@ -25,6 +25,8 @@ program figures {
 
 		end
 
+		move t2 (x: 8, y: 9)
+
 		
 	}
 }

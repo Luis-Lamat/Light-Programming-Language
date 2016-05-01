@@ -261,7 +261,7 @@ class FunctionTable:
 
 	@classmethod
 	def get_var_in_scope(cls, p, function_name, var_name):
-		if not cls.verify_var_in_func(function_name, var_name):
+		if not cls.verify_var_in_func(function_name, var_name): # TODO: Double check from syntax, unecessary
 			Error.variable_not_defined(var_name, p.lexer.lineno)
 		try:
 			var = cls.function_dict[function_name].vars[var_name]

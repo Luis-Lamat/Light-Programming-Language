@@ -602,9 +602,18 @@ def p_act_visible (p):
 	'''
 
 def p_camera (p):
-	'camera : CAMERA VAR_IDENTIFIER'
+	'camera : CAMERA VAR_IDENTIFIER verify_variable'
 	aux_var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[2])
 	build_and_push_quad(special_operator_dict['cam'], None, None, aux_var.id)
+
+def p_move (p):
+	'move : MOVE VAR_IDENTIFIER verify_variable SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
+	if p[5] != 'x' or p[9] != 'y':
+		Error.wrong_move_declaration(p.lexer.lineno)
+	aux_var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[2])
+	y = operand_stack.pop(); type_stack.pop();
+	x = operand_stack.pop(); type_stack.pop();
+	build_and_push_quad(special_operator_dict['move'], x, y, aux_var.id)
 
 ##AND OR ret
 def p_condition (p):
@@ -892,6 +901,7 @@ def p_statement (p):
 				| cycle 
 				| action 
 				| camera 
+				| move
 				| function_call 
 				| print
 				| increment

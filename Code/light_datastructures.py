@@ -56,7 +56,8 @@ special_operator_dict = {
     'addc'	: 29,
     'adds'  : 30,
     'wsize' : 31,
-    'cam'	: 32
+    'cam'   : 32,
+    'move'	: 33
 }
 
 merged_dict = dict(operator_dict, **special_operator_dict)
