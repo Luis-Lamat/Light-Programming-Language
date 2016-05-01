@@ -227,7 +227,8 @@ def RUN_AT_LIGHTSPEED():
 
 	raw_input("Press enter to exit")
 	#win.getMouse() # Pause to view result
-	win.close()
+	if win:
+		win.close()
 	print "> PROGRAM EXIT"
 
 def QuadIterator(index, quads):

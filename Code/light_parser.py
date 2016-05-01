@@ -217,7 +217,12 @@ def p_main_func (p):
 	# TODO: Liberar tabla de variables
 
 def p_window_func(p):
-	'window_func : WINDOW_SIZE SEP_LPAR VAR_IDENTIFIER SEP_COLON cnt_prim SEP_COMMA VAR_IDENTIFIER SEP_COLON cnt_prim SEP_RPAR'
+	'''
+	window_func : WINDOW_SIZE SEP_LPAR VAR_IDENTIFIER SEP_COLON cnt_prim SEP_COMMA VAR_IDENTIFIER SEP_COLON cnt_prim SEP_RPAR
+		| epsilon
+	'''
+	if len(p) < 6:
+		return None
 	if p[3] != 'width' or p[7] != 'height':
 		Error.wrong_window_declaration(p.lexer.lineno)
 	t1 = type_stack.pop()
