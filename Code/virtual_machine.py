@@ -182,7 +182,7 @@ def move(quad, index):
 	for i, j in itertools.izip_longest(range(0, x, x_step), range(0, y, y_step), fillvalue=0):
 	#for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
 		fig.move(i, j)
-		time.sleep(0.05)
+		time.sleep(0.025)
 
 def rst(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
