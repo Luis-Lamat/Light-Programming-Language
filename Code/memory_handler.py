@@ -228,11 +228,14 @@ class MemoryHandler:
 			else:
 				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 		else:
-			if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
-				cls.stack.peek().memory[type][relative_address][sub_index] = val
-				print "> Stack memory: {}".format(cls.stack.peek().memory)
-			else:
-				Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
+			try:
+				if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
+					cls.stack.peek().memory[type][relative_address][sub_index] = val
+					print "> Stack memory: {}".format(cls.stack.peek().memory)
+				else:
+					Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
+			except TypeError:
+				Error.not_type_array()
 
 	@classmethod
 	def get_array_value(cls, quad):
@@ -249,10 +252,13 @@ class MemoryHandler:
 			else:
 				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 		else:
-			if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
-				val = cls.stack.peek().memory[type][relative_address][sub_index]
-			else:
-				Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
+			try:
+				if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
+					val = cls.stack.peek().memory[type][relative_address][sub_index]
+				else:
+					Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
+			except TypeError:
+				Error.type_array()
 
 		cls.set_address_value(quad.result, val)
 

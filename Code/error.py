@@ -108,7 +108,7 @@ class Error:
 	def wrong_bgc_declaration(lineno):
 		print "Syntax Error (line {}): The correct syntax for background color is 'background_color (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
 		sys.exit()
-
+  
 	@staticmethod
 	def wrong_name_window(lineno):
 		print "Syntax Error (line {}): The correct syntax for window name 'window_name (name: <string>)'".format(lineno)
@@ -139,6 +139,17 @@ class Error:
 	def window_not_defined():
 		print "RunTime Error: Window_size not defined"
 		sys.exit()
+
+	@staticmethod
+	def not_type_array():
+		print "RunTime Error: Variable is not of type Array"
+		sys.exit()
+
+	@staticmethod
+	def type_array():
+		print "RunTime Error: Variable is of type Array"
+		sys.exit()
+
 
 	@staticmethod
 	def figure_not_in_camera():

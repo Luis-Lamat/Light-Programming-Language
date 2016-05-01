@@ -1,0 +1,25 @@
+program merge_sort {
+	
+
+	function merge_sort(n: int) returns int {
+
+
+		print(n)
+		return 1
+    }
+
+
+
+	light() {
+		
+		var arr:[int](5)
+		var i:int
+
+		i = 3
+
+		arr[2] = 2
+
+		print(arr[2])
+		#merge_sort(n: arr)
+	}
+}
