@@ -4,6 +4,14 @@ from quadruple import *
 from figures import *
 import time
 
+import itertools
+try:
+    from itertools import izip_longest
+except ImportError:
+    # Python 3...
+    from itertools import zip_longest
+    izip_longest = zip_longest
+
 win = None #GraphWin("LIGHT", 500, 500)
 fig_dict = {}
 
@@ -171,9 +179,10 @@ def move(quad, index):
 	if(y < 0):
 		y_step = -1
 
-	for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
+	for i, j in itertools.izip_longest(range(0, x, x_step), range(0, y, y_step), fillvalue=0):
+	#for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
 		fig.move(i, j)
-		time.sleep(0.1)
+		time.sleep(0.05)
 
 def rst(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)

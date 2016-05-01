@@ -23,11 +23,15 @@ program figures {
 			end
 			camera t2
 			wait (ms: 500 / i)
+			move t2 (x: 1* i * 2, y: 0)
+			move t2 (x: 0, y: -1 * i * 2)
+			move t2 (x:-1 * i * 2, y:1 * i * 2)
+			print(i)
 		end
 
-		move t2 (x: 100, y: 0)
-		wait (ms: 100)
-		move t2 (x: 100 * -1, y: 0)
+		#move t2 (x: 20, y: 0)
+		#move t2 (x: 0, y: -20)
+		#move t2 (x:-20, y:20)
 
 	}
 }
