@@ -91,10 +91,6 @@ class L_Circle(Figure):
 		return Point(self.center.x, self.center.y)
 
 	def reset(self):
-		self.radius = 0
-		self.center.x = 0
-		self.center.y = 0
-		self.totalNumVertices = 1
 		self.numVertices = 0
 
 class L_Triangle(Figure):
@@ -126,8 +122,6 @@ class L_Triangle(Figure):
 		return l
 
 	def reset(self):
-		self.vertices = [Vertex(0,0), Vertex(0,0), Vertex(0,0)]
-		self.totalNumVertices = 3
 		self.numVertices = 0
 
 class L_Rectangle(Figure):
@@ -149,8 +143,6 @@ class L_Rectangle(Figure):
 		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
 
 	def reset(self):
-		self.vertices = [Vertex(0,0), Vertex(0,0)]
-		self.totalNumVertices = 2
 		self.numVertices = 0
 
 # class L_Point(Figure):
@@ -186,10 +178,6 @@ class L_Square(Figure):
 		return (Point(self.v1.x, self.v1.y), Point(self.v2.x, self.v2.y))
 
 	def reset(self):
-		self.size = 0
-		self.v1 = Vertex(0, 0)
-		self.v2 = Vertex(0, 0)
-		self.totalNumVertices = 1
 		self.numVertices = 0
 
 
@@ -223,8 +211,6 @@ class L_Polygon(Figure):
 		self.vertices.append(Vertex(x,y))
 
 	def reset(self):
-		self.vertices = []
-		self.numVertices = numVertices
 		self.numVertices = 0
 
 #NOT READY
@@ -247,8 +233,6 @@ class L_Line(Figure):
 		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
 
 	def reset(self):
-		self.vertices = [Vertex(0,0), Vertex(0,0)]
-		self.totalNumVertices = 2
 		self.numVertices = 0
 
 

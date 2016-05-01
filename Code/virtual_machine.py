@@ -223,7 +223,7 @@ def RUN_AT_LIGHTSPEED():
 	print "\nVIRTUAL MACHINE ==============================="
 	QuadIterator(0, quads)
 
-	input("Pleas enter to exit")
+	raw_input("Press enter to exit")
 	#win.getMouse() # Pause to view result
 	win.close()
 	print "> PROGRAM EXIT"

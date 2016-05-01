@@ -22,7 +22,7 @@ program figures {
 				size: 5 * i
 			end
 			camera t2
-			wait (ms: 9)
+			wait (ms: 50)
 		end
 
 		move t2 (x: 8, y: 9)

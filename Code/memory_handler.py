@@ -237,7 +237,7 @@ class MemoryHandler:
 	@classmethod
 	def wait(cls, quad):
 		wait_time = cls.get_address_value(quad.result)
-		time.sleep(wait_time)
+		time.sleep(wait_time/1000.0)
 
 	#FIGURES
 	@classmethod
