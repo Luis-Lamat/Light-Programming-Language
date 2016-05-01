@@ -2,6 +2,7 @@ from memory_handler import *
 from light_datastructures import *
 from quadruple import *
 from figures import *
+import time
 
 win = None #GraphWin("LIGHT", 500, 500)
 fig_dict = {}
@@ -162,7 +163,17 @@ def move(quad, index):
 	fig = fig_dict[quad.result]
 	x = MemoryHandler.get_address_value(quad.left_operand)
 	y = MemoryHandler.get_address_value(quad.right_operand)
-	fig.move(x, y)
+
+	x_step = 1
+	if(x < 0):
+		x_step = -1
+	y_step = 1
+	if(y < 0):
+		y_step = -1
+
+	for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
+		fig.move(i, j)
+		time.sleep(0.1)
 
 def rst(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
