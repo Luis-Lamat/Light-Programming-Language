@@ -36,6 +36,11 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def variable_already_defined(name, line):
+		print "Semantic Error (line {}): Variable '{}' already defined".format(line, name)
+		sys.exit()
+
+	@staticmethod
 	def function_not_defined(name, line):
 		print "Semantic Error: Function '" + name +"' not defined in line: " + str(line)
 		sys.exit()
@@ -72,6 +77,11 @@ class Error:
 	def wrong_attribute_for_figure(fig_t, attr, lineno):
 		fig_t = inv_type_dict[fig_t]
 		print "Semantic Error (line {}): The figure type '{}' does not accept the attribute '{}'".format(lineno, fig_t, attr)
+		sys.exit()
+
+	@staticmethod
+	def wrong_size_initialization( lineno):
+		print "Semantic Error (line {}): Array initialization error, arguments should be equal to the length'".format(lineno)
 		sys.exit()
 
 	@staticmethod

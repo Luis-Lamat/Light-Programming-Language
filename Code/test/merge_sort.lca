@@ -1,25 +1,67 @@
 program merge_sort {
 	
+	var arr:[int](10) = {20,10,2,5,7,1,55,3,9,15}
+	var helper:[int](10)
+	var arr_len:int = 10
 
-	function merge_sort(n: int) returns int {
+	function merge(low: int, middle: int, high: int){
+    	var i:int = 0
+    	var j:int = 0
+    	var k:int = 0
 
 
-		print(n)
-		return 1
+    	for(i = low; i <= high; i += 1)do
+    		helper[i] = arr[i]
+    	end
+
+    	i = low
+    	j = middle + 1
+    	k = low
+
+    	while( i <= middle and j <= high) do
+
+    		if(helper[i] <= helper[j])do
+    			arr[k] = helper[i]
+    			i += 1
+    		end
+    		else do
+    			arr[k] = helper[j]
+    			j += 1
+    		end
+    		k += 1
+    	end
+
+    	while( i <= middle)do
+    		arr[k] = helper[i]
+
+    		k += 1
+    		i += 1
+
+    	end
+
     }
 
+	function merge_sort(low: int, high: int) {
+		var middle:int = 0
 
+		if( low < high) do
+			middle = low + (high - low) / 2
+
+			merge_sort(low: low, high: middle)
+
+			merge_sort(low: middle+1, high: high)
+
+			merge(low: low, middle: middle, high: high)
+
+		end
+    }
 
 	light() {
-		
-		var arr:[int](5)
-		var i:int
 
-		i = 3
+		var arr2:[string](2) = {"stuff", "more"}
+		print(arr)
+		#merge_sort(low:0, high:9)
+		print(arr)
 
-		arr[2] = 2
-
-		print(arr[2])
-		#merge_sort(n: arr)
 	}
 }

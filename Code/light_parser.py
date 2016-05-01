@@ -32,6 +32,7 @@ tmp_quad_stack = Stack()
 
 # Temp ArrayIndex
 tmp_array_index = Stack()
+tmp_count_arr = 0
 
 # STUFF 4 PUSSEYS
 # IF ELDA:
@@ -39,7 +40,6 @@ tmp_array_index = Stack()
 IS_ARRAY = True
 
 #Figure Array
-
 
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
@@ -83,7 +83,7 @@ def assign_quad_helper(p):
 	op = operator_stack.pop()
 	o1 = operand_stack.pop()
 	o2 = operand_stack.pop()
-	print "YAAAAAAAAASSSS {}".format(o2)
+	print ">Second Opperand {}".format(o2)
 
 	# Generate Quadruple and push it to the list
 
@@ -170,6 +170,34 @@ def fig_vertex_quad_helper(p, fig_addr):
 
 	op = special_operator_dict['addv'] # 'Add Vertex'
 	build_and_push_quad(op, X, Y, fig_addr)
+
+
+def add_attr_to_array(p, last):
+
+	type_assign = type_stack.pop()
+
+	global tmp_count_arr
+	push_const_operand_and_type(tmp_count_arr, 'int')
+
+	if last:
+		if tmp_count_arr != 0:
+			Error.wrong_size_initialization(p.lexer.lineno)
+	else:
+		tmp_count_arr -= 1
+
+	
+	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), tmp_var.name)
+	addr = operand_stack.pop()
+	
+	print("HERE!!!!!! {} and {}".format(var.type, type_assign))
+
+	if var.type != type_assign:
+		Error.type_mismatch(p.lexer.lineno, type_assign, var.type, '=')
+
+
+	o1 = operand_stack.pop()	
+
+	build_and_push_quad(special_operator_dict["="], o1, addr, var.id)
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -1048,10 +1076,15 @@ def p_v_a (p):
 
 def p_vars_start (p):
 	'''
-	vars_start : VAR VAR_IDENTIFIER push_var_name SEP_COLON v_a
-			| FIGURE VAR_IDENTIFIER push_var_name SEP_COLON figure add_fig_quad vf_a
+	vars_start : VAR VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON v_a
+			| FIGURE VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON figure add_fig_quad vf_a
 	'''
 
+def p_verify_if_variable_exists_neg (p):
+	'verify_if_variable_exists_neg : epsilon'
+	func = function_stack.peek()
+	if FunctionTable.verify_var_in_func(func, p[-2]):
+		Error.variable_already_defined(p[-2], p.lexer.lineno)
 
 def p_push_var_name(p):
 	'push_var_name : epsilon'
@@ -1088,10 +1121,10 @@ def p_push_tmp_var(p):
 		tmp_var.id = SemanticInfo.current_var_id[tmp_var.type]
 	operand_stack.push(tmp_var.id)
 
-#array
+#array #HERE
 def p_vars_arr (p):
 	'''
-	vars_arr : SEP_LBRACKET primitive_type SEP_RBRACKET SEP_LPAR VAR_INT SEP_RPAR init_arr 
+	vars_arr : SEP_LBRACKET primitive_type SEP_RBRACKET SEP_LPAR VAR_INT SEP_RPAR init_arr continue_array
 	'''
 
 #SEP_LPAR VAR_INT SEP_RPAR
@@ -1108,7 +1141,30 @@ def p_init_arr(p):
 	arr_var = FunctionTable.add_arr_to_func(function_stack.peek(), arr_var)
 	allocate_arr_helper(arr_var.id, arr_var.length)
 
+	global tmp_count_arr
+	tmp_count_arr = int(p[-2]) - 1
+
 	#FunctionTable.get_var_in_scope(p, function_stack.peek(), arr_var.name)
+
+def p_continue_array(p):
+	'''
+	continue_array : OP_EQUALS SEP_LCBRACKET exp more_arr_param SEP_RCBRACKET
+				| epsilon
+	'''
+	if len(p) > 2:
+		#do not move
+		type_stack.pop()
+		add_attr_to_array(p, True)
+
+
+def p_more_arr_param(p):
+	'''
+	more_arr_param : SEP_COMMA exp more_arr_param
+				| epsilon
+	'''
+	if len(p) > 2:
+		add_attr_to_array(p, False)
+
 
 # WARNING: Adds a shift reduce conflict because of function_call
 def p_init_a (p):
