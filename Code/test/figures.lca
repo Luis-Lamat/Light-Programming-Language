@@ -22,10 +22,12 @@ program figures {
 				size: 5 * i
 			end
 			camera t2
-			wait (ms: 50)
+			wait (ms: 500 / i)
 		end
 
-		move t2 (x: 8, y: 9)
+		move t2 (x: 100, y: 0)
+		wait (ms: 100)
+		move t2 (x: (100 * (0-1)), y: 0)
 
 		
 	}
