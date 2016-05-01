@@ -13,6 +13,8 @@ except ImportError:
     izip_longest = zip_longest
 
 win = None #GraphWin("LIGHT", 500, 500)
+move_speed = 0.001
+text_color = [0,0,0]
 fig_dict = {}
 
 def execute_operator(argument, quad, index):
@@ -51,7 +53,13 @@ def execute_operator(argument, quad, index):
 		32	:	cam,
 		33	:	move,
 		34	:	rst,
-		35 	:	wait
+		35 	:	wait,
+		36	:	backgroundColor,
+		37	:	moveSpeed,
+		38	:	hide,
+		39	:	show,
+		40	:	textColor,
+		41	:	gprint
 
 	}
 	# Get the function from switcher dictionary
@@ -167,6 +175,7 @@ def wsize(quad, index):
 	win = GraphWin("LIGHT", width, height)
 
 def move(quad, index):
+	checkWindow()
 	#obj_temp = MemoryHandler.get_fig(quad.result)
 	fig = fig_dict[quad.result]
 	x = MemoryHandler.get_address_value(quad.left_operand)
@@ -182,7 +191,7 @@ def move(quad, index):
 	for i, j in itertools.izip_longest(range(0, x, x_step), range(0, y, y_step), fillvalue=0):
 	#for i, j in zip(range(0, x, x_step), range(0, y, y_step)):
 		fig.move(i, j)
-		time.sleep(0.001)
+		time.sleep(move_speed)
 
 
 def rst(quad, index):
@@ -192,7 +201,41 @@ def rst(quad, index):
 def wait(quad, index):
 	MemoryHandler.wait(quad)
 
+def backgroundColor(quad, index):
+	checkWindow()
+	color = MemoryHandler.set_background_color(quad)
+	win.setBackground(color_rgb(color[0], color[1], color[2]))
+
+def moveSpeed(quad, index):
+	move_speed = MemoryHandler.set_move_speed(quad)
+
+def hide(quad, index):
+	checkWindow()
+	fig = fig_dict[quad.result]
+	fig.undraw()
+
+def show(quad, index):
+	checkWindow()
+	fig = fig_dict[quad.result]
+	fig.undraw()
+
+def textColor(quad, index):
+	color = set_text_color(quad)
+	text_color = color
+
+def gprint(quad, index):
+	checkWindow()
+	text = MemoryHandler.get_text(quad)
+	t = Text(text)
+	t.setFill(color_rgb(text_color[0], text_color[1], text_color[2]))
+	t.draw(win)
+
+def checkWindow():
+	if not win:
+		Error.window_not_defined()
+
 def cam(quad, index):
+	checkWindow()
 	obj_temp = MemoryHandler.get_fig(quad.result)
 
 	type = abs(quad.result) // 1000

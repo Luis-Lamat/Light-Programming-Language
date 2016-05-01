@@ -49,13 +49,13 @@ class Figure(object):
 		self.color.b = b
 
 	def setTypeColor(self, type, color):
-		if color >= 0 and color <= 255:
+		if color >= 0:
 			if type == "r" :
-				self.color.r = color
+				self.color.r = color % 255
 			elif type == "g":
-				self.color.g = color
+				self.color.g = color % 255
 			elif type == "b":
-				self.color.b = color
+				self.color.b = color % 255
 			else :
 				pass
 			return True

@@ -274,6 +274,46 @@ class MemoryHandler:
 		# 	type = abs(quad.result) // 1000
 		# 	Error.wrong_vertex_number(type)
 
+
+	@classmethod
+	def set_move_speed(cls, quad):
+
+		speed = cls.get_address_value(quad.result)
+		return speed/1000.0
+
+	@classmethod
+	def throwColorError(type, r,g,b):
+		if not (r >= 0 and r <= 255): 
+			Error.wrong_color_number(type, r)
+		elif not (g >= 0 and g <= 255):
+			Error.wrong_color_number(type, g)
+		else:
+			Error.wrong_color_number(type, b)
+
+	@classmethod
+	def set_text_color(cls, quad):
+
+		r = cls.get_address_value(quad.left_operand)
+		g = cls.get_address_value(quad.right_operand)
+		b = cls.get_address_value(quad.result)
+
+		if r >= 0 and r <= 255 and g >= 0 and g <= 255 and b >= 0 and b <= 255 :
+			return [r,g,b]
+		else:
+			cls.throwColorError("text", r,g,b)
+
+	@classmethod
+	def set_background_color(cls, quad):
+
+		r = cls.get_address_value(quad.left_operand)
+		g = cls.get_address_value(quad.right_operand)
+		b = cls.get_address_value(quad.result)
+
+		if r >= 0 and r <= 255 and g >= 0 and g <= 255 and b >= 0 and b <= 255 :
+			return [r,g,b]
+		else:
+			cls.throwColorError("background",r,g,b)
+
 	@classmethod
 	def add_color_fig(cls, quad, obj_temp):
 
@@ -281,7 +321,14 @@ class MemoryHandler:
 		color = cls.get_address_value(quad.right_operand)
 
 		if not obj_temp.setTypeColor(type, color):
-			Error.wrong_color_number(color)
+			Error.wrong_color_number("figure", color)
+
+
+	@classmethod
+	def get_text(cls, quad):
+
+		text = cls.get_address_value(quad.result)
+		return text
 
 	@classmethod
 	def add_size_fig(cls, quad, obj_temp):

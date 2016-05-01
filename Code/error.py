@@ -107,8 +107,13 @@ class Error:
 		sys.exit()
 
 	@staticmethod
-	def wrong_color_number(color):
-		print "RunTime Error: Wrong color number shuld be in range (0...255) and is '{}'".format(color)
+	def wrong_color_number(color, data):
+		print "RunTime Error: Wrong color number in {}, shuld be in range (0...255) and is '{}'".format(data, color)
+		sys.exit()
+
+	@staticmethod
+	def window_not_defined():
+		print "RunTime Error: Window_size not defined"
 		sys.exit()
 
 	@staticmethod

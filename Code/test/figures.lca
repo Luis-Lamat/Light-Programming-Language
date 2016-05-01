@@ -38,5 +38,7 @@ program figures {
 		move_speed(ms: 9)
 
 
+		#text_color(r:20, g:50, b:30)
+		#printg("Hello darkness my old friend", 50, 20)
 	}
 }

@@ -53,6 +53,14 @@ def main():
     l = Line(line.getPoints())
     l.draw(win)
 
+    t = Text(Point(300, 300), "Hello darkness my old friend")
+    t.setFill(color_rgb(255, 255, 255))
+    t.draw(win)
+    t.undraw()
+    t.draw(win)
+
+    win.setBackground(color_rgb(50, 20, 50))
+
 
     # p = Polygon(Point(100,100), Point(500,300), Point(200,400))
     # p.draw(win)
