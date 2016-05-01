@@ -74,11 +74,11 @@ class L_Circle(Figure):
 		self.numVertices = 0
 
 	def setNextVertex(self, x, y):
-		if self.numVertices >= self.totalNumVertices:
-			return False
+		# if self.numVertices >= self.totalNumVertices:
+		# 	return False
 		self.center.x = x
 		self.center.y = y
-		self.numVertices += 1
+		# self.numVertices += 1
 		return True
 
 	def setSize(self, size):

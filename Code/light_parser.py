@@ -932,7 +932,6 @@ def p_vars_prim (p):
 	'''
 	vars_prim : primitive_type var_p_a
 	'''
-	print "\n> Adding var '{}' to func '{}'".format(tmp_var.name, function_stack.peek())
 	aux_var = FunctionTable.add_var_to_func(function_stack.peek(), tmp_var)
 	tmp_var.id = aux_var.id # Nasty hack brawh
 

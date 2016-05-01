@@ -264,10 +264,10 @@ class MemoryHandler:
 
 		x = cls.get_address_value(quad.left_operand)
 		y = cls.get_address_value(quad.right_operand)
-
-		if not obj_temp.setNextVertex(x, y):
-			type = abs(quad.result) // 1000
-			Error.wrong_vertex_number(type)
+		obj_temp.setNextVertex(x, y)
+		# if not obj_temp.setNextVertex(x, y):
+		# 	type = abs(quad.result) // 1000
+		# 	Error.wrong_vertex_number(type)
 
 	@classmethod
 	def add_color_fig(cls, quad, obj_temp):

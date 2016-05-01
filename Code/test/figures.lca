@@ -14,12 +14,12 @@ program figures {
 			color: rgb((1 + 2 * 8), (4 * 7 + 5), 255)
 		end
 
-		for (i = 0; i < 10; i += 1) do
+		for (i = 1; i < 11; i += 1) do
 
 			t2 has
-				v: ((10 * i), 100),
-				color: rgb(100, 200, 200),
-				size: 50
+				v: ((30 * i), (30 * i)),
+				color: rgb(20 * i, 200 + i, 200 / i),
+				size: 5 * i
 			end
 			camera t2
 
