@@ -619,11 +619,16 @@ class Circle(Oval):
               
 class Line(_BBox):
     
-    def __init__(self, p1, p2):
-        _BBox.__init__(self, p1, p2, ["arrow","fill","width"])
+    def __init__(self, p1, p2 = None):
+    	if p2 == None:
+    		f1, f2 = p1
+        	_BBox.__init__(self, f1, f2, ["arrow","fill","width"])
+        else:
+        	_BBox.__init__(self, p1, p2, ["arrow","fill","width"])
         self.setFill(DEFAULT_CONFIG['outline'])
         self.setOutline = self.setFill
    
+
     def clone(self):
         other = Line(self.p1, self.p2)
         other.config = self.config.copy()

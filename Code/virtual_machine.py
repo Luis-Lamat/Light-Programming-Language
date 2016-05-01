@@ -39,7 +39,10 @@ def execute_operator(argument, quad, index):
 		29	:	addc,
 		30	:	adds,
 		31	:	wsize,
-		32	:	cam
+		32	:	cam,
+		33	:	move,
+		34	:	rst,
+		35 	:	wait
 
 	}
 	# Get the function from switcher dictionary
@@ -120,8 +123,7 @@ def _print(quad, index):
 	MemoryHandler._print(quad)
 
 def end(quad, index):
-	print "> PROGRAM EXIT"
-	# sys.exit(0)
+	print "> PROGRAM EXECUTION DONE"
 
 def alloc(quad, index):
 	MemoryHandler.allocate_array_space(quad)
@@ -155,11 +157,30 @@ def wsize(quad, index):
 	global win
 	win = GraphWin("LIGHT", width, height)
 
+def move(quad, index):
+	#obj_temp = MemoryHandler.get_fig(quad.result)
+	fig = fig_dict[quad.result]
+	fig.move(quad.left_operand, quad.right_operand)
+
+def rst(quad, index):
+	obj_temp = MemoryHandler.get_fig(quad.result)
+	obj_temp.reset()
+
+def wait(quad, index):
+	MemoryHandler.wait(quad)
+
 def cam(quad, index):
 	obj_temp = MemoryHandler.get_fig(quad.result)
 
 	type = abs(quad.result) // 1000
-	if type == 7 : #triangle
+
+	if type == 6 : #Line
+		x = Line(obj_temp.getPointsList())
+		x.setFill(obj_temp.getColor())
+		x.draw(win)
+		fig_dict[quad.result] = x
+
+	elif type == 7 : #triangle
 		x = Polygon(obj_temp.getPointsList())
 		x.setFill(obj_temp.getColor())
 		x.draw(win)
@@ -202,8 +223,10 @@ def RUN_AT_LIGHTSPEED():
 	print "\nVIRTUAL MACHINE ==============================="
 	QuadIterator(0, quads)
 
-	win.getMouse() # Pause to view result
-	win.close() 
+	input("Pleas enter to exit")
+	#win.getMouse() # Pause to view result
+	win.close()
+	print "> PROGRAM EXIT"
 
 def QuadIterator(index, quads):
 

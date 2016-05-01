@@ -23,6 +23,10 @@ rect = L_Rectangle(200, 200, 250, 280)
 
 square = L_Square(300, 300, 50)
 
+line = L_Line()
+line.setNextVertex(100, 200)
+line.setNextVertex(300, 400)
+
 def main():
 
 	
@@ -32,7 +36,6 @@ def main():
     c.setFill(cir.getColor())
     c.draw(win)
 
-    #t = Polygon(Point(triangle.getVertex(0)), Point(triangle.getVertex(1)), Point(triangle.getVertex(2)))
     t = Polygon(triangle.getPointsList())
     t.setFill(triangle.getColor())
     t.draw(win)
@@ -46,6 +49,10 @@ def main():
 
     s = Rectangle(square.getPoints())
     s.draw(win)
+
+    l = Line(line.getPoints())
+    l.draw(win)
+
 
     # p = Polygon(Point(100,100), Point(500,300), Point(200,400))
     # p.draw(win)

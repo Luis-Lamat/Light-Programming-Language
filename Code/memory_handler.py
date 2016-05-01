@@ -3,6 +3,7 @@ from light_semantic_controller import *
 from memory import *
 from error import *
 from figures import *
+import time
 
 class MemoryHandler:
 	# Global and local memory declarations
@@ -233,6 +234,10 @@ class MemoryHandler:
 
 		cls.set_address_value(quad.result, val)
 
+	@classmethod
+	def wait(cls, quad):
+		wait_time = cls.get_address_value(quad.result)
+		time.sleep(wait_time)
 
 	#FIGURES
 	@classmethod

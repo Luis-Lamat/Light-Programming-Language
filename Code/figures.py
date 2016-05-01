@@ -90,6 +90,13 @@ class L_Circle(Figure):
 	def getPointCenter(self):
 		return Point(self.center.x, self.center.y)
 
+	def reset(self):
+		self.radius = 0
+		self.center.x = 0
+		self.center.y = 0
+		self.totalNumVertices = 1
+		self.numVertices = 0
+
 class L_Triangle(Figure):
 	def __init__(self):
 		super(self.__class__, self).__init__()
@@ -118,6 +125,11 @@ class L_Triangle(Figure):
 			l.append( Point(vertex.x, vertex.y) )
 		return l
 
+	def reset(self):
+		self.vertices = [Vertex(0,0), Vertex(0,0), Vertex(0,0)]
+		self.totalNumVertices = 3
+		self.numVertices = 0
+
 class L_Rectangle(Figure):
 	def __init__(self, x1 = 0, y1 = 0, x2 = 0, y2 = 0):
 		super(self.__class__, self).__init__()
@@ -136,6 +148,11 @@ class L_Rectangle(Figure):
 	def getPoints(self):
 		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
 
+	def reset(self):
+		self.vertices = [Vertex(0,0), Vertex(0,0)]
+		self.totalNumVertices = 2
+		self.numVertices = 0
+
 # class L_Point(Figure):
 # 	def __init__(self, x = 0, y = 0):
 # 		super(self.__class__, self).__init__()
@@ -153,7 +170,6 @@ class L_Square(Figure):
 		self.totalNumVertices = 1
 		self.numVertices = 0
 
-
 	def setNextVertex(self, x, y):
 		if self.numVertices >= self.totalNumVertices:
 			return False
@@ -168,6 +184,14 @@ class L_Square(Figure):
 
 	def getPoints(self):
 		return (Point(self.v1.x, self.v1.y), Point(self.v2.x, self.v2.y))
+
+	def reset(self):
+		self.size = 0
+		self.v1 = Vertex(0, 0)
+		self.v2 = Vertex(0, 0)
+		self.totalNumVertices = 1
+		self.numVertices = 0
+
 
 class L_Polygon(Figure):
 	def __init__(self, numVertices = 0):
@@ -198,10 +222,34 @@ class L_Polygon(Figure):
 	def addVertex(self, x, y):
 		self.vertices.append(Vertex(x,y))
 
+	def reset(self):
+		self.vertices = []
+		self.numVertices = numVertices
+		self.numVertices = 0
+
 #NOT READY
 class L_Line(Figure):
 	def __init__(self):
-		super(self.__class__, self).__init__()	
+		super(self.__class__, self).__init__()
+		self.vertices = [Vertex(0,0), Vertex(0,0)]
+		self.totalNumVertices = 2
+		self.numVertices = 0
+
+	def setNextVertex(self, x, y):
+		if self.numVertices >= self.totalNumVertices:
+			return False
+		self.vertices[self.numVertices].x = x
+		self.vertices[self.numVertices].y = y
+		self.numVertices += 1
+		return True
+
+	def getPoints(self):
+		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
+
+	def reset(self):
+		self.vertices = [Vertex(0,0), Vertex(0,0)]
+		self.totalNumVertices = 2
+		self.numVertices = 0
 
 
 ##NO STAR #@$% that!
