@@ -49,6 +49,7 @@ program fig_rec {
 
 
 	light() {
+		window_name(name: "Fibonacci - Recursive")
 		window_size(width: 500, height: 500)
         # printing text
 		text_color(r:0, g:0, b:200)

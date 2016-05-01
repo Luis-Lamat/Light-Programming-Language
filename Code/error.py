@@ -110,6 +110,11 @@ class Error:
 		sys.exit()
 
 	@staticmethod
+	def wrong_name_window(lineno):
+		print "Syntax Error (line {}): The correct syntax for window name 'window_name (name: <string>)'".format(lineno)
+		sys.exit()
+
+	@staticmethod
 	def wrong_txtc_declaration(lineno):
 		print "Syntax Error (line {}): The correct syntax for text color is 'text_color (r: <exp>, g: <exp>, b: <exp>)'".format(lineno)
 		sys.exit()

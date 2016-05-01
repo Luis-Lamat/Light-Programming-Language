@@ -16,6 +16,7 @@ win = None #GraphWin("LIGHT", 500, 500)
 move_speed = 0.001
 text_color = [0,0,0]
 fig_dict = {}
+win_name = "LIGHT"
 
 def execute_operator(argument, quad, index):
 
@@ -60,6 +61,7 @@ def execute_operator(argument, quad, index):
 		39	:	show,
 		40	:	textColor,
 		41	:	gprint,
+		42 	: 	winname
 
 	}
 	# Get the function from switcher dictionary
@@ -77,7 +79,8 @@ def times(quad, index):
 	MemoryHandler.binary_operator(quad)
 
 def over(quad, index):
-	MemoryHandler.division(quad)
+	#MemoryHandler.division(quad)
+	MemoryHandler.binary_operator(quad)
 
 def lessThan(quad, index):
 	MemoryHandler.binary_operator(quad)
@@ -172,7 +175,8 @@ def wsize(quad, index):
 	height = MemoryHandler.get_address_value(quad.result)
 
 	global win
-	win = GraphWin("LIGHT", width, height)
+	global win_name
+	win = GraphWin(win_name, width, height)
 
 def move(quad, index):
 	checkWindow()
@@ -238,7 +242,6 @@ def textColor(quad, index):
 	text_color = MemoryHandler.get_text_color(quad)
 
 def gprint(quad, index):
-
 	checkWindow()
 	text = MemoryHandler.get_text(quad)
 	t = Text(Point(text[0], text[1]), text[2])
@@ -246,6 +249,10 @@ def gprint(quad, index):
 	t.setFill(color_rgb(text_color[0]%256, text_color[1]%256, text_color[2]%256))
 	t.draw(win)
 
+def winname(quad, index):
+	global win_name
+	name = MemoryHandler.get_window_name(quad)
+	win_name = name
 
 def checkWindow():
 	if not win:

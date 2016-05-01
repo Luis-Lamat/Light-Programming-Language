@@ -36,28 +36,50 @@ class MemoryHandler:
 		result = cls.execute_binary_operator(quad.operator, left_op, right_op)
 		cls.set_address_value(quad.result, result)
 
-	@classmethod
-	def division(cls, quad):
-		left_op = cls.get_address_value(quad.left_operand)
-		right_op = cls.get_address_value(quad.right_operand)
-		result = operator.div(left_op, right_op)
-		cls.set_address_value(quad.result, result)
+	# @classmethod
+	# def division(cls, quad):
+	# 	left_op = cls.get_address_value(quad.left_operand)
+	# 	right_op = cls.get_address_value(quad.right_operand)
+	# 	result = operator.div(left_op, right_op)
+	# 	cls.set_address_value(quad.result, result)
 
 	@classmethod
 	def execute_binary_operator(cls, val, x, y):
-		ops = {
-			0	: operator.add(x,y),
-			1	: operator.sub(x,y),
-			2	: operator.mul(x,y),
-		# 	3	: operator.div(x,y),
-			4	: operator.lt(x,y),
-			5	: operator.gt(x,y),
-			6	: operator.le(x,y),
-			7	: operator.ge(x,y),
-			8	: operator.eq(x,y),
-			9	: operator.ne(x,y)
-		}
-		return ops[val]
+
+		if val == 0:
+			return operator.add(x,y)
+		elif val == 1:
+			return operator.sub(x,y)
+		elif val == 2:
+			return operator.mul(x,y)
+		elif val == 3:
+			return operator.div(x,y)
+		elif val == 4:
+			return operator.lt(x,y)
+		elif val == 5:
+			return operator.gt(x,y)
+		elif val == 6:
+			return operator.le(x,y)
+		elif val == 7:
+			return operator.ge(x,y)
+		elif val == 8:
+			return operator.eq(x,y)
+		elif val == 9:
+			return operator.ne(x,y)
+
+		# ops = {
+		# 	0	: operator.add(x,y),
+		# 	1	: operator.sub(x,y),
+		# 	2	: operator.mul(x,y),
+		# # 	3	: operator.div(x,y),
+		# 	4	: operator.lt(x,y),
+		# 	5	: operator.gt(x,y),
+		# 	6	: operator.le(x,y),
+		# 	7	: operator.ge(x,y),
+		# 	8	: operator.eq(x,y),
+		# 	9	: operator.ne(x,y)
+		# }
+		# return ops[val]
 
 	@classmethod
 	def gosub(cls, quad, return_index):
@@ -285,6 +307,10 @@ class MemoryHandler:
 
 		speed = cls.get_address_value(quad.result)
 		return speed/1000.0
+
+	@classmethod
+	def get_window_name(cls, quad):
+		return cls.get_address_value(quad.result)
 
 	@classmethod
 	def throwColorError(type, r,g,b):

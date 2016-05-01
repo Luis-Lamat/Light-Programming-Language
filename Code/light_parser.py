@@ -206,7 +206,7 @@ def p_pr_b (p):
 
 def p_main_func (p):
 	'''
-	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET window_func pr_a stmt_loop SEP_RCBRACKET
+	main_func : LIGHT_TOKEN new_func_scope main_fill_quad SEP_LPAR SEP_RPAR SEP_LCBRACKET window_name window_func pr_a stmt_loop SEP_RCBRACKET
 	'''
 	FunctionTable.add_var_quantities_to_func(function_stack.peek())
 	function_stack.pop()
@@ -668,6 +668,23 @@ def p_show (p):
 
 # 	by = operand_stack.pop()
 # 	build_and_push_quad(special_operator_dict['scale'], by , None, tmp_var.id)
+
+def p_window_name(p):
+	'''
+	window_name : WINDOW_NAME SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR
+				| epsilon
+	'''
+	if len(p) > 2:
+		if p[3] != "name":
+			Error.wrong_name_window(p.lexer.lineno)
+
+		type = type_stack.pop()
+		if type != type_dict['string']:
+			Error.wrong_name_window(p.lexer.lineno)
+
+		name = operand_stack.pop()
+
+		build_and_push_quad(special_operator_dict['winame'], None, None, name)
 
 
 def p_background_color (p):
