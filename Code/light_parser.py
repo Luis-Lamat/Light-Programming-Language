@@ -1191,14 +1191,6 @@ def p_more_arr_param(p):
 	if len(p) > 2:
 		add_attr_to_array(p, False)
 
-
-# WARNING: Adds a shift reduce conflict because of function_call
-def p_init_a (p):
-       '''
-       init_a : function_call
-               | var_cte
-       '''
-
 def p_fig_create_block (p):
 	'''
 	fig_create_block : fig_a  END

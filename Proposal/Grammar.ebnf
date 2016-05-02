@@ -55,9 +55,18 @@ EXPRESION ::= EXP (('>' | '<' | '!=' | '<=' | '>=') EXPRESION )?
 
 EXP::= TERM (('+'| '-') EXP)?
 
-TERM::= FACTOR (('*'| '/') TERM)*
+TERM::= FACTOR (('*'| '/' | 'mod') TERM)*
 
-FACTOR::= ( '(' CONDITION ')' | FUNCTION_CALL | LENGTH | VAR_CTE )
+FACTOR::= ( '(' CONDITION ')' | FUNCTION_CALL | LENGTH | SINE | COSINE | TANGENT | EXPONENTIAL | LOG10 | SQRT | POW | VAR_CTE )
+
+LENGTH ::= 'length' '(' 'id' ')'
+SINE ::= 'sin' '(' EXP ')'
+COSINE ::= 'cos' '(' EXP ')'
+TANGENT ::= 'tan' '(' EXP ')'
+EXPONENTIAL ::= 'exp' '(' EXP ')'
+LOG10 ::= 'log10' '(' EXP ')'
+SQRT ::= 'sqrt' '(' EXP ')'
+POW ::= 'pow' '(' EXP ',' EXP ')'
 
 VAR_CTE ::= (VAR_ID | CNT_PRIM)
 
@@ -75,29 +84,31 @@ STMT_LOOP ::= ( ASSIGNMENT | IF | CYCLE | CAMERA | MOVE | WAIT | MOVE_SPEED | HI
 
 VARS ::= (('var' 'id' ':' (VARS_PRIM | VARS_ARR)) | ('figure' 'id' ':' FIGURE ('has' FIG_CREATE_BLOCK)? ))
 
-<<<<<<<<<<<<< VARS_FIGS ::=  FIGURE (INIT_FIG)?
-
 VARS_PRIM ::=  PRIMITIVE (INIT_PRIM)?
 
-INIT_PRIM ::= '=' ('id' | CNT_PRIM)
- 
-INIT_FIG::= ( ('=' 'id') | ('has' FIG_CREATE_BLOCK ))
+INIT_PRIM ::= '=' EXP
 
+VARS_ARR ::= '[' PRIMITIVE_TYPE ']' '(' 'CTE_INT' ')' (CONITNUE_ARRAY)?
+
+CONITNUE_ARRAY ::= '=' '{' ((EXP) ( ',' EXP)*) '}'
+ 
 FIG_CREATE_BLOCK ::= (  ( FIG_ATTR) ( ','  FIG_ATTR)* )  'end'
 
-FIG_ATTR::= (VECTOR | ('color' ':' 'id') | ('size' ':' EXP))
+FIG_ATTR::= (VECTOR | FIG_COLOR_ATTR | ('size' ':' EXP))
 
-VECTOR::= 'v' 'CTE_INT' ':' '(' EXP ',' EXP ')'
+FIG_COLOR_ATTR ::= 'color' ':' '(' 'r' ':' EXP ',' 'g' ':' EXP ',' 'b' ':' EXP ')'
 
-CNT_PRIM::= ( 'CTE_INT' | 'CTE_DEC' )
+VECTOR::= 'v' ':' '(' 'x' ':' EXP ',' 'y' ':' EXP ')'
 
-RETURN ::= 'return' ( 'id' | EXP )
+CNT_PRIM::= (  SIGN 'CTE_INT' | SIGN 'CTE_DECIMAL' | 'CTE_STRING' | 'CTE_BOOLEAN' )
 
-COMMENTS::= '#' (.)* 
+SIGN ::= ('+' | '-')?
 
-PRINT::= 'print' '(' ('id'| EXP | CTE_STRING )  ')'
+RETURN ::= 'return' ( EXP )?
 
-FIGURE_CREATIONS::= 'var' 'id' ':' FIGURE 'has' FIGURE_CREATE_BLOCK
+PRINT ::= 'print' '(' EXP ')'
+
+FIGURE_CREATIONS::= 'figure' 'id' ':' FIGURE 'has' FIGURE_CREATE_BLOCK
 
 FIGURE_DESCRIPTION ::= 'id' 'has' FIGURE_CREATE_BLOCK
 
