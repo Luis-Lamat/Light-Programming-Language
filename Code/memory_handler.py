@@ -181,7 +181,7 @@ class MemoryHandler:
 
 	@classmethod
 	def get_address_value(cls, addr):
-		print "> Called get_address_value({})".format(addr)
+		print "  Called get_address_value({})".format(addr)
 		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
 		print "> Get mem value: type = {}, addr = {}".format(type, relative_address)
@@ -198,7 +198,7 @@ class MemoryHandler:
 
 	@classmethod
 	def set_address_value(cls, addr, val):
-		print "> Called set_address_value({}, {})".format(addr, val)
+		print "  Called set_address_value({}, {})".format(addr, val)
 		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
@@ -222,7 +222,7 @@ class MemoryHandler:
 		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
-		print "> Set ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, relative_address, val)
+		print "> Set ARR mem value: type = {}, rel = {}, sub = {},  val = {}".format(type, relative_address, sub_index, val)
 		if addr < 0:
 			#out_of_bounds(name, num)
 			if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
