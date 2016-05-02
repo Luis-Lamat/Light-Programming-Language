@@ -4,6 +4,7 @@ from memory import *
 from error import *
 from figures import *
 import time
+import ast
 
 class MemoryHandler:
 	# Global and local memory declarations
@@ -36,13 +37,6 @@ class MemoryHandler:
 		result = cls.execute_binary_operator(quad.operator, left_op, right_op)
 		cls.set_address_value(quad.result, result)
 
-	# @classmethod
-	# def division(cls, quad):
-	# 	left_op = cls.get_address_value(quad.left_operand)
-	# 	right_op = cls.get_address_value(quad.right_operand)
-	# 	result = operator.div(left_op, right_op)
-	# 	cls.set_address_value(quad.result, result)
-
 	@classmethod
 	def execute_binary_operator(cls, val, x, y):
 
@@ -66,20 +60,6 @@ class MemoryHandler:
 			return operator.eq(x,y)
 		elif val == 9:
 			return operator.ne(x,y)
-
-		# ops = {
-		# 	0	: operator.add(x,y),
-		# 	1	: operator.sub(x,y),
-		# 	2	: operator.mul(x,y),
-		# # 	3	: operator.div(x,y),
-		# 	4	: operator.lt(x,y),
-		# 	5	: operator.gt(x,y),
-		# 	6	: operator.le(x,y),
-		# 	7	: operator.ge(x,y),
-		# 	8	: operator.eq(x,y),
-		# 	9	: operator.ne(x,y)
-		# }
-		# return ops[val]
 
 	@classmethod
 	def gosub(cls, quad, return_index):
@@ -267,6 +247,21 @@ class MemoryHandler:
 		cls.set_address_value(quad.result, val)
 
 	@classmethod
+	def get_array_length(cls, quad):
+		addr = quad.left_operand
+		type = abs(addr) // 1000 # integer division
+		relative_address = abs(addr) - (type * 1000)
+		
+		if addr < 0:
+			val = len(cls.heap.memory[type][abs(relative_address)]) 
+			
+		else:
+		 	val = len(cls.stack.peek().memory[type][relative_address])
+					
+		cls.set_address_value(quad.result, val)
+
+
+	@classmethod
 	def wait(cls, quad):
 		wait_time = cls.get_address_value(quad.result)
 		time.sleep(wait_time/1000.0)
@@ -320,7 +315,7 @@ class MemoryHandler:
 
 	@classmethod
 	def get_window_name(cls, quad):
-		return cls.get_address_value(quad.result)
+		return ast.literal_eval(str(cls.get_address_value(quad.result)))
 
 	@classmethod
 	def throwColorError(type, r,g,b):
@@ -367,7 +362,7 @@ class MemoryHandler:
 
 	@classmethod
 	def get_text(cls, quad):
-		text = cls.get_address_value(quad.result)
+		text = ast.literal_eval(str(cls.get_address_value(quad.result)))
 		x = cls.get_address_value(quad.left_operand)
 		y = cls.get_address_value(quad.right_operand)
 		return [x, y, text]

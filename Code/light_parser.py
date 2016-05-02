@@ -189,7 +189,7 @@ def add_attr_to_array(p, last):
 	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), tmp_var.name)
 	addr = operand_stack.pop()
 	
-	print("HERE!!!!!! {} and {}".format(var.type, type_assign))
+	# print("HERE!!!!!! {} and {}".format(var.type, type_assign))
 
 	if var.type != type_assign:
 		Error.type_mismatch(p.lexer.lineno, type_assign, var.type, '=')
@@ -530,7 +530,7 @@ def p_end_while_helper (p) :
 
 def p_for (p):
 	'''
-	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition push_jump_loop start_loop_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
+	for : FOR SEP_LPAR for_a SEP_SEMICOLON push_jump_for condition start_loop_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
 	'''
 	print("for" + str(p.lexer.lineno))
 
@@ -538,6 +538,11 @@ def p_push_jump_loop (p):
 	'push_jump_loop : epsilon'
 	#Put count in JUMPSTACK
 	Quadruples.push_jump(0)
+
+def p_push_jump_for (p):
+	'push_jump_for : epsilon'
+	#Put count in JUMPSTACK
+	Quadruples.push_jump(1)
 
 def p_start_loop_helper (p):
 	'''
@@ -875,6 +880,7 @@ def p_factor (p):
 	'''
 	factor : SEP_LPAR quad_push_lpar condition SEP_RPAR quad_pop_lpar
 		| function_call 
+		| length
 		| var_cte
 	'''
 	print("factor: " + str(p.lexer.lineno))
@@ -1264,6 +1270,19 @@ def p_print (p):
 	print : PRINT push_operator SEP_LPAR print_a SEP_RPAR
 	'''
 	print("print " + str(p.lexer.lineno))
+
+#length
+def p_length(p):
+	'length : LENGTH SEP_LPAR VAR_IDENTIFIER verify_variable SEP_RPAR'
+
+	next_id = SemanticInfo.get_next_var_id(type_dict['int'])
+	operand_stack.push(next_id)
+	type_stack.push(type_dict['int'])
+	arr = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[3])
+	if arr.__class__.__name__ == "Array":
+		build_and_push_quad(special_operator_dict['length'],arr.id, None, next_id)
+	else:
+		Error.not_type_array()
 
 def p_print_a (p):
 	'print_a : exp'

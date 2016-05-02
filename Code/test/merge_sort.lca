@@ -1,16 +1,14 @@
 program merge_sort {
 	
-	var arr:[int](4) = {20,10,2,5}
-	var helper:[int](4)
-	var arr_len:int = 4
+	var arr:[int](10) = {20,10,2,5,25, 10, 2, 4,1, 6}
+	var helper:[int](10)
+	var arr_len:int = 10
 
 	function tryy(low: int, high: int){
 		var i:int = 0
 
 		for(i = low; i <= high; i += 1)do
     		helper[i] = arr[i]
-    		print(i)
-    		print(high)
     	end
 
 	}
@@ -20,8 +18,7 @@ program merge_sort {
     	var j:int = 0
     	var k:int = 0
 
-
-    	for(i = low; i <= high; i = i + 1)do
+    	for(i = low; i <= high; i += 1)do
     		helper[i] = arr[i]
     	end
 
@@ -38,24 +35,24 @@ program merge_sort {
     			arr[k] = helper[i]
     			print("while 1 i")
     			print(i)
-    			i = i + 1
+    			i += 1
     		end
     		else do
     			arr[k] = helper[j]
     			print("while 1 j")
     			print(j)
-    			j = j + 1
+    			j += 1
     		end
     		print("while 1 k")
     		print(k)
-    		k = k + 1
+    		k += 1
     	end
 
     	while( i <= middle)do
     		arr[k] = helper[i]
 
-    		k = k + 1
-    		i = i + 1
+    		k += 1
+    		i += 1
 
     		print("while 2 k")
     		print(k)
@@ -81,29 +78,14 @@ program merge_sort {
 		end
     }
 
+
+    function 
+
 	light() {
-		var num1:int = 1
-		var num2:int = 2
-		var num3:int = 3
-		var num4:int = 4
-
 
 		print(arr)
-		# tryy(low:0, high:3)
-		#merge_sort(low:0, high:3)
+		merge_sort(low:0, high:9)
 		print(arr)
-
-		while(num1 < num4 and true)do
-			num1 += 1
-			print("ok")
-		end
-
-		# if(num1 > num4 and num3 > num1)do
-		# 	print("if")
-		# end
-		# else do
-		# 	print("else")
-		# end
 
 	}
 }

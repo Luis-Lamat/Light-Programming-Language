@@ -61,7 +61,8 @@ def execute_operator(argument, quad, index):
 		39	:	show,
 		40	:	textColor,
 		41	:	gprint,
-		42 	: 	winname
+		42 	: 	winname,
+		43	:	length
 
 	}
 	# Get the function from switcher dictionary
@@ -141,6 +142,9 @@ def param(quad, index):
 
 def _print(quad, index):
 	MemoryHandler._print(quad)
+
+def length(quad, index):
+	MemoryHandler.get_array_length(quad)
 
 def end(quad, index):
 	print "> PROGRAM EXECUTION DONE"
