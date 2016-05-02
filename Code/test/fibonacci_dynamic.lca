@@ -1,0 +1,38 @@
+program fig_rec {
+	
+	var arr:[int](101)
+	var arr_size:int = 101
+
+	function fibonacci(n: int) returns int {
+
+		if(n == 0 or n == 1)do
+			return n
+		end
+
+		if(arr[n] == 0)do
+			arr[n] = fibonacci(n:n-1) + fibonacci(n:n-2)
+		end
+
+		return arr[n]
+	}
+
+	function init_arr(){
+		var i:int
+
+		for(i = 0; i < arr_size; i +=1 )do
+			arr[i] = 0
+		end
+
+	}
+
+	light(){
+		var answer:int = 0
+		init_arr()
+
+		answer = fibonacci(n:100)
+
+		print(answer)
+
+	}
+
+}

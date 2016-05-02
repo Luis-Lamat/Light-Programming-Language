@@ -4,6 +4,17 @@ program merge_sort {
 	var helper:[int](10)
 	var arr_len:int = 10
 
+	function tryy(low: int, high: int){
+		var i:int = 0
+
+		for(i = low; i <= high; i += 1)do
+    		helper[i] = arr[i]
+    		print(i)
+    		print(high)
+    	end
+
+	}
+
 	function merge(low: int, middle: int, high: int){
     	var i:int = 0
     	var j:int = 0
@@ -18,7 +29,7 @@ program merge_sort {
     	j = middle + 1
     	k = low
 
-    	while( i <= middle and j <= high) do
+    	while( (i <= middle) and (j <= high)) do
 
     		if(helper[i] <= helper[j])do
     			arr[k] = helper[i]
@@ -60,7 +71,8 @@ program merge_sort {
 
 		var arr2:[string](2) = {"stuff", "more"}
 		print(arr)
-		#merge_sort(low:0, high:9)
+		merge_sort(low:0, high:9)
+		#tryy(low:0, high: 9)
 		print(arr)
 
 	}

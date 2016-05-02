@@ -192,8 +192,9 @@ class MemoryHandler:
 		elif addr < 0:
 			print "> Heap memory: {}".format(cls.heap.memory)
 			return cls.heap.memory[type][abs(relative_address)]
-		print "> Stack memory: {}".format(cls.stack.peek().memory)
-		return cls.stack.peek().memory[type][relative_address]
+		else:
+			print "> Stack memory: {}".format(cls.stack.peek().memory)
+			return cls.stack.peek().memory[type][relative_address]
 
 	@classmethod
 	def set_address_value(cls, addr, val):
@@ -209,6 +210,8 @@ class MemoryHandler:
 		elif addr < 0:
 			cls.heap.memory[type][abs(relative_address)] = val
 			print "> Heap memory: {}".format(cls.heap.memory)
+
+		###HELP: faltaba el else???
 		else:
 			cls.stack.peek().memory[type][relative_address] = val
 			print "> Stack memory: {}".format(cls.stack.peek().memory)
