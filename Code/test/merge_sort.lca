@@ -90,7 +90,7 @@ program merge_sort {
 
 		print(arr)
 		# tryy(low:0, high:3)
-		#merge_sort(low:0, high:3)
+		merge_sort(low:0, high:3)
 		print(arr)
 
 		while(num1 < num4 and true)do

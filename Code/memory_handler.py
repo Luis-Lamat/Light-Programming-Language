@@ -248,13 +248,14 @@ class MemoryHandler:
 		type = abs(addr) // 1000 # integer division
 		relative_address = abs(addr) - (type * 1000)
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
-		print "> Get ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, quad.right_operand, quad.result)
+		print "> Get ARR mem value: type = {}, rel = {}, sub = {},  set_to = {}".format(type, relative_address, sub_index, quad.result)
 
 		try:
 			if addr < 0:
 				if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
 					val = cls.heap.memory[type][abs(relative_address)][sub_index]
 				else:
+					print "> Error on Heap memory: {}".format(cls.heap.memory)				
 					Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 			else:
 				if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
