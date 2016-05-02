@@ -511,7 +511,7 @@ def p_cycle (p):
 
 def p_while (p):
 	'''
-	while : WHILE SEP_LPAR condition SEP_RPAR start_loop_helper do_block end_while_helper
+	while : WHILE push_jump_loop SEP_LPAR condition SEP_RPAR start_loop_helper do_block end_while_helper
 	'''
 
 def p_end_while_helper (p) :
@@ -530,17 +530,19 @@ def p_end_while_helper (p) :
 
 def p_for (p):
 	'''
-	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition start_loop_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
+	for : FOR SEP_LPAR for_a SEP_SEMICOLON condition push_jump_loop start_loop_helper SEP_SEMICOLON for_b SEP_RPAR do_block end_for_helper
 	'''
 	print("for" + str(p.lexer.lineno))
+
+def p_push_jump_loop (p):
+	'push_jump_loop : epsilon'
+	#Put count in JUMPSTACK
+	Quadruples.push_jump(0)
 
 def p_start_loop_helper (p):
 	'''
 	start_loop_helper : epsilon
 	'''
-
-	#Put count in JUMPSTACK
-	Quadruples.push_jump(0)
 
 	aux = type_stack.pop()
 	if aux != 1 :
@@ -600,7 +602,7 @@ def p_tmp_increment (p):
 def p_tmp_assign (p):
 	'tmp_assign : epsilon'
 	p[0] = 0
-	tmp_quad_queue.push(Quadruples.pop_quad())
+	tmp_quad_stack.push(Quadruples.pop_quad())
 
 
 

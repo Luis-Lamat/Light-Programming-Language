@@ -2,15 +2,10 @@
 program bubble {
 
     function bubbleSort() {
-        var arr:[int](5)
+        var arr:[int](5) = {8, 17, 2, 9, 6}
         var i:int
         var j:int
         var tmp:int
-        arr[0] = 8
-        arr[1] = 17
-        arr[2] = 2
-        arr[3] = 9
-        arr[4] = 6
 
         for (i = 0; i < 5; i += 1) do
         	for (j = 0; j < 4 - i; j += 1) do

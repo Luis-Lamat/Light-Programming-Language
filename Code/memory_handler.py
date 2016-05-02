@@ -223,22 +223,23 @@ class MemoryHandler:
 		relative_address = abs(addr) - (type * 1000)
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
 		print "> Set ARR mem value: type = {}, rel = {}, sub = {},  val = {}".format(type, relative_address, sub_index, val)
-		if addr < 0:
-			#out_of_bounds(name, num)
-			if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
-				cls.heap.memory[type][abs(relative_address)][sub_index] = val
-				print "> Heap memory: {}".format(cls.heap.memory)
+		try:
+			if addr < 0:
+				#out_of_bounds(name, num)
+				if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
+					cls.heap.memory[type][abs(relative_address)][sub_index] = val
+					print "> Heap memory: {}".format(cls.heap.memory)
+				else:
+					Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 			else:
-				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
-		else:
-			try:
+				
 				if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
 					cls.stack.peek().memory[type][relative_address][sub_index] = val
 					print "> Stack memory: {}".format(cls.stack.peek().memory)
 				else:
 					Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
-			except TypeError:
-				Error.not_type_array()
+		except TypeError:
+			Error.not_type_array()
 
 	@classmethod
 	def get_array_value(cls, quad):
@@ -249,19 +250,19 @@ class MemoryHandler:
 		print "> Rel = {} - {}".format(abs(addr), (type * 1000))
 		print "> Get ARR mem value: type = {}, addr[{}] = {},  val = {}".format(type, sub_index, quad.right_operand, quad.result)
 
-		if addr < 0:
-			if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
-				val = cls.heap.memory[type][abs(relative_address)][sub_index]
+		try:
+			if addr < 0:
+				if len(cls.heap.memory[type][abs(relative_address)]) > sub_index and sub_index >= 0 :
+					val = cls.heap.memory[type][abs(relative_address)][sub_index]
+				else:
+					Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
 			else:
-				Error.out_of_bounds(len(cls.heap.memory[type][abs(relative_address)]), sub_index)
-		else:
-			try:
 				if len(cls.stack.peek().memory[type][relative_address]) > sub_index and sub_index >= 0 :
 					val = cls.stack.peek().memory[type][relative_address][sub_index]
 				else:
 					Error.out_of_bounds(len(cls.stack.peek().memory[type][relative_address]), sub_index)
-			except TypeError:
-				Error.type_array()
+		except TypeError:
+			Error.type_array()
 
 		cls.set_address_value(quad.result, val)
 
