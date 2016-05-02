@@ -274,7 +274,6 @@ def p_type (p):
 	'''
 	type : primitive_type 
 		| figure 
-		| epsilon
 	'''
 	p[0] = p[1]
 
@@ -948,24 +947,6 @@ def p_do_sum_rest (p):
 	exp_quad_helper(p, ['+', '-'])
 
 
-def p_inc_a (p):
-	'''
-	inc_a :  OP_PLUS_EQUALS
-		| OP_MINUS_EQUALS
-	'''
-
-	print(p[1])
-	p[0] = p[1]
-	
-#This was in increment
-def p_inc_var_cte(p): 
-	'''
-	inc_var_cte : var_id
-		| sign VAR_INT push_num 
-		| exp
-	'''
-#PROBADO VAR_INT y VAR_IDENTIFIER
-
 def p_if (p):
 	'''
 	if : IF SEP_LPAR condition SEP_RPAR quad_if_helper do_block if_a if_b end_if_stmt_quad_helper
@@ -1041,11 +1022,6 @@ def p_end_if_stmt_quad_helper(p):
 	tmp_count = Quadruples.next_free_quad
 	tmp_quad = Quadruples.fill_missing_quad(tmp_end, tmp_count)
 
-
-def p_condition_block (p):
-	'condition_block : SEP_LPAR condition SEP_RPAR do_block'
-	print("conditionBlock " + str(p.lexer.lineno))
-
 def p_do_block (p):
 	'do_block : DO stmt_loop END'
 	print("doBlock " + str(p.lexer.lineno))
@@ -1073,19 +1049,16 @@ def p_statement (p):
 	'''
 
 def p_vars (p):
-	'vars : vars_start'
+	'''
+	vars : VAR VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON v_a
+		| FIGURE VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON figure add_fig_quad vf_a
+	'''
 
 #array
 def p_v_a (p):
 	'''
 	v_a : vars_prim
 		| vars_arr
-	'''
-
-def p_vars_start (p):
-	'''
-	vars_start : VAR VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON v_a
-			| FIGURE VAR_IDENTIFIER push_var_name verify_if_variable_exists_neg SEP_COLON figure add_fig_quad vf_a
 	'''
 
 def p_verify_if_variable_exists_neg (p):
