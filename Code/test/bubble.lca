@@ -7,7 +7,7 @@ program bubble {
         var j:int
         var tmp:int
 
-        for (i = 0; i < 5; i += 1) do
+        for (i = 0; i < length(arr); i += 1) do
         	for (j = 0; j < 4 - i; j += 1) do
         		if (arr[j+1] < arr[j]) do
         			tmp = arr[j+1]

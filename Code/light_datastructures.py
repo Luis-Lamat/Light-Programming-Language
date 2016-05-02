@@ -66,7 +66,8 @@ special_operator_dict = {
     'show'	: 39,
     'txtc'	: 40,
     'printg': 41,
-    'winame': 42
+    'winame': 42,
+    'length': 43
 
 }
 

@@ -41,7 +41,7 @@ program fig_rec {
 
         # printing text
 		text_color(r:0, g:0, b:0)
-		printg(text: ans, x: y - ((5 * n) + 20), y: x)
+		printg(text: ans, x: x, y: y - ((5 * n) + 20))
 
         return ans
     }
@@ -53,7 +53,7 @@ program fig_rec {
 		window_size(width: 500, height: 500)
         # printing text
 		text_color(r:0, g:0, b:200)
-		printg(text: "Fibonacci - Recursive", x: 50, y: 250)
+		printg(text: "Fibonacci - Recursive", x: 250, y: 50)
 		fibo(n: 10)
 	}
 }
