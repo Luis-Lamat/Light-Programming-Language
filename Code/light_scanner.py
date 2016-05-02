@@ -71,6 +71,10 @@ reserved_words = {
     'printg'    : 'PRINT_G',
     'length'	: 'LENGTH',
 
+    #MATH		
+    'sin'		: 'SIN',
+    'cos'		: 'COS',
+
     # AND OR Conditionals
     'and'		: 'AND',
     'or'		: 'OR'
@@ -89,7 +93,8 @@ tokens = (
     'OP_PLUS', 'OP_MINUS', 'OP_TIMES', 'OP_DIVISION', 'OP_PLUS_EQUALS', 
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
     'FOR', 'ROTATE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE',
-    'RGB', 'WINDOW_SIZE', 'WAIT', 'MOVE_SPEED', 'BACKGROUND_COLOR', 'TEXT_COLOR', 'PRINT_G', 'WINDOW_NAME', 'LENGTH'
+    'RGB', 'WINDOW_SIZE', 'WAIT', 'MOVE_SPEED', 'BACKGROUND_COLOR', 'TEXT_COLOR', 'PRINT_G', 'WINDOW_NAME', 'LENGTH',
+    'SIN', 'COS'
 )
 
 # Ignoring comments, spaces and tabs

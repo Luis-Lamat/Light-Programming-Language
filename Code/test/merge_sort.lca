@@ -79,12 +79,60 @@ program merge_sort {
     }
 
 
-    function 
+    function quick_sort(low: int, high: int){
+    	var middle:int = 0
+    	var pivot:int = 0
+    	var i:int = 0
+    	var j:int = 0
+    	var temp:int = 0
+
+    	if(low >= high)do
+    		return
+    	end
+
+    	middle = low + (high - low) / 2
+    	pivot = arr[middle]
+
+
+    	i = low
+    	j = high
+
+    	while ( i <= j ) do
+    		while (arr[i] < pivot)do
+    			i += 1
+    		end
+    		while (arr[j] > pivot)do
+    			j -= 1
+    		end
+
+    		if(i <= j)do
+    			temp = arr[i]
+    			arr[i] = arr[j]
+    			arr[j] = temp
+    			i += 1
+    			j -= 1
+    		end
+
+    	end
+
+    	if(low < j) do
+    		quick_sort(low: low, high: j)
+
+    	end
+
+    	if(high > i) do
+    		quick_sort(low:i, high: high)
+    	end
+
+    }
+
+
 
 	light() {
 
 		print(arr)
-		merge_sort(low:0, high:9)
+		#merge_sort(low:0, high:9)
+		quick_sort(low:0, high:9)
 		print(arr)
 
 	}

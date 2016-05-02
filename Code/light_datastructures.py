@@ -67,7 +67,9 @@ special_operator_dict = {
     'txtc'	: 40,
     'printg': 41,
     'winame': 42,
-    'length': 43
+    'length': 43,
+    'sin'	: 44,
+    'cos'	: 45
 
 }
 
