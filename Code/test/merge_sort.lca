@@ -30,15 +30,24 @@ program merge_sort {
     	k = low
 
     	while( (i <= middle) and (j <= high)) do
-
+    			print("main 1 K")
+    			print(k)
+    			print("main 1 i")
+    			print(i)
     		if(helper[i] <= helper[j])do
     			arr[k] = helper[i]
+    			print("while 1 i")
+    			print(i)
     			i += 1
     		end
     		else do
     			arr[k] = helper[j]
+    			print("while 1 j")
+    			print(j)
     			j += 1
     		end
+    		print("while 1 k")
+    		print(k)
     		k += 1
     	end
 
@@ -47,6 +56,11 @@ program merge_sort {
 
     		k += 1
     		i += 1
+
+    		print("while 2 k")
+    		print(k)
+    		print("while 2 i")
+    		print(i)
 
     	end
 
@@ -71,6 +85,7 @@ program merge_sort {
 
 		var arr2:[string](2) = {"stuff", "more"}
 		print(arr)
+		tryy(low:0, high:9)
 		merge_sort(low:0, high:9)
 		#tryy(low:0, high: 9)
 		print(arr)
