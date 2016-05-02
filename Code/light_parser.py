@@ -200,7 +200,7 @@ def add_attr_to_array(p, last):
 	build_and_push_quad(special_operator_dict["="], o1, addr, var.id)
 
 
-def push_trig(p, type):
+def push_math(p, type):
 
 	data = operand_stack.pop()
 	type_oper = type_stack.pop()
@@ -213,6 +213,27 @@ def push_trig(p, type):
 		Error.type_mismatch(p.lexer.lineno, type_oper, type_dict['decimal'], type)
 
 	build_and_push_quad(special_operator_dict[type], data, None, next_id)
+
+def push_math_double(p, type):
+
+	data1 = operand_stack.pop()
+	type_oper1 = type_stack.pop()
+
+	data2 = operand_stack.pop()
+	type_oper2 = type_stack.pop()
+
+	next_id = SemanticInfo.get_next_var_id(type_dict['decimal'])
+	operand_stack.push(next_id)
+	type_stack.push(type_dict['decimal'])
+	
+	if type_oper1 != type_dict['decimal'] and type_oper1 != type_dict['int']:
+		Error.type_mismatch(p.lexer.lineno, type_oper1, type_dict['decimal'], type)
+
+	if type_oper2 != type_dict['decimal'] and type_oper2 != type_dict['int']:
+		Error.type_mismatch(p.lexer.lineno, type_oper2, type_dict['decimal'], type)
+
+	build_and_push_quad(special_operator_dict[type], data2, data1, next_id)
+
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -500,13 +521,13 @@ def p_call_param_a(p):
 	'''
 def p_verify_param(p):
 	'verify_param : '
+	global param_counter
 	param_name = p[-4]
 	arg = operand_stack.pop()
 	arg_type = type_stack.pop()
 	if not FunctionTable.verify_param_at_index(last_func_called, param_name, arg_type, param_counter):
 		Error.param_mismatch( p.lexer.lineno, param_name, arg_type)
 	build_and_push_quad(special_operator_dict['param'], arg, last_func_called, param_counter)
-	global param_counter
 	param_counter = param_counter + 1
  
 def p_assignment (p):
@@ -883,12 +904,13 @@ def p_term_b (p):
 	'''
 	term_b : OP_TIMES
 		| OP_DIVISION
+		| OP_MOD
 	'''
 	operator_stack.push(operator_dict[p[1]])
 
 def p_quad_helper_mult(p):
 	'quad_helper_mult : '
-	exp_quad_helper(p, ['*', '/'])
+	exp_quad_helper(p, ['*', '/', 'mod'])
 
 def p_factor (p):
 	'''
@@ -897,8 +919,14 @@ def p_factor (p):
 		| length
 		| sine
 		| cosine
+		| tangent
+		| exponential
+		| log10
+		| square_root
+		| pow
 		| var_cte
 	'''
+
 	print("factor: " + str(p.lexer.lineno))
 
 def p_push_ff(p):
@@ -1277,11 +1305,31 @@ def p_length(p):
 #sine
 def p_sine(p):
 	'sine : SIN SEP_LPAR exp SEP_RPAR'
-	push_trig(p,'sin')
+	push_math(p,'sin')
 
 def p_cosine(p):
 	'cosine : COS SEP_LPAR exp SEP_RPAR'
-	push_trig(p,'cos')
+	push_math(p,'cos')
+
+def p_tangent(p):
+	'tangent : TAN SEP_LPAR exp SEP_RPAR'
+	push_math(p,'tan')
+
+def p_exponential(p):
+	'exponential : EXPONENTIAL SEP_LPAR exp SEP_RPAR'
+	push_math(p,'exp')
+
+def p_log10(p):
+	'log10 : LOG10 SEP_LPAR exp SEP_RPAR'
+	push_math(p,'log10')
+
+def p_square_root(p):
+	'square_root : SQRT SEP_LPAR exp SEP_RPAR'
+	push_math(p,'sqrt')
+
+def p_pow(p):
+	'pow : POW SEP_LPAR exp SEP_COMMA exp SEP_RPAR'
+	push_math_double(p,'pow')
 
 def p_print_a (p):
 	'print_a : exp'

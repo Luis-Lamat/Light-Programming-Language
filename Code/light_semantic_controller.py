@@ -390,5 +390,6 @@ for type in num_types:
 		# every numerical conditional comparison returns a boolean value
 		SemanticCube.set_return_value_for(type, comp_ops, type2, 'boolean')
 
+SemanticCube.set_return_value_for('int', 'mod', 'int', 'int')
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
 SemanticCube.set_return_value_for('boolean', cond_ops, 'boolean', 'boolean')

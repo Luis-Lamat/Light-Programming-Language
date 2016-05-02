@@ -130,10 +130,12 @@ program merge_sort {
 
 	light() {
 
-		print(arr)
+		# print(arr)
 		#merge_sort(low:0, high:9)
-		quick_sort(low:0, high:9)
-		print(arr)
+		#quick_sort(low:0, high:9)
+		# print(arr)
+
+		print(pow(2, 3))
 
 	}
 }

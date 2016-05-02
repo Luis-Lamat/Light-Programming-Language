@@ -74,10 +74,21 @@ reserved_words = {
     #MATH		
     'sin'		: 'SIN',
     'cos'		: 'COS',
+    'tan'		: 'TAN',
 
     # AND OR Conditionals
     'and'		: 'AND',
-    'or'		: 'OR'
+    'or'		: 'OR',
+
+    #MOD
+    'mod'		: 'OP_MOD',
+
+    #extra
+    'exp'		: 'EXPONENTIAL',
+    'log10'		: 'LOG10',
+    'sqrt'		: 'SQRT',
+    'pow'		: 'POW'
+
 }
 
 tokens = (
@@ -94,8 +105,8 @@ tokens = (
     'OP_MINUS_EQUALS', 'IF', 'ELSIF', 'ELSE', 'HAS', 'COLOR', 'VAR', 'PRINT', 
     'FOR', 'ROTATE', 'VAR_VECTORID', 'RETURN', 'SEP_LBRACKET', 'SEP_RBRACKET', 'AND', 'OR', 'FIGURE',
     'RGB', 'WINDOW_SIZE', 'WAIT', 'MOVE_SPEED', 'BACKGROUND_COLOR', 'TEXT_COLOR', 'PRINT_G', 'WINDOW_NAME', 'LENGTH',
-    'SIN', 'COS'
-)
+    'SIN', 'COS', 'OP_MOD', 'TAN', 'EXPONENTIAL', 'LOG10', 'SQRT', 'POW'
+    )
 
 # Ignoring comments, spaces and tabs
 

@@ -33,38 +33,44 @@ def execute_operator(argument, quad, index):
 		9	:	notEqual,
 		10	:	_and,
 		11	:	_or,
-		14	:	equal,
-		15	:	gotof,
-		16	:	gotot,
-		17	:	goto,
-		18	:	ret,
-		19	:	_return,
-		20	:	gosub,
-		21	:	era,
-		22	:	param,
-		23	:	_print,
-		24	:	end,	
-		25	:	alloc,
-		26	:	eqarr,
-		27	:	newfig,
-		28	:	addv,
-		29	:	addc,
-		30	:	adds,
-		31	:	wsize,
-		32	:	cam,
-		33	:	move,
-		34	:	rst,
-		35 	:	wait,
-		36	:	backgroundColor,
-		37	:	moveSpeed,
-		38	:	hide,
-		39	:	show,
-		40	:	textColor,
-		41	:	gprint,
-		42 	: 	winname,
-		43	:	length,
-		44	:	sine,
-		45	:	cosine
+		12	:	mod,
+		15	:	equal,
+		16	:	gotof,
+		17	:	gotot,
+		18	:	goto,
+		19	:	ret,
+		20	:	_return,
+		21	:	gosub,
+		22	:	era,
+		23	:	param,
+		24	:	_print,
+		25	:	end,	
+		26	:	alloc,
+		27	:	eqarr,
+		28	:	newfig,
+		29	:	addv,
+		30	:	addc,
+		31	:	adds,
+		32	:	wsize,
+		33	:	cam,
+		34	:	move,
+		35	:	rst,
+		36 	:	wait,
+		37	:	backgroundColor,
+		38	:	moveSpeed,
+		39	:	hide,
+		40	:	show,
+		41	:	textColor,
+		42	:	gprint,
+		43 	: 	winname,
+		44	:	length,
+		45	:	sine,
+		46	:	cosine,
+		47	:	tangent,
+		48	:	exponential,
+		49	:	log10,
+		50	:	square_root,
+		51	:	power
 
 	}
 	# Get the function from switcher dictionary
@@ -83,6 +89,9 @@ def times(quad, index):
 
 def over(quad, index):
 	#MemoryHandler.division(quad)
+	MemoryHandler.binary_operator(quad)
+
+def mod(quad, index):
 	MemoryHandler.binary_operator(quad)
 
 def lessThan(quad, index):
@@ -149,10 +158,25 @@ def length(quad, index):
 	MemoryHandler.get_array_length(quad)
 
 def sine(quad, index):
-	MemoryHandler.do_trig(quad, "sin")
+	MemoryHandler.do_math(quad, "sin")
 
 def cosine(quad, index):
-	MemoryHandler.do_trig(quad, "cos")
+	MemoryHandler.do_math(quad, "cos")
+
+def tangent(quad, index):
+	MemoryHandler.do_math(quad, "tan")
+
+def exponential(quad, index):
+	MemoryHandler.do_math(quad, "exp")
+
+def log10(quad, index):
+	MemoryHandler.do_math(quad, "log10")
+
+def square_root(quad, index):
+	MemoryHandler.do_math(quad, "sqrt")
+
+def power(quad, index):
+	MemoryHandler.do_math_double(quad, "pow")
 
 def end(quad, index):
 	print "> PROGRAM EXECUTION DONE"

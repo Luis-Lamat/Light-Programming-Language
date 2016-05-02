@@ -61,6 +61,8 @@ class MemoryHandler:
 			return operator.eq(x,y)
 		elif val == 9:
 			return operator.ne(x,y)
+		elif val == 12:
+			return operator.mod(x,y)
 
 	@classmethod
 	def gosub(cls, quad, return_index):
@@ -263,13 +265,32 @@ class MemoryHandler:
 		cls.set_address_value(quad.result, val)
 
 	@classmethod
-	def do_trig(cls, quad, type):
+	def do_math(cls, quad, type):
 		data = cls.get_address_value(quad.left_operand)
 		val = 0.0
 		if(type == "sin"):
 			val = math.sin(data)
 		elif(type == "cos"):
 			val = math.cos(data)
+		elif(type == "tan"):
+			val = math.tan(data)
+		elif(type == "exp"):
+			val = math.exp(data)
+		elif(type == "log10"):
+			val = math.log10(data)
+		elif(type == "sqrt"):
+			val = math.sqrt(data)
+
+		cls.set_address_value(quad.result, val)
+
+	@classmethod
+	def do_math_double(cls, quad, type):
+		data1 = cls.get_address_value(quad.left_operand)
+		data2 = cls.get_address_value(quad.right_operand)
+		val = 0.0
+		if(type == "pow"):
+			val = math.pow(data1, data2)
+
 		cls.set_address_value(quad.result, val)
 
 	@classmethod
