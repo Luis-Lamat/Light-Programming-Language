@@ -965,6 +965,15 @@ def p_increment (p):
 
 	assign_quad_helper(p)
 
+def p_inc_a (p):		
+	'''		
+	inc_a :  OP_PLUS_EQUALS		
+		| OP_MINUS_EQUALS		
+	'''
+		
+	p[0] = p[1]		
+	
+
 def p_double_pushID (p):
 	'''
 	double_pushID : epsilon
