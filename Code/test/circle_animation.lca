@@ -1,0 +1,42 @@
+program circle_animation {
+	
+
+	function do_animation(){
+
+		var x:decimal = 50.0
+		var y:decimal = 50.0
+		var times:int = 100000
+		var n:int = 1
+		var circle_size:int = 150
+
+		# Making the figure
+		figure c1:circle
+		figure c2:circle
+
+		while(times > 0)do
+
+			c1 has
+				v: (x: sin(x) * circle_size + 250 , y: cos(y) * circle_size + 250),
+				color: (r:20 * n,g: 200 + (n * n),b: 10 * n),
+				size: 10
+			end
+
+			camera c1
+			wait(ms:10)
+			# hide c1
+			x += 0.1
+			y += 0.1
+			times -= 1
+			n += 1
+		end
+	}
+
+	light() {
+		window_name(name: "Circle-animation")
+		window_size(width: 500, height: 500)
+		text_color(r:0, g:0, b:200)
+		printg(text: "Circle-Animation", x: 250, y: 50)
+
+		do_animation()
+	}
+}

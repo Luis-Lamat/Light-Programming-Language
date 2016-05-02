@@ -62,7 +62,9 @@ def execute_operator(argument, quad, index):
 		40	:	textColor,
 		41	:	gprint,
 		42 	: 	winname,
-		43	:	length
+		43	:	length,
+		44	:	sine,
+		45	:	cosine
 
 	}
 	# Get the function from switcher dictionary
@@ -145,6 +147,12 @@ def _print(quad, index):
 
 def length(quad, index):
 	MemoryHandler.get_array_length(quad)
+
+def sine(quad, index):
+	MemoryHandler.do_trig(quad, "sin")
+
+def cosine(quad, index):
+	MemoryHandler.do_trig(quad, "cos")
 
 def end(quad, index):
 	print "> PROGRAM EXECUTION DONE"

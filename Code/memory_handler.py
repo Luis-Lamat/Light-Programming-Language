@@ -5,6 +5,7 @@ from error import *
 from figures import *
 import time
 import ast
+import math
 
 class MemoryHandler:
 	# Global and local memory declarations
@@ -260,6 +261,15 @@ class MemoryHandler:
 					
 		cls.set_address_value(quad.result, val)
 
+	@classmethod
+	def do_trig(cls, quad, type):
+		data = cls.get_address_value(quad.left_operand)
+		val = 0.0
+		if(type == "sin"):
+			val = math.sin(data)
+		elif(type == "cos"):
+			val = math.cos(data)
+		cls.set_address_value(quad.result, val)
 
 	@classmethod
 	def wait(cls, quad):

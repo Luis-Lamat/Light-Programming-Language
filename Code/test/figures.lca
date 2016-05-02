@@ -53,7 +53,8 @@ program figures {
 
 		camera poly
 
-		move poly (x: 5, y: 5)
+		move poly (x: 20, y: 20)
+		move poly (x: -20, y: -20)
 		#move poly (x: 1, y: 1)
 
 

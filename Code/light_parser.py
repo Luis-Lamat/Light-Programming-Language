@@ -163,9 +163,9 @@ def fig_vertex_quad_helper(p, fig_addr):
 	type1 = type_stack.pop()
 	type2 = type_stack.pop()
 
-	if type1 != type_dict['int']:
+	if type1 != type_dict['int'] and type1 != type_dict['decimal']:
 		Error.wrong_type('Vertex value', type1, type_dict['int'], p.lexer.lineno)
-	if type2 != type_dict['int']:
+	if type2 != type_dict['int'] and type2 != type_dict['decimal']:
 		Error.wrong_type('Vertex value', type2, type_dict['int'], p.lexer.lineno)
 
 	op = special_operator_dict['addv'] # 'Add Vertex'
@@ -198,6 +198,21 @@ def add_attr_to_array(p, last):
 	o1 = operand_stack.pop()	
 
 	build_and_push_quad(special_operator_dict["="], o1, addr, var.id)
+
+
+def push_trig(p, type):
+
+	data = operand_stack.pop()
+	type_oper = type_stack.pop()
+
+	next_id = SemanticInfo.get_next_var_id(type_dict['decimal'])
+	operand_stack.push(next_id)
+	type_stack.push(type_dict['decimal'])
+	
+	if type_oper != type_dict['decimal'] and type_oper != type_dict['int']:
+		Error.type_mismatch(p.lexer.lineno, type_oper, type_dict['decimal'], type)
+
+	build_and_push_quad(special_operator_dict[type], data, None, next_id)
 
 # STATEMENTS ###################################################################
 # http://snatverk.blogspot.mx/2011/01/parser-de-mini-c-en-python.html
@@ -881,6 +896,8 @@ def p_factor (p):
 	factor : SEP_LPAR quad_push_lpar condition SEP_RPAR quad_pop_lpar
 		| function_call 
 		| length
+		| sine
+		| cosine
 		| var_cte
 	'''
 	print("factor: " + str(p.lexer.lineno))
@@ -1283,6 +1300,15 @@ def p_length(p):
 		build_and_push_quad(special_operator_dict['length'],arr.id, None, next_id)
 	else:
 		Error.not_type_array()
+
+#sine
+def p_sine(p):
+	'sine : SIN SEP_LPAR exp SEP_RPAR'
+	push_trig(p,'sin')
+
+def p_cosine(p):
+	'cosine : COS SEP_LPAR exp SEP_RPAR'
+	push_trig(p,'cos')
 
 def p_print_a (p):
 	'print_a : exp'
