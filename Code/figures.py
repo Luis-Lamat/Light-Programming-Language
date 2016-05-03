@@ -22,6 +22,7 @@ class Figure(object):
 		self.color = Color(0,0,0)
 		self.avgx = 0.0
 		self.avgy = 0.0
+		self.numVertices = 0
 
 	def setColor(self, r, g, b):
 		"""Set color
@@ -85,6 +86,13 @@ class Figure(object):
 			ver.x += x
 			ver.y += y
 
+	def reset(self):
+		"""reset number of vertices
+		
+		Reset number of vertices
+		"""
+		self.numVertices = 0
+
 
 class L_Circle(Figure):
 	""" Cirlce class """
@@ -93,7 +101,6 @@ class L_Circle(Figure):
 		self.radius = radius
 		self.center = Vertex(x, y)
 		self.totalNumVertices = 1
-		self.numVertices = 0
 
 	def setNextVertex(self, x, y):
 		"""Set next vertex
@@ -153,16 +160,12 @@ class L_Circle(Figure):
 		"""
 		return Point(self.center.x, self.center.y)
 
-	def reset(self):
-		self.numVertices = 0
-
 class L_Triangle(Figure):
 	""" Triangel Class """
 	def __init__(self):
 		super(self.__class__, self).__init__()
 		self.vertices = [Vertex(0,0), Vertex(0,0), Vertex(0,0)]
 		self.totalNumVertices = 3
-		self.numVertices = 0
 	
 	def setVertex(self, num, x, y):
 		"""Set vertex
@@ -219,15 +222,11 @@ class L_Triangle(Figure):
 			l.append( Point(vertex.x, vertex.y) )
 		return l
 
-	def reset(self):
-		self.numVertices = 0
-
 class L_Rectangle(Figure):
 	def __init__(self, x1 = 0, y1 = 0, x2 = 0, y2 = 0):
 		super(self.__class__, self).__init__()
 		self.vertices = [Vertex(0,0), Vertex(0,0)]
 		self.totalNumVertices = 2
-		self.numVertices = 0
 
 	def setNextVertex(self, x, y):
 		"""Set next vertex
@@ -258,12 +257,6 @@ class L_Rectangle(Figure):
 		"""
 		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
 
-	def reset(self):
-		"""reset number of vertices
-		
-		Reset number of vertices
-		"""
-		self.numVertices = 0
 
 class L_Square(Figure):
 	""" Square class """
@@ -274,7 +267,6 @@ class L_Square(Figure):
 		self.v1 = Vertex(x, y)
 		self.v2 = Vertex(x+size, y+size)
 		self.totalNumVertices = 1
-		self.numVertices = 0
 
 	def setNextVertex(self, x, y):
 		"""Set next vertex
@@ -316,13 +308,6 @@ class L_Square(Figure):
 		"""
 		return (Point(self.v1.x, self.v1.y), Point(self.v2.x, self.v2.y))
 
-	def reset(self):
-		"""reset number of vertices
-		
-		Reset number of vertices
-		"""
-		self.numVertices = 0
-
 	def move(self, x, y):
 		"""Move
 		
@@ -343,7 +328,6 @@ class L_Polygon(Figure):
 		super(self.__class__, self).__init__()
 		self.vertices = []
 		self.numVertices = numVertices
-		self.numVertices = 0
 
 	def setVertex(self, num, x, y):
 		"""Set vertex
@@ -407,13 +391,6 @@ class L_Polygon(Figure):
 		"""
 		self.vertices.append(Vertex(x,y))
 
-	def reset(self):
-		"""reset number of vertices
-		
-		Reset number of vertices
-		"""
-		self.numVertices = 0
-
 
 #NOT READY
 class L_Line(Figure):
@@ -421,7 +398,6 @@ class L_Line(Figure):
 		super(self.__class__, self).__init__()
 		self.vertices = [Vertex(0,0), Vertex(0,0)]
 		self.totalNumVertices = 2
-		self.numVertices = 0
 
 	def setNextVertex(self, x, y):
 		"""Set next vertex
@@ -452,9 +428,3 @@ class L_Line(Figure):
 		"""
 		return (Point(self.vertices[0].x, self.vertices[0].y), Point(self.vertices[1].x, self.vertices[1].y))
 
-	def reset(self):
-		"""reset number of vertices
-		
-		Reset number of vertices
-		"""
-		self.numVertices = 0
