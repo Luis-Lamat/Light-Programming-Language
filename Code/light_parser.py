@@ -613,7 +613,7 @@ def p_end_for_helper (p) :
 		Quadruples.push_quad(tmp_quad_stack.pop())
 
 	#fill the return value
-	build_and_push_quad(17, None, None, tmp_return - offset)
+	build_and_push_quad(special_operator_dict['goto'], None, None, tmp_return - offset)
 
 	#fill false with count
 	tmp_count = Quadruples.next_free_quad

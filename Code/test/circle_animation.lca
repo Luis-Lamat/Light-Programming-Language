@@ -1,6 +1,5 @@
 program circle_animation {
 	
-
 	function do_animation(){
 
 		var x:decimal = 50.0
