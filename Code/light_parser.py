@@ -979,13 +979,14 @@ def p_double_pushID (p):
 	double_pushID : epsilon
 	'''
 
-	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-3]].type)
-	operand_stack.push(func.vars[p[-3]].id)
+	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[-3])
+	type_stack.push(var.type)
+	operand_stack.push(var.id)
 
-	func = FunctionTable.function_dict[function_stack.peek()]
-	type_stack.push(func.vars[p[-3]].type)
-	operand_stack.push(func.vars[p[-3]].id)
+	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[-3])
+	type_stack.push(var.type)
+	operand_stack.push(var.id)
+
 
 def p_do_sum_rest (p):
 	'''

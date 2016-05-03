@@ -249,6 +249,7 @@ class MemoryHandler:
 			Error.type_array()
 
 		cls.set_address_value(quad.result, val)
+		
 
 	@classmethod
 	def get_array_length(cls, quad):

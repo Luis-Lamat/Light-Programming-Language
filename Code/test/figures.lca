@@ -1,11 +1,10 @@
 program figures {
 	
-
+	
 	light(){
 		window_size(width: 500, height: 500)
-
 		var i:int = 0
-
+		
 		figure t2:circle
 		figure poly:polygon
 
