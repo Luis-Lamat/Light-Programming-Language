@@ -43,11 +43,30 @@ IS_ARRAY = True
 
 # Helper Functions
 def build_and_push_quad(op, l_op, r_op, res):
+	"""Build and push quadruple
+	
+	Build and push quadruple to quad list
+	
+	Arguments:
+		op {int} -- Operator
+		l_op {int} -- Left operand
+		r_op {int} -- Right operand
+		res {int} -- Result
+	"""
+
 	tmp_quad = Quadruple()
 	tmp_quad.build(op, l_op, r_op, res)
 	Quadruples.push_quad(tmp_quad)
 
 def exp_quad_helper(p, op_list):
+	"""Exp quad helper
+	
+	Pops 2 operands from typestack and operand stack, checks type and calls build_and_push_quad
+	
+	Arguments:
+		p {p} -- p
+		op_list {list} -- Operand list
+	"""
 	if operator_stack.isEmpty():
 		return
 	op = operator_stack.peek()
@@ -76,6 +95,13 @@ def exp_quad_helper(p, op_list):
 		print_stacks()
 
 def assign_quad_helper(p):
+	"""Assign quadruple helper
+	
+	Helper to build the assign quadruple, pops 2 operands fromthe operand_stack and checks type
+	
+	Arguments:
+		p {p} -- p
+	"""
 	t1 = type_stack.pop()
 	t2 = type_stack.pop()
 	if t1 != t2:
@@ -94,6 +120,10 @@ def assign_quad_helper(p):
 		build_and_push_quad(op, o1, None, o2)
 
 def temporary_quad_4_array():
+	"""Temporary Quadruple for array
+	
+	Builds the quadruple eqarr to assign information to array
+	"""
 	o1 = operand_stack.pop()
 	temp_id = SemanticInfo.get_next_var_id(abs(o1 // 1000))
 
@@ -101,18 +131,41 @@ def temporary_quad_4_array():
 	build_and_push_quad(special_operator_dict['eqarr'], o1, tmp_array_index.pop(), temp_id)
 
 def allocate_arr_helper(addr, size):
+	"""Allocate array helper
+	
+	Builds the quadruple to allocate array memory
+	
+	Arguments:
+		addr {int} -- address
+		size {int} -- size
+	"""
+
 	op = special_operator_dict['alloc']
 	o1 = addr
 	o2 = size
 	build_and_push_quad(op, o1, o2, None)
 
 def print_quad_helper():
+	"""Print quadruple helper
+	
+	Builds the print quadruple
+	"""
 	operand = operand_stack.pop()
 	op = operator_stack.pop()
 	build_and_push_quad(op, None, None, operand)
 	type_stack.pop()
 
 def fig_color_quad_helper(p, color_char, fig_addr):
+	"""Figure color quad helper
+	
+	Builds color quadruple, it is used in figures
+	
+	Arguments:
+		p {p} -- p
+		color_char {char} -- Char 'r', 'g' or 'b'
+		fig_addr {int} -- Figure address
+	"""
+
 	type = type_stack.pop()
 	if type != type_dict['int']:
 		Error.wrong_type('RGB value', type, type_dict['int'], p.lexer.lineno)
@@ -121,6 +174,15 @@ def fig_color_quad_helper(p, color_char, fig_addr):
 	build_and_push_quad(op, color_char, exp_result, fig_addr)
 
 def fig_size_quad_helper(p, fig_addr):
+	"""Figure size quadruple helper
+	
+	Builds the size quadruple , used in figures
+	
+	Arguments:
+		p {p} -- p
+		fig_addr {int} -- figure address
+	"""
+
 	fig_type = (abs(fig_addr) // 1000)
 	if fig_type != type_dict['circle'] and fig_type != type_dict['square']:
 		Error.wrong_attribute_for_figure(fig_type, 'size', p.lexer.lineno)
@@ -132,6 +194,14 @@ def fig_size_quad_helper(p, fig_addr):
 	build_and_push_quad(op, None, exp_result, fig_addr)
 
 def push_const_operand_and_type(operand, type):
+	"""Push constant operand and type
+	
+	Builds the constant quadruple for operands and type
+	
+	Arguments:
+		operand {operand} -- Operand
+		type {int} -- Type
+	"""
 	type_stack.push(type_dict[type])
 	if operand in FunctionTable.constant_dict.keys():
 		operand_stack.push(FunctionTable.constant_dict[operand])
@@ -141,6 +211,10 @@ def push_const_operand_and_type(operand, type):
 	FunctionTable.constant_dict[operand] = addr
 
 def print_stacks():
+	"""Print Stacks
+	
+	Prints the operand, operator and type stack
+	"""
 	sys.stdout.write("> Operand Stack = ")
 	operand_stack.pprint()
 
@@ -152,12 +226,25 @@ def print_stacks():
 
 
 def build_fig_quad():
+	"""Builds figure quadruple
+	
+	Builds the new figure quadruple
+	"""
 	#HERE
 	op = special_operator_dict['newfig']
 	build_and_push_quad(op, None, None, tmp_var.id)
 
 
 def fig_vertex_quad_helper(p, fig_addr):
+	"""Figure vertex quadruple helper
+	
+	Builds figure vertex quadruple helper
+	
+	Arguments:
+		p {p} -- p
+		fig_addr {int} -- Figure address
+	"""
+
 	Y = operand_stack.pop()
 	X = operand_stack.pop()
 	type1 = type_stack.pop()
@@ -173,6 +260,14 @@ def fig_vertex_quad_helper(p, fig_addr):
 
 
 def add_attr_to_array(p, last):
+	"""Address attribute to array
+	
+	Builds the intermediate quadruple to do one line array assignment
+	
+	Arguments:
+		p {p} -- p
+		last {bool} -- If is the last quadruple to assing
+	"""
 
 	type_assign = type_stack.pop()
 
@@ -185,22 +280,25 @@ def add_attr_to_array(p, last):
 	else:
 		tmp_count_arr -= 1
 
-	
 	var = FunctionTable.get_var_in_scope(p, function_stack.peek(), tmp_var.name)
 	addr = operand_stack.pop()
 	
-	# print("HERE!!!!!! {} and {}".format(var.type, type_assign))
-
 	if var.type != type_assign:
 		Error.type_mismatch(p.lexer.lineno, type_assign, var.type, '=')
-
 
 	o1 = operand_stack.pop()	
 
 	build_and_push_quad(special_operator_dict["="], o1, addr, var.id)
 
-
 def push_math(p, type):
+	"""Push math quadruple
+	
+	Pushes the math quadruple, it pops the data from opperand 
+	
+	Arguments:
+		p {p} -- p
+		type {string} -- math types "sin", "cos", "tan", "exp"
+	"""
 
 	data = operand_stack.pop()
 	type_oper = type_stack.pop()
@@ -215,6 +313,14 @@ def push_math(p, type):
 	build_and_push_quad(special_operator_dict[type], data, None, next_id)
 
 def push_math_double(p, type):
+	"""Push math double quadruple
+	
+	Pushes the math quadruple, it pops two opperands from opperand stack 
+	
+	Arguments:
+		p {p} -- p
+		type {string} -- "pow"
+	"""
 
 	data1 = operand_stack.pop()
 	type_oper1 = type_stack.pop()
@@ -644,38 +750,6 @@ def p_tmp_assign (p):
 	p[0] = 0
 	tmp_quad_stack.push(Quadruples.pop_quad())
 
-
-
-# def p_action (p):
-# 	'''
-# 	action : ACTION act_a 
-# 	'''
-
-# def p_act_a (p):
-# 	'''
-# 	act_a : act_move
-# 		| act_scale
-# 		| act_visible
-# 	'''
-
-# def p_act_header (p):
-# 	'act_header : VAR_IDENTIFIER DO  BEGINS SEP_COLON exp SEP_COMMA  ENDS SEP_COLON exp'
-
-# def p_act_move (p):
-# 	'act_move : MOVE act_header SEP_COMMA POS_X SEP_COLON exp SEP_COMMA  POS_Y SEP_COLON exp END'
-
-# def p_act_scale (p):
-# 	'act_scale : SCALE act_header SEP_COMMA SIZE SEP_COLON exp END'
-
-# # def p_act_rotate (p):
-# # 	'act_rotate : SCALE act_header SEP_COMMA ANGLE SEP_COLON exp SEP_COMMA END'
-
-# def p_act_visible (p):
-# 	'''
-# 	act_visible : HIDE act_header END
-# 		| SHOW act_header END
-# 	'''
-
 def p_camera (p):
 	'camera : CAMERA VAR_IDENTIFIER verify_variable'
 	aux_var = FunctionTable.get_var_in_scope(p, function_stack.peek(), p[2])
@@ -717,27 +791,6 @@ def p_hide (p):
 def p_show (p):
 	'show : SHOW VAR_IDENTIFIER verify_variable fig_tmp_var'
 	build_and_push_quad(special_operator_dict['show'], None, None, tmp_var.id)
-
-# def p_rotate(p):
-# 	'rotate : ROTATE VAR_IDENTIFIER verify_variable SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
-# 	if p[5] != 'deg':
-# 		Error.wrong_rotate_declaration(p.lexer.lineno)
-# 	type = type_stack.pop()
-# 	if type != type_dict['int']:
-# 		Error.wrong_type('rotate', type, type_dict['int'], p.lexer.line)
-# 	degree = operand_stack.pop()
-# 	build_and_push_quad(special_operator_dict['rotate'], degree, None, tmp_var.id)
-
-# def p_scale(p):
-# 	'scale : SCALE VAR_IDENTIFIER verify_variable SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_RPAR'
-# 	if p[5] != 'by':
-# 		Error.wrong_scale_declaration(p.lexer.lineno)
-# 	type = type_stack.pop()
-# 	if type != type_dict['int']:
-# 		Error.wrong_type('scale', type, type_dict['int'], p.lexer.line)
-
-# 	by = operand_stack.pop()
-# 	build_and_push_quad(special_operator_dict['scale'], by , None, tmp_var.id)
 
 def p_window_name(p):
 	'''

@@ -19,6 +19,18 @@ fig_dict = {}
 win_name = "LIGHT"
 
 def execute_operator(argument, quad, index):
+	"""Execute quad operator
+	
+	Execute quad operator
+	
+	Arguments:
+		argument {} -- 
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		Function -- Function to execute
+	"""
 
 	switcher = {
 		0	: 	plus,
@@ -79,133 +91,231 @@ def execute_operator(argument, quad, index):
 	return func(quad, index)
 
 def plus(quad, index):
+	""" Executes plus quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def minus(quad, index):
+	""" Executes minus quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def times(quad, index):
+	""" Executes times quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def over(quad, index):
-	#MemoryHandler.division(quad)
+	""" Executes over quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def mod(quad, index):
+	""" Executes mod quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def lessThan(quad, index):
+	""" Executes less than quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def greaterThan(quad, index):
+	""" Executes greater than quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def lessEqThan(quad, index):
+	""" Executes less than or equal quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def greaterEqThan(quad, index):
+	""" Executes greater than or equal quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def equals(quad, index):
+	""" Executes equals quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def notEqual(quad, index):
+	""" Executes not equals quadruple """
 	MemoryHandler.binary_operator(quad)
 
 def _and(quad, index):
+	""" Executes and quadruple """
 	MemoryHandler.and_or_operator(quad)
 
 def _or(quad, index):
+	""" Executes or quadruple """
 	MemoryHandler.and_or_operator(quad)
 
 def equal(quad, index):
+	""" Executes equal quadruple """
 	MemoryHandler.assign_operator(quad)
 
 def gotof(quad, index):
+	"""go to false
+	
+	Executes go to false quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.gotof(quad, index)
 	return index
 
 def gotot(quad, index):
+	"""go to true
+	
+	Executes go to true quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.gotot(quad, index)
 	return index
 
 def goto(quad, index):
+	"""go to 
+	
+	Executes go to quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.goto(quad)
 	return index
 
 def ret(quad, index):
+	"""return
+	
+	Executes return quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.ret_operator()
 	return index
 
 def _return(quad, index):
+	"""return
+	
+	Executes return quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.return_operator(quad)
 	return index
 
 def gosub(quad, index):
+	"""go sub
+	
+	Executes go sub quadruple
+	
+	Arguments:
+		quad {Quadruple} -- quadruple
+		index {int} -- int
+	
+	Returns:
+		int -- int
+	"""
 	index = MemoryHandler.gosub(quad, index)
 	return index
 
 def era(quad, index):
+	""" Executes era quadruple """
 	MemoryHandler.era_operator(quad) 
 
 def param(quad, index):
+	""" Executes param quadruple """
 	MemoryHandler.param_operator(quad)
 
 def _print(quad, index):
+	""" Executes print quadruple """
 	MemoryHandler._print(quad)
 
 def length(quad, index):
+	""" Executes length quadruple """
 	MemoryHandler.get_array_length(quad)
 
 def sine(quad, index):
+	""" Executes sine quadruple """
 	MemoryHandler.do_math(quad, "sin")
 
 def cosine(quad, index):
+	""" Executes cosine quadruple """
 	MemoryHandler.do_math(quad, "cos")
 
 def tangent(quad, index):
+	""" Executes tangent quadruple """
 	MemoryHandler.do_math(quad, "tan")
 
 def exponential(quad, index):
+	""" Executes exponential quadruple """
 	MemoryHandler.do_math(quad, "exp")
 
 def log10(quad, index):
+	""" Executes log10 quadruple """
 	MemoryHandler.do_math(quad, "log10")
 
 def square_root(quad, index):
+	""" Executes square root quadruple """
 	MemoryHandler.do_math(quad, "sqrt")
 
 def power(quad, index):
+	""" Executes power quadruple """
 	MemoryHandler.do_math_double(quad, "pow")
 
 def end(quad, index):
+	""" Executes end quadruple """
 	print "> PROGRAM EXECUTION DONE"
 
 def alloc(quad, index):
+	""" Executes alloc array quadruple """
 	MemoryHandler.allocate_array_space(quad)
 
 def eqarr(quad, index):
+	""" Executes equal array quadruple """
 	MemoryHandler.get_array_value(quad)
 
 def newfig(quad, index):
+	""" Executes new figure quadruple """
 	MemoryHandler.set_new_fig(quad)
 
 def addv(quad, index):
+	""" Executes add vertex quadruple """
 	obj_temp = MemoryHandler.get_fig(quad.result)
 	MemoryHandler.add_vertex_fig(quad, obj_temp)
 	#MemoryHandler.set_fig(obj_temp, quad)
 
 def addc(quad, index):
+	""" Executes add color quadruple """
 	obj_temp = MemoryHandler.get_fig(quad.result)
 	MemoryHandler.add_color_fig(quad, obj_temp)
 	#MemoryHandler.set_fig(obj_temp, quad)
 	
 def adds(quad, index):
+	""" Executes add size quadruple """
 	obj_temp = MemoryHandler.get_fig(quad.result)
 	MemoryHandler.add_size_fig(quad, obj_temp)
 	#MemoryHandler.set_fig(obj_temp, quad)
 
 def wsize(quad, index):
+	""" Executes window size quadruple """
 
 	width = MemoryHandler.get_address_value(quad.right_operand)
 	height = MemoryHandler.get_address_value(quad.result)
@@ -215,6 +325,7 @@ def wsize(quad, index):
 	win = GraphWin(win_name, width, height)
 
 def move(quad, index):
+	""" Executes move quadruple """
 	checkWindow()
 	# Dejar comentado,
 	# obj_temp = MemoryHandler.get_fig(quad.result)
@@ -242,21 +353,26 @@ def move(quad, index):
 
 
 def rst(quad, index):
+	""" Executes reset quadruple """
 	obj_temp = MemoryHandler.get_fig(quad.result)
 	obj_temp.reset()
 
 def wait(quad, index):
+	""" Executes wait quadruple """
 	MemoryHandler.wait(quad)
 
 def backgroundColor(quad, index):
+	""" Executes background color quadruple """
 	checkWindow()
 	color = MemoryHandler.set_background_color(quad)
 	win.setBackground(color_rgb(color[0]%256, color[1]%256, color[2]%256))
 
 def moveSpeed(quad, index):
+	""" Executes move speed quadruple """
 	move_speed = MemoryHandler.set_move_speed(quad)
 
 def hide(quad, index):
+	""" Executes hide quadruple """
 	checkWindow()
 
 	if not quad.result in fig_dict:
@@ -266,6 +382,7 @@ def hide(quad, index):
 	fig.undraw()
 
 def show(quad, index):
+	""" Executes show quadruple """
 	checkWindow()
 	if not quad.result in fig_dict:
 		Error.figure_not_in_camera()
@@ -274,10 +391,12 @@ def show(quad, index):
 	fig.draw(win)
 
 def textColor(quad, index):
+	""" Executes text color quadruple """
 	global text_color
 	text_color = MemoryHandler.get_text_color(quad)
 
 def gprint(quad, index):
+	""" Executes graphical print quadruple """
 	checkWindow()
 	text = MemoryHandler.get_text(quad)
 	t = Text(Point(text[0], text[1]), text[2])
@@ -286,15 +405,18 @@ def gprint(quad, index):
 	t.draw(win)
 
 def winname(quad, index):
+	""" Executes window name quadruple """
 	global win_name
 	name = MemoryHandler.get_window_name(quad)
 	win_name = name
 
 def checkWindow():
+	""" Check if window is defined """
 	if not win:
 		Error.window_not_defined()
 
 def cam(quad, index):
+	""" Executes camera quadruple """
 	checkWindow()
 	obj_temp = MemoryHandler.get_fig(quad.result)
 
@@ -344,6 +466,7 @@ def cam(quad, index):
 		pass
 
 def RUN_AT_LIGHTSPEED():
+	""" Start the virtual machine """
 	MemoryHandler.init_class_vars() # Supah weird hack...
 	quads = Quadruples.quad_list
 	print "\nVIRTUAL MACHINE ==============================="
@@ -356,6 +479,7 @@ def RUN_AT_LIGHTSPEED():
 	print "> PROGRAM EXIT"
 
 def QuadIterator(index, quads):
+	""" Executes executes the operators quadruple """
 
 	while(index < len(quads)):
 		op = quads[index].operator
