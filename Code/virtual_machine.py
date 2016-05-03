@@ -423,7 +423,7 @@ def cam(quad, index):
 	type = abs(quad.result) // 1000
 
 	if type == 6 : #Line
-		x = Line(obj_temp.getPointsList())
+		x = Line(obj_temp.getPoints())
 		x.setFill(obj_temp.getColor())
 		x.draw(win)
 		fig_dict[quad.result] = x
