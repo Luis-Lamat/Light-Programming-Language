@@ -465,6 +465,9 @@ def cam(quad, index):
 	else:
 		pass
 
+def display_print_queue():
+	MemoryHandler.display_print()
+
 def RUN_AT_LIGHTSPEED():
 	""" Start the virtual machine """
 	MemoryHandler.init_class_vars() # Supah weird hack...
@@ -472,10 +475,13 @@ def RUN_AT_LIGHTSPEED():
 	print "\nVIRTUAL MACHINE ==============================="
 	QuadIterator(0, quads)
 
+	display_print_queue()
+
 	raw_input("Press enter to exit\n")
 	#win.getMouse() # Pause to view result
 	if win:
 		win.close()
+
 	print "> PROGRAM EXIT"
 
 def QuadIterator(index, quads):

@@ -2,6 +2,7 @@ import light_scanner as lexer
 import ply.yacc as yacc
 from light_semantic_controller import *
 from quadruple import *
+import copy
 
 tokens = lexer.tokens
 function_stack = Stack()
@@ -677,12 +678,12 @@ def p_for (p):
 
 def p_push_jump_loop (p):
 	'push_jump_loop : epsilon'
-	#Put count in JUMPSTACK
-	Quadruples.push_jump(0)
+	#Put count in JUMPSTACK while
+	Quadruples.push_jump(1)
 
 def p_push_jump_for (p):
 	'push_jump_for : epsilon'
-	#Put count in JUMPSTACK
+	#Put count in JUMPSTACK for
 	Quadruples.push_jump(1)
 
 def p_start_loop_helper (p):
