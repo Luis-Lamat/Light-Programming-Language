@@ -2,9 +2,15 @@ import sys
 from light_datastructures import *
 
 class Error:
+	""" Error class
+	
+		Static class used throughout the application to display certain errors in
+		a standirdized format.
+	"""
+
 	@staticmethod
 	def already_defined(type, name):
-		""" already defined error """
+		""" already defined error"""
 		print "Semantic Error: {} '{}' already defined".format(type, name)
 		sys.exit()
 

@@ -387,7 +387,7 @@ def p_main_func (p):
 
 def p_window_func(p):
 	'''
-	window_func : WINDOW_SIZE SEP_LPAR VAR_IDENTIFIER SEP_COLON cnt_prim SEP_COMMA VAR_IDENTIFIER SEP_COLON cnt_prim SEP_RPAR
+	window_func : WINDOW_SIZE SEP_LPAR VAR_IDENTIFIER SEP_COLON exp SEP_COMMA VAR_IDENTIFIER SEP_COLON exp SEP_RPAR
 		| epsilon
 	'''
 	if len(p) < 6:
@@ -691,7 +691,7 @@ def p_start_loop_helper (p):
 	'''
 
 	aux = type_stack.pop()
-	if aux != 1 :
+	if aux != type_dict['boolean'] :
 		Error.not_a_condition(aux, p.lexer.lineno)
 	else :
 		res = operand_stack.pop()

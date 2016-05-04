@@ -631,4 +631,5 @@ for type in num_types:
 
 SemanticCube.set_return_value_for('int', 'mod', 'int', 'int')
 SemanticCube.set_return_value_for('string', '+', 'string', 'string')
+SemanticCube.set_return_value_for('string', comp_ops, 'string', 'string')
 SemanticCube.set_return_value_for('boolean', cond_ops, 'boolean', 'boolean')

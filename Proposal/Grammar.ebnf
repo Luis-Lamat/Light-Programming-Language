@@ -3,7 +3,7 @@ PROGRAM ::= 'program' 'id' '{'  (VARS)*  (FUNCTION)* MAIN_FUNC '}'
 MAIN_FUNC ::= 'light()' '{' (WINDOW_NAME)? (WINDOW_FUNC)? (VARS)* STMT_LOOP '}'
 
 WINDOW_NAME ::= 'window_name' '(' 'name' ':' EXP ')'
-WINDOW_FUNC ::= 'window' '(' 'width' ':' EXP ',' 'width' ':' EXP ')'
+WINDOW_FUNC ::= 'window' '(' 'width' ':' EXP ',' 'height' ':' EXP ')'
 
 TYPE ::= (PRIMITIVE_TYPE  | FIGURE)
 
@@ -21,9 +21,9 @@ FUNCTION_CALL ::= 'id' '(' CALL_PARAMETERS ')'
 
 CALL_PARAMETERS ::= (('id' (VAR_ARRAY_VER)? ':' EXP) (',' 'id' (VAR_ARRAY_VER)? ':' EXP)*)
 
-ASSIGNMENT ::= VAR_ID '=' '<& push_operator' EXP 
+ASSIGNMENT ::= VAR_ID '=' EXP 
 
-VAR_ID ::= 'id' '<& verify_variable' VAR_ARRAY_VER '<& push_id'
+VAR_ID ::= 'id' VAR_ARRAY_VER 
 
 CYCLE ::= (WHILE | FOR)
 
@@ -55,7 +55,7 @@ EXPRESION ::= EXP (('>' | '<' | '!=' | '<=' | '>=') EXPRESION )?
 
 EXP::= TERM (('+'| '-') EXP)?
 
-TERM::= FACTOR (('*'| '/' | 'mod') TERM)*
+TERM::= FACTOR (('*'| '/' | 'mod') TERM)?
 
 FACTOR::= ( '(' CONDITION ')' | FUNCTION_CALL | LENGTH | SINE | COSINE | TANGENT | EXPONENTIAL | LOG10 | SQRT | POW | VAR_CTE )
 
