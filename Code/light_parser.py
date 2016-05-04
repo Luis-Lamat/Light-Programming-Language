@@ -2,7 +2,6 @@ import light_scanner as lexer
 import ply.yacc as yacc
 from light_semantic_controller import *
 from quadruple import *
-import copy
 
 tokens = lexer.tokens
 function_stack = Stack()
@@ -168,7 +167,7 @@ def fig_color_quad_helper(p, color_char, fig_addr):
 	"""
 
 	type = type_stack.pop()
-	if type != type_dict['int']:
+	if type != type_dict['int'] and type != type_dict['decimal']:
 		Error.wrong_type('RGB value', type, type_dict['int'], p.lexer.lineno)
 	exp_result = operand_stack.pop()
 	op = special_operator_dict['addc'] # 'Add Color'

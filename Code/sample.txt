@@ -1,0 +1,1649 @@
+ 64f0cc974699358921015a6f5655c505395fe7b6
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 19:54:29 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 19:54:29 2016 -0500
+
+ SORT and QUICK SORT working, and print queue
+
+ 42bf90a6113df76c769f651f8974770efe79be2c
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:14:49 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:14:49 2016 -0500
+
+ working
+
+ dec13e5639d9c2ce34012aabcd457e94b725b11f
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:11:31 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:11:31 2016 -0500
+
+
+
+ 5874b509968205a17e88590ea1c367785c3ed37b
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:03:13 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 15:03:13 2016 -0500
+
+ comments
+
+ add44f21e2cc235c9cc2bc3119ef3b0a72831207
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 14:25:24 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue May 3 14:25:24 2016 -0500
+
+
+
+ ff3d9280e028c1a0d31d1f7c89bcf0adfb3fb498
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 23:06:18 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 23:06:18 2016 -0500
+
+ += global
+
+ a1b06dca4eb378532de56648acad267d9187befc
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 20:31:12 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 20:31:14 2016 -0500
+
+
+
+ 2b175ef5a740f827565005d4e85237bb84b09096
+ c07e616 5b0a942
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 18:16:36 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 18:16:36 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ c07e6168dae4818ec1b4403fe7dfa8aadb59f6d6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 18:16:25 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 18:16:25 2016 -0500
+
+ grammar.ebnf
+
+ 5b0a9422357e046fb41fe6987913d5b07a7a6449
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 18:15:07 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 18:15:07 2016 -0500
+
+ inc_a
+
+ 4500bfaac3628d32ba1f5c5a780eef814d963972
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 17:41:16 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 17:41:18 2016 -0500
+
+ exp, log10, square root, pow
+
+ fd0dff7b3e3bd4ca2af08710cd30ea25c7e47557
+ af7b38d 0f7b7f1
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 17:39:16 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 17:39:16 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ af7b38da6759eec85fe859f78e59a700a5a80e72
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 17:39:02 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 17:39:02 2016 -0500
+
+ vars rules
+
+ 0f7b7f13eb51e135528be4882e02499280d8c806
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 16:36:11 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 16:36:11 2016 -0500
+
+ animation!!1
+
+ 56c2e39682b7f9b47ba8a8ff85b2194610686f90
+ fc3c860 83047c8
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 13:26:50 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 13:26:50 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ fc3c860011b8e4df858a8abdde75e45ad7646f50
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 13:26:18 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 13:26:18 2016 -0500
+
+ changes
+
+ 83047c8c99dd173239f383301592898e8be07f90
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 13:04:43 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 13:04:43 2016 -0500
+
+ length
+
+ 60697e1beeaf04142d3290b2ae5bc30d855856a2
+ ed5265d c2268f6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 11:40:14 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 11:40:14 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ ed5265d2dff4ea4172f4025d19eac91f2c8fd380
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 11:39:14 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon May 2 11:39:14 2016 -0500
+
+ '>' from print
+
+ c2268f61c6c82681d71e8bf7b21fa1a2752967c4
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 11:38:12 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 11:38:12 2016 -0500
+
+ fix
+
+ f37ec6dd3168906054844116c35b813b2aa973bc
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 10:52:10 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon May 2 10:52:10 2016 -0500
+
+ prueba
+
+ 9ed1c95030414de69245e1358842f60dd7ad9a77
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 19:43:18 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 19:43:18 2016 -0500
+
+ dynamic 100
+
+ 519d1dad3b26bba9347692b219738b9297fb48c7
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 18:38:04 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 18:38:04 2016 -0500
+
+ line array initialization!!!
+
+ eca4f5513e76fb427b11702f9b0cf1c9b7c17a90
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 16:10:48 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 16:10:48 2016 -0500
+
+ for array type errors
+
+ e88dc91d140554c7703172de1cdea70de9c99f3b
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 14:33:44 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 14:33:44 2016 -0500
+
+ name
+
+ fc56f0c173cf857130e185311d9ee369f4de85b0
+ 6f37462 f391e36
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 14:02:56 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 14:02:56 2016 -0500
+
+ syntax fixes
+
+ Conflicts:
+ Code/virtual_machine.py
+
+ 6f374629f15e8222155c3e706179d047c0f0e8ae
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 13:59:10 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sun May 1 13:59:10 2016 -0500
+
+ fixes and move improvements
+
+ f391e36b6b2a43a41678369a239806b55e3e8595
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun May 1 11:25:02 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun May 1 11:25:02 2016 -0500
+
+ exp to init_var, adds printing graphical nums
+
+ 3b55a0286171be9bc8bb14955e6e6b8c9babc36e
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 23:00:10 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 23:00:10 2016 -0500
+
+
+
+ 1d2982d433e5daf97dfc5b94383175a0cb0f4a97
+ 72171b4 16e8bb9
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:52:30 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:52:30 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ 72171b48071415a779465ae98e3e0218f4f4a127
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:52:20 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:52:20 2016 -0500
+
+ printg and text_color quads
+
+ 16e8bb908110b69700212182bbfe8d942aaa5271
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 22:52:11 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 22:52:11 2016 -0500
+
+ working and color
+
+ 4ef714224fc20d683720a1f3de2d00e248af6b0c
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 22:17:22 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 22:17:24 2016 -0500
+
+ moveSpeed, gprint, textcolor, show, hide
+
+ 6497f77878b277b5a684b7852490f7979634676c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:16:01 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 22:16:01 2016 -0500
+
+ move_speed, bkg_color, hide, and show quadruples with their checks
+
+ 6d13a89482cb010dd45ca19ad7f84cd601d9e138
+ 0bb30d4 a7c675c
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:28:18 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:28:18 2016 -0500
+
+ remote-tracking branch 'origin/virtual_machine' into virtual_machine
+
+ Conflicts:
+ Code/test/figures.lca
+
+ 0bb30d4836d7d82272f1d7789a8dd30bd44b2414
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:27:33 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:27:33 2016 -0500
+
+ actions
+
+ a7c675c7f7e5e2b8a6fa57a4ee1949d036e70b50
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 21:27:17 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 21:27:17 2016 -0500
+
+ animation speed
+
+ b07438e9b9b58657475075e4a1573acc8496fd64
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:05:30 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 21:05:30 2016 -0500
+
+ Animation!
+
+ 33f54796bbfaa1ad37c92c9c224a40cafa3bd1e1
+ 5c28232 8334ce6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:33:37 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:33:37 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ 5c28232300016326d70e33e3a9b03b4d335e6552
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:33:19 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:33:19 2016 -0500
+
+ negative numbers!
+
+ 8334ce60c12e47df3c581ba85354c9284c2880c5
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 20:26:22 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 20:26:26 2016 -0500
+
+ with animation Working!
+
+ 59edf75c55101aecacf2517c75c39d67c01a9964
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:21:26 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:21:26 2016 -0500
+
+ window_size optional
+
+ 6c84a1e4170ef2607a1007673f80134437d3bad4
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:13:31 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 20:13:31 2016 -0500
+
+ cool figures.lca file
+
+ 2b54580e23b31bdecca4f44540a22255bdce9c97
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 20:03:00 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 20:03:00 2016 -0500
+
+ move
+
+ 79668a271493bdf3130fb8217c543a57ba2f8929
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:54:02 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:54:02 2016 -0500
+
+ WORK, WORK, WORK
+
+ bd192f3bf8617e1d2323c7f0f7e1299d766796c5
+ 6c57a8b 489f541
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:44:58 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:44:58 2016 -0500
+
+ remote-tracking branch 'origin/virtual_machine' into virtual_machine
+
+ 6c57a8b26095c46d162e71d05d50337c9d51b12a
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:44:55 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:44:55 2016 -0500
+
+ and Reset
+
+ 489f541c3164807fb14f6c08439d55e75216ed04
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:42:20 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:42:20 2016 -0500
+
+ wait quad and reduces rules's lines
+
+ 059a4153ae5981168b87e2a3549127a1dae14905
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:27:10 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:27:10 2016 -0500
+
+ reset quad, missing its action in memory handler
+
+ 292ddd7a0f9b47c45f83713ecb412fe3fe8b970d
+ a6a643c be1f2f8
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:24:56 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:24:56 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ a6a643cf43b2c168c1302ba332168899b1b31052
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:24:09 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:24:09 2016 -0500
+
+ move quad, doest have move action on memory handler
+
+ be1f2f8f72c93109c903c60426011c7a7bb0d7fe
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:18:31 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:18:31 2016 -0500
+
+ quad
+
+ 13a091cd9d0570f5c29eabc5cb6585ae6b8a080d
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:10:50 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 19:10:50 2016 -0500
+
+ actions
+
+ 0e93fdc6c4ddd9b01b6ad77bf2529b429b4c9c2e
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:04:10 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 19:04:10 2016 -0500
+
+ cool re=paints
+
+ 76ef5b78df658c622137631356632e0ae142ce25
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 18:27:13 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 30 18:27:13 2016 -0500
+
+ token works, re-adds variable names to tmp_var
+
+ 48eab9365ccfd4268399f9bebe93f822b689760d
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 16:48:05 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 30 16:48:05 2016 -0500
+
+ Size, Window_size working in figures
+
+ d6d776c90892d823c0df274e916c1097e3ccc68a
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 22:26:17 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 22:26:17 2016 -0500
+
+ got 'em Triangles BRO!
+
+ dba0f718bea30340c76680c121e472a2b26bbbe6
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 22:06:03 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 22:06:03 2016 -0500
+
+ vertex to virtual memory
+
+ 8ce1fdef0c175c5c935eee07eedea2c01c6f3f15
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 21:30:45 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 21:30:45 2016 -0500
+
+ camera quadruples, refactors 'get_var_in_scope'
+
+ 63610d57cbe5744878f94f4f8d844d7ce72478e3
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 20:55:31 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 20:55:31 2016 -0500
+
+ window_size quadruple
+
+ 5f44e9008814312956a4eea7df64e7ab230f52a7
+ f890189 9dfabdd
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 19:07:05 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 19:07:05 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ f8901897466223ac0c615fc31cc54976ab2300f6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 19:06:46 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 19:06:46 2016 -0500
+
+ fig size attr quads, removes for_each, refactor some code
+
+ 9dfabdd19a2734ba7aaf0227d43133a64daf0eb5
+ bc32f8f 0364b2a
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:54:07 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:54:07 2016 -0500
+
+ fix
+
+ bc32f8f4c14b0887f275942e2098e5d1694d2292
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:53:14 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:53:14 2016 -0500
+
+ Vertex ready
+
+ 0364b2a0cf7f58b2af7abc19b4dd70105cb5042c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:40:07 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:40:07 2016 -0500
+
+ figure_creations from statement rule
+
+ d6ca8c622a08d5a3c44b260567029af810330f1c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:38:52 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:38:52 2016 -0500
+
+ fig test file, basic fig quads built
+
+ 949573a64bc7a161eb0ff6140c59ed9cd88571bf
+ 1ddd64e 444611b
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:29:40 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:29:40 2016 -0500
+
+ remote-tracking branch 'origin/virtual_machine' into virtual_machine
+
+ Conflicts:
+ Code/test/figures.lca
+
+ 1ddd64ec39a6c5b7e12b09f7000f0776a3ec497f
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:29:12 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 18:29:12 2016 -0500
+
+ quad ready
+
+ 444611b0944aa5b66d9465ddd8f51d5d60399f34
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:17:05 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:17:05 2016 -0500
+
+ RGB quadruples with exp
+
+ e6cfc17d8a12c47155848f98c8e26c5b1eb19663
+ 9c5cd2c edb9ee1
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:10:31 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 18:10:31 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ edb9ee13ccef2995afabeaabdd7ab9152279db67
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 17:34:44 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 17:34:44 2016 -0500
+
+ Quads
+
+ 9c5cd2c456bd51ae00afc6bd1ff337877e98731b
+ 872490a 1195f54
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 17:25:53 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 29 17:25:53 2016 -0500
+
+ branch 'virtual_machine' of https://github.com/Luis-Lamat/Light-Programming-Language into virtual_machine
+
+ 1195f54590d7174ed6ca787886bb288c506fc360
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 11:07:45 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 29 11:07:45 2016 -0500
+
+ Codigos"
+
+ 872490acb5b73659bb8f2286b849d6e0a518573e
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 28 21:34:20 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 28 21:34:20 2016 -0500
+
+ sort works
+
+ 2042446a80ef01a9561a5782fed33d66c093817b
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 28 21:03:26 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 28 21:03:26 2016 -0500
+
+
+
+ 6b5777084cc698769edb548d87f4293d663d3620
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 28 20:00:55 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 28 20:00:55 2016 -0500
+
+ array working with great fix, great idea, just great stuff!
+
+ cb5b4ba0619802dfb4caabd601aaa752305d3a63
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 27 12:07:38 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 27 12:07:38 2016 -0500
+
+ DOUBLE REC WORKS MAAAN
+
+ 6209b48c998144a5e8afdd5ca4377f9a5a38d7de
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 26 23:41:37 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 26 23:41:37 2016 -0500
+
+ second test file, prints quads better
+
+ 1547ffc048c59325fac58e539b9dfb6b407b7cc6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 26 21:26:05 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 26 21:26:05 2016 -0500
+
+ Quad after gosub works, tail rec call works, BUT THE OTHER ONE THOUGH
+
+ bfc670642ced408f805ba8aa65697c14a5f54722
+ 08cf584 34aa6a7
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 25 17:02:32 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 25 17:02:32 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 08cf5847718015cc0a4a9e52f206e4ae8d351827
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 25 12:45:43 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 25 12:45:43 2016 -0500
+
+ function works, but with separate variables
+
+ 34aa6a7d6d9e39659ecb884b7480461b110f89b1
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 23 00:46:30 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 23 00:46:32 2016 -0500
+
+ Equals
+
+ b03fdbd8c0a88e1ea329c5f185ce22d3609d0af1
+ 11671bd 77ca123
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 23 00:21:25 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 23 00:21:25 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 11671bde8013a750d48be6cfa3af161d669cc933
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 23 00:21:19 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 23 00:21:19 2016 -0500
+
+ test for Fibonacci recursive, fails
+
+ 77ca123631ae307c172b1f932767a11fa14831b6
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 23 00:20:04 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 23 00:20:04 2016 -0500
+
+ FIXED!
+
+ 76bfbe524226c87b98c080287e13434bb483456e
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 23:49:55 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 23:49:55 2016 -0500
+
+
+
+ 36a117b4988a2a17468a48a07514558d4e068cbe
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 23:29:23 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 23:29:23 2016 -0500
+
+ Working, missing tests
+
+ 7a61b9a1676e8c9fb39dc3e9f655c11be1787fca
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 22:37:35 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 22:37:35 2016 -0500
+
+ Initialization, Array call add syntax, general Array handling improvements
+
+ 036acb40183bbb97ef8f40112d7650465bd2af4e
+ 9e0e325 c6fd1c7
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 22:18:34 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 22:18:34 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 9e0e3256c87600f01201ff7bc0c83580d6235c52
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 22:17:03 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 22:17:03 2016 -0500
+
+ RETURN op, moves <function_call> to <exp>, adds global var quantities at the end of program, global var id tracker, fixes abs() on rel_addr, EPSILON EPSILON
+
+ c6fd1c7c25fefd1318b4686c3dad1277df36a574
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 19:10:38 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 19:10:38 2016 -0500
+
+ FIX!!
+
+ e64c43d0df4e9d713cebb0f7e48b373e6b33dbdd
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 18:13:51 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 18:13:51 2016 -0500
+
+
+
+ 67edf96834e35b0ce3e95ef84337c58b90216c8e
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 18:03:07 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 18:03:07 2016 -0500
+
+
+
+ 7039135193c83fee0a02fa67402c0ce22030b360
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 17:42:01 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 17:42:01 2016 -0500
+
+
+
+ 329255affaf8e4b2e4f2d7bf2d439dc82ba39b9a
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:51:09 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:51:09 2016 -0500
+
+ funcionando
+
+ d36ba484df7d7150449a34b3e14922040a84a60e
+ 592efd8 edea814
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:35:54 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:35:54 2016 -0500
+
+ remote-tracking branch 'origin/intermediate_code' into intermediate_code
+
+ 592efd8c434df13cc774e13f86c2fb948d2305ec
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:35:49 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 22 14:35:49 2016 -0500
+
+ 1.0
+
+ edea8143c370263011422c3e712fe00422f57212
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 13:04:04 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 13:04:04 2016 -0500
+
+ test end successfully, 'input.in' has infinite loops in code
+
+ 21e525b53b287e24364de5e6d9f290b05417e65f
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 11:28:52 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 22 11:28:52 2016 -0500
+
+ gotof and gotot operators
+
+ 9307b00a4b70604372ddcc42c3ff3870a5f0fb72
+ Enrique Hernandez <enrique@axented.com>
+ Wed Apr 20 23:31:05 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Wed Apr 20 23:31:05 2016 -0500
+
+ gotot, gotof
+
+ 7594ce1a36d5ba3691c2c8b029a5b35345f0e825
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 19:29:15 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 19:29:15 2016 -0500
+
+ wtf error maaaan...
+
+ 14771b78128681ea602dfd3e747fd459fad9b56c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 18:28:56 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 18:28:56 2016 -0500
+
+ code running works, missing param passing, return values, and ret operator
+
+ 148018600bd945618c0d87c7cee90a987ad130e0
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 17:59:59 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 17:59:59 2016 -0500
+
+ mem stack push on runtime
+
+ 3e007aa86cf5e86f1577f963da23386fd23c581d
+ Enrique Hernandez <enrique@axented.com>
+ Mon Apr 18 17:13:06 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon Apr 18 17:13:06 2016 -0500
+
+ quantities
+
+ 24bde185894bc18c2e8bbb51a539f2a29347db9e
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 16:18:38 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 16:18:38 2016 -0500
+
+ something in memory.py
+
+ 8c671b3da743004a7bea9ca2b89418324d1d960a
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 15:41:40 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 15:41:40 2016 -0500
+
+ cool printing values
+
+ 0f1666a59b2aa87aa59a929df601c4412ba40845
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 13:00:11 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 13:00:11 2016 -0500
+
+ MAIN_FUNC era and gosub op's, fixes get and set mem val's
+
+ 158d47de81cb8e5afb4b99c53baf1652527697a4
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 13:00:01 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 13:00:01 2016 -0500
+
+ MAIN_FUNC era and gosub op's, fixes get and set mem val's
+
+ b16395083e3f94cd9113a2755941e617ee9ae99a
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 00:10:44 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 18 00:10:44 2016 -0500
+
+ mem fix (hack), parser tmp_var.id assignment fix
+
+ 8f59a3f96fe0eb2f3e23f209d75bebbf46dd87c5
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 16 00:46:36 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 16 00:46:36 2016 -0500
+
+
+
+ 364b033b40c1b78821c615b31d75522bdb0f3abe
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 16 00:04:14 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 16 00:04:14 2016 -0500
+
+ Machine changes
+
+ 4b5209ef34bdc9cc4fb1e83ec747a62ef1f9fa97
+ e9ebe94 4702250
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 23:39:39 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 23:39:39 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ e9ebe94b723b5c4d1dd57a736c7c18295765ff5b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 23:36:22 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 23:36:22 2016 -0500
+
+ MemoryHandler era operator
+
+ 4702250e90db7423e02d42005940310ce140a490
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 23:36:16 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 23:36:16 2016 -0500
+
+ AT LIGHTSPEED
+
+ ea47c1681408fa066cb897cb7be147e1e0b22f89
+ 3562fd0 3a754f8
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 22:00:09 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 22:00:09 2016 -0500
+
+ remote-tracking branch 'origin/intermediate_code' into intermediate_code
+
+ Conflicts:
+ Code/latest_log.txt
+
+ 3562fd09b1a5ce9895c0c0747742edaf86973773
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 21:58:57 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 21:58:57 2016 -0500
+
+ handler arithmetic operators, assign operator working
+
+ 3a754f8c092b23a6f057c1d5ae0e2aecace0958b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:55:17 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:55:17 2016 -0500
+
+ get and set addres value in memory
+
+ 125cb5d6c560eb499fb400d31c0b4e710e1d4e9b
+ 23f18a0 bcad43b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:16:56 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:16:56 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 23f18a065f8fc29cc57e3f0bda02be96bffd619e
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:16:45 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 21:16:45 2016 -0500
+
+ heap and stack to MemoryHandler class
+
+ bcad43b66c2699dc5425b01313099e3eb285f8be
+ a5b7e37 b1d5285
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 20:47:44 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 20:47:44 2016 -0500
+
+ remote-tracking branch 'origin/intermediate_code' into intermediate_code
+
+ Conflicts:
+ Code/latest_log.txt
+
+ a5b7e37e9eb4ecd0570beab0b06d6340aaa5e843
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 20:47:18 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 15 20:47:18 2016 -0500
+
+
+
+ b1d528535220aee442ca6ca1fe43b98c7b1a3170
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 20:45:09 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 20:45:09 2016 -0500
+
+ 4 Quique 2
+
+ d80223c69f5996e2856c6e84e1cd7213a51bbe02
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 20:43:45 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 15 20:43:45 2016 -0500
+
+ 4 Quique
+
+ 19285b192bad81262f50ba8635ec9fbbf88f1e74
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 15:34:46 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 15:34:46 2016 -0500
+
+ gloabl constant_dict, will be passed to the Memory class in runtime
+
+ d3ed7ef600f28bac7f2250a86c54f03fd56ba7e3
+ c8cde38 28c9c01
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 14:08:22 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 14:08:22 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ c8cde38b963c3f1c8c85ab9381045df03a0783cf
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 14:07:46 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 14 14:07:46 2016 -0500
+
+ some reduce/reduce conflicts on rules
+
+ 28c9c0186633ca24722ebd120931e81da0798fd6
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 14 10:57:24 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 14 10:57:24 2016 -0500
+
+ loop Working
+
+ 8ea6c51202b525353f88e8fc6d8e5939f7024030
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:58:22 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:58:22 2016 -0500
+
+ sign of global vars id's (Memory class will handle this)
+
+ 372e9b5ce7803774f6c956010c1a40e2f9e1379d
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:49:11 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:49:11 2016 -0500
+
+ adds VAR_BOOLEAN to cnt_prim rule for basic assignments
+
+ 4d449cce0fca60ee449b5d4e4b986d122602e6a4
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:38:55 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:38:55 2016 -0500
+
+ boolean 'true' and 'false' to language...LOL
+
+ b623927f0e5890a9410a611ed8bcaebef7c40d6c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:26:42 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 17:26:42 2016 -0500
+
+ VAR_STRING to var_cte rule for exp
+
+ 4f4c8cd2320d0f26e11076bf1fe099c3bc2e4d25
+ 41952de 9236ee8
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 16:57:36 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 16:57:36 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 41952dedad7073e352db168c7c9df2c3245b5e64
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 16:56:30 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 16:56:30 2016 -0500
+
+ quads generate successfully, missing func name as global var for return values
+
+ 17fb079bfcfdd93e8c347ae703540adab43e4349
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 12:51:39 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Apr 13 12:51:39 2016 -0500
+
+ cnt_prim to exp in function_call, global vars usage works
+
+ 9236ee85c3506a92e4ced0491916b95b05816b2f
+ Enrique Hernandez <enrique@axented.com>
+ Wed Apr 13 00:27:43 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Wed Apr 13 00:27:43 2016 -0500
+
+ Loop Quadruples Working!
+
+ fac65f5219cc67525e09fb613978bd3b8fb66b0a
+ Enrique Hernandez <enrique@axented.com>
+ Tue Apr 12 22:35:21 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Tue Apr 12 22:35:21 2016 -0500
+
+ if working, += Working with quadruples
+
+ aa3dab34f7a189f51a4b118a10fa1a8d2d5104d6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 16:25:04 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 16:25:04 2016 -0500
+
+ starting quad address to functions
+
+ 37f1cfb349eb6441cc88ee42a3b78da6fdafa03c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 15:49:01 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 15:49:01 2016 -0500
+
+ param signature (types) to functions
+
+ fa10a6e71c8f3363b0fd796dc5254c8289272d0c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 15:05:32 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 15:05:32 2016 -0500
+
+ Print quadruple (missing function_call sub-rule)
+
+ bc4f42d416f3439e2bc0a007b130fd464e36c397
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 14:35:11 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 14:35:11 2016 -0500
+
+ operators to their respective dicts, refactors push_operator rule
+
+ cbccd0088587b5ca6716d2c6ced90fa47045cd23
+ 25ef63f 1736f6f
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 14:20:56 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 11 14:20:56 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 1736f6ff91f4e11328f032d45d12b9c8cb5123c9
+ Enrique Hernandez <enrique@axented.com>
+ Mon Apr 11 09:07:10 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Mon Apr 11 09:07:10 2016 -0500
+
+
+
+ 25ef63f671199f39a3a44e9f2778a1c94bdc6d12
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 23:34:06 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 23:34:06 2016 -0500
+
+ commit
+
+ cff02d8577df135b7047507cc9d68e80720af728
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 9 21:05:44 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 9 21:05:44 2016 -0500
+
+ IS PLAYING WITH OUR FUTURE
+
+ 74231589ea719e610981f3ba6e792d312eca9c6c
+ 1117286 23a3f81
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 21:01:23 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 21:01:23 2016 -0500
+
+ branch 'intermediate_code' of https://github.com/Luis-Lamat/Light-Programming-Language into intermediate_code
+
+ 1117286bf8816bbe7e87109581de4d5dda2c6e77
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 20:46:51 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Apr 9 20:46:51 2016 -0500
+
+ for var declaration + assignment and var assignment
+
+ 23a3f81eb051be9067b36a91f51ec02165ae6d9e
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 9 18:43:29 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Sat Apr 9 18:43:29 2016 -0500
+
+ if function has return
+
+ 61e43669d32dd7e8f043bf380ecf9a329f1cf1f1
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 8 14:21:50 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 8 14:21:50 2016 -0500
+
+ SemanticCube definitions to work properly
+
+ a399bd8f76fb0e0026267a19f4af77ce5f2955ed
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 8 14:14:26 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 8 14:14:26 2016 -0500
+
+ quads working, type mismatch working
+
+ 0056f084f33f8efa898738cdc8b39888540dcf67
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 8 00:15:32 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 8 00:15:32 2016 -0500
+
+ sin return son de tipo Void, FIX
+
+ 018423a6c1d8b576f19ac77d44980df6c96ec2ef
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 23:57:02 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 23:57:02 2016 -0500
+
+ if function name exists, else error
+
+ bb425f62b433d94b54cd157d734491dfd3465c30
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 23:26:50 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 23:26:50 2016 -0500
+
+
+
+ 1f8f02a0735e460e5d9ed56b23d2ce466d751beb
+ ae9f3e2 d822178
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:35:41 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:35:41 2016 -0500
+
+ remote-tracking branch 'origin/basic_semantics' into basic_semantics
+
+ Conflicts:
+ Code/latest_log.txt
+ Code/light_semantic_controller.py
+
+ ae9f3e2387a7564a800dd9a38306afe958a22d9e
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:35:01 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:35:01 2016 -0500
+
+
+
+ e7cbf667432e15ba621df89cddc5f630b641e165
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:34:36 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:34:36 2016 -0500
+
+ merge
+
+ dfadbb469b00c52acc809176bb178bffceaed3a5
+ aa3d5ce 3733733
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:33:58 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:33:58 2016 -0500
+
+ remote-tracking branch 'origin/basic_semantics' into basic_semantics
+
+ Conflicts:
+ Code/latest_log.txt
+ Code/light_semantic_controller.py
+
+ d8221783d4518035f7809758c3b0070b2b40725b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 7 22:33:48 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Apr 7 22:33:48 2016 -0500
+
+ generate with multiple operators, BUG: first operand not taken
+
+ aa3d5ceb3ad3cdd4f62b1718f49a3feccda53241
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:32:01 2016 -0500
+ Enrique Hernandez <enrique@axented.com>
+ Thu Apr 7 22:32:01 2016 -0500
+
+ for existing variables in for, asignment, increment, if, etc.
+
+ 373373326ede236b5239d0041cdc967b74cd836b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 15:50:43 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 15:50:43 2016 -0500
+
+ various classes and data structures
+
+ 0bc906fa9102f9f673de45c3e89f736bd70e1583
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:51:57 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:51:57 2016 -0500
+
+ quad.id on quad list push to reflect list index
+
+ 2f9a06631d7fb303de3508851f8a359dd8aca62c
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:46:44 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:46:44 2016 -0500
+
+ the var id's when changing function scope in quads
+
+ c45ca44fe17e160bd8e88e5a2afd28ed106dae53
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:43:31 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Apr 5 14:43:31 2016 -0500
+
+ sum quads (built-in func error in sum var)
+
+ 934aab38f4df8fdac42dac9d734c25c5ceef2d34
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 4 12:29:48 2016 -0500
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Apr 4 12:29:48 2016 -0500
+
+ type_stack, comments error in input example
+
+ 2207c1a4e64fd90316147ef01a3f6ab639e8249b
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 1 22:07:12 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 1 22:07:12 2016 -0600
+
+ is getting out of hand...(missin exp quads :( )
+
+ e60afc46580e28c53b44ed8f90c3adeaf2a2ee3a
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 1 21:14:18 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Fri Apr 1 21:14:18 2016 -0600
+
+ WHAT IM DOING (semantic returns check)
+
+ aa71ce1163dd32581db35a69c1d2ac58a4fc3de0
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 1 19:41:38 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Fri Apr 1 19:41:38 2016 -0600
+
+
+
+ 800d0870a4deef25d94b1b60a64cbf65862adcb1
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:42:40 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:42:40 2016 -0600
+
+ Log
+
+ c3f11df170a0ff160fb45005cd3bf2870682f117
+ 78226d2 84a7ad0
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:42:08 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:42:08 2016 -0600
+
+ remote-tracking branch 'origin/basic_semantics' into basic_semantics
+
+ Conflicts:
+ Code/input.in
+ Code/latest_log.txt
+
+ 78226d2bc28c711e11b67a90f907a2c024707ee8
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:40:31 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 31 00:40:31 2016 -0600
+
+ AND and OR Operators and general improvements
+
+ 84a7ad0e0c8462edfa49627586c88cae49ca146a
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 30 22:34:21 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 30 22:34:21 2016 -0600
+
+ initial proposal back again
+
+ 634ac91c7f20d7373f7249470c5ced50c0c01243
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 30 22:29:20 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 30 22:29:20 2016 -0600
+
+ stuff...
+
+ 7f3b46eba5ffe2aafb8107581b0981be4b497c07
+ Enrique Hernandez <enrique@axented.com>
+ Mon Mar 28 16:38:18 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Mon Mar 28 16:38:21 2016 -0600
+
+ array with length
+
+ 592507c8283dd5b0a845016fa99dc4f73cf2bb45
+ 83d93d1 2327e49
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 28 16:23:13 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 28 16:23:13 2016 -0600
+
+ branch 'basic_semantics' of https://github.com/Luis-Lamat/Light-Programming-Language into basic_semantics
+
+ 83d93d1dc633cc4a389a8ebb4687d416fafb4133
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 28 16:23:05 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 28 16:23:05 2016 -0600
+
+ updated grammar
+
+ 2327e4964830b6dc15b7dda9f563e1a3c18e32f8
+ Enrique Hernandez <enrique@axented.com>
+ Mon Mar 28 16:09:08 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Mon Mar 28 16:09:08 2016 -0600
+
+
+
+ 7b59350403b859614e95d06cec36f87205bf0f30
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 24 14:32:56 2016 -0700
+ Enrique Hernandez <enrique@axented.com>
+ Thu Mar 24 14:32:56 2016 -0700
+
+ with Global id, array definition working
+
+ d3e6686e2e589bf8ecf2efe53fd465f629b1cf3d
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Mar 22 23:16:21 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Tue Mar 22 23:16:21 2016 -0600
+
+ basic semantic cube definition, adds num ops to it
+
+ 3556eaa0d742945ffaf85d78dadc313251adff75
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun Mar 13 23:52:15 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun Mar 13 23:52:15 2016 -0600
+
+ parameters as local function variables
+
+ f80f7cf015943dd5ee5b805841e196a30d29a135
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun Mar 13 23:40:01 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sun Mar 13 23:40:01 2016 -0600
+
+ builds functions and variables tables
+
+ e8b640388652e3051231b6d235566728bbc12915
+ Enrique Hernandez <enrique@axented.com>
+ Sat Mar 12 22:09:02 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Sat Mar 12 22:09:02 2016 -0600
+
+ work aaammm variables have bug o algo asi
+
+ 67432c5b0586670bba3067ee5f9842cd15af8584
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Mar 12 20:45:54 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Mar 12 20:45:54 2016 -0600
+
+ semantic starting to work
+
+ 577df6a60568f4f60fcb31cbd8a060e7d32e00d6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Mar 12 20:29:56 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Sat Mar 12 20:29:56 2016 -0600
+
+ between fear commit
+
+ bd814719a34443322eaadee1f31f7ccd969eaa5a
+ Enrique Hernandez <enrique@axented.com>
+ Sat Mar 12 17:36:00 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Sat Mar 12 17:36:00 2016 -0600
+
+ number representation
+
+ 94a274aa86c5602455b65807b40ee700dcba1d42
+ Enrique Hernandez <enrique@axented.com>
+ Fri Mar 11 00:41:28 2016 -0600
+ Enrique Hernandez <enrique@axented.com>
+ Fri Mar 11 00:41:28 2016 -0600
+
+ Semantic Controller and partial variable handling
+
+ e07c3d9643f3e12ca33fcf7f0042100f7230d329
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 22:28:00 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 22:28:00 2016 -0600
+
+ grammar works now, missing arrays...
+
+ 2f34991dd154c224df533c0be7e2396a530935e8
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 17:15:58 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 17:15:58 2016 -0600
+
+ of changes...
+
+ f6cb623abbd842987cb7525d3158056c87bdf1d5
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 16:36:39 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 16:36:39 2016 -0600
+
+ comments
+
+ 6743654c180038c31ab59c0b5248fcee2b75392d
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 16:24:11 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 16:24:11 2016 -0600
+
+ separation of files, adds reserved words hash table
+
+ 33e7f253c5f492b6ca777b7db195b781a47d19de
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 15:08:05 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Thu Mar 10 15:08:05 2016 -0600
+
+ scanner and parser
+
+ 79aa898dcbc3161364f3172760f9e4358cf1d47d
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 22:37:07 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 22:37:07 2016 -0600
+
+ PLY
+
+ 8f3c651f0664d46bd1487b2606fdd938e24045fe
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 21:45:42 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 21:45:42 2016 -0600
+
+ left rec. in expresions, fixes hierarch. or tpken '+=' and fixes for's stmt_loop wrapper
+
+ 421f622ce3c3cfa6a6ce5eb8dbb8d3141a6c607f
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 21:29:27 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 21:29:27 2016 -0600
+
+ loop to parameters, and adds DECIMAL token
+
+ a805380e5d8a4b25c3bde8185976de5f69581344
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 19:16:25 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Wed Mar 9 19:16:25 2016 -0600
+
+ RETURNS token above RETURN token
+
+ 67331a85d923ca12d604357f1cf6b923a0d22def
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 22:13:30 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 22:13:30 2016 -0600
+
+ for the day, trouble in 'return <exp>' rule
+
+ c81508930d0bc8d8674998c7b76882fb94e176f4
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:53:58 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:53:58 2016 -0600
+
+ variable declaration working, adds newline to script
+
+ 952b3039523564c2270771d804c52d176fe7c64a
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:46:48 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:46:48 2016 -0600
+
+ old_version, adds running script with latest logs
+
+ 7f6a0c2e5480bb7ae133248b620bb01dfefcf0b6
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:25:59 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:25:59 2016 -0600
+
+ unwanted files, fixes 'primitive' rule and adds type tolens
+
+ d34813a2f2c6ed745a89e9133f70c53a265b27b3
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:13:00 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:13:00 2016 -0600
+
+ initial proposal dir
+
+ 358557a1e50f168434d4813db31f0ac163ff24a0
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:07:07 2016 -0600
+ Luis-Lamat <beto_alaska@hotmail.com>
+ Mon Mar 7 21:07:07 2016 -0600
+
+ commit

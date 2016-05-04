@@ -4,15 +4,6 @@ program merge_sort {
 	var helper:[int](10)
 	var arr_len:int = 10
 
-	function tryy(low: int, high: int){
-		var i:int = 0
-
-		for(i = low; i <= high; i += 1)do
-    		helper[i] = arr[i]
-    	end
-
-	}
-
 	function merge(low: int, middle: int, high: int){
     	var i:int = 0
     	var j:int = 0
@@ -79,7 +70,6 @@ program merge_sort {
     	middle = low + (high - low) / 2
     	pivot = arr[middle]
 
-
     	i = low
     	j = high
 
@@ -98,18 +88,15 @@ program merge_sort {
     			i += 1
     			j -= 1
     		end
-
     	end
 
     	if(low < j) do
     		quick_sort(low: low, high: j)
-
     	end
 
     	if(high > i) do
     		quick_sort(low:i, high: high)
     	end
-
     }
 
 
@@ -117,9 +104,8 @@ program merge_sort {
 	light() {
 
 		print(arr)
-
-		merge_sort(low:0, high:9)
-		#quick_sort(low:0, high:9)
+		#merge_sort(low:0, high:9)
+		quick_sort(low:0, high:9)
 		print(arr)
 
 	}

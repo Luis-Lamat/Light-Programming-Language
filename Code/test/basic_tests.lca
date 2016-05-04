@@ -51,10 +51,15 @@ program basic_tests {
 
 		while(i > 0)do
 			i -= 1
-			print("algo")
 			sum += 1
 		end
 		print(sum)
+	}
+	function arr_test(){
+		var arr:[int](5) = {1,2,3,4,5}
+
+		print(arr[arr[2] + 1])
+
 	}
 	
 	light(){
@@ -64,6 +69,7 @@ program basic_tests {
 		if_else_test()
 		if_elsif_else_test()
 		while_test()
+		arr_test()
 
 	}
 }

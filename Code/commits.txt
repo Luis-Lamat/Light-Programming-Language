@@ -1,0 +1,518 @@
+Date: Tue May 3 15:14:49 2016 -0500
+    Lines working
+
+Date: Tue May 3 15:11:31 2016 -0500
+    Figures
+
+Date: Tue May 3 15:03:13 2016 -0500
+    More comments
+
+Date: Tue May 3 14:25:24 2016 -0500
+    Comments
+
+Date: Mon May 2 23:06:18 2016 -0500
+    Fix += global
+
+Date: Mon May 2 20:31:14 2016 -0500
+    fix
+
+Date: Mon May 2 18:16:25 2016 -0500
+    Updates grammar.ebnf
+
+Date: Mon May 2 18:15:07 2016 -0500
+    fix inc_a
+
+Date: Mon May 2 17:41:18 2016 -0500
+    tangent, exp, log10, square root, pow
+
+Date: Mon May 2 17:39:02 2016 -0500
+    Refactrs vars rules
+
+Date: Mon May 2 16:36:11 2016 -0500
+    Circle animation!!1
+
+Date: Mon May 2 13:26:18 2016 -0500
+    Some changes
+
+Date: Mon May 2 13:04:43 2016 -0500
+    Array length
+
+Date: Mon May 2 11:39:14 2016 -0500
+    Removes '>' from print
+
+Date: Mon May 2 11:38:12 2016 -0500
+    while fix
+
+Date: Mon May 2 10:52:10 2016 -0500
+    Merge_sort prueba
+
+Date: Sun May 1 19:43:18 2016 -0500
+    Fibonacci dynamic 100
+
+Date: Sun May 1 18:38:04 2016 -0500
+    Single line array initialization!!!
+
+Date: Sun May 1 16:10:48 2016 -0500
+    Check for array type errors
+
+Date: Sun May 1 14:33:44 2016 -0500
+    Window name
+
+Date: Sun May 1 13:59:10 2016 -0500
+    Syntaxis fixes and move improvements
+
+Date: Sun May 1 11:25:02 2016 -0500
+    Adds exp to init_var, adds printing graphical nums
+
+Date: Sat Apr 30 23:00:10 2016 -0500
+    Colors
+
+Date: Sat Apr 30 22:52:20 2016 -0500
+    Adds printg and text_color quads
+
+Date: Sat Apr 30 22:52:11 2016 -0500
+    Poly working and color
+
+Date: Sat Apr 30 22:17:24 2016 -0500
+    backgroundColor, moveSpeed, gprint, textcolor, show, hide
+
+Date: Sat Apr 30 22:16:01 2016 -0500
+    Adds move_speed, bkg_color, hide, and show quadruples with their checks
+
+Date: Sat Apr 30 21:27:33 2016 -0500
+    New actions
+
+Date: Sat Apr 30 21:27:17 2016 -0500
+    Changes animation speed
+
+Date: Sat Apr 30 21:05:30 2016 -0500
+    Coool Animation!
+
+Date: Sat Apr 30 20:33:19 2016 -0500
+    Adds negative numbers!
+
+Date: Sat Apr 30 20:26:26 2016 -0500
+    Move with animation Working!
+
+Date: Sat Apr 30 20:21:26 2016 -0500
+    Makes window_size optional
+
+Date: Sat Apr 30 20:13:31 2016 -0500
+    Edits cool figures.lca file
+
+Date: Sat Apr 30 20:03:00 2016 -0500
+    Fix move
+
+Date: Sat Apr 30 19:54:02 2016 -0500
+    WORK, WORK, WORK, WORK
+
+Date: Sat Apr 30 19:44:55 2016 -0500
+    Line and Reset
+
+Date: Sat Apr 30 19:42:20 2016 -0500
+    Adds wait quad and reduces rules's lines
+
+Date: Sat Apr 30 19:27:10 2016 -0500
+    Adds reset quad, missing its action in memory handler
+
+Date: Sat Apr 30 19:24:09 2016 -0500
+    Adds move quad, doest have move action on memory handler
+
+Date: Sat Apr 30 19:18:31 2016 -0500
+    Wait quad
+
+Date: Sat Apr 30 19:10:50 2016 -0500
+    New actions
+
+Date: Sat Apr 30 19:04:10 2016 -0500
+    Adds cool re=paints
+
+Date: Sat Apr 30 18:27:13 2016 -0500
+    Vertex token works, re-adds variable names to tmp_var
+
+Date: Sat Apr 30 16:48:05 2016 -0500
+    Color, Size, Window_size working in figures
+
+Date: Fri Apr 29 22:26:17 2016 -0500
+    We got 'em Triangles BRO!
+
+Date: Fri Apr 29 22:06:03 2016 -0500
+    Add vertex to virtual memory
+
+Date: Fri Apr 29 21:30:45 2016 -0500
+    Adds camera quadruples, refactors 'get_var_in_scope'
+
+Date: Fri Apr 29 20:55:31 2016 -0500
+    Adds window_size quadruple
+
+Date: Fri Apr 29 19:06:46 2016 -0500
+    Adds fig size attr quads, removes for_each, refactor some code
+
+Date: Fri Apr 29 18:54:07 2016 -0500
+    Conflict fix
+
+Date: Fri Apr 29 18:53:14 2016 -0500
+    Add Vertex ready
+
+Date: Fri Apr 29 18:40:07 2016 -0500
+    Removes figure_creations from statement rule
+
+Date: Fri Apr 29 18:38:52 2016 -0500
+    Fixes fig test file, basic fig quads built
+
+Date: Fri Apr 29 18:29:12 2016 -0500
+    NewFig quad ready
+
+Date: Fri Apr 29 18:17:05 2016 -0500
+    Adds RGB quadruples with exp
+
+Date: Fri Apr 29 17:34:44 2016 -0500
+    New Quads
+
+Date: Fri Apr 29 11:07:45 2016 -0500
+    "Los Codigos"
+
+Date: Thu Apr 28 21:34:20 2016 -0500
+    Bubble sort works
+
+Date: Thu Apr 28 21:03:26 2016 -0500
+    Bubble
+
+Date: Thu Apr 28 20:00:55 2016 -0500
+    Set array working with great fix, great idea, just great stuff!
+
+Date: Wed Apr 27 12:07:38 2016 -0500
+    FIBO DOUBLE REC WORKS MAAAN
+
+Date: Tue Apr 26 23:41:37 2016 -0500
+    Adds second test file, prints quads better
+
+Date: Tue Apr 26 21:26:05 2016 -0500
+    '=' Quad after gosub works, tail rec call works, BUT THE OTHER ONE THOUGH
+
+Date: Mon Apr 25 12:45:43 2016 -0500
+    Fibonacci function works, but with separate variables
+
+Date: Sat Apr 23 00:46:32 2016 -0500
+    Equals Equals
+
+
+Date: Sat Apr 23 00:21:19 2016 -0500
+    Adds test for Fibonacci recursive, fails
+
+Date: Sat Apr 23 00:20:04 2016 -0500
+    EVERYTHING FIXED!
+
+Date: Fri Apr 22 23:49:55 2016 -0500
+    TESTS
+
+Date: Fri Apr 22 23:29:23 2016 -0500
+    ARRAYS Working, missing tests
+
+Date: Fri Apr 22 22:37:35 2016 -0500
+    Array Initialization, Array call add syntax, general Array handling improvements
+
+Date: Fri Apr 22 22:17:03 2016 -0500
+    Adds RETURN op, moves <function_call> to <exp>, adds global var quantities at the end of program, global var id tracker, fixes abs() on rel_addr, EPSILON EPSILON
+
+Date: Fri Apr 22 19:10:38 2016 -0500
+    For FIX!!
+
+Date: Fri Apr 22 18:13:51 2016 -0500
+    LoopTESTFIXSTUFF
+
+Date: Fri Apr 22 18:03:07 2016 -0500
+    puuuuush
+
+Date: Fri Apr 22 17:42:01 2016 -0500
+    stuff
+
+Date: Fri Apr 22 14:51:09 2016 -0500
+    Print funcionando
+
+Date: Fri Apr 22 14:35:54 2016 -0500
+    Merge remote-tracking branch 'origin/intermediate_code' into intermediate_code
+
+Date: Fri Apr 22 14:35:49 2016 -0500
+    Graphics 1.0
+
+Date: Fri Apr 22 13:04:04 2016 -0500
+    Example test end successfully, 'input.in' has infinite loops in code
+
+Date: Fri Apr 22 11:28:52 2016 -0500
+    Fixes gotof and gotot operators
+
+Date: Wed Apr 20 23:31:05 2016 -0500
+    Goto, gotot, gotof
+
+Date: Mon Apr 18 19:29:15 2016 -0500
+    Fixes wtf error maaaan...
+
+Date: Mon Apr 18 18:28:56 2016 -0500
+    Basic code running works, missing param passing, return values, and ret operator
+
+Date: Mon Apr 18 17:59:59 2016 -0500
+    Fixed mem stack push on runtime
+
+Date: Mon Apr 18 17:13:06 2016 -0500
+    Var quantities
+
+Date: Mon Apr 18 16:18:38 2016 -0500
+    Printing something in memory.py
+
+Date: Mon Apr 18 15:41:40 2016 -0500
+    Adds cool printing values
+
+Date: Mon Apr 18 13:00:11 2016 -0500
+    Adds MAIN_FUNC era and gosub op's, fixes get and set mem val's
+
+Date: Mon Apr 18 13:00:01 2016 -0500
+    Adds MAIN_FUNC era and gosub op's, fixes get and set mem val's
+
+Date: Mon Apr 18 00:10:44 2016 -0500
+    Virtual mem fix (hack), parser tmp_var.id assignment fix
+
+Date: Sat Apr 16 00:46:36 2016 -0500
+    FML
+
+Date: Sat Apr 16 00:04:14 2016 -0500
+    Virtual Machine changes
+
+Date: Fri Apr 15 23:36:22 2016 -0500
+    Adds MemoryHandler era operator
+
+Date: Fri Apr 15 23:36:16 2016 -0500
+    RUN AT LIGHTSPEED
+
+Date: Fri Apr 15 21:58:57 2016 -0500
+    Memory handler arithmetic operators, assign operator working
+
+Date: Fri Apr 15 21:55:17 2016 -0500
+    Adds get and set addres value in memory
+
+
+Date: Fri Apr 15 21:16:45 2016 -0500
+    Adds heap and stack to MemoryHandler class
+
+Date: Fri Apr 15 20:47:18 2016 -0500
+    trashcan
+
+Date: Thu Apr 14 15:34:46 2016 -0500
+    Adds gloabl constant_dict, will be passed to the Memory class in runtime
+
+Date: Thu Apr 14 14:07:46 2016 -0500
+    Fixes some reduce/reduce conflicts on rules
+
+Date: Thu Apr 14 10:57:24 2016 -0500
+    While loop Working
+
+Date: Wed Apr 13 17:58:22 2016 -0500
+    Inverts sign of global vars id's (Memory class will handle this)
+
+Date: Wed Apr 13 17:49:11 2016 -0500
+    Also adds VAR_BOOLEAN to cnt_prim rule for basic assignments
+
+Date: Wed Apr 13 17:38:55 2016 -0500
+    Adds boolean 'true' and 'false' to language...LOL
+
+Date: Wed Apr 13 17:26:42 2016 -0500
+    Adds VAR_STRING to var_cte rule for exp
+
+
+Date: Wed Apr 13 16:56:30 2016 -0500
+    Fucntion quads generate successfully, missing func name as global var for return values
+
+Date: Wed Apr 13 12:51:39 2016 -0500
+    Moves cnt_prim to exp in function_call, global vars usage works
+
+Date: Wed Apr 13 00:27:43 2016 -0500
+    For Loop Quadruples Working!
+
+Date: Tue Apr 12 22:35:21 2016 -0500
+    Else if working, += Working with quadruples
+
+Date: Mon Apr 11 16:25:04 2016 -0500
+    Adds starting quad address to functions
+
+Date: Mon Apr 11 15:49:01 2016 -0500
+    Adds param signature (types) to functions
+
+Date: Mon Apr 11 15:05:32 2016 -0500
+    Adds Print quadruple (missing function_call sub-rule)
+
+Date: Mon Apr 11 14:35:11 2016 -0500
+    Moves operators to their respective dicts, refactors push_operator rule
+
+
+Date: Mon Apr 11 09:07:10 2016 -0500
+    stuff
+
+Date: Sat Apr 9 23:34:06 2016 -0500
+    Useless commit
+
+Date: Sat Apr 9 21:05:44 2016 -0500
+    LAMADRID IS PLAYING WITH OUR FUTURE
+
+Date: Sat Apr 9 20:46:51 2016 -0500
+    Quads for var declaration + assignment and var assignment
+
+Date: Sat Apr 9 18:43:29 2016 -0500
+    Verify if function has return
+
+Date: Fri Apr 8 14:21:50 2016 -0500
+    Fixes SemanticCube definitions to work properly
+
+Date: Fri Apr 8 14:14:26 2016 -0500
+    Expression quads working, type mismatch working
+
+Date: Fri Apr 8 00:15:32 2016 -0500
+    Funciones sin return son de tipo Void, FIX
+
+Date: Thu Apr 7 23:57:02 2016 -0500
+    Check if function name exists, else error
+
+Date: Thu Apr 7 23:26:50 2016 -0500
+    fix
+
+Date: Thu Apr 7 22:35:41 2016 -0500
+    Merge remote-tracking branch 'origin/basic_semantics' into basic_semantics
+    
+    # Conflicts:
+    #	Code/latest_log.txt
+    #	Code/light_semantic_controller.py
+
+Date: Thu Apr 7 22:35:01 2016 -0500
+    log
+
+Date: Thu Apr 7 22:34:36 2016 -0500
+    Fix merge
+
+Date: Thu Apr 7 22:33:58 2016 -0500
+    Merge remote-tracking branch 'origin/basic_semantics' into basic_semantics
+    
+    # Conflicts:
+    #	Code/latest_log.txt
+    #	Code/light_semantic_controller.py
+
+Date: Thu Apr 7 22:33:48 2016 -0500
+    Quads generate with multiple operators, BUG: first operand not taken
+
+Date: Thu Apr 7 22:32:01 2016 -0500
+    Checks for existing variables in for, asignment, increment, if, etc.
+
+Date: Tue Apr 5 15:50:43 2016 -0500
+    Separates various classes and data structures
+
+Date: Tue Apr 5 14:51:57 2016 -0500
+    Modifies quad.id on quad list push to reflect list index
+
+Date: Tue Apr 5 14:46:44 2016 -0500
+    Resets the var id's when changing function scope in quads
+
+Date: Tue Apr 5 14:43:31 2016 -0500
+    Adds sum quads (built-in func error in sum var)
+
+Date: Mon Apr 4 12:29:48 2016 -0500
+    Advances type_stack, comments error in input example
+
+Date: Fri Apr 1 22:07:12 2016 -0600
+    This is getting out of hand...(missin exp quads :( )
+
+Date: Fri Apr 1 21:14:18 2016 -0600
+    IDK WHAT IM DOING (semantic returns check)
+
+Date: Fri Apr 1 19:41:38 2016 -0600
+    PushOfendido
+
+Date: Thu Mar 31 00:42:40 2016 -0600
+    Latest Log
+
+Date: Thu Mar 31 00:40:31 2016 -0600
+    Added AND and OR Operators and general improvements
+
+Date: Wed Mar 30 22:34:21 2016 -0600
+    Adds initial proposal back again
+
+Date: Wed Mar 30 22:29:20 2016 -0600
+    Adds stuff...
+
+Date: Mon Mar 28 16:38:21 2016 -0600
+    Fill array with length
+
+Date: Mon Mar 28 16:23:05 2016 -0600
+    Adds updated grammar
+
+Date: Mon Mar 28 16:09:08 2016 -0600
+    STAWF
+
+Date: Thu Mar 24 14:32:56 2016 -0700
+    Variables with Global id, array definition working
+
+Date: Tue Mar 22 23:16:21 2016 -0600
+    Adds basic semantic cube definition, adds num ops to it
+
+Date: Sun Mar 13 23:52:15 2016 -0600
+    Adds parameters as local function variables
+
+Date: Sun Mar 13 23:40:01 2016 -0600
+    Successfully builds functions and variables tables
+
+Date: Sat Mar 12 22:09:02 2016 -0600
+    Tables work aaammm variables have bug o algo asi
+
+Date: Sat Mar 12 20:45:54 2016 -0600
+    Basic semantic starting to work
+
+Date: Sat Mar 12 20:29:56 2016 -0600
+    In between fear commit
+
+Date: Sat Mar 12 17:36:00 2016 -0600
+    fix number representation
+
+Date: Fri Mar 11 00:41:28 2016 -0600
+    added Semantic Controller and partial variable handling
+
+Date: Thu Mar 10 22:28:00 2016 -0600
+    All grammar works now, missing arrays...
+
+Date: Thu Mar 10 17:15:58 2016 -0600
+    Lots of changes...
+
+Date: Thu Mar 10 16:36:39 2016 -0600
+    Adds comments
+
+Date: Thu Mar 10 16:24:11 2016 -0600
+    Successful separation of files, adds reserved words hash table
+
+Date: Thu Mar 10 15:08:05 2016 -0600
+    Separates scanner and parser
+
+Date: Wed Mar 9 22:37:07 2016 -0600
+    @#$% PLY
+
+Date: Wed Mar 9 21:45:42 2016 -0600
+    Fixes left rec. in expresions, fixes hierarch. or tpken '+=' and fixes for's stmt_loop wrapper
+
+Date: Wed Mar 9 21:29:27 2016 -0600
+    Adds loop to parameters, and adds DECIMAL token
+
+Date: Wed Mar 9 19:16:25 2016 -0600
+    Moves RETURNS token above RETURN token
+
+Date: Mon Mar 7 22:13:30 2016 -0600
+    End for the day, trouble in 'return <exp>' rule
+
+Date: Mon Mar 7 21:53:58 2016 -0600
+    Multiple variable declaration working, adds newline to script
+
+Date: Mon Mar 7 21:46:48 2016 -0600
+    Removes old_version, adds running script with latest logs
+
+Date: Mon Mar 7 21:25:59 2016 -0600
+    Remove unwanted files, fixes 'primitive' rule and adds type tolens
+
+Date: Mon Mar 7 21:13:00 2016 -0600
+    Deletes initial proposal dir
+
+Date: Mon Mar 7 21:07:07 2016 -0600
+    Initial commit

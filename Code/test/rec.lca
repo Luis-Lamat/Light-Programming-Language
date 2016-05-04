@@ -1,18 +1,15 @@
 program test {
 
-    function fibo(n: int) returns int {
-        var a:int
-        if (n < 1) do
-            return 1
-        end
-        elsif (n < 2) do
-            return 1
-        end
-        return fibo(n: n-2) + fibo(n: n-1)
-    }
-  
+    function fibonacci(n: int) returns int {
 
+		if(n == 0 or n == 1)do
+			return n
+		end
+
+		return fibonacci(n:n-1) + fibonacci(n:n-2)
+	}
+  
     light() {
-        print(fibo(n: 2 ))
+        print(fibonacci(n: fibonacci(n: 6) ))
     }
 }
