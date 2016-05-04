@@ -227,7 +227,7 @@ def t_VAR_FRACTION (t):
     r'[0-9]+[\\][0-9]+'
 
 def t_VAR_IDENTIFIER (t):
-    r'[a-zA-Z]+[0-9]*(_[a-zA-Z0-9]+)?'
+    r'[a-zA-Z]+[0-9]*(_[a-zA-Z0-9]*)*'
     t.type = reserved_words.get(t.value, 'VAR_IDENTIFIER')
     return t
 

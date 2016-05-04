@@ -1,0 +1,69 @@
+program basic_tests {
+
+	function for_test(){
+
+		var i:int 
+		var sum:int = 0
+		for(i = 0 ; i < 10 ; i += 1)do
+			sum += 1
+		end
+		print(sum)
+	}
+	function if_test(){
+
+		var yes:boolean = true
+
+		if(yes)do
+			print("yes")
+		end
+
+	}
+	function if_else_test(){
+
+		var do_else:boolean = false
+
+		if(do_else)do
+			print("if")
+		end
+		else do
+			print("else")
+		end
+	}
+	function if_elsif_else_test(){
+		var i:int = 5
+
+		if(i == 3)do
+			print("3")
+		end
+		elsif ( i == 4) do
+			print("4")
+		end
+		elsif (i == 5)do
+			print("5")
+		end
+		else do
+			print("other")
+		end
+	}
+	function while_test(){
+		var i:int = 5
+		var sum:int = 0
+
+		while(i > 0)do
+			i -= 1
+			print("algo")
+			sum += 1
+		end
+		print(sum)
+	}
+	
+	light(){
+
+		for_test()
+		if_test()
+		if_else_test()
+		if_elsif_else_test()
+		while_test()
+
+	}
+}

@@ -6,8 +6,15 @@ from figures import *
 import time
 import ast
 import math
+import copy
+import collections
+
 
 class MemoryHandler:
+
+	#print list
+	print_queue = Queue()
+
 	# Global and local memory declarations
 	global_size = None
 
@@ -167,6 +174,21 @@ class MemoryHandler:
 		"""
 		print("\nLIGHT OUTPUT:\n<<<<{}>>>>".format(cls.get_address_value(quad.result)))
 		print("END")
+
+		var = cls.get_address_value(quad.result)
+		if isinstance(var, collections.Iterable):
+			print("DEEP COPY")
+			cls.print_queue.enqueue(copy.deepcopy(var))
+		else:
+			cls.print_queue.enqueue(var)
+		
+	@classmethod
+	def display_print(cls):
+		print("\n_____________________________")
+		while (not cls.print_queue.isEmpty()):
+			print("\nLIGHT OUTPUT:\n<<<<{}>>>>".format(cls.print_queue.dequeue()))
+			print("END")
+
 
 	@classmethod
 	def ret_operator(cls):
