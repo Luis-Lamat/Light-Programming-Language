@@ -11,6 +11,10 @@ program circle_animation {
 		# Making the figure
 		figure c1:circle
 		figure c2:circle
+		figure c3:circle
+
+		figure l1:line
+		figure l2:line
 
 		while(times > 0)do
 
@@ -20,9 +24,46 @@ program circle_animation {
 				size: 10
 			end
 
+			c2 has
+				v: (x: sin(x) * circle_size + 250 , y: 450),
+				color: (r:20 * n,g: 200 + (n * n),b: 10 * n),
+				size: 10
+			end
+
+
+			c3 has
+				v: (x: 450 , y: cos(y) * circle_size + 250),
+				color: (r:20 * n,g: 200 + (n * n),b: 10 * n),
+				size: 10
+			end
+
+			l1 has
+				v:(x: sin(x) * circle_size + 250, y: 50),
+				v:(x: sin(x) * circle_size + 250, y: 450)
+			end
+
+
+			l2 has
+				v:(x: 50, y: cos(y) * circle_size + 250),
+				v:(x: 450, y: cos(y) * circle_size + 250)
+			end
+
+
 			camera c1
+			camera c2
+			camera c3
+
+			camera l1
+			camera l2
+
 			wait(ms:10)
-			# hide c1
+
+			hide c2
+			hide c3
+			hide l1
+			hide l2
+
+			
 			x += 0.1
 			y += 0.1
 			times -= 1

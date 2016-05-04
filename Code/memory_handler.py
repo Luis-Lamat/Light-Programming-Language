@@ -172,7 +172,7 @@ class MemoryHandler:
 		Arguments:
 			quad {Quadruple} -- quadruple
 		"""
-		print("\nLIGHT OUTPUT:\n<<<<{}>>>>".format(cls.get_address_value(quad.result)))
+		print("\nLIGHT OUTPUT:\n<<<<{}>>>>".format(ast.literal_eval(str(cls.get_address_value(quad.result)))))
 		print("END")
 
 		var = cls.get_address_value(quad.result)
@@ -185,10 +185,9 @@ class MemoryHandler:
 	@classmethod
 	def display_print(cls):
 		print("\n_____________________________")
+		print("LIGHT OUTPUT:")
 		while (not cls.print_queue.isEmpty()):
-			print("\nLIGHT OUTPUT:\n<<<<{}>>>>".format(cls.print_queue.dequeue()))
-			print("END")
-
+			print("> {}".format(ast.literal_eval(str(cls.print_queue.dequeue()))))
 
 	@classmethod
 	def ret_operator(cls):

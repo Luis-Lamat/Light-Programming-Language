@@ -1,0 +1,74 @@
+program sine {
+	
+	function do_animation(){
+
+		var x:decimal = -135.0
+		var y:decimal = 50.0
+
+		var times:int = 100000
+		var circle_size:int = 150
+
+		# Making the figure
+		figure c1:circle
+		figure c2:circle
+
+		figure l1:line
+		figure l2:line
+
+
+			l1 has
+				v:(x: 250, y: 0),
+				v:(x: 250, y: 500)
+			end
+
+			l2 has
+				v:(x: 0, y: 250),
+				v:(x: 500, y: 250)
+			end
+
+			camera l1
+			camera l2
+
+		while(times > 0)do
+
+			c1 has
+				v: (x: x , y: sin(y) * circle_size + 250),
+				color: (r:255,g: x + times,b: 0),
+				size: 10
+			end
+
+			c2 has
+				v: (x: x , y: cos(y) * circle_size + 250),
+				color: (r:0,g: 0,b: x + times),
+				size: 10
+			end
+
+			camera c1
+			camera c2
+
+			wait(ms:10)
+
+			
+			times -= 1
+
+			y += 0.1
+
+			x += 4.0
+			if(x > 510)do
+				x = -135.0
+				y = 50.0
+			end
+
+			
+		end
+	}
+
+	light() {
+		window_name(name: "Sine-Cosine-animation")
+		window_size(width: 500, height: 500)
+		text_color(r:0, g:0, b:200)
+		printg(text: "Sine-Cosine-Animation", x: 250, y: 50)
+
+		do_animation()
+	}
+}
