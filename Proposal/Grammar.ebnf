@@ -32,21 +32,13 @@ WHILE ::= 'while' '(' CONDITION ')' DO_BLOCK
 FOR ::= 'for' '(' (ASSIGNMENT)? ';' CONDITION ';' (INCREMENT | ASSIGNMENT) ')' DO_BLOCK
 
 CAMERA::= 'camera' 'id' 
-
 MOVE ::= 'move' 'id' '(' 'x' ':' EXP ',' 'y' ':' EXP ')'
-
 WAIT ::= 'wait' 'id' '(' 'ms' ':' EXP  ')'
-
 MOVE_SPEED ::= 'move_speed' 'id' '(' 'ms' ':' EXP  ')'
-
 HIDE ::= 'hide' 'id'
-
 SHOW ::= 'show' 'id'
-
 BACKGROUND_COLOR ::= 'background_color' '(' 'r' ':' EXP ',' 'g' ':' EXP ',' 'b' ':' EXP ')'
-
 TEXT_COLOR ::= 'text_color' '(' 'r' ':' EXP ',' 'g' ':' EXP ',' 'b' ':' EXP ')'
-
 PRINT_G ::= 'printg' '(' 'text' ':' EXP ',' 'x' ':' EXP ',' 'y' ':' EXP ')'
 
 CONDITION ::= EXPRESION (('and' | 'or') CONDITION )? 

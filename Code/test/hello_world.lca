@@ -1,0 +1,6 @@
+program hello_world {
+	light(){
+		window_size(width: 100, height: 100)
+		printg(text: "Hello World!",x: 50, y: 50)
+	}
+}
